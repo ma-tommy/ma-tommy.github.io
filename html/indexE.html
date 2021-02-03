@@ -16,9 +16,6 @@
 
     </div>
     <script>
-        var doResolveAPI = "https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places.json?20200910";
-        var doRejectAPI = "https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places-fail.json?20200910";
-        var callURL = [doResolveAPI, doRejectAPI];
         var callAPI = (url) => {
             return new Promise ((resolve, reject) => {
                 $.get(url,(data) => {
@@ -32,8 +29,8 @@
             })
         }
     
-        var exec = (num) => {
-            callAPI(callURL[num]).then((res) => {
+        var exec = (url) => {
+            callAPI(url).then((res) => {
                 $("#response").text(JSON.stringify(res));
             }).catch(() => {
                 $("#response").text("");
@@ -42,11 +39,11 @@
         }
 
         $("#index-e-success").on("click", () => {
-            exec(0);
+            exec("https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places.json?20200910");
         });
 
         $("#index-e-faild").on("click", () => {
-            exec(1);
+            exec("https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places-fail.json?20200910");
         });
     </script>  
 </body>
