@@ -10,6 +10,7 @@
        test1
     </div>
     <a href="https://ma-tommy.github.io" style="margin: 10px;">google</a><br>
+    <input id="case-value" type="text" value="true"/>
     <input id="index-d-button" type="submit" onclick="doSuccess()" value="success" style="margin: 10px;background-color: pink; border-radius: 39px;"></input>
     <input id="index-d-button" type="submit" onclick="test()" value="faild" style="margin: 10px;background-color: pink; border-radius: 39px;"></input>
     <div id="response">
@@ -19,43 +20,28 @@
         var doResolveAPI = "https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places.json?20200910";
         var doRejectAPI = "https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places-fail.json?20200910";
         
-        function callAPI (url) {
+        var callAPI = (url) => {
             return new Promise (function (resolve, reject) {
                 $.get(url,function(data) {
                     console.log("api response = " + JSON.stringify(data));
-                    resolve(data)
+                    if ($("#case-value").val() === "true") {
+                        resolve(data);
+                    } else {
+                        reject();
+                    }
                 },"json");
             })
         }
         
-        var innerHtml = function (res) {
+        var innerHtml = (res) => {
             $("#response").text(res);
         }
 
-        function doSuccess() {
+        var doSuccess = () => {
             callAPI(doResolveAPI).then(function (res) {
                 innerHtml(JSON.stringify(res));
             })
         }
-
-        // // XHR 取得したい data
-        // var urls = [doResolveAPI, doRejectAPI];
-
-        // // serial promise execution https://goo.gl/yULtwn
-        // // Array#reduce とは: https://goo.gl/6efZi4
-        // var p = urls.reduce(function (current, url) {
-        //     return current.then(function (items) {
-        //         // 合計 N 件以上取得できたら追加 XHR を止める
-        //         // この例では計 3 件以上で止めるケース (==XHR 2 回で終了)
-        //         // 3 を 4 に変えると XHR 3 回する挙動に変わるよ
-        //         if (items.length >= 3) return Promise.resolve(items);
-        //         return _get(url, items);
-        //     });
-        // }, Promise.resolve([]));
-
-        // p.then(function (items) {
-        //     console.log("total items", items);
-        // });
     </script>  
 </body>
   </html>
