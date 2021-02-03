@@ -10,45 +10,49 @@
        test1
     </div>
     <a href="https://ma-tommy.github.io" style="margin: 10px;">google</a><br>
-    <input id="index-d-button" type="submit" onclick="test()" value="button" style="margin: 10px;background-color: pink; border-radius: 39px;"></input>
+    <input id="index-d-button" type="submit" onclick="doSuccess()" value="success" style="margin: 10px;background-color: pink; border-radius: 39px;"></input>
+    <input id="index-d-button" type="submit" onclick="test()" value="faild" style="margin: 10px;background-color: pink; border-radius: 39px;"></input>
+    <div id="response">
+
+    </div>
     <script>
         var doResolveAPI = "https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places.json?20200910";
         var doRejectAPI = "https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places-fail.json?20200910";
-        // XHR で data 取得する function 定義
-        var _get = function (url, items) {
-        return new Promise(function (resolve, reject) {
-            console.log("xhr url", url);
-            $.get(
-            url,
-            function (d) {
-                console.log("get data", d);
-                items = items.concat(d.items);
-                console.log("current items", items);
-                resolve(items);
-            },
-            "json"
-            );
-        });
-        };
+        
+        var restClient = function (url) {
+            new Promise (function (resolve, reject) {
+                $.get(url,resolve(v),"json");
+            })
+        }
+        
+        var innerHtml = function (res) {
+            $("#response").text(res);
+        }
 
-        // XHR 取得したい data
-        var urls = [doResolveAPI, doRejectAPI];
+        function doSuccess() {
+            restClient(doResolveAPI).then(function (res) {
+                innerHtml(res);
+            })
+        }
 
-        // serial promise execution https://goo.gl/yULtwn
-        // Array#reduce とは: https://goo.gl/6efZi4
-        var p = urls.reduce(function (current, url) {
-            return current.then(function (items) {
-                // 合計 N 件以上取得できたら追加 XHR を止める
-                // この例では計 3 件以上で止めるケース (==XHR 2 回で終了)
-                // 3 を 4 に変えると XHR 3 回する挙動に変わるよ
-                if (items.length >= 3) return Promise.resolve(items);
-                return _get(url, items);
-            });
-        }, Promise.resolve([]));
+        // // XHR 取得したい data
+        // var urls = [doResolveAPI, doRejectAPI];
 
-        p.then(function (items) {
-            console.log("total items", items);
-        });
+        // // serial promise execution https://goo.gl/yULtwn
+        // // Array#reduce とは: https://goo.gl/6efZi4
+        // var p = urls.reduce(function (current, url) {
+        //     return current.then(function (items) {
+        //         // 合計 N 件以上取得できたら追加 XHR を止める
+        //         // この例では計 3 件以上で止めるケース (==XHR 2 回で終了)
+        //         // 3 を 4 に変えると XHR 3 回する挙動に変わるよ
+        //         if (items.length >= 3) return Promise.resolve(items);
+        //         return _get(url, items);
+        //     });
+        // }, Promise.resolve([]));
+
+        // p.then(function (items) {
+        //     console.log("total items", items);
+        // });
     </script>  
 </body>
   </html>
