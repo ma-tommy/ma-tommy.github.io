@@ -10,8 +10,8 @@
        test
     </div>
     <a href="https://ma-tommy.github.io" style="margin: 10px;">google</a><br>
-    <input id="index-d-button" type="submit" onclick="exec(0)" value="success" style="margin: 10px;background-color: pink; border-radius: 39px;"></input>
-    <input id="index-d-button" type="submit" onclick="exec(1)" value="faild" style="margin: 10px;background-color: pink; border-radius: 39px;"></input>
+    <input id="index-d-success" type="submit" value="success" style="margin: 10px;background-color: pink; border-radius: 39px;"></input>
+    <input id="index-d-faild" type="submit" value="faild" style="margin: 10px;background-color: pink; border-radius: 39px;"></input>
     <div id="response">
 
     </div>
@@ -40,6 +40,14 @@
                 return;
             })
         }
+
+        $("#index-d-success").on("click", () => {
+            exec(0);
+        });
+
+        $("#index-d-faild").on("click", () => {
+            exec(1);
+        });
     </script>  
 </body>
   </html>
