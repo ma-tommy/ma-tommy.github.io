@@ -22,14 +22,14 @@
         
         var callAPI = (url) => {
             return new Promise (function (resolve, reject) {
-                $.get(url,function(data) {
+                $.getJson(url,function(data) {
                     console.log("api response = " + JSON.stringify(data));
                     if ($("#case-value").val() === "true") {
                         resolve(data);
                     } else {
                         reject();
                     }
-                },"json");
+                });
             })
         }
         
@@ -38,8 +38,10 @@
         }
 
         var doSuccess = () => {
-            callAPI(doResolveAPI).then(function (res) {
+            callAPI(doResolveAPI).then((res) => {
                 innerHtml(JSON.stringify(res));
+            }).catch(() => {
+                return;
             })
         }
     </script>  
