@@ -12,25 +12,20 @@
     <a href="https://ma-tommy.github.io" style="margin: 10px;">google</a><br>
     <input id="index-d-button" type="submit" onclick="test()" value="button" style="margin: 10px;background-color: pink; border-radius: 39px;"></input>
     <script>
-    
-        var promise = new Promise(function(resolve, reject) {
-            $(function() {
-                if ($('#username').length > 0) {
-                    resolve();
-                } else {
-                    reject();
-                }
-            });
-        });
-
         var doResolveAPI = "https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places.json?20200910";
-        console.log(doResolveAPI);
-        var doRejectAPI = "https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places.json?20200910";
-        console.log(doRejectAPI);
-        // var resolveTest = function() {
-            
-        // }    
-        
+        var doRejectAPI = "https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places-fail.json?20200910";
+        var request = new XMLHttpRequest();
+ 
+        request.open('GET', doResolveAPI, true);
+        request.responseType = 'json';
+    
+        request.onload = function () {
+        var data = this.response;
+        console.log("data = " + data);
+        };
+    
+        var result = request.send();
+        console.log("result = " + result );
     </script>  
 </body>
   </html>
