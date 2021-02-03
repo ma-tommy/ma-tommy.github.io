@@ -19,9 +19,12 @@
         var doResolveAPI = "https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places.json?20200910";
         var doRejectAPI = "https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places-fail.json?20200910";
         
-        var restClient = function (url) {
+        function callAPI (url) {
             new Promise (function (resolve, reject) {
-                $.get(url,resolve(v),"json");
+                $.get(url,function(data) {
+                    console.log("api response = " + data);
+                    resolve(data)
+                },"json");
             })
         }
         
@@ -30,8 +33,8 @@
         }
 
         function doSuccess() {
-            restClient(doResolveAPI).then(function (res) {
-                innerHtml(res);
+            callAPI(doResolveAPI).then(function (res) {
+                innerHtml(JSON.stringify(res));
             })
         }
 
