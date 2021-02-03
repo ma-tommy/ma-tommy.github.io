@@ -7,7 +7,7 @@
 <body>
     <h1>indexD</h1>
     <div id="index-d-div" style="margin: 10px;">
-       test3
+       test4
     </div>
     <a href="https://ma-tommy.github.io" style="margin: 10px;">google</a><br>
     <input id="index-d-button" type="submit" onclick="exec(0)" value="success" style="margin: 10px;background-color: pink; border-radius: 39px;"></input>
@@ -21,24 +21,20 @@
         var callURL = [doResolveAPI, doRejectAPI];
         var callAPI = (url) => {
             return new Promise ((resolve, reject) => {
-                $.getJson(url,(data) => {
+                $.get(url,(data) => {
                     console.log("api response = " + JSON.stringify(data));
-                    if (true == true) {
+                    if (1 == 1) {
                         resolve(data);
                     } else {
                         reject();
                     }
-                });
+                }, "json");
             })
         }
-        
-        var innerHtml = (res) => {
-            $("#response").text(res);
-        }
-
+    
         var exec = (num) => {
             callAPI(callURL[num]).then((res) => {
-                innerHtml(JSON.stringify(res));
+                $("#response").text(JSON.stringify(res));
             }).catch(() => {
                 console.log("reject");
                 return;
