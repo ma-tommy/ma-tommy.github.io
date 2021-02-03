@@ -21,11 +21,10 @@
     
         request.onload = function () {
         var data = this.response;
-        console.log("data = " + data);
+        console.log("data = " + JSON.stringify(data));
         };
     
-        var result = request.send();
-        console.log("result = " + result );
+        request.send();
     </script>  
 </body>
   </html>
