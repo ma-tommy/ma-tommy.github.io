@@ -20,9 +20,9 @@
         var doRejectAPI = "https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places-fail.json?20200910";
         
         function callAPI (url) {
-            new Promise (function (resolve, reject) {
+            return new Promise (function (resolve, reject) {
                 $.get(url,function(data) {
-                    console.log("api response = " + data);
+                    console.log("api response = " + JSON.stringify(data));
                     resolve(data)
                 },"json");
             })
