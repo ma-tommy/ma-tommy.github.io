@@ -10,21 +10,18 @@
        test1
     </div>
     <a href="https://ma-tommy.github.io" style="margin: 10px;">google</a><br>
-    <input id="case-value" type="text" value="1"/>
-    <input id="index-d-button" type="submit" onclick="doSuccess()" value="success" style="margin: 10px;background-color: pink; border-radius: 39px;"></input>
-    <input id="index-d-button" type="submit" onclick="test()" value="faild" style="margin: 10px;background-color: pink; border-radius: 39px;"></input>
+    <input id="index-d-button" type="submit" onclick="exec('https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places.json?20200910')" value="success" style="margin: 10px;background-color: pink; border-radius: 39px;"></input>
+    <input id="index-d-button" type="submit" onclick="exec('https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places-fail.json?20200910')" value="faild" style="margin: 10px;background-color: pink; border-radius: 39px;"></input>
     <div id="response">
 
     </div>
     <script>
-        var doResolveAPI = "https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places.json?20200910";
-        var doRejectAPI = "https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places-fail.json?20200910";
         
         var callAPI = (url) => {
             return new Promise ((resolve, reject) => {
                 $.getJson(url,(data) => {
                     console.log("api response = " + JSON.stringify(data));
-                    if ($("#case-value").val() === "1") {
+                    if (data.success == true) {
                         resolve(data);
                     } else {
                         reject();
@@ -37,11 +34,11 @@
             $("#response").text(res);
         }
 
-        var doSuccess = () => {
-            callAPI(doResolveAPI).then((res) => {
+        var exec = (url) => {
+            callAPI(url).then((res) => {
                 innerHtml(JSON.stringify(res));
             }).catch(() => {
-                innerHtml("reject");
+                return;
             })
         }
     </script>  
