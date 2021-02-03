@@ -40,6 +40,7 @@
             callAPI(callURL[num]).then((res) => {
                 innerHtml(JSON.stringify(res));
             }).catch(() => {
+                console.log("reject");
                 return;
             })
         }
