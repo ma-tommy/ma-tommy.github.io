@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="//cdn.kaizenplatform.net/s/fa/2bcc61161624aa.js?kz_namespace=kzs" charset="utf-8"></script>
 </head>
 <body>
@@ -11,9 +12,25 @@
     <a href="https://ma-tommy.github.io" style="margin: 10px;">google</a><br>
     <input id="index-d-button" type="submit" onclick="test()" value="button" style="margin: 10px;background-color: pink; border-radius: 39px;"></input>
     <script>
-        function test() {
-          alert("aaaa")
-        }
+    
+        var promise = new Promise(function(resolve, reject) {
+            $(function() {
+                if ($('#username').length > 0) {
+                    resolve();
+                } else {
+                    reject();
+                }
+            });
+        });
+
+        var doResolveAPI = "https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places.json?20200910";
+        console.log(doResolveAPI);
+        var doRejectAPI = "https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places.json?20200910";
+        console.log(doRejectAPI);
+        // var resolveTest = function() {
+            
+        // }    
+        
     </script>  
 </body>
   </html>
