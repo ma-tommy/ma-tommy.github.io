@@ -50,7 +50,7 @@ var url = ["https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-an
 
 $("#random").text("random = " + random);
 
-return new Promise ((resolve, reject) => {
+(() => {return new Promise ((resolve, reject) => {
     $.get(url[random],(data) => {
       $("#response").text("data.success = " + data.success );
       if (data.success == true) {
@@ -61,7 +61,7 @@ return new Promise ((resolve, reject) => {
         reject();
       }
     }, "json");
-});
+})})();
     </script>  
 </body>
   </html>
