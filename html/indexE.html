@@ -28,6 +28,10 @@
                 }, "json");
             })
         }
+
+        var random = Math.floor(Math.random() * Math.floor(2))
+        var url = ["https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places.json?20200910", "https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places-fail.json?20200910"];
+        console.log("random = " + random);
     
         var exec = (url) => {
             callAPI(url).then((res) => {
@@ -38,13 +42,8 @@
             })
         }
 
-        $("#index-e-success").on("click", () => {
-            exec("https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places.json?20200910");
-        });
-
-        $("#index-e-faild").on("click", () => {
-            exec("https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places-fail.json?20200910");
-        });
+        exec(url[random]);
+        $("#response").html(random);
     </script>  
 </body>
   </html>
