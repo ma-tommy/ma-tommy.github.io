@@ -10,7 +10,7 @@
        test1
     </div>
     <a href="https://ma-tommy.github.io" style="margin: 10px;">google</a><br>
-    <input id="case-value" type="text" value="true"/>
+    <input id="case-value" type="text" value="1"/>
     <input id="index-d-button" type="submit" onclick="doSuccess()" value="success" style="margin: 10px;background-color: pink; border-radius: 39px;"></input>
     <input id="index-d-button" type="submit" onclick="test()" value="faild" style="margin: 10px;background-color: pink; border-radius: 39px;"></input>
     <div id="response">
@@ -21,10 +21,10 @@
         var doRejectAPI = "https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places-fail.json?20200910";
         
         var callAPI = (url) => {
-            return new Promise (function (resolve, reject) {
-                $.getJson(url,function(data) {
+            return new Promise ((resolve, reject) => {
+                $.getJson(url,(data) => {
                     console.log("api response = " + JSON.stringify(data));
-                    if ($("#case-value").val() === "true") {
+                    if ($("#case-value").val() === "1") {
                         resolve(data);
                     } else {
                         reject();
@@ -41,7 +41,7 @@
             callAPI(doResolveAPI).then((res) => {
                 innerHtml(JSON.stringify(res));
             }).catch(() => {
-                return;
+                innerHtml("reject");
             })
         }
     </script>  
