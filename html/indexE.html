@@ -17,51 +17,34 @@
 
     </div>
     <script>
-        // var callAPI = (url) => {
-        //     return new Promise ((resolve, reject) => {
-        //         $.get(url,(data) => {
-        //             console.log("api response = " + JSON.stringify(data));
-        //             if (data.success == true) {
-        //                 resolve(data);
-        //             } else {
-        //                 reject();
-        //             }
-        //         }, "json");
-        //     })
-        // }
+        var callAPI = (url) => {
+            return new Promise ((resolve, reject) => {
+                $.get(url,(data) => {
+                    console.log("api response = " + JSON.stringify(data));
+                    if (data.success == true) {
+                        resolve(data);
+                    } else {
+                        reject();
+                    }
+                }, "json");
+            })
+        }
 
-        // var random = Math.floor(Math.random() * Math.floor(2))
-        // var url = ["https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places.json?20200910", "https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places-fail.json?20200910"];
-        // console.log("random = " + random);
-    
-        // var exec = (url) => {
-        //     callAPI(url).then((res) => {
-        //         $("#response").text(JSON.stringify(res));
-        //     }).catch(() => {
-        //         $("#response").text("");
-        //         return;
-        //     })
-        // }
-
-        // exec(url[random]);
-        // $("#random").text(random);
         var random = Math.floor(Math.random() * Math.floor(2))
-var url = ["https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places.json?20200910", "https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places-fail.json?20200910"];
+        var url = ["https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places.json?20200910", "https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places-fail.json?20200910"];
+        console.log("random = " + random);
+    
+        var exec = (url) => {
+            callAPI(url).then((res) => {
+                $("#response").text(JSON.stringify(res));
+            }).catch(() => {
+                $("#response").text("");
+                return;
+            })
+        }
 
-$("#random").text("random = " + random);
-
-(() => {return new Promise ((resolve, reject) => {
-    $.get(url[random],(data) => {
-      $("#response").text("data.success = " + data.success );
-      if (data.success == true) {
-          console.log("success");
-        resolve();
-      } else {
-        console.log("faild");
-        reject();
-      }
-    }, "json");
-})})();
+        exec(url[random]);
+        $("#random").text(random);
     </script>  
 </body>
   </html>
