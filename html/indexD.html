@@ -10,36 +10,8 @@
        test
     </div>
     <a href="https://ma-tommy.github.io" style="margin: 10px;">google</a><br>
-    <input id="index-d-button" type="submit" onclick="exec(0)" value="success" style="margin: 10px;background-color: pink; border-radius: 39px;"></input>
-    <input id="index-d-button" type="submit" onclick="exec(1)" value="faild" style="margin: 10px;background-color: pink; border-radius: 39px;"></input>
-    <div id="response">
-
-    </div>
-    <script>
-        var doResolveAPI = "https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places.json?20200910";
-        var doRejectAPI = "https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places-fail.json?20200910";
-        var callURL = [doResolveAPI, doRejectAPI];
-        var callAPI = (url) => {
-            return new Promise ((resolve, reject) => {
-                $.get(url,(data) => {
-                    console.log("api response = " + JSON.stringify(data));
-                    if (data.success == true) {
-                        resolve(data);
-                    } else {
-                        reject();
-                    }
-                }, "json");
-            })
-        }
-    
-        var exec = (num) => {
-            callAPI(callURL[num]).then((res) => {
-                $("#response").text(JSON.stringify(res));
-            }).catch(() => {
-                $("#response").text("");
-                return;
-            })
-        }
-    </script>  
+    <input id="index-d-success" type="submit" value="success" style="margin: 10px;background-color: pink; border-radius: 39px;"></input>
+    <input id="index-d-faild" type="submit" value="faild" style="margin: 10px;background-color: pink; border-radius: 39px;"></input>
+    <div id="response"></div>
 </body>
-  </html>
+</html>
