@@ -8,12 +8,20 @@
 		></script>
 	</head>
 	<body>
-		<h1>complate</h1>
+        <h1>complate</h1>
+        <h2 id="loginHeader"></h1>
 		<script>
 			try {
 				kzs("trackClickGoals", "35258");
-				console.log("aaaaa");
-			} catch (e) {}
+            } catch (e) {}
+            
+            var login = 1;
+            if (login == 1) {
+                $("#loginHeader").text("ログイン");
+            } else if (login == 2) {
+                $("#loginHeader").text("未ログイン");
+            }
+            
 		</script>
 	</body>
 </html>
