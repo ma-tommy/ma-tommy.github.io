@@ -12,7 +12,6 @@
     <a href="https://ma-tommy.github.io" style="margin: 10px;">google</a><br>
     <input id="index-e-success" type="submit" value="success" style="margin: 10px;background-color: pink; border-radius: 39px;"></input>
     <input id="index-e-faild" type="submit" value="faild" style="margin: 10px;background-color: pink; border-radius: 39px;"></input>
-    <div id="random"></div>
     <div id="response">
 
     </div>
@@ -29,10 +28,6 @@
                 }, "json");
             })
         }
-
-        var random = Math.floor(Math.random() * Math.floor(2))
-        var url = ["https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places.json?20200910", "https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places-fail.json?20200910"];
-        console.log("random = " + random);
     
         var exec = (url) => {
             callAPI(url).then((res) => {
@@ -43,8 +38,14 @@
             })
         }
 
-        exec(url[random]);
-        $("#random").text(random);
+        $("#index-e-success").on("click", () => {
+            exec("https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places.json?20200910");
+        });
+
+        $("#index-e-faild").on("click", () => {
+            exec("https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places-fail.json?20200910");
+        });
+
     </script>  
 </body>
   </html>
