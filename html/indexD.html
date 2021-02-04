@@ -14,36 +14,5 @@
     <input id="index-d-faild" type="submit" value="faild" style="margin: 10px;background-color: pink; border-radius: 39px;"></input>
     <div id="random"></div>
     <div id="response"></div>
-    <!-- <script>
-        var callAPI = (url) => {
-            return new Promise ((resolve, reject) => {
-                $.get(url,(data) => {
-                    console.log("api response = " + JSON.stringify(data));
-                    //if (data.success == true) {
-                        resolve(data);
-                    //} else {
-                    //    reject();
-                    //}
-                }, "json");
-            })
-        }
-    
-        var exec = (url) => {
-            callAPI(url).then((res) => {
-                $("#response").text(JSON.stringify(res));
-            }).catch(() => {
-                $("#response").text("");
-                return;
-            })
-        }
-
-        $("#index-d-success").on("click", () => {
-            exec("https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places.json?20200910");
-        });
-
-        $("#index-d-faild").on("click", () => {
-            exec("https://storage.googleapis.com/kaizen-cse-public/cse-examples/xhr-and-dom-append/plain-js/kaizen-web-api/places-fail.json?20200910");
-        });
-    </script> -->
 </body>
 </html>
