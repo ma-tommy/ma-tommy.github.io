@@ -6,6 +6,15 @@
 <body>
     <h1>Exp未適用</h1>
     <h2 id="loginHeader"></h1>
+    <input id="index-d-success" type="submit" onclick="doGoal()" value="goal" style="margin: 10px;background-color: blue; border-radius: 39px;"></input>
+    
     <script src="//cdn.kaizenplatform.net/s/fa/2bcc61161624aa.js?kz_namespace=kzs" charset="utf-8"></script>
+    <script>
+        function doGoal () {
+            try {
+				kzs("trackClickGoals", "35275");
+			} catch (e) {}
+        }
+    </script>
 </body>
 </html>
