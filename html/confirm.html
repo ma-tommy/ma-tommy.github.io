@@ -27,13 +27,13 @@
 		var queryParam = window.location.search.substr(1).split("&");
 		var prodcut = queryParam[0].split("=");
 		console.log("prodcut1:" + prodcut[1])
-		$("[name=productName]")[0].text(prodcut[1]);
+		$("span[name=productName]")[0].text(prodcut[1]);
 		prodcut = queryParam[1].split("=");
-		$("[name=productNum]")[0].text(prodcut[1]);
+		$("span[name=productNum]")[0].text(prodcut[1]);
 		prodcut = queryParam[2].split("=");
-		$("[name=productName]")[1].text(prodcut[1]);
+		$("span[name=productName]")[1].text(prodcut[1]);
 		prodcut = queryParam[3].split("=");
-		$("[name=productNum]")[1].text(prodcut[1]);
+		$("span[name=productNum]")[1].text(prodcut[1]);
 
 		function onButtonClick() {
 			window.location.href="https://ma-tommy.github.io/html/buyComp.html";
