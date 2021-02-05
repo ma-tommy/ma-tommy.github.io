@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script
+			src="//cdn.kaizenplatform.net/s/fa/2bcc61161624aa.js?kz_namespace=kzs"
+			charset="utf-8"
+		></script>
+	</head>
+	<body>
+		<h1>カート</h1>
+		<form>
+			<div>
+				<span>商品</span>
+				<input type="text" id="product" value="" />
+				<span>数量</span>
+				<input type="text" id="num" value="" />
+			</div>
+			<div>
+				<span>商品</span>
+				<input type="text" id="product" value="" />
+				<span>数量</span>
+				<input type="text" id="num" value="" />
+			</div>
+			<input type="submit" onclick="buy1OnClick()" value="購入" />
+		</form>
+		<script>
+			function buy1OnClick() {
+				window.location.href = "https://ma-tommy.github.io/html/confirm.html";
+			}
+		</script>
+	</body>
+</html>
