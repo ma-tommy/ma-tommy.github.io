@@ -11,13 +11,13 @@
 		<h1>購入確認</h1>
 		<div>
 			<span>商品　:　</span>
-			<span name="productName" style="margin-right: 10px"></span>
-			<span>数量　:　</span><span name="productNum"></span>
+			<span id="productName1" style="margin-right: 10px"></span>
+			<span>数量　:　</span><span name="productNum1"></span>
 		</div>
 		<div>
 			</span> <span>商品　:　</span>
-			<span name="productName" style="margin-right: 10px"></span>
-			<span>数量　:　</span><span name="productNum"></span>
+			<span id="productName2" style="margin-right: 10px"></span>
+			<span>数量　:　</span><span id="productNum2"></span>
 		<div>
 			<div>
 				<input type="button" onclick="onButtonClick()" value="購入">
@@ -27,13 +27,13 @@
 		var queryParam = window.location.search.substr(1).split("&");
 		var prodcut = queryParam[0].split("=");
 		console.log("prodcut1:" + prodcut[1])
-		$("span[name=productName]")[0].text(prodcut[1]);
+		$("#productName1").text(prodcut[1]);
 		prodcut = queryParam[1].split("=");
-		$("span[name=productNum]")[0].text(prodcut[1]);
+		$("#productNum1").text(prodcut[1]);
 		prodcut = queryParam[2].split("=");
-		$("span[name=productName]")[1].text(prodcut[1]);
+		$("#productName2").text(prodcut[1]);
 		prodcut = queryParam[3].split("=");
-		$("span[name=productNum]")[1].text(prodcut[1]);
+		$("#productNum2").text(prodcut[1]);
 
 		function onButtonClick() {
 			window.location.href="https://ma-tommy.github.io/html/buyComp.html";
