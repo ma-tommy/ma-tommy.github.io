@@ -13,12 +13,14 @@
 			<span>商品　:　</span>
 			<span id="productName1" style="margin-right: 10px"></span>
 			<span>数量　:　</span><span id="productNum1"></span>
+			<span>金額　:　</span><span id="moeny1"></span>
 		</div>
 		<div>
 			</span> <span>商品　:　</span>
 			<span id="productName2" style="margin-right: 10px"></span>
 			<span>数量　:　</span><span id="productNum2"></span>
-		<div>
+			<span>金額　:　</span><span id="moeny2"></span>
+		
 			<div>
 				<input type="button" onclick="onButtonClick()" value="購入">
 			</div>
@@ -26,14 +28,18 @@
 	<script>
 		var queryParam = window.location.search.substr(1).split("&");
 		var prodcut = queryParam[0].split("=");
-		console.log("prodcut1:" + prodcut[1])
 		$("#productName1").text(prodcut[1]);
 		prodcut = queryParam[1].split("=");
 		$("#productNum1").text(prodcut[1]);
 		prodcut = queryParam[2].split("=");
-		$("#productName2").text(prodcut[1]);
+		$("#money1").text(prodcut[1]);
 		prodcut = queryParam[3].split("=");
+		$("#productName2").text(prodcut[1]);
+		prodcut = queryParam[4].split("=");
 		$("#productNum2").text(prodcut[1]);
+		prodcut = queryParam[5].split("=");
+		$("#money2").text(prodcut[1]);
+		
 
 		function onButtonClick() {
 			window.location.href="https://ma-tommy.github.io/html/buyComp.html";
