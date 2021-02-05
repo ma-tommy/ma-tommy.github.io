@@ -9,7 +9,7 @@
 	</head>
 	<body>
 		<h1>カート</h1>
-		<form>
+		<form id="mainForm">
 			<div>
 				<span>商品</span>
 				<input type="text" id="product" value="" />
@@ -26,7 +26,10 @@
 		</form>
 		<script>
 			function buy1OnClick() {
-				window.location.href = "https://ma-tommy.github.io/html/confirm.html";
+				var f = document.forms["mainForm"];
+				f.method = "POST";
+				f.action = "https://ma-tommy.github.io/html/confirm.html";
+				f.submit();
 			}
 		</script>
 	</body>
