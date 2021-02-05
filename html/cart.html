@@ -10,18 +10,11 @@
 	<body>
 		<h1>カート</h1>
 		<form id="mainForm">
-			<div>
-				<span>商品</span>
-				<input type="text" id="product" value="" />
-				<span>数量</span>
-				<input type="text" id="num" value="" />
-			</div>
-			<div>
-				<span>商品</span>
-				<input type="text" id="product" value="" />
-				<span>数量</span>
-				<input type="text" id="num" value="" />
-			</div>
+			<span>商品　:　</span
+			><span name="product" style="margin-right: 10px">PCスタンド</span>
+			<span>数量　:　</span><span name="num">1つ</span> <span>商品　:　</span
+			><span name="product" style="margin-right: 10px">ソファー</span>
+			<span>数量　:　</span><span name="num">1つ</span>
 			<input type="submit" onclick="buy1OnClick()" value="購入" />
 		</form>
 		<script>
@@ -30,6 +23,7 @@
 				f.method = "POST";
 				f.action = "https://ma-tommy.github.io/html/confirm.html";
 				f.submit();
+				return true;
 			}
 		</script>
 	</body>
