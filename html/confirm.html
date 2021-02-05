@@ -21,29 +21,30 @@
 				<input type="button" onclick="onButtonClick()" value="購入">
 			</div>
 		</div>
+		<script>
+			var queryParam = window.location.search.substr(1).split("&");
+			var prodcut = queryParam[0].split("=");
+			$("#productName1").text(prodcut[1]);
+			prodcut = queryParam[1].split("=");
+			$("#productNum1").text(prodcut[1]);
+			prodcut = queryParam[2].split("=");
+			$("#money1").text(prodcut[1]);
+			prodcut = queryParam[3].split("=");
+			$("#productName2").text(prodcut[1]);
+			prodcut = queryParam[4].split("=");
+			$("#productNum2").text(prodcut[1]);
+			prodcut = queryParam[5].split("=");
+			$("#money2").text(prodcut[1]);
+			
+	
+			function onButtonClick() {
+				window.location.href="https://ma-tommy.github.io/html/buyComp.html";
+			}
+		</script>
 		<script
 		src="//cdn.kaizenplatform.net/s/fa/2bcc61161624aa.js?kz_namespace=kzs"
 		charset="utf-8"
 	></script>
 	</body>
-	<script>
-		var queryParam = window.location.search.substr(1).split("&");
-		var prodcut = queryParam[0].split("=");
-		$("#productName1").text(prodcut[1]);
-		prodcut = queryParam[1].split("=");
-		$("#productNum1").text(prodcut[1]);
-		prodcut = queryParam[2].split("=");
-		$("#money1").text(prodcut[1]);
-		prodcut = queryParam[3].split("=");
-		$("#productName2").text(prodcut[1]);
-		prodcut = queryParam[4].split("=");
-		$("#productNum2").text(prodcut[1]);
-		prodcut = queryParam[5].split("=");
-		$("#money2").text(prodcut[1]);
-		
-
-		function onButtonClick() {
-			window.location.href="https://ma-tommy.github.io/html/buyComp.html";
-		}
-	</script>
+	
 </html>
