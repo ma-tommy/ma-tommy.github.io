@@ -23,8 +23,8 @@
 	<script>
 		var queryParam = window.location.search.substr(1).split("=");
 		$("#productName1").text(queryParam[0]);
-		$("#productNum1").text(queryParam[1]);
+		$("#productNum1").text(queryParam[1].substr(1));
 		$("#productName2").text(queryParam[2]);
-		$("#productNum2").text(queryParam[3]);
+		$("#productNum2").text(queryParam[3].substr(1));
 	</script>
 </html>
