@@ -10,16 +10,35 @@
 	<body>
 		<h1>カート</h1>
 			<div>
-			<span>商品　:　</span
-			><span name="product" style="margin-right: 10px">PCスタンド</span>
-			<span>数量　:　</span><span name="num">1つ
+				<span>商品　:　</span>
+				<span name="product" style="margin-right: 10px">PCスタンド</span>
+				<span>数量　:　</span>
+				<select id="num1">
+					<option value="1">1つ</option>
+					<option value="2">2つ</option>
+					<option value="3">3つ</option>
+					<option value="4">4つ</option>
+				</select>
 			</div>
 			<div>
-			</span> <span>商品　:　</span
-			><span name="product" style="margin-right: 10px">ソファー</span>
-			<span>数量　:　</span><span name="num">1つ</span>
+				<span>商品　:　</span>
+				<span name="product" style="margin-right: 10px">ソファー</span>
+				<span>数量　:　</span>
+				<select id="num2">
+					<option value="1">1つ</option>
+					<option value="2">2つ</option>
+					<option value="3">3つ</option>
+					<option value="4">4つ</option>
+				</select>
 			<div>
-			<a href="https://ma-tommy.github.io/html/confirm.html?productName1=PCスタンド&productNUM1=1&productName2=ソファー&productNUM2=1">確認画面へ</a>
-		</div>
+				<a onclick="onAClick">Next</a>
+			</div>
+		<script>
+			function onAClick () {
+				const num1 = $("#num1").val();
+				const num2 = $("#num2").val();
+				window.location.href=`https://ma-tommy.github.io/html/confirm.html?productName1=PCスタンド&productNUM1=${num1}&productName2=ソファー&productNUM2=${num2}`
+			}
+		</script>
 	</body>
 </html>
