@@ -11,11 +11,14 @@
 		<h1>購入完了</h1>
 	</body>
 	<script type="text/javascript">
-		var kzsGoalId = 2824;
+		var kzsGoalId = 35300;
 		const cookieValue = document.cookie.split("; ");
 		const find = (str) =>
 			cookieValue.find((row) => row.startsWith(str)).split("=")[1];
 		const totalAmount = find("total_amount");
-		kzs("trackTransaction", kzsGoalId, { total_amount: totalAmount });
+		kzs("trackTransaction", kzsGoalId, {
+			total_amount: totalAmount,
+			unique_id: "49E-355444",
+		});
 	</script>
 </html>
