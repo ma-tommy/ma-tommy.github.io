@@ -1,4 +1,5 @@
-function run() {
+const run = (exec) => {
+	const project1 = "test";
 	// このタイミングでは userData は empty object (== {})
 	kzs.console.log("%s initial", project1, kzs.current.userData);
 
@@ -7,9 +8,10 @@ function run() {
 			return;
 		// ここ以降は期待通り userData が load されている
 		clearInterval(tid);
+		exec();
 		kzs.console.log("%s after userdata load", project1, kzs.current.userData);
 	}, 200);
-}
+};
 
 var queryParam = window.location.search.substr(1).split("=");
 console.log("key : " + queryParam[0]);
@@ -36,9 +38,13 @@ if (window.location.href.match("/confirm.html")) {
 		money2: $("#money2").text(),
 	};
 	sessionStorage.setItem("buy", JSON.stringify(strage));
+	run(() => {
+		console.log(kzs.current.userData.buyCount);
+	});
 }
 
 if (window.location.href.match("/buyComp.html")) {
+	console.log("user Data = " + kzs.current.userData.buyCount);
 	const buyObj = JSON.parse(sessionStorage.getItem("buy"));
 	console.log(buyObj);
 	const productName1 = buyObj.productName1;
@@ -78,11 +84,15 @@ if (window.location.href.match("/buyComp.html")) {
 		}
 	);
 	sessionStorage.removeItem("buy");
-	//
-	kzs("setUserData", {
-		buyCount:
-			kzs.current.userData.buyCount === null
-				? 1
-				: kzs.current.userData.buyCount + 1,
-	});
+	// user Dataの設定
+	const userDataExec = () => {
+		kzs("setUserData", {
+			buyCount:
+				kzs.current.userData.buyCount === null
+					? 1
+					: kzs.current.userData.buyCount + 1,
+		});
+	};
+
+	run(userDataExec);
 }
