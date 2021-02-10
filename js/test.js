@@ -1,9 +1,22 @@
+function run() {
+	// このタイミングでは userData は empty object (== {})
+	kzs.console.log("%s initial", project1, kzs.current.userData);
+
+	var tid = setInterval(function () {
+		if (!kzs.current.executedActions || kzs.current.executedActions.length == 0)
+			return;
+		// ここ以降は期待通り userData が load されている
+		clearInterval(tid);
+		kzs.console.log("%s after userdata load", project1, kzs.current.userData);
+	}, 200);
+}
+
 var queryParam = window.location.search.substr(1).split("=");
 console.log("key : " + queryParam[0]);
 console.log("value : " + queryParam[1]);
 var loginHeader = $("#loginHeader").text();
 console.log("loginHeader : " + loginHeader);
-console.log("deploy8");
+console.log("deploy7");
 
 if (loginHeader == "1") {
 	kzs("setCustomVariable", "isLogin", loginHeader);
@@ -43,7 +56,7 @@ if (window.location.href.match("/buyComp.html")) {
 		kzsGoalId,
 		{
 			total_amount: total,
-			unique_id: "49E-355450",
+			unique_id: "49E-355469",
 		},
 		{
 			transaction_id: "",
@@ -65,4 +78,11 @@ if (window.location.href.match("/buyComp.html")) {
 		}
 	);
 	sessionStorage.removeItem("buy");
+	//
+	kzs("setUserData", {
+		buyCount:
+			kzs.current.userData.buyCount === null
+				? 1
+				: kzs.current.userData.buyCount + 1,
+	});
 }
