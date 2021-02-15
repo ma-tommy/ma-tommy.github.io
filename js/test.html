@@ -1,0 +1,1902 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta charset="utf-8" />
+		<meta
+			name="description"
+			content="「会員解約手続き」のページです。音楽聴き放題のサブスク音楽配信アプリ「dヒッツ」なら、最新ランキングから洋楽やカラオケのヒット曲、懐かしの名曲からオーディオブックまで、充実のラインナップが聴き放題！音楽アプリでお気に入りの曲をオフライン再生（ダウンロード）で聴けて歌詞も見れる♪初回31日間無料キャンペーン中！"
+		/>
+		<meta
+			name="keywords"
+			content="歌詞,ランキング,音楽,新曲,話題,聴き放題,dヒッツ,スマホ,カラオケ,ラジオ,スマートフォン,人気,邦楽,洋楽,アプリ,myヒッツ,初回31日間無料,キャッシュ,月額500円(税抜)"
+		/>
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="membership" property="membership" content="1" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<meta property="fb:app_id" content="799889663393876" />
+		<link
+			rel="shortcut icon"
+			type="image/x-icon"
+			href="https://img.music.dmkt-sp.jp/dh-img-p1/pc/common/icon_dhits.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			href="https://img.music.dmkt-sp.jp/dh-img-p1/pc/common/icon_dhits.png"
+		/>
+
+		<link rel="stylesheet" href="/css/pc/style.min.css?1593172181" />
+		<link rel="stylesheet" href="/css/pc/layout.min.css?1593172181" />
+		<title>
+			【dヒッツ】会員解約手続き|音楽聴き放題のサブスク音楽アプリ！オフライン（ダウンロード）でも再生できる！
+		</title>
+
+		<script src="/js/jquery-3.1.0.min.js?1593172181"></script>
+		<script src="/js/common.js?1593172181"></script>
+	</head>
+
+	<body data-is-play="false">
+		<div class="wrapper" style="display: none">
+			<header data-template="header">
+				<div class="common-inner head-list">
+					<div class="hl-logo-area">
+						<h1 class="logo"><a href="/">dヒッツ</a></h1>
+					</div>
+					<!-- /hl-logo-area -->
+					<form
+						action="/search/freeword"
+						id="js-searchForm"
+						class="search-form"
+						name="search_form"
+						accept-charset="UTF-8"
+						method="GET"
+					>
+						<div class="search-input">
+							<input
+								id="js-searchKst"
+								style="-webkit-appearance: none"
+								type="search"
+								tabindex="2"
+								placeholder="曲名やアーティスト名で検索"
+								data-selected-placeholder="で検索する"
+								autocomplete="off"
+								autocorrect="off"
+								autocapitalize="off"
+								name="k_q"
+								maxlength="100"
+								data-search-cancel="false"
+							/>
+							<input
+								id="js-searchCancel"
+								class="btn btn-search-cancel"
+								type="button"
+								value=""
+								onclick="onCancel(); return false;"
+							/>
+							<input id="submit-freeword" type="button" value="" />
+							<div id="js-searchKstSuggest" class="search-suggest"></div>
+							<!-- /search-suggest -->
+						</div>
+						<!-- /search-input -->
+					</form>
+					<!-- /search-form -->
+					<div class="hl-login">
+						<a class="btn btn-login" href="/logout"
+							><span style="white-space: nowrap">ログアウト</span></a
+						>
+					</div>
+					<!-- /hl-login -->
+					<div class="hl-d-account">
+						<div
+							id="daccountArea"
+							style="
+								width: 162px;
+								height: 42px;
+								background-color: #fff;
+								border-radius: 7px;
+							"
+						>
+							<div
+								style="
+									padding: 3px;
+									background: url(https://img.music.dmkt-sp.jp/dh-img-p1/custom_img/top/arw_g.png)
+										no-repeat right center;
+								"
+							>
+								<a href="/login?rdr=1">
+									<img
+										src="https://img.music.dmkt-sp.jp/dh-img-p1/custom_img/top/daccount.png"
+										alt="dアカウント"
+										style="height: 14px; width: 66px"
+									/>
+									<div style="color: #000; margin-top: -5px">
+										ログイン/発行する
+									</div>
+								</a>
+							</div>
+						</div>
+						<div
+							id="pointArea"
+							style="
+								width: 162px;
+								height: 42px;
+								background-color: #fff;
+								border-radius: 7px;
+								margin-left: 10px;
+							"
+						>
+							<a
+								href="https://d.dmkt-sp.jp/common/dpoint_pc/index.html"
+								style="
+									height: 42px;
+									background: url(https://img.music.dmkt-sp.jp/dh-img-p1/pc/common/point_arrow.png)
+										right center no-repeat;
+									background-size: contain;
+								"
+							>
+								<div
+									style="
+										width: 154px;
+										height: 42px;
+										line-height: 42px;
+										color: #000;
+										text-align: center;
+									"
+								>
+									ご利用可能ポイント
+								</div>
+							</a>
+						</div>
+					</div>
+					<!-- /hl-d-account -->
+				</div>
+				<!-- /common-inner -->
+
+				<nav data-template="menu">
+					<div class="common-inner">
+						<ul class="menu-list">
+							<li id="headerTop" class="ml-item">
+								<a class="ml-title" href="/"><span>TOP</span></a>
+							</li>
+							<li id="headerPlay" class="ml-item" data-menu-type="play">
+								<p class="ml-title"><span>PLAY</span></p>
+								<div class="ml-sub">
+									<a id="headerMyhits" class="ml-sub-title" href="/play/myhits"
+										>myヒッツ</a
+									>
+									<a
+										id="headerFavorite"
+										class="ml-sub-title"
+										href="/play/favorites"
+										>お気に入り</a
+									>
+									<a
+										id="headerHistory"
+										class="ml-sub-title"
+										href="/play/program-histories"
+										>履歴</a
+									>
+								</div>
+							</li>
+							<li id="headerMypage" class="ml-item" data-menu-type="mypage">
+								<p class="ml-title"><span>MYPAGE</span></p>
+								<div class="ml-sub">
+									<a
+										id="headerFollowArtist"
+										class="ml-sub-title"
+										href="/mypage/follow-artists"
+										>フォローアーティスト</a
+									>
+								</div>
+							</li>
+						</ul>
+						<!-- /menu-list -->
+
+						<ul class="more-list">
+							<li id="headerGuideIcon" class="ml-item" data-more-type="guide">
+								<p class="ml-title"><span>使い方ガイド</span></p>
+								<div class="ml-sub">
+									<a
+										id="headerInfoGuide"
+										class="ml-sub-title"
+										href="/info/guide"
+										>初めての方へ</a
+									>
+									<a
+										id="headerInfoOverview"
+										class="ml-sub-title"
+										href="/info/overview"
+										>dヒッツとは？</a
+									>
+									<a
+										id="headerInfoHowtouse"
+										class="ml-sub-title"
+										href="/ft/howtouse2_1702_pc"
+										>dヒッツの使い方</a
+									>
+									<a
+										id="headerInfoDevice"
+										class="ml-sub-title"
+										href="/info/device"
+										>推奨環境/対応機種</a
+									>
+									<a
+										id="headerInfoMultidevice"
+										class="ml-sub-title"
+										href="/info/multidevice"
+										>複数端末をご利用の方へ</a
+									>
+								</div>
+							</li>
+							<li id="headerFaqIcon" class="ml-item" data-more-type="qa">
+								<p class="ml-title"></p>
+								<div class="ml-sub">
+									<a id="headerFaq" class="ml-sub-title" href="/faq"
+										>よくある質問</a
+									>
+								</div>
+							</li>
+							<li id="headerSettingIcon" class="ml-item" data-more-type="more">
+								<p class="ml-title"></p>
+								<div class="ml-sub">
+									<a
+										id="headerNoticeList"
+										class="ml-sub-title"
+										href="/notice/list"
+										>お知らせ</a
+									>
+									<a
+										id="headerContractHistory"
+										class="ml-sub-title"
+										href="/contract/history"
+										>契約状態の確認</a
+									>
+									<a
+										id="headerContractTerms"
+										class="ml-sub-title"
+										href="/contract/terms"
+										>ご利用規約</a
+									>
+									<a
+										id="headerContractIndex"
+										class="ml-sub-title"
+										href="/contract/history"
+										>サービス申込み</a
+									>
+									<a
+										id="headerContractDelete"
+										class="ml-sub-title"
+										href="/contract/delete"
+										>サービス解約</a
+									>
+									<a
+										id="headerInfoCookie"
+										class="ml-sub-title"
+										href="/info/cookie"
+										>Cookieの利用について</a
+									>
+									<a
+										id="headerInfoPrivacy"
+										class="ml-sub-title"
+										href="/info/privacy"
+										target="_blank"
+										>プライバシーポリシー</a
+									>
+									<a
+										id="headerInfoRepresentation"
+										class="ml-sub-title"
+										href="/info/representation"
+										>提供事業者に関する表示</a
+									>
+									<a
+										id="headerInfoLicense"
+										class="ml-sub-title"
+										href="/info/license"
+										>許諾について</a
+									>
+									<a id="headerSetting" class="ml-sub-title" href="/setting"
+										>各種設定</a
+									>
+								</div>
+							</li>
+						</ul>
+						<!-- /more-list -->
+					</div>
+					<!-- /common-inner -->
+				</nav>
+				<!-- menu-list -->
+			</header>
+
+			<div id="pjaxContent" class="common-container">
+				<div id="loading" style="display: none"></div>
+
+				<style type="text/css">
+					#main {width: 100%;}
+
+					.basic .content_box {margin-bottom: 10px; padding: 0;}
+					.basic .content_box2 {margin-bottom: 60px; padding: 0;}
+					.basic .content_box3 {margin: 60px 0; padding: 0;}
+					.basic .content_box .content_ttl,
+					.basic .content_box2 .content_ttl,
+					.basic .content_box3 .content_ttl {color: #FFF; padding: 13px 10px 10px; font-size: 15px; font-size: 1.5rem; font-weight: bold; background: #c11f6b; margin-bottom: 10px;}
+
+
+					.box_01 {margin: 0 15px; background: #f2f2f2;}
+					.box_02 {text-align: center; background: #f9e9f0; margin: 0 40px;}
+					.box_03 {text-align: center; background: url(https://img.music.dmkt-sp.jp/dh-img-p1/contract/delete/attention_03.png) no-repeat 50%; background-size: 80px 80px; padding: 10px 0;}
+					.box_04 {text-align: center; background: #f9e9f0 url(https://img.music.dmkt-sp.jp/dh-img-p1/contract/delete/attention_02.png) no-repeat 50% 20%; background-size: 80px 80px; padding: 10px 0;}
+					.box_04 p {padding-bottom: 0 !important;}
+					.box_04 .btn_w {background: #fff; max-width: 240px;}
+					.box_05 {border: 1px solid #c11f6b; padding: 15px 0; margin: 0 40px;}
+					.box_05 p {padding-bottom: 0 !important; padding-top: 6px !important; color: #666; text-align: center;}
+					.box_05 p.px18 { font-size: 18px; }
+					.box_05 .btn_p {max-width: 240px;}
+					.box_05 .num {font-size: 17px; font-weight: bold; color: #c11f6b; padding-left: 5px; vertical-align: -1px;}
+					.box_06 {border: 1px solid #c11f6b; padding: 0px 50px 40px; margin: 0 40px;}
+					.box_06 p {padding-bottom: 0 !important; padding-top: 20px !important; color: #666; text-align: left; font-size: 20px;}
+					.box_06 p.img {text-align: center;}
+					.box_06 p.caption {margin-top: 10px; font-size: 0.8rem; line-height: 1.3; !important;}
+					.box_06 img {width: 100%; max-width: 500px;}
+
+					.artist_list {padding: 15px 15px 0; overflow: hidden; *zoom: 1; display: table; -webkit-box-sizing: border-box; box-sizing: border-box; width: 100%;}
+					.artist_list ul {display: table-row; width: 100%;}
+					.artist_list ul li {display: table-cell; width: 33%; padding: 0 0 10px; float: left; text-align: center; word-break: break-all;}
+					.artist_list ul li:nth-child(3n) {margin-right: 0;}
+					.artist_list ul li img {display: block; margin: 0 auto; width: 90%; max-width: 100px; height: auto;}
+					.artist_list ul li span {display: block; padding-top: 4px; font-size: 10px; line-height: 12px; width: 100%;}
+					.artist_list ul li a {color: #c11f6b; text-decoration: none;}
+
+
+					.ttl_wrap {position: relative;}
+					.ttl_wrap .more {position: absolute; right: 0; top: 0; padding: 0 !important; margin: 0 !important;}
+					.ttl_wrap .more a {display: block; position: relative; color: #fff; text-decoration: none; padding: 0 22px; font-size: 12px; font-size: 1.2rem; line-height: 40px; height: 40px;}
+					.ttl_wrap .more a:before {position: absolute; content: ''; display: block; width: 7px; height: 7px; top: 50%; right: 12px; margin-top: -4px; border-top: 1px solid #fff; border-right: 1px solid #fff; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg);}
+					.scroll_wrap {padding: 0 15px 10px;}
+					.recommend_wrap {width: 100%; overflow: hidden;}
+					.recommend_wrap li {float: left; width: 33%;}
+					.recommend_wrap .artist-list {float: left; width: 30%;  margin: 0px 1.66%;}
+					.recommend_wrap li a {position: relative; display: block; margin: 0 auto; width: 90%; max-width: 142px; text-decoration: none;}
+					.recommend_wrap li .list-image{ position: relative; display: block; margin: 0 auto; width: 100%; max-width: 142px; text-decoration: none;}
+					.recommend_wrap .inner {width: 100%; height: auto; overflow: hidden;}
+					.recommend_wrap .inner img { width: 100%; height: auto; float: left; border: 1px solid #f2f2f2;}
+					.recommend_wrap .desc {position: absolute; width: 100%; bottom: 0; left: 0; color: #c11f6b; font-size: 10px; font-size: 1.0rem; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; background: rgba(255, 255, 255, 0.7); padding: 1px !important; margin: 0 !important;}
+
+					    .recommend_wrap .inner img {padding-top: 0px;}
+
+					<?php/*  */ ?>
+					.attention_ttl {text-align: center; margin: 15px auto;}
+					.attention_ttl span {background: url(https://img.music.dmkt-sp.jp/dh-img-p1/contract/delete/attention_01.png) no-repeat 0 0; background-size: 18px auto; color: #c11f6b; height: 18px; font-size: 17px; font-weight: bold; line-height: 19px; padding-left: 22px; display: inline-block;}
+					.attention_box {border: 2px solid #e6e6e6; margin: 20px 40px; padding: 15px 0; text-align: center;}
+					.attention_box .btn_wrap {margin-top: 0;}
+					.attention_box .btn_p {margin-top: 0; max-width: 240px;}
+					.btn_wrap .btn_p{max-width: 240px;}
+
+
+					.jacket_box {display: block; margin: 0 auto 15px; width: 300px;}
+					.jacket_box .jacket_imgs {width: 100%; overflow: hidden; *zoom: 1;}
+					.jacket_box .jacket_imgs > * {float: left;}
+					.jacket_box .jacket_imgs a {display: block; width: 100px; height: 100px;}
+					.jacket_box .jacket_imgs img {display: block; width: 100px; height: 100px; background-size: cover;}
+					.jacket_box .jacket_rights {font-size: 10px; line-height: 1.2em !important; padding: 3px 0 0 !important; margin: 0 !important; color: #a0a0a0 !important;}
+
+
+					.btn_01 {width: 100%; max-width: 390px; overflow: hidden; padding: 0 15px 30px; margin: 6px auto;}
+					.btn_01 li {width: 50%; float: left;}
+					.btn_01 li:nth-child(1) {padding-right: 3px;}
+					.btn_01 li:nth-child(2) {padding-left: 3px;}
+					.btn_01 li a.btn_f {display: block; background: #808080; color: #fff; height: 40px; line-height: 42px; font-size: 14px; text-align: center; text-decoration: none;}
+					.btn_01 li a.btn_l {display: block; background: #fff; border: 1px solid #b3b3b3; color: #a5a5a5; height: 40px; line-height: 42px; font-size: 14px; text-align: center; text-decoration: none;}
+					.btn_02 {max-width: 390px; padding: 0 15px; margin: 0 auto;}
+					.btn_02 a {display: block; background: #c11f6b; color: #fff; height: 40px; line-height: 42px; font-size: 14px; font-size: 1.4rem; text-align: center; text-decoration: none;}
+
+					.check_list {padding: 0 15px; margin: 10px auto; text-align: center;}
+					.check_list li {display: inline-block;}
+					.check_list li:nth-child(1) label.checkbox_btn {margin-right: 36px;}
+					label.checkbox_btn {width: 100%; height: 23px; cursor: pointer;}
+					label.checkbox_btn input[type="checkbox"] {-moz-appearance: none; -webkit-appearance: none; cursor: pointer; position: relative; display: inline-block; width: 25px; height: 25px; margin-right: 6px;}
+					label.checkbox_btn input[type="checkbox"]:checked {position: relative; position: relative;}
+					label.checkbox_btn input[type="checkbox"]:checked:after {content: ''; position: absolute; top: 3px; left: 8px; display: block; width: 8px; height: 15px; border-right: 4px solid #c11f6b; border-bottom: 4px solid #c11f6b; transform: rotate(45deg); -webkit-transform : rotate(45deg); -moz-transform: rotate(45deg); z-index: 3;}
+					label.checkbox_btn input[type="checkbox"]:before {content: ''; position: absolute; width: 23px; height: 23px; left: 0px; top: 0; border: 1px solid #B3B3B3; background: #fff; z-index: 2; box-shadow : none;}
+					label.checkbox_btn img {width: auto; height: 25px;}
+
+					.check_list_02 {padding: 15px 15px 5px; border-bottom: 1px solid #d8d8d8;}
+					.check_list_02 li {margin-bottom: 10px; line-height: 1.5em;}
+					.check_list_02 label.checkbox_btn {position: relative; display: inline-block; padding-left: 32px; padding-top: 6px;}
+					.check_list_02 label.checkbox_btn input[type="checkbox"] {position: absolute; top: 0; left: 0;}
+					.artist-name{display: block; position: relative;background: #2a2a2a; font-weight: 400; color: #fff; text-align: center; padding: 3px 8px; overflow: hidden; height: 22px ; text-overflow: ellipsis;white-space: nowrap; max-width: 142px;  margin: 0 auto; font-size: 8px;line-height:18px}
+					.textimg_wrap{ margin: 0 1.66% ;padding-bottom:10px ; text-align: center;}
+					.textimg_wrap img{width: 100%; max-width: 800px;}
+					.bottom_icon{width: 30% ;    margin: 0 1.2%;}
+					.bottom_img{width: 25% ; max-width: 400px;  }
+					.artist-name:after {border-top: 1px solid #fff; border-right: 1px solid #fff;}
+					.artist-name:after{  position: absolute;  content: '';  display: block; width: 4px; height: 4px; top: 50%; right: 5px; margin-top: -2px; -webkit-transform: rotate(45deg);  -ms-transform: rotate(45deg);  transform: rotate(45deg);}
+
+					.b {font-weight: bold !important;}
+					.pink {color: #bc1a69 !important;}
+					.basic .content_box p,
+					.basic .content_box2 p {margin: 0 15px;line-height: 1.6;padding-top: 12px;padding-bottom: 12px;}
+					.box_05 .btn_p {max-width: 240px;}
+					.btn_wrap .btn_p {background: #c11f6b;color: #fff !important;}
+					.btn_wrap a {display: block;position: relative;margin: 12px auto; width: 92%;max-width: 320px;height: 40px;padding: 12px;line-height: 1.3;font-size: 13px;text-align: center;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;text-decoration: none;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+					.btn_wrap .btn_p:after {border-top: 1px solid #fff;border-right: 1px solid #fff;}
+					.btn_wrap a:after {position: absolute;content: '';display: block;width: 7px;height: 7px;top: 50%;right: 8px;margin-top: -4px;-webkit-transform: rotate(45deg);-ms-transform: rotate(45deg);transform: rotate(45deg);}
+					ul {list-style: none;}
+					.btn_wrap .btn_w {border: 1px solid #c11f6b;color: #c11f6b;}
+				</style>
+				<script>
+					$(document).ready(function () {
+						$("#delete").click(function () {
+							var mail = [];
+							$("[name='mail[]']:checked").each(function () {
+								mail.push(this.value);
+							});
+							$.ajax({
+								type: "POST",
+								url: "/contract/async-update?affiliate=3402010002",
+								data: {
+									mail: mail,
+									isMailEdit: true,
+								},
+								async: false,
+							});
+						});
+						$("#cnv500").click(function () {
+							$.ajax({
+								type: "POST",
+								url: "/contract/async-update?affiliate=3402010040",
+								data: {},
+								async: false,
+							});
+						});
+						$("#cnv300").click(function () {
+							$.ajax({
+								type: "POST",
+								url: "/contract/async-update?affiliate=3402010039",
+								data: {},
+								async: false,
+							});
+						});
+					});
+				</script>
+
+				<article class="content-area common-inner">
+					<div id="main" class="basic">
+						<div class="content_box pb12">
+							<h2 class="content_ttl">会員解約手続き</h2>
+							<p>
+								会員の解約処理を行います。<br />
+								「解約する」に進んでください。
+							</p>
+							<div>
+								<p class="px15"><span class="pink b">dヒッツ (500円)</span></p>
+							</div>
+						</div>
+
+						<div class="content_box">
+							<div class="box_02">
+								<p>
+									<img
+										src="https://img.music.dmkt-sp.jp/dh-img-p1/contract/delete/attention_01.png"
+										width="40"
+										height="40"
+										style="padding: 8px 0"
+									/><br />
+									<span class="px15 b pink"
+										>dヒッツは月初に解約しても月末に解約しても料金は変わりません。</span
+									>
+								</p>
+								<p style="padding-bottom: 28px">
+									<span class="gray6"
+										>ぜひ月末までお楽しみください。<br />
+										※解約した時点でサービスをご利用いただけなくなります。</span
+									>
+								</p>
+							</div>
+						</div>
+
+						<div class="content_box">
+							<div class="box_05">
+								<p class="attention_ttl"><span>ご注意ください</span></p>
+								<p>解約すると、今まで保存した楽曲が聴けなくなります！</p>
+								<p>あなたの保存曲数<span class="num">0曲</span></p>
+								<div class="btn_wrap">
+									<a class="btn_p" href="/play/myhits">myヒッツを確認する</a>
+								</div>
+							</div>
+						</div>
+
+						<!-- <div class="content_box">
+            <div class="box_03">
+                <p class="b gray6 pb00">聴き逃しているプログラムはありませんか？</p>
+                <p class="b pink">dヒッツは、様々なジャンル、<br>様々な年代に向けたプログラムが満載です！</p>
+            </div>
+            <div class="btn_wrap" style="margin-top:0;">
+                <a class="btn_p" href="/search/genres" style="margin-top:0;">ジャンル別プログラムはコチラ</a>
+            </div>
+            <div class="btn_wrap" style="padding-bottom:5px;">
+                <a class="btn_p" href="/search/generations" >年代別プログラムはコチラ</a>
+            </div>
+        </div> -->
+
+						<div class="content_box3 pb12">
+							<div class="ttl_wrap">
+								<h2 class="content_ttl">
+									人気アーティスト、聴き逃していませんか？
+								</h2>
+							</div>
+
+							<div class="scroll_wrap">
+								<ul
+									id="reccomend_slider"
+									class="recommend_wrap"
+									style="padding-bottom: 5px"
+								>
+									<li class="artist-list">
+										<a
+											class="list-image"
+											href="https://music-service.dmkt-sp.jp/dhits/out/playlist1/"
+										>
+											<div class="inner">
+												<img
+													src="https://img.music.dmkt-sp.jp/dh-img-p1/contract/delete/artist10.jpg"
+													class="protected jacket_img"
+												/>
+											</div>
+										</a>
+										<span class="artist-name">あいみょん</span>
+									</li>
+									<li class="artist-list">
+										<a
+											class="list-image"
+											href="https://music-service.dmkt-sp.jp/dhits/out/playlist2/"
+										>
+											<div class="inner">
+												<img
+													src="https://img.music.dmkt-sp.jp/dh-img-p1/contract/delete/artist11.jpg"
+													class="protected jacket_img"
+												/>
+											</div>
+										</a>
+										<span class="artist-name">back number</span>
+									</li>
+									<li class="artist-list">
+										<a
+											class="list-image"
+											href="https://music-service.dmkt-sp.jp/dhits/out/playlist3/"
+										>
+											<div class="inner">
+												<img
+													src="https://img.music.dmkt-sp.jp/dh-img-p1/contract/delete/artist12.jpg"
+													class="protected jacket_img"
+												/>
+											</div>
+										</a>
+										<span class="artist-name">LiSA</span>
+									</li>
+								</ul>
+								<ul
+									id="reccomend_slider"
+									class="recommend_wrap"
+									style="padding-bottom: 5px"
+								>
+									<li class="artist-list">
+										<a
+											class="list-image"
+											href="https://music-service.dmkt-sp.jp/dhits/out/playlist4/"
+										>
+											<div class="inner">
+												<img
+													src="https://img.music.dmkt-sp.jp/dh-img-p1/contract/delete/artist13.jpg"
+													class="protected jacket_img"
+												/>
+											</div>
+										</a>
+										<span class="artist-name">安室奈美恵</span>
+									</li>
+									<li class="artist-list">
+										<a
+											class="list-image"
+											href="https://music-service.dmkt-sp.jp/dhits/out/playlist5/"
+										>
+											<div class="inner">
+												<img
+													src="https://img.music.dmkt-sp.jp/dh-img-p1/contract/delete/artist14.jpg"
+													class="protected jacket_img"
+												/>
+											</div>
+										</a>
+										<span class="artist-name">WANIMA</span>
+									</li>
+									<li class="artist-list">
+										<a
+											class="list-image"
+											href="https://music-service.dmkt-sp.jp/dhits/out/playlist6/"
+										>
+											<div class="inner">
+												<img
+													src="https://img.music.dmkt-sp.jp/dh-img-p1/contract/delete/artist15.jpg"
+													class="protected jacket_img"
+												/>
+											</div>
+										</a>
+										<span class="artist-name">TWICE</span>
+									</li>
+								</ul>
+								<ul id="reccomend_slider" class="recommend_wrap">
+									<li class="artist-list">
+										<a
+											class="list-image"
+											href="https://music-service.dmkt-sp.jp/dhits/out/playlist7/"
+										>
+											<div class="inner">
+												<img
+													src="https://img.music.dmkt-sp.jp/dh-img-p1/contract/delete/artist16.jpg"
+													class="protected jacket_img"
+												/>
+											</div>
+										</a>
+										<span class="artist-name">ビリー・アイリッシュ</span>
+									</li>
+									<li class="artist-list">
+										<a
+											class="list-image"
+											href="https://music-service.dmkt-sp.jp/dhits/out/playlist8/"
+										>
+											<div class="inner">
+												<img
+													src="https://img.music.dmkt-sp.jp/dh-img-p1/contract/delete/artist17.jpg"
+													class="protected jacket_img"
+												/>
+											</div>
+										</a>
+										<span class="artist-name">エド・シーラン</span>
+									</li>
+									<li class="artist-list">
+										<a
+											class="list-image"
+											href="https://music-service.dmkt-sp.jp/dhits/out/playlist9/"
+										>
+											<div class="inner">
+												<img
+													src="https://img.music.dmkt-sp.jp/dh-img-p1/contract/delete/artist18.jpg"
+													class="protected jacket_img"
+												/>
+											</div>
+										</a>
+										<span class="artist-name">星野源</span>
+									</li>
+								</ul>
+							</div>
+
+							<div class="btn_wrap">
+								<a
+									class="btn_p"
+									href="/search/artists"
+									style="padding-left: 5px"
+									>もっとみる</a
+								>
+							</div>
+						</div>
+
+						<div class="content_box2 pb12">
+							<div class="ttl_wrap">
+								<h2 class="content_ttl">あなたにおすすめ</h2>
+							</div>
+							<p style="margin: 20px">
+								普段聴いている音楽から、あなた専用おすすめプレイリストを作成。<br />毎日更新されています。
+							</p>
+
+							<div class="scroll_wrap" id="personal_recommend_program">
+								<ul id="reccomend_slider" class="recommend_wrap">
+									<li>
+										<a href="/program/80040144">
+											<div class="inner">
+												<img
+													src="https://img.music.dmkt-sp.jp/dh-img-p1/sockets/1028278097/80040144_4.jpeg?t=1613354942"
+													class="protected jacket_img"
+												/>
+											</div>
+											<p class="desc">
+												【人気】[2/10号]レコチョク最新J-POPヒッツ
+											</p>
+										</a>
+									</li>
+									<li>
+										<a href="/program/80040135">
+											<div class="inner">
+												<img
+													src="https://img.music.dmkt-sp.jp/dh-img-p1/sockets/1028278097/80040135_4.jpeg?t=1613354942"
+													class="protected jacket_img"
+												/>
+											</div>
+											<p class="desc">
+												【人気】ストレス発散カラオケ熱唱系バラード
+											</p>
+										</a>
+									</li>
+									<li>
+										<a href="/program/80040235">
+											<div class="inner">
+												<img
+													src="https://img.music.dmkt-sp.jp/dh-img-p1/sockets/1028278097/80040235_4.jpeg?t=1613354942"
+													class="protected jacket_img"
+												/>
+											</div>
+											<p class="desc">【人気】[2020年間]myヒッツランキング</p>
+										</a>
+									</li>
+								</ul>
+							</div>
+
+							<div class="btn_wrap">
+								<a class="btn_p" href="/search/recommends">もっと見る</a>
+							</div>
+						</div>
+
+						<div class="content_box2 pb12">
+							<div class="padding_wrap mb10">
+								<h3 class="content_ttl">解約前に必ずご確認ください</h3>
+								<h4 class="attention_ttl tac" style="margin: 35px auto 20px">
+									<span>ご注意ください</span>
+								</h4>
+								<div class="attention_box">
+									<p style="padding-top: 15px">
+										解約すると、myヒッツ登録した<span class="pink">0曲</span
+										>の楽曲が<span class="pink">聴けなくなります。</span>
+									</p>
+									<div class="btn_wrap">
+										<a class="btn_p" href="/play/myhits"
+											>myヒッツ登録した楽曲を確認</a
+										>
+									</div>
+								</div>
+								<div class="attention_box">
+									<p style="padding-top: 15px">
+										<span class="pink">あと20曲</span
+										>myヒッツに登録できます。解約すると<span class="pink"
+											>全て無効</span
+										>になります。
+									</p>
+									<div class="btn_wrap">
+										<a class="btn_p" href="/search/artists"
+											>myヒッツ設定する楽曲を探す</a
+										>
+									</div>
+								</div>
+								<div class="attention_box">
+									<div>
+										<img
+											src="https://img.music.dmkt-sp.jp/dh-img-p1/contract/delete/howto_03.jpg"
+										/>
+									</div>
+									<div>
+										<img
+											src="https://img.music.dmkt-sp.jp/dh-img-p1/contract/delete/howto_04r.jpg"
+										/>
+									</div>
+								</div>
+								<div class="attention_box">
+									<p style="padding-top: 15px">
+										解約すると登録した<span class="pink"
+											>「お気に入り」「再生履歴」「プレイリスト」</span
+										>が<span class="pink">全て消去</span>されます。
+									</p>
+									<div class="btn_wrap">
+										<a class="btn_p" href="/play/favorites">お気に入りを確認</a>
+									</div>
+									<div class="btn_wrap">
+										<a class="btn_p" href="/play/program-histories"
+											>再生履歴を確認</a
+										>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="content_box pb12">
+							<div class="ttl_wrap">
+								<h2 class="content_ttl">
+									楽曲をダウンロードできるので、いつでもどこでも楽しめます♪
+								</h2>
+							</div>
+							<div class="scroll_wrap" style="text-align: center">
+								<img
+									src="https://img.music.dmkt-sp.jp/dh-img-p1/contract/delete/icon_spot.png"
+									style="padding: 20px 0 40px"
+								/>
+							</div>
+							<div class="ttl_wrap">
+								<h2 class="content_ttl">
+									さらに、スマートスピーカーにも対応！
+								</h2>
+							</div>
+							<div class="scroll_wrap" style="text-align: center">
+								<img
+									src="https://img.music.dmkt-sp.jp/dh-img-p1/contract/delete/icon_device.png"
+									style="padding: 10px 0"
+								/>
+							</div>
+						</div>
+
+						<div class="content_box">
+							<form
+								method="post"
+								accept-charset="utf-8"
+								id="async"
+								action="/contract/delete?rdx=1"
+							>
+								<div style="display: none">
+									<input type="hidden" name="_method" value="POST" />
+								</div>
+								<p class="tac">
+									登録中のメールサービスも停止する場合はチェックを外して、解約処理に進んで下さい。
+								</p>
+								<ul class="check_list check_all">
+									<li>
+										<label class="checkbox_btn"
+											><input type="checkbox" value="music" name="mail[]" /><img
+												src="https://img.music.dmkt-sp.jp/dh-img-p1/custom_img/logo_dhits_300x100.png"
+												alt="dヒッツ"
+										/></label>
+									</li>
+									<li>
+										<label class="checkbox_btn"
+											><input
+												type="checkbox"
+												value="market"
+												name="mail[]" /><img
+												src="https://img.music.dmkt-sp.jp/dh-img-p1/custom_img/logo_dmarket_446x100.png"
+												alt="dマーケット"
+										/></label>
+									</li>
+								</ul>
+								<ul class="btn_01">
+									<li>
+										<a
+											href="javascript:void(0)"
+											id="selectAll"
+											class="btn_f"
+											data-contents-load="false"
+											>全て選択</a
+										>
+									</li>
+									<li>
+										<a
+											href="javascript:void(0)"
+											id="releaseAll"
+											class="btn_l"
+											data-contents-load="false"
+											>全て解除</a
+										>
+									</li>
+								</ul>
+							</form>
+							<!-- /form -->
+						</div>
+
+						<div class="content_box">
+							<div class="box_02">
+								<p>
+									<img
+										src="https://img.music.dmkt-sp.jp/dh-img-p1/contract/delete/attention_01.png"
+										width="40"
+										height="40"
+										style="padding: 8px 0"
+									/><br />
+									<span class="px15 b pink"
+										>ご利用料金は日割りにはなりません。月末までお使いいただけます。</span
+									><br />
+									<span class="gray6"
+										>※解約した時点でサービスをご利用いただけなくなります。</span
+									>
+								</p>
+								<div class="btn_wrap" style="padding-bottom: 10px">
+									<a class="btn_p" href="/search/artists">もう少し使ってみる</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="content_box">
+							<div class="box_05">
+								<p class="px18 pink">コース変更はこちら</p>
+								<p class="gray6">
+									プレイリストの聴き放題だけ利用したい方は、dヒッツ（300円）にコース変更ができます。
+								</p>
+								<div class="btn_wrap">
+									<a
+										class="btn_p"
+										href="/register/redirect?serviceCode=C0485&source=0006&no=001"
+										id="cnv300"
+										>コースを変更する</a
+									>
+								</div>
+							</div>
+						</div>
+
+						<div class="content_box">
+							<div class="box_06">
+								<p class="img">
+									<img
+										src="https://img.music.dmkt-sp.jp/dh-img-p1/contract/delete/attention_04.png"
+										alt="dヒッツはここがすごい！"
+									/>
+								</p>
+								<p>
+									・気に入った曲だけでも聴ける！<br />
+									・myヒッツ楽曲は圏外でも楽しめる！<br />
+									・myヒッツ楽曲でパケット代節約！<br />
+									→<a
+										style="font-weight: bold; color: #c01834"
+										href="/ft/howtouse2_1702_pc"
+										>myヒッツ登録方法を確認</a
+									>
+								</p>
+								<p>
+									・スマホでもタブレットでもOK、複数端末でも利用できる！<br />
+									・歌詞が見られてカラオケ表示ができる！<br />
+									→<a
+										style="font-weight: bold; color: #c01834"
+										href="/ft/howtouse2_1702_pc"
+										>使い方をチェック</a
+									>
+								</p>
+								<p>
+									・キャンペーンでｄポイントもGET！<br />
+									→<a
+										style="font-weight: bold; color: #c01834"
+										href="/ft/sys00115"
+										>今すぐチェック</a
+									>
+								</p>
+							</div>
+						</div>
+
+						<div class="btn_wrap">
+							<a
+								href="/contract/cancel-premium?affiliate=3402010044"
+								id="delete"
+								class="btn_p"
+								>解約する</a
+							>
+						</div>
+
+						<script>
+							addGaQuery(["cnv300", "cnv500", "delete"]);
+							$(document).ready(function () {
+								$("form .btn_02").click(function () {
+									$("form").submit();
+									return false;
+								});
+								changeCheckAllButtonColor();
+
+								// チェックボックスを全て選ぶ
+								$("#selectAll").click(function () {
+									$("#selectAll, #releaseAll").removeClass("btn_f btn_l");
+									$("#releaseAll").addClass("btn_f");
+									$("#selectAll").addClass("btn_l");
+									$(".check_all input[type='checkbox']").prop({
+										checked: "checked",
+									});
+								});
+
+								// チェックボックスを全て解除する
+								$("#releaseAll").click(function () {
+									$("#selectAll, #releaseAll").removeClass("btn_f btn_l");
+									$("#selectAll").addClass("btn_f");
+									$("#releaseAll").addClass("btn_l");
+									$(".check_all input[type='checkbox']").prop({
+										checked: false,
+									});
+								});
+
+								// check allの状態変化時に、それに合わせたselectAll, releaseAllのactive/disactiveの切り換え
+								$(".check_all input[type='checkbox']").change(function () {
+									changeCheckAllButtonColor();
+								});
+							});
+
+							function changeCheckAllButtonColor() {
+								$("#selectAll, #releaseAll").removeClass("btn_f btn_l");
+								switch ($(".check_all input[type='checkbox']:checked").length) {
+									case 0:
+										$("#selectAll").addClass("btn_f");
+										$("#releaseAll").addClass("btn_l");
+										break;
+									case 1:
+										$("#selectAll, #releaseAll").addClass("btn_f");
+										break;
+									case 2:
+										$("#releaseAll").addClass("btn_f");
+										$("#selectAll").addClass("btn_l");
+										break;
+								}
+							}
+						</script>
+					</div>
+					<!-- /#main -->
+				</article>
+				<script>
+					$(function () {
+						loadingEvent("contents-loading", "hide");
+						loadingEvent("loading", "hide");
+
+						if (transitionType === TRANSITION_TYPE_PJAX) {
+							selectEvent(false);
+							sliderEvent();
+							myhitsEditEvent(true);
+							checkBackgroundImage();
+							textThreePointLeader($("[data-clamp]").add(".text-clamp"), false);
+						} else if (transitionType === TRANSITION_TYPE_POPSTATE) {
+							selectEvent(true);
+							sliderEvent();
+						}
+					});
+				</script>
+			</div>
+			<!-- /common-container -->
+
+			<footer data-template="footer">
+				<div class="other-menu-area">
+					<div class="other-menu-list common-inner">
+						<a class="oml-item" href="/notice/list">お知らせ</a>
+						<a class="oml-item" href="/info/overview">dヒッツとは？</a>
+						<a class="oml-item" href="/info/guide">初めての方へ</a>
+						<a class="oml-item" href="/ft/howtouse2_1702_pc">dヒッツの使い方</a>
+						<a class="oml-item" href="/info/device">推奨環境/対応機種</a>
+						<a class="oml-item" href="/info/multidevice"
+							>複数端末をご利用の方へ</a
+						>
+						<a class="oml-item" href="/faq">よくある質問</a>
+						<a class="oml-item" href="/setting/quality">音質設定</a>
+						<a class="oml-item" href="/setting/mail-service">メール設定</a>
+						<a class="oml-item" href="/setting/profile">プロフィール設定</a>
+						<a class="oml-item" href="/contract/history">契約状態の確認</a>
+						<a class="oml-item" href="/contract/terms">ご利用規約</a>
+						<a class="oml-item" href="/contract/history">サービス申込み</a>
+						<a class="oml-item" href="/contract/delete">サービス解約</a>
+						<a class="oml-item" href="/info/cookie">Cookieの利用について</a>
+						<a class="oml-item" href="/info/privacy" target="_blank"
+							>プライバシーポリシー</a
+						>
+						<a class="oml-item" href="/info/representation"
+							>提供事業者に関する表示</a
+						>
+						<a class="oml-item" href="/info/license">許諾について</a>
+						<a class="oml-item" href="/relogin">別のdアカウントでログイン</a>
+						<a
+							class="oml-item"
+							href="https://id.smt.docomo.ne.jp/src/utility/ctop_safety.html"
+							style="font-size: 11px"
+							target="_blank"
+							>dアカウントの2段階認証について</a
+						>
+						<a
+							class="oml-item"
+							href="https://service.smt.docomo.ne.jp/cgi7/set/changeinfoview?serviceurl=https%3A%2F%2Fselection.music.dmkt-sp.jp&amp;rbody="
+							target="_blank"
+							>ポイント表示設定</a
+						>
+					</div>
+				</div>
+				<!-- /other-menu-area -->
+
+				<div class="store-area">
+					<div class="common-inner">
+						<div class="store-list">
+							<a
+								class="sl-item"
+								href="https://d.dmkt-sp.jp/?utm_source=dhits&amp;utm_medium=owned&amp;utm_campaign=dmkt_201809_top_0000010"
+								target="_blank"
+							>
+								<div class="sl-icon">
+									<img
+										src="https://img.music.dmkt-sp.jp/dh-img-p1/pc/dmarket/btn_d-market_small.png"
+										alt="dマーケット"
+									/>
+								</div>
+								<h6 class="sl-title">dマーケット</h6>
+								<p class="sl-detail">
+									動画、音楽、電子書籍から日用品、ファッション、旅行などの商品すべてが楽しめる！
+								</p>
+							</a>
+							<a
+								class="sl-item"
+								href="https://shopping.dmkt-sp.jp/?affiliate=008&amp;utm_source=ins&amp;utm_medium=other&amp;utm_campaign=dhits"
+								target="_blank"
+							>
+								<div class="sl-icon">
+									<img
+										src="https://img.music.dmkt-sp.jp/dh-img-p1/pc/dmarket/btn_shopping_small.png"
+										alt="dショッピング"
+									/>
+								</div>
+								<h6 class="sl-title">dショッピング</h6>
+								<p class="sl-detail">
+									日用品、家電がお買い得。ショッピング通販サイト
+								</p>
+							</a>
+							<a
+								class="sl-item"
+								href="http://www.dmkt-sp.jp/?url=http%3A%2F%2Fportal.dmkt-sp.jp%2Fsp%2Fgame-store%2Ftop&amp;dcp=gamescpspxxxxx010721&amp;utm_source=dhits&amp;utm_medium=owned&amp;utm_campaign=dgame_201808_001"
+								target="_blank"
+							>
+								<div class="sl-icon">
+									<img
+										src="https://img.music.dmkt-sp.jp/dh-img-p1/pc/dmarket/btn_game_small.png"
+										alt="dゲーム"
+									/>
+								</div>
+								<h6 class="sl-title">dゲーム</h6>
+								<p class="sl-detail">
+									スマホのソーシャルゲーム紹介。無料で遊べるオンラインゲーム多数！
+								</p>
+							</a>
+							<a
+								class="sl-item"
+								href="https://delivery.dmkt-sp.jp/?utm_source=dhits&amp;utm_medium=owned&amp;utm_campaign=ddelivery_201809_top&amp;utm_content=footer"
+								target="_blank"
+							>
+								<div class="sl-icon">
+									<img
+										src="https://img.music.dmkt-sp.jp/dh-img-p1/pc/dmarket/btn_delivery_small.png"
+										alt="dデリバリー"
+									/>
+								</div>
+								<h6 class="sl-title">dデリバリー</h6>
+								<p class="sl-detail">
+									全国約13,000店のお店から選べる、出前・フード宅配サービス！
+								</p>
+							</a>
+							<a
+								class="sl-item"
+								href="https://books.dmkt-sp.jp?utm_source=dhits&amp;utm_medium=owned&amp;utm_campaign=dbook_201808_fico"
+								target="_blank"
+							>
+								<div class="sl-icon">
+									<img
+										src="https://img.music.dmkt-sp.jp/dh-img-p1/pc/dmarket/btn_book_small_icon.png"
+										alt="dブック"
+									/>
+								</div>
+								<h6 class="sl-title">dブック</h6>
+								<p class="sl-detail">
+									漫画、小説・実用書の試し読み（無料）ができる電子書籍ストア
+								</p>
+							</a>
+
+							<a
+								class="sl-item"
+								href="https://fashion.dmkt-sp.jp/?utm_medium=owned&amp;utm_source=dhits&amp;utm_campaign=dfashion_202005_footer"
+								target="_blank"
+							>
+								<div class="sl-icon">
+									<img
+										src="https://img.music.dmkt-sp.jp/dh-img-p1/pc/dmarket/btn_fashion_small.png"
+										alt="d fashion"
+									/>
+								</div>
+								<h6 class="sl-title">d fashion</h6>
+								<p class="sl-detail">
+									取扱いブランド1500超！ファッション通販サイト
+								</p>
+							</a>
+							<a
+								class="sl-item"
+								href="https://travel.dmkt-sp.jp/?utm_medium=owned&amp;utm_source=dhits&amp;utm_campaign=dtravel_202005_footer"
+								target="_blank"
+							>
+								<div class="sl-icon">
+									<img
+										src="https://img.music.dmkt-sp.jp/dh-img-p1/pc/dmarket/btn_travel_small.png"
+										alt="dトラベル"
+									/>
+								</div>
+								<h6 class="sl-title">dトラベル</h6>
+								<p class="sl-detail">ホテル・旅館の宿泊予約サイト</p>
+							</a>
+							<a
+								class="sl-item"
+								href="https://music.dmkt-sp.jp/?affiliate=3380230003&amp;utm_source=dhits&amp;utm_medium=owned&amp;utm_campaign=dmusic_201808_dhits-footer"
+								target="_blank"
+							>
+								<div class="sl-icon">
+									<img
+										src="https://img.music.dmkt-sp.jp/dh-img-p1/pc/dmarket/btn_music_small.png"
+										alt="dミュージック"
+									/>
+								</div>
+								<h6 class="sl-title">dミュージック</h6>
+								<p class="sl-detail">dポイントが使える音楽ダウンロードサイト</p>
+							</a>
+							<a
+								class="sl-item"
+								href="https://job.dmkt-sp.jp/?ref_code=owned_dhits_201809&amp;utm_source=dhits&amp;utm_medium=owned&amp;utm_campaign=djob_201809_footernavi&amp;utm_content=btn"
+								target="_blank"
+							>
+								<div class="sl-icon">
+									<img
+										src="https://img.music.dmkt-sp.jp/dh-img-p1/pc/dmarket/btn_job_small.png"
+										alt="dジョブ"
+									/>
+								</div>
+								<h6 class="sl-title">dジョブ</h6>
+								<p class="sl-detail">仕事探しはdジョブで！</p>
+							</a>
+							<a
+								class="sl-item"
+								href="https://carshare.dmkt-sp.jp/portal/?utm_source=dhits&amp;utm_medium=owned&amp;utm_campaign=dcarshare_201808_dhits_f"
+								target="_blank"
+							>
+								<div class="sl-icon">
+									<img
+										src="https://img.music.dmkt-sp.jp/dh-img-p1/pc/dmarket/btn_car_small.png"
+										alt="dカーシェア"
+									/>
+								</div>
+								<h6 class="sl-title">dカーシェア</h6>
+								<p class="sl-detail">ドコモで、クルマを借りる</p>
+							</a>
+							<a
+								class="sl-item"
+								href="https://mealkit.dmkt-sp.jp/?hosid=1200&amp;utm_source=dhits&amp;utm_medium=owned&amp;utm_campaign=mk_201906_dhits-footer"
+								target="_blank"
+							>
+								<div class="sl-icon">
+									<img
+										src="https://img.music.dmkt-sp.jp/dh-img-p1/pc/dmarket/btn_dmealkit_small.png"
+										alt="dミールキット"
+									/>
+								</div>
+								<h6 class="sl-title">dミールキット</h6>
+								<p class="sl-detail">
+									下ごしらえされた食材と調味料を必要な分量だけセット"ミールキット"をご自宅までお届け♪
+								</p>
+							</a>
+							<a
+								class="sl-item"
+								href="https://app.dcm-gate.com/?utm_source=dhits&amp;utm_medium=owned&amp;utm_campaign=dapp_201808_selectionmusic-footer"
+								target="_blank"
+							>
+								<div class="sl-icon">
+									<img
+										src="https://img.music.dmkt-sp.jp/dh-img-p1/pc/dmarket/btn_appli_small.png"
+										alt="dアプリ＆レビュー"
+									/>
+								</div>
+								<h6 class="sl-title">dアプリ＆レビュー</h6>
+								<p class="sl-detail">アプリ紹介サイト</p>
+							</a>
+							<a
+								class="sl-item"
+								href="https://pc.video.dmkt-sp.jp/?campaign=osh10000001&amp;utm_source=dhits&amp;utm_medium=owned&amp;utm_campaign=dtv_201809_footer"
+								target="_blank"
+							>
+								<div class="sl-icon">
+									<img
+										src="https://img.music.dmkt-sp.jp/dh-img-p1/pc/dmarket/btn_dtv.png"
+										alt="dTV"
+									/>
+								</div>
+								<h6 class="sl-title">dTV</h6>
+								<p class="sl-detail">映画・ドラマ・アニメが見放題</p>
+							</a>
+							<a
+								class="sl-item"
+								href="https://dch.dmkt-sp.jp/?campaign=osh10000011&amp;utm_source=dhits&amp;utm_medium=owned&amp;utm_campaign=dch_201809_footer"
+								target="_blank"
+							>
+								<div class="sl-icon">
+									<img
+										src="https://img.music.dmkt-sp.jp/dh-img-p1/pc/dmarket/btn_dtvch_small.png"
+										alt="dTVチャンネル"
+									/>
+								</div>
+								<h6 class="sl-title">dTVチャンネル</h6>
+								<p class="sl-detail">30以上の専門チャンネルが楽しめる♪</p>
+							</a>
+							<a
+								class="sl-item"
+								href="https://magazine.dmkt-sp.jp/?utm_source=dhits&amp;utm_medium=owned&amp;utm_campaign=dmagazine_201809_dmkt-footer&amp;utm_content=footer"
+								target="_blank"
+							>
+								<div class="sl-icon">
+									<img
+										src="https://img.music.dmkt-sp.jp/dh-img-p1/pc/dmarket/btn_magazine.png"
+										alt="dマガジン"
+									/>
+								</div>
+								<h6 class="sl-title">dマガジン</h6>
+								<p class="sl-detail">
+									人気雑誌の多彩な厳選記事が定額読み放題！
+								</p>
+							</a>
+							<a
+								class="sl-item"
+								href="https://d.photo.dmkt-sp.jp/?utm_source=dhits&amp;utm_medium=owned&amp;utm_campaign=dphoto_201809_dhits_f"
+								target="_blank"
+							>
+								<div class="sl-icon">
+									<img
+										src="https://img.music.dmkt-sp.jp/dh-img-p1/pc/dmarket/btn_dphoto_small.png"
+										alt="dフォト"
+									/>
+								</div>
+								<h6 class="sl-title">dフォト</h6>
+								<p class="sl-detail">
+									スマホで撮った写真を簡単にフォトブックに！L判プリントも選べて、ご自宅へお届け♪
+								</p>
+							</a>
+							<a
+								class="sl-item"
+								href="https://anime.dmkt-sp.jp/animestore/tp?lan=311&amp;utm_source=dhits&amp;utm_medium=owned&amp;utm_campaign=danime_201808_footer-selection.music"
+								target="_blank"
+							>
+								<div class="sl-icon">
+									<img
+										src="https://img.music.dmkt-sp.jp/dh-img-p1/pc/dmarket/btn_anime_small.png"
+										alt="dアニメストア"
+									/>
+								</div>
+								<h6 class="sl-title">dアニメストア</h6>
+								<p class="sl-detail">
+									最新TVアニメがいつでも見放題!!<br />さらにアニソンも聴き放題！
+								</p>
+							</a>
+							<a
+								class="sl-item"
+								href="https://health.dmkt-sp.jp/?utm_source=dhits&amp;utm_medium=owned&amp;utm_campaign=dhealthcare_201809_footer"
+								target="_blank"
+							>
+								<div class="sl-icon">
+									<img
+										src="https://img.music.dmkt-sp.jp/dh-img-p1/pc/dmarket/btn_healthcare_small.png"
+										alt="dヘルスケア"
+									/>
+								</div>
+								<h6 class="sl-title">dヘルスケア</h6>
+								<p class="sl-detail">
+									dポイントがたまる歩くアプリなどあなたの健康をトータルサポート
+								</p>
+							</a>
+							<a
+								class="sl-item"
+								href="https://kids.dmkt-sp.jp/adlp?advertise=owned&amp;utm_source=dhits&amp;utm_medium=owned&amp;utm_campaign=dkidz_201808_owned-adlp&amp;utm_content=footer"
+								target="_blank"
+							>
+								<div class="sl-icon">
+									<img
+										src="https://img.music.dmkt-sp.jp/dh-img-p1/pc/dmarket/btn_kids_small.png"
+										alt="dキッズ"
+									/>
+								</div>
+								<h6 class="sl-title">dキッズ</h6>
+								<p class="sl-detail">
+									親子で安心して楽しめるお絵かきなどの子供向け知育アプリ
+								</p>
+							</a>
+							<a
+								class="sl-item"
+								href="https://gp.dmkt-sp.jp/?utm_source=dhits&amp;utm_medium=owned&amp;utm_campaign=denjoypass_201809_footer&amp;utm_content=footer"
+								target="_blank"
+							>
+								<div class="sl-icon">
+									<img
+										src="https://img.music.dmkt-sp.jp/dh-img-p1/pc/dmarket/btn_enjoy_pass_small.png"
+										alt="dエンジョイパス"
+									/>
+								</div>
+								<h6 class="sl-title">dエンジョイパス</h6>
+								<p class="sl-detail">さまざまな優待で生活をお得に！</p>
+							</a>
+						</div>
+						<!-- /store-list -->
+
+						<div id="js-pagetop" class="pagetop-area">
+							<button class="btn btn-pagetop">ページトップへ戻る</button>
+						</div>
+						<!-- /pagetop-area -->
+					</div>
+					<!-- /common-inner -->
+				</div>
+				<!-- /store-area -->
+
+				<div class="common-inner">
+					<div class="credit-list">
+						<div class="cl-mark">
+							<img
+								src="https://img.music.dmkt-sp.jp/dh-img-p1/pc/common/logo_eco.png"
+								alt="このエコマークは、レコード会社・映像制作会社が提供するコンテンツを示す登録商標です RIAJ10001055"
+							/>
+						</div>
+						<div class="cl-logo">
+							<img
+								src="https://img.music.dmkt-sp.jp/dh-img-p1/pc/common/logo_docomo_recochoku.png"
+								alt="NTT DOCOMO × レコチョク"
+							/>
+						</div>
+					</div>
+					<!-- /credit-list -->
+				</div>
+				<!-- /common-inner -->
+			</footer>
+
+			<div id="player" data-player-type="" style="display: none">
+				<div class="player-area">
+					<div class="common-inner">
+						<button
+							id="backButton"
+							class="btn btn-player-control"
+							data-btn-type="prev"
+						></button>
+						<button
+							id="playButton"
+							class="btn btn-player-control"
+							data-btn-type="play"
+						></button>
+						<button
+							id="nextButton"
+							class="btn btn-player-control"
+							data-btn-type="next"
+						></button>
+						<button
+							id="repeatButton"
+							class="btn btn-player-control"
+							data-btn-type="repeat"
+							data-repeat-status="off"
+						></button>
+						<button
+							id="shuffleButton"
+							class="btn btn-player-control"
+							data-btn-type="shuffle"
+							tite="シャッフル"
+							data-shuffle-status="inactive"
+						></button>
+						<div id="js-playerInfo" class="player-info">
+							<div class="jacket">
+								<a
+									id="jacketUrl"
+									href=""
+									style="display: block; padding-top: 20px"
+									><img
+										id="jacketImage"
+										class="protected"
+										style=""
+										src="https://img.music.dmkt-sp.jp/dh-img-p1/pc/common/b.png"
+										alt=""
+								/></a>
+								<div class="btn btn-play"></div>
+							</div>
+							<div class="detail">
+								<audio id="audio" preload="none"></audio>
+								<a id="programTitle" class="title-album" href=""></a>
+								<a id="musicTitle" class="title-song" href=""></a>
+								<a id="artistName" class="title-artist" href=""></a>
+							</div>
+						</div>
+						<!-- /playerInfo-area -->
+						<div class="player-other">
+							<div class="player-bar" data-playerbar-type="seek">
+								<div class="bar-wrap">
+									<div class="bar-area">
+										<div id="seekBar" class="bar"></div>
+									</div>
+								</div>
+							</div>
+							<div class="player-time">
+								<span id="passedTime" class="time-now">0:00:00</span
+								><span>&nbsp;/&nbsp;</span
+								><span id="totalTime" class="time-all">0:00:00</span>
+							</div>
+							<button
+								id="myhitsButton"
+								class="btn"
+								data-btn-type="myhits"
+								data-btn-status=""
+								data-track-id=""
+								data-title=""
+							></button>
+							<button
+								id="lyricButton"
+								class="btn"
+								data-btn-type="lyric"
+								data-song-number=""
+							></button>
+							<div class="share-area">
+								<button
+									id="shareButton"
+									class="btn"
+									data-btn-type="share"
+									data-share-url=""
+								></button>
+							</div>
+							<div id="volume" class="player-bar" data-playerbar-type="volume">
+								<div
+									id="volumeButton"
+									class="btn btn-player-control"
+									data-btn-type="mute"
+								></div>
+								<div class="bar-wrap">
+									<div class="bar-area">
+										<div id="volumeBar" class="bar">
+											<div class="btn"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- /player-other -->
+					</div>
+					<!-- /common-inner -->
+				</div>
+				<!-- /player-area -->
+			</div>
+			<!-- /[data-player-type="myhits"] -->
+			<div id="trialPlayer" data-player-type="trial" style="display: none">
+				<div class="trial-bar">
+					<div class="common-inner flex">
+						<div class="flex-l">▼ 試聴版を再生しています</div>
+						<div
+							id="closeButton"
+							class="flex-r btn btn-trialbar-close js-closeTrialbar"
+						>
+							試聴プレイヤー終了<i class="icon icon-close"></i>
+						</div>
+					</div>
+				</div>
+				<div class="player-area">
+					<div class="common-inner">
+						<button
+							id="playButton"
+							class="btn btn-player-control"
+							data-btn-type="play"
+						></button>
+						<div id="js-playerInfo" class="player-info">
+							<div class="jacket">
+								<a id="jacketUrl" href="" style="display: block"
+									><img
+										id="jacketImage"
+										class="protected"
+										style=""
+										src="https://img.music.dmkt-sp.jp/dh-img-p1/pc/common/b.png"
+										alt=""
+								/></a>
+							</div>
+							<div class="detail">
+								<audio id="audio" preload="none"></audio>
+								<a id="musicTitle" class="title-song" href=""></a>
+								<a id="artistName" class="title-artist" href=""></a>
+							</div>
+						</div>
+						<!-- /playerInfo-area -->
+						<div class="player-other">
+							<div class="player-bar" data-playerbar-type="seek">
+								<div class="bar-wrap">
+									<div class="bar-area">
+										<div id="seekBar" class="bar"></div>
+									</div>
+								</div>
+							</div>
+							<div class="player-time">
+								<span id="passedTime" class="time-now">0:00:00</span
+								><span>&nbsp;/&nbsp;</span
+								><span id="totalTime" class="time-all">0:00:00</span>
+							</div>
+							<div id="volume" class="player-bar" data-playerbar-type="volume">
+								<div
+									id="volumeButton"
+									class="btn btn-player-control"
+									data-btn-type="mute"
+								></div>
+								<div class="bar-wrap">
+									<div class="bar-area">
+										<div id="volumeBar" class="bar">
+											<div class="btn"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- /player-other -->
+					</div>
+					<!-- /common-inner -->
+				</div>
+				<!-- /player-area -->
+			</div>
+			<!-- /[data-player-type="trial"] -->
+
+			<div id="isLogin" data-is-login="1"></div>
+			<div id="isMember" data-is-member="1"></div>
+			<div id="isPremium" data-is-premium="1"></div>
+			<div
+				id="dialogEventSeq"
+				data-dialog-event-seq="%3FserviceCode%3DC0517%26source%3D0006%26no%3D003"
+			></div>
+		</div>
+		<!-- /wrapper -->
+
+		<script
+			src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js"
+			async="async"
+			defer="defer"
+		></script>
+		<script>
+			var noImageUrl =
+				"https://img.music.dmkt-sp.jp/dh-img-p1/api/img_playlist_noimg_01.png";
+			var storageKey =
+				"d3a1fc999d54db69c8acb9a15268ad1201118085ffc158b1b819d8465663c859";
+			var storageKeyLogin =
+				"52a990648c0aebe90e2942d809f17085a24b3c529c2eb14a744c05e3d8330435";
+
+			var TRANSITION_TYPE_NORMAL = 0;
+
+			var TRANSITION_TYPE_PJAX = 1;
+
+			var TRANSITION_TYPE_POPSTATE = 2;
+
+			var transitionType = TRANSITION_TYPE_NORMAL;
+		</script>
+
+		<script src="/js/pc/jquery.magnific-popup.min.js?1593172181"></script>
+		<script src="/js/pc/jquery.dotdotdot.min.js?1593172181"></script>
+		<script src="/js/pc/jquery-ui-1.12.1.min.js?1593172181"></script>
+		<script src="/js/pc/jquery.sortable.min.js?1593172181"></script>
+		<script src="/js/pc/hls.min.js?1593172181"></script>
+		<script src="/js/pc/common.min.js?1593172181"></script>
+		<script src="/js/pc/slick.min.js?1593172181"></script>
+		<script src="/js/pc/jquery.pjax.min.js?1593172181"></script>
+		<script src="/js/pc/jsrender.min.js?1593172181"></script>
+		<script src="/js/pc/player.min.js?1593172181"></script>
+		<script src="/js/pc/moji.min.js?1593172181"></script>
+		<script src="/js/pc/ui-support.min.js?1593172181"></script>
+		<script>
+			addGaQuery([
+				"header-register",
+				"headerContractIndexNonPremium",
+				"footer-register",
+			]);
+		</script>
+		<!-- JavaScript未許可の場合の処理 -->
+		<noscript>
+			<h1>
+				<a class="text_logo dhits_img_logo">JavaScript未許可のお知らせ</a>
+			</h1>
+			<br />
+			<p>
+				お客様がご利用中のブラウザにおいて、JavaScriptの利用が許可されていないため、本サービスをご利用いただくことができません。<br />
+				ブラウザのメニューからJavaScriptの利用を許可する設定にしてから本サービスをご利用頂くようお願い申し上げます。
+			</p>
+		</noscript>
+
+		<style>
+			#submit-freeword {
+				position: absolute;
+				margin: auto 0;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				width: 40px;
+				height: 100%;
+				background: url(https://img.music.dmkt-sp.jp/dh-img-p1/pc/common/icon.png) -38px
+					8px no-repeat;
+				cursor: pointer;
+			}
+		</style>
+
+		<script>
+			$.ajax({
+				type: "GET",
+				url: "https://service.smt.docomo.ne.jp/cgi8/id/getmskchkck",
+				dataType: "jsonp",
+				timeout: 5000,
+				cache: false,
+				jsonp: "callback",
+				jsonpCallback: "getSmtMasking",
+			})
+				.done(function (data) {})
+				.fail(function (data) {
+					getSmtMasking({ gSmtResult: 1 });
+				});
+
+			function getSmtMasking(jsonData) {
+				// callback
+				$.ajax({
+					type: "POST",
+					url: "/top/ajax-daccount",
+					data: JSON.stringify(jsonData),
+					contentType: "application/json",
+					dataType: "json",
+					timeout: 5000,
+					cache: false,
+				})
+					.done(function (data) {
+						if (data.result == 0) {
+							var dAccount = data.dAccount;
+							var dPoint = data.dPoint;
+							updateAccountContents(dAccount.dAccountType, dAccount[0]);
+							updatePointContents(dPoint.dPointType, dPoint[0]);
+						} else {
+							updateAccountContentsForError();
+							updatePointContentsForError();
+						}
+					})
+					.fail(function (data) {
+						updateAccountContentsForError();
+						updatePointContentsForError();
+					});
+			}
+
+			function updateAccountContents(type, data) {
+				if (data.message.length == 0) {
+					updateAccountContentsForError();
+					return;
+				}
+
+				var html = $("#accountTemplate" + type).render(data);
+				$("#daccountArea").empty().append(html);
+			}
+
+			function updatePointContents(type, data) {
+				var html = $("#pointTemplate" + type).render(data);
+				$("#pointArea").empty().append(html);
+			}
+
+			function updateAccountContentsForError() {
+				var html = $("#accountTemplateError").render();
+				$("#daccountArea").empty().append(html);
+			}
+
+			function updatePointContentsForError() {
+				var html = $("#pointTemplateError").render();
+				$("#pointArea").empty().append(html);
+			}
+		</script>
+
+		<script id="accountTemplate3" type="text/x-jsrender">
+			<div style="padding: 3px; background: url(https://img.music.dmkt-sp.jp/dh-img-p1/custom_img/top/arw_g.png) no-repeat right center;">
+			    {{if linkUrl.length > 0}}<a href="{{:linkUrl}}">{{/if}}
+			        <img src="https://img.music.dmkt-sp.jp/dh-img-p1/custom_img/top/daccount.png" alt="dアカウント" style="height: 14px; width: 66px;">
+			        <div style="font-size: 12px; color: #000; margin-top: -5px;">
+			            <div style="display: inline-block; width: 121px; white-space: nowrap;">{{:message}}</div>
+			            {{if stageRankImageUrl.length > 0}}<div style="display: inline-block; width: 30px; margin-left: -5px;"><img src="{{:stageRankImageUrl}}" style="width: 30px; height: 14px; margin-top: 2px;"></div>{{/if}}
+			        </div>
+			    {{if linkUrl.length > 0}}</a>{{/if}}
+			</div>
+		</script>
+
+		<script id="accountTemplate4" type="text/x-jsrender">
+			<div style="padding: 3px; background: url(https://img.music.dmkt-sp.jp/dh-img-p1/custom_img/top/arw_g.png) no-repeat right center;">
+			    {{if linkUrl.length > 0}}<a href="{{:linkUrl}}">{{/if}}
+			        <img src="https://img.music.dmkt-sp.jp/dh-img-p1/custom_img/top/daccount.png" alt="dアカウント" style="height: 14px; width: 66px;">
+			        <div style="font-size: 12px; color: #000; margin-top: -5px;">
+			            <div style="display: inline-block; width: 121px; white-space: nowrap;">{{:message}}</div>
+			            {{if stageRankImageUrl.length > 0}}<div style="display: inline-block; width: 30px; margin-left: -5px;"><img src="{{:stageRankImageUrl}}" style="width: 30px; height: 14px; margin-top: 2px;"></div>{{/if}}
+			        </div>
+			    {{if linkUrl.length > 0}}</a>{{/if}}
+			</div>
+		</script>
+
+		<script id="accountTemplateError" type="text/x-jsrender">
+			<div style="padding: 3px;">
+			    <img src="https://img.music.dmkt-sp.jp/dh-img-p1/custom_img/top/daccount.png" alt="dアカウント" style="height: 14px; width: 66px;">
+			</div>
+		</script>
+
+		<script id="pointTemplate1" type="text/x-jsrender">
+			<a href="https://d.dmkt-sp.jp/common/dpoint_pc/index.html" style="height: 42px; background:url(https://img.music.dmkt-sp.jp/dh-img-p1/pc/common/point_arrow.png) right center no-repeat; background-size: contain;">
+			    <div style="width: 154px; height: 42px; line-height: 42px; color: #000; text-align: center;">ご利用可能ポイント</div>
+			</a>
+		</script>
+
+		<script id="pointTemplate2" type="text/x-jsrender">
+			<a href="{{:linkUrl}}" style="height: 42px; padding: 5px; background:url(https://img.music.dmkt-sp.jp/dh-img-p1/pc/common/point_arrow.png) right center no-repeat; background-size: contain;">
+			    <div style="line-height: 15px; margin-top: 8px;">
+			        <div style="display: inline-block; width: 65px;">
+			            <img src="https://img.music.dmkt-sp.jp/dh-img-p1/custom_img/header/dp.gif" style="width: 56px; height: 15px;">
+			        </div>
+			        {{if isNegativeNumber === 1}}
+			        <div style="display: inline-block; width: 70px; text-align: right; border-bottom: solid 1px #ccc; font-size: 12px; color: #C00000;">
+			        {{else}}
+			        <div style="display: inline-block; width: 70px; text-align: right; border-bottom: solid 1px #ccc; font-size: 12px; color: #000;">
+			        {{/if}}
+			            {{:dPoint}}
+			            {{if isNegativeNumber === 1}}
+			            <span style="font-size: 10px; color: #996666;">
+			            {{else}}
+			            <span style="font-size: 10px; color: #999;">
+			            {{/if}}
+			            P</span>
+			        </div>
+			    </div>
+			</a>
+		</script>
+
+		<script id="pointTemplate3" type="text/x-jsrender">
+			<a href="{{:linkUrl}}" style="height: 42px; padding: 5px; background:url(https://img.music.dmkt-sp.jp/dh-img-p1/pc/common/point_arrow.png) right center no-repeat; background-size: contain;">
+			    <div style="line-height: 15px;">
+			        <div style="display: inline-block; width: 65px;">
+			            <img src="https://img.music.dmkt-sp.jp/dh-img-p1/custom_img/header/dp.gif" style="width: 56px; height: 15px;">
+			        </div>
+			        {{if isNegativeNumber === 1}}
+			        <div style="display: inline-block; width: 70px; text-align: right; border-bottom: solid 1px #ccc; font-size: 12px; color: #C00000;">
+			        {{else}}
+			        <div style="display: inline-block; width: 70px; text-align: right; border-bottom: solid 1px #ccc; font-size: 12px; color: #000;">
+			        {{/if}}
+			            {{:dPoint}}
+			            {{if isNegativeNumber === 1}}
+			            <span style="font-size: 10px; color: #996666;">
+			            {{else}}
+			            <span style="font-size: 10px; color: #999;">
+			            {{/if}}
+			            P</span>
+			        </div>
+			    </div>
+			    <div style="line-height: 15px;">
+			        <div style="display: inline-block; width: 65px;">
+			            <img src="https://img.music.dmkt-sp.jp/dh-img-p1/custom_img/header/dop.gif" style="width: 61px; height: 15px;">
+			        </div>
+			        <div style="display: inline-block; width: 70px; text-align: right; font-size: 12px; color: #000;">
+			            {{:userPoint}}<span style="font-size: 10px; color: #999;">P</span>
+			        </div>
+			    </div>
+			</a>
+		</script>
+
+		<script id="pointTemplateError" type="text/x-jsrender">
+			<a href="https://d.dmkt-sp.jp/common/dpoint_pc/index.html" style="height: 42px; padding: 5px; background:url(https://img.music.dmkt-sp.jp/dh-img-p1/pc/common/point_arrow.png) right center no-repeat; background-size: contain;">
+			    <div style="line-height: 15px; margin-top: 8px;">
+			        <div style="display: inline-block; width: 65px;">
+			            <img src="https://img.music.dmkt-sp.jp/dh-img-p1/custom_img/header/dp.gif" style="width: 56px; height: 15px;">
+			        </div>
+			        <div style="display: inline-block; width: 70px; text-align: right; border-bottom: solid 1px #ccc; font-size: 12px; color: #000;">
+			            ---<span style="font-size: 10px; color: #999;">P</span>
+			        </div>
+			    </div>
+			</a>
+		</script>
+
+		<script type="text/javascript">
+			(function () {
+				var tagjs = document.createElement("script");
+				var s = document.getElementsByTagName("script")[0];
+				tagjs.async = true;
+				tagjs.src =
+					"//s.yjtag.jp/tag.js#site=IEN6dH8,58lrC0p,EmLZwrm,sBZ9lBB,h1l1OP9";
+				s.parentNode.insertBefore(tagjs, s);
+			})();
+		</script>
+		<noscript>
+			<iframe
+				src="//b.yjtag.jp/iframe?c=IEN6dH8,58lrC0p,EmLZwrm,sBZ9lBB"
+				width="1"
+				height="1"
+				frameborder="0"
+				scrolling="no"
+				marginheight="0"
+				marginwidth="0"
+			></iframe>
+		</noscript>
+
+		<!-- Google Tag Manager -->
+		<noscript
+			><iframe
+				src="https://www.googletagmanager.com/ns.html?id=GTM-KQP4V5"
+				height="0"
+				width="0"
+				style="display: none; visibility: hidden"
+			></iframe
+		></noscript>
+		<script>
+			(function (w, d, s, l, i) {
+				w[l] = w[l] || [];
+				w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != "dataLayer" ? "&l=" + l : "";
+				j.async = true;
+				j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+				f.parentNode.insertBefore(j, f);
+			})(window, document, "script", "dataLayer", "GTM-KQP4V5");
+		</script>
+		<!-- End Google Tag Manager -->
+	</body>
+</html>

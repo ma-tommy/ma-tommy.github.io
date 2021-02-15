@@ -18,7 +18,7 @@ console.log("key : " + queryParam[0]);
 console.log("value : " + queryParam[1]);
 var loginHeader = $("#loginHeader").text();
 console.log("loginHeader : " + loginHeader);
-console.log("deploy7");
+console.log("deploy1");
 
 if (loginHeader == "1") {
 	kzs("setCustomVariable", "isLogin", loginHeader);
@@ -38,9 +38,6 @@ if (window.location.href.match("/confirm.html")) {
 		money2: $("#money2").text(),
 	};
 	sessionStorage.setItem("buy", JSON.stringify(strage));
-	run(() => {
-		console.log(kzs.current.userData.buyCount);
-	});
 }
 
 if (window.location.href.match("/buyComp.html")) {
@@ -86,11 +83,21 @@ if (window.location.href.match("/buyComp.html")) {
 	sessionStorage.removeItem("buy");
 	// user Dataの設定
 	const userDataExec = () => {
+		if (kzs.current.userData.buyCount == null) {
+			console.log("null == dayo");
+		}
+
+		if (kzs.current.userData.buyCount === null) {
+			console.log("null === dayo");
+		}
+
+		console.log("検証");
+		console.log(kzs.current.userData.buyCount);
+
 		kzs("setUserData", {
-			buyCount:
-				kzs.current.userData.buyCount === null
-					? 1
-					: kzs.current.userData.buyCount + 1,
+			buyCount: kzs.current.userData.buyCount
+				? kzs.current.userData.buyCount + 1
+				: 1,
 		});
 	};
 
