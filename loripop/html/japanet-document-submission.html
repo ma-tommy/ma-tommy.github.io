@@ -5,6 +5,11 @@
 		<meta http-equiv="Content-Script-Type" content="text/javascript" />
 		<meta name="format-detection" content="telephone=no" />
 		<meta name="robots" content="noindex,nofollow,noarchive" />
+		<meta
+			name="viewport"
+			content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes"
+		/>
+
 		<title>JNB投資信託・NISA同時開設 - ジャパンネット銀行</title>
 		<link
 			rel="stylesheet"
@@ -25,26 +30,6 @@
 			media="screen, print"
 		/>
 
-		<link
-			rel="stylesheet"
-			type="text/css"
-			href="https://logintest.japannetbank.co.jp/commontpl/css/common_pc.css"
-			media="screen, print"
-		/>
-		<link
-			rel="stylesheet"
-			type="text/css"
-			href="https://logintest.japannetbank.co.jp/commontpl/css/category/investment_trust_pc.css?v=201008"
-			media="screen, print"
-		/>
-		<!--[if lt IE 9
-			]><link
-				rel="stylesheet"
-				type="text/css"
-				href="https://logintest.japannetbank.co.jp/commontpl/css/ie.css"
-				media="screen, print"
-		/><![endif]-->
-
 		<script
 			async=""
 			crossorigin="anonymous"
@@ -57,6 +42,7 @@
 			charset="utf-8"
 			src="https://px.ladsp.com/pixel_p?advertiser_id=00009422&amp;su=2&amp;site_url=https%3A%2F%2Flogintest.japannetbank.co.jp%2Fwctx%2FNBCW2101.do&amp;smnRetargetingParameter=&amp;referer=https%3A%2F%2Flogintest.japannetbank.co.jp%2Fwctx%2FNBCW2101.do"
 		></script>
+
 		<script
 			type="text/javascript"
 			async=""
@@ -86,7 +72,7 @@
 		></script>
 		<script
 			async=""
-			src="https://b92.yahoo.co.jp/search/?p=WG38K8UA5I&amp;label=&amp;ref=https%3A%2F%2Flogintest.japannetbank.co.jp%2Fwctx%2FNBCW2101.do&amp;rref=https%3A%2F%2Flogintest.japannetbank.co.jp%2Fwctx%2FNBCW2101.do&amp;pt=&amp;item=&amp;cat=&amp;price=&amp;quantity=&amp;r=1613538066.4016476&amp;pvid=rai513fhhmrkl8ywkj0&amp;tsyjad=1613531291&amp;_impl=ytag"
+			src="https://b92.yahoo.co.jp/search/?p=WG38K8UA5I&amp;label=&amp;ref=https%3A%2F%2Flogintest.japannetbank.co.jp%2Fwctx%2FNBCW2101.do&amp;rref=https%3A%2F%2Flogintest.japannetbank.co.jp%2Fwctx%2FNBCW2101.do&amp;pt=&amp;item=&amp;cat=&amp;price=&amp;quantity=&amp;r=1613538802.2370894&amp;pvid=hkkufhwwrqkl8zcbxe&amp;tsyjad=1613531291&amp;_impl=ytag"
 		></script>
 		<script
 			type="text/javascript"
@@ -114,7 +100,7 @@
 		></script>
 
 		<script type="text/javascript">
-			var uaType = 1;
+			var uaType = 2;
 			var smtFlg = uaType == 2 ? "1" : "0";
 		</script>
 		<script
@@ -230,6 +216,20 @@
 					$(".thumb02").removeClass("activeThumb");
 				});
 
+				$(window).bind("resize", function () {
+					if ($(window).height() > $(window).width()) {
+						$("#thumb-next").css("display", "block");
+					} else {
+						$("#thumb-prev,#thumb-next").css("display", "none");
+						$(".thumb01").addClass("activeThumb");
+						$(".thumb02").removeClass("activeThumb");
+					}
+					$(".thumb-cont").css({ transform: "translate3d(0px, 0px, 0px)" });
+					$(".thumb-cont").css({
+						"-webkit-transform": "translate3d(0px, 0px, 0px)",
+					});
+				});
+
 				$("#thumb-next").click(function () {
 					clickedElementId = "account_opening_thumb_next";
 					_satellite.track("clickElement");
@@ -243,8 +243,11 @@
 			$(function () {
 				var ua = navigator.userAgent;
 
-				if (isTablet(ua)) {
-					$("#toAppStore, #toGooglePlay").hide();
+				var curOS = typeOfOS(ua);
+				if (curOS == "Android") {
+					$("#appStoreArea,#googleQr").hide();
+				} else if (curOS == "iOS") {
+					$("#googlePlayArea,#appQr").hide();
 				}
 			});
 			//-->
@@ -274,10 +277,6 @@
 			<!--header-->
 
 			<a name="top"></a>
-
-			<!--skip-->
-			<div id="skip"><a href="#container">本文へスキップ</a></div>
-			<!--/skip-->
 
 			<div id="hdrContainer" class="cfx">
 				<div class="hdrLR">
@@ -326,7 +325,7 @@
 					<input
 						type="hidden"
 						name="__sid"
-						value="xiumjDXNmXkDB84TgBmXrTh]clxB0rohXFbAcc0[BikTmQKL0q0QTMj4BydB2cJU"
+						value="MXf0ubMWb88IRz4gOg[8uTDtQ9irehmr1GYguLGqM0TBpm9DD[H9T7O5P1OD[k]u"
 					/>
 					<input type="hidden" name="B_ID" value="7" />
 					<input type="hidden" name="NBGFD211G13_DL_001" value="" />
@@ -347,11 +346,7 @@
 						<p id="breadCrumb">
 							<a href="javascript:commonSubmit('ln0001')" class="arw arwLeft"
 								>Welcome Page</a
-							>&nbsp;&gt;&nbsp;投資信託・NISA口座開設
-						</p>
-
-						<p id="numberName" class="ctHidden">
-							003-9021559&nbsp;外貨 太郎 様
+							>
 						</p>
 					</div>
 
@@ -360,7 +355,7 @@
 					<!--title-->
 					<div id="title" class="cfx">
 						<div class="titleL"><h1>投資信託・NISA口座開設</h1></div>
-						<div class="titleR">2021/02/17&nbsp;14:01:05&nbsp;現在</div>
+						<div class="titleR">2021/02/17&nbsp;14:13:20&nbsp;現在</div>
 					</div>
 					<!--/title-->
 
@@ -469,7 +464,11 @@
 																				alt=""
 																			/><br />書類送信
 																		</th>
-																		<td id="appStoreArea" class="device01">
+																		<td
+																			id="appStoreArea"
+																			class="device01"
+																			style="display: none"
+																		>
 																			<span>iPhone</span>
 																			<img
 																				src="https://logintest.japannetbank.co.jp/commontpl/images/category/trust/trust_qr001.gif"
@@ -497,6 +496,7 @@
 																				width="70"
 																				height="70"
 																				id="googleQr"
+																				style="display: none"
 																			/><a
 																				href="https://play.google.com/store/apps/details?id=jp.co.japannetbank.smtapp.infoupload"
 																				target="_blank"
@@ -512,11 +512,6 @@
 																	</tr>
 																</tbody>
 															</table>
-															<p class="txtIndent">
-																※QRコードが読み取れない場合は、App
-																StoreまたはGoogle
-																Playからダウンロードしてください。
-															</p>
 														</li>
 														<li>
 															<p class="ftxt">
@@ -525,7 +520,12 @@
 															<div class="thumb-step">
 																<div class="thumb-wrap">
 																	<div class="thumb-inwrap">
-																		<div class="thumb-cont">
+																		<div
+																			class="thumb-cont"
+																			style="
+																				transform: translate3d(0px, 0px, 0px);
+																			"
+																		>
 																			<p class="thumb01 activeThumb">
 																				<img
 																					src="https://logintest.japannetbank.co.jp/commontpl/images/category/trust/trust_img003.png"
@@ -551,7 +551,7 @@
 																				/>
 																			</p>
 																		</div>
-																		<p id="thumb-prev">
+																		<p id="thumb-prev" style="display: none">
 																			<img
 																				src="https://logintest.japannetbank.co.jp/account/transmit/images/index_leftarrow_smt.png"
 																				width="60"
@@ -559,7 +559,7 @@
 																				alt=""
 																			/>
 																		</p>
-																		<p id="thumb-next">
+																		<p id="thumb-next" style="display: block">
 																			<img
 																				src="https://logintest.japannetbank.co.jp/account/transmit/images/index_rightarrow_smt.png"
 																				width="60"
@@ -820,7 +820,6 @@
 			var google_remarketing_only = false;
 			/* ]]> */
 		</script>
-
 		<!-- Yahoo Code for your Conversion Page -->
 		<script type="text/javascript">
 			/* <![CDATA[ */
@@ -844,6 +843,7 @@
 				/>
 			</div>
 		</noscript>
+
 		<img
 			src="https://cc01.japannetbank.co.jp/r/NjoG4/NBGFD212G14"
 			width="1"
@@ -861,12 +861,18 @@
 
 		<!-- Global site tag (gtag.js) - Google Ads: 780888625 -->
 
-		<!-- Twitter universal website tag code -->
+		<!-- line universal website tag code -->
 
 		<!-- End Twitter universal website tag code -->
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 
 		<iframe
+			src="https://um.ladsp.com/match/iframe?pids=10140&amp;ts=1613538802461&amp;svid=51"
+			width="1"
+			height="1"
+			style="display: none"
+		></iframe
+		><iframe
 			id="cs-native-frame"
 			src="about:blank"
 			title="Intentionally blank"
