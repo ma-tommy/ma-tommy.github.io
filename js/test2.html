@@ -1,926 +1,1160 @@
 <html lang="ja">
 	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta http-equiv="Content-Type" content="text/html; charset=shift_jis" />
+		<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
+
 		<meta http-equiv="Content-Script-Type" content="text/javascript" />
-		<meta name="format-detection" content="telephone=no" />
-
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="title" content="NTT WEST Official Web site" />
 		<meta
-			name="viewport"
-			content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes"
+			name="copyright"
+			content="Copyright (C) NIPPON TELEGRAPH AND TELEPHONE WEST CORPORATION"
 		/>
 
-		<title>JNB投資信託・NISA同時開設 - ジャパンネット銀行</title>
-		<link
-			rel="stylesheet"
-			type="text/css"
-			href="/commontpl/css/reset.css"
-			media="screen, print"
-		/>
-		<link
-			rel="stylesheet"
-			type="text/css"
-			href="/commontpl/css/common_smt.css"
-			media="screen, print"
-		/>
-		<link
-			rel="stylesheet"
-			type="text/css"
-			href="/commontpl/css/category/investment_trust_smt.css?v=201008"
-			media="screen, print"
-		/>
-
-		<script
-			async=""
-			crossorigin="anonymous"
-			type="text/javascript"
-			src="https://cdnssl.clicktale.net/www34/ptc/026fc46f-ddb0-4772-9287-241335104687.js"
-		></script>
 		<script
 			type="text/javascript"
 			async=""
 			src="https://www.google-analytics.com/analytics.js"
 		></script>
 		<script
-			type="text/javascript"
 			async=""
-			src="https://www.googleadservices.com/pagead/conversion_async.js"
+			src="https://www.googletagmanager.com/gtm.js?id=GTM-TKSQHQM"
 		></script>
-		<script
-			async=""
-			charset="utf-8"
-			src="https://px.ladsp.com/pixel_p?advertiser_id=00009422&amp;su=2&amp;site_url=https%3A%2F%2Flogintest.japannetbank.co.jp%2Fwctx%2FNBCW2101.do&amp;smnRetargetingParameter=&amp;referer=https%3A%2F%2Flogintest.japannetbank.co.jp%2Fwctx%2FNBCW2101.do"
-		></script>
-		<script
-			type="text/javascript"
-			async=""
-			src="//munchkin.marketo.net/159/munchkin.js"
-		></script>
-		<script
-			type="text/javascript"
-			src="//yjtag.yahoo.co.jp/tag?site=wx1imoX%2CtKAulMa%2CfPD5v7j&amp;H=kamnz&amp;referrer=https%3A%2F%2Flogintest.japannetbank.co.jp%2Fwctx%2FNBCW2101.do&amp;docReferrer=https%3A%2F%2Flogintest.japannetbank.co.jp%2Fwctx%2FNBCW2101.do&amp;mode=v2&amp;cf=107563531"
-		></script>
-		<script
-			type="text/javascript"
-			src="https://www.googletagmanager.com/gtag/js?id=UA-154197457-1"
-		></script>
-		<script
-			charset="utf-8"
-			async=""
-			src="https://cd.ladsp.com/script/pixel2_p.js"
-		></script>
-		<script
-			type="text/javascript"
-			src="https://s.yimg.jp/images/listing/tool/cv/ytag.js"
-		></script>
-		<script async="" src="//static.ads-twitter.com/uwt.js"></script>
-		<script
-			type="text/javascript"
-			src="https://www.googletagmanager.com/gtag/js?id=AW-780888625"
-		></script>
-		<script
-			async=""
-			src="https://b92.yahoo.co.jp/search/?p=WG38K8UA5I&amp;label=&amp;ref=https%3A%2F%2Flogintest.japannetbank.co.jp%2Fwctx%2FNBCW2101.do&amp;rref=https%3A%2F%2Flogintest.japannetbank.co.jp%2Fwctx%2FNBCW2101.do&amp;pt=&amp;item=&amp;cat=&amp;price=&amp;quantity=&amp;r=1613541866.4142997&amp;pvid=ymdwbz4wn4fkl91601l&amp;tsyjad=1613531291&amp;_impl=ytag"
-		></script>
-		<script
-			type="text/javascript"
-			src="https://s.yimg.jp/images/listing/tool/cv/ytag.js"
-		></script>
-		<script
-			type="text/javascript"
-			src="//yjtag.yahoo.co.jp/tag?site=wx1imoX%2CtKAulMa%2CfPD5v7j&amp;referrer=https%3A%2F%2Flogintest.japannetbank.co.jp%2Fwctx%2FNBCW2101.do&amp;docReferrer=https%3A%2F%2Flogintest.japannetbank.co.jp%2Fwctx%2FNBCW2101.do&amp;H=kamnz"
-		></script>
-		<script
-			async=""
-			src="//s.yjtag.jp/tag.js#site=wx1imoX,tKAulMa,fPD5v7j"
-		></script>
-		<script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
-		<script type="text/javascript" src="/commontpl/js/common.js"></script>
-		<script type="text/javascript" src="/common/js/deviceTypeChk.js"></script>
+		<script type="text/javascript" src="jsp/common/js/common.js"></script>
 
-		<script type="text/javascript">
-			var uaType = 2;
-			var smtFlg = uaType == 2 ? "1" : "0";
+		<script language="JavaScript">
+			function resetParam(form) {
+				form.adr_flg.value = "";
+				form.jso_cd.value = "";
+				form.jso_cd_oya.value = "";
+				form.oya_flg.value = "";
+				form.n_adr_flg.value = "";
+				form.new_jso_cd.value = "";
+				form.abol.value = "";
+				form.post1.value = "";
+				form.post2.value = "";
+				form.post.value = "";
+				form.tod_flg.value = "1";
+				form.tod_gn_flg.value = "";
+				form.jso_cd_tod.value = "16";
+				form.ent_tod.value = "ﾂ富ﾂ山ﾂ個ｧ";
+				form.sel_tod.value = "ﾂ富ﾂ山ﾂ個ｧ";
+				form.shi_flg.value = "";
+				form.shi_gn_flg.value = "";
+				form.jso_cd_shi.value = "";
+				form.ent_shi.value = "";
+				form.sel_shi.value = "";
+				form.ooa_flg.value = "";
+				form.ooa_gn_flg.value = "";
+				form.jso_cd_ooa.value = "";
+				form.ent_ooa.value = "";
+				form.sel_ooa.value = "";
+				form.aza_flg.value = "";
+				form.aza_gn_flg.value = "";
+				form.jso_cd_aza.value = "";
+				form.ent_aza.value = "";
+				form.sel_aza.value = "";
+				form.ad_r_code.value = "";
+				form.adr1_flg.value = "";
+				form.adr1_gn_flg.value = "";
+				form.ent_adr1.value = "";
+				form.sel_adr1.value = "";
+				form.adr2_flg.value = "";
+				form.adr2_gn_flg.value = "";
+				form.ent_adr2.value = "";
+				form.sel_adr2.value = "";
+				form.adr3_flg.value = "";
+				form.adr3_gn_flg.value = "";
+				form.ent_adr3.value = "";
+				form.sel_adr3.value = "";
+				form.bld1_flg.value = "";
+				form.bld1_gn_flg.value = "";
+				form.ent_bld1.value = "";
+				form.sel_bld1.value = "";
+				form.src_bld.value = "";
+				form.src_bld_input.value = "";
+				form.scr_hist.value = "";
+				form.act_id.value = "";
+
+				form.p_mansion.value = "";
+
+				form.cp.value = "00171109";
+				form.cp1.value = "";
+				form.cp2.value = "";
+				form.wlid.value = "";
+
+				form.etc_data.value = "";
+				form.cmn.value = "";
+				form.seq_no.value = "1018830668";
+				form.s_id.value =
+					"FjSHLnjDFvsZ2wTUiKaizpq1e23655103db857a1ffdc558e88a344e";
+				form.adr_omit_from.value = "";
+				form.bld_ovl_flg.value = "";
+				form.ovl_flg.value = "";
+
+				form.research_adr_flg.value = "";
+			}
 		</script>
-		<script type="text/javascript" src="/js/inc_common.js?v=210225"></script>
 
-		<script src="/common/js/adobe/fdb40d642a7524d383849d9e1c4fbc3f56afb2dd/satelliteLib-27fe9326fc116198f78f7151ce8e9e10bd1f9cc9-staging.js"></script>
+		<script language="JavaScript">
+			var page_lock_flag = "0";
 
-		<script type="text/javascript">
-			<!--
-			function yusoreq() {
-				if ("" == "1") {
-					document.HOST.action = "SSONBCW2101.do";
+			function setPageLock() {
+				if (page_lock_flag == "0") {
+					page_lock_flag = "1";
+					return true;
 				} else {
-					document.HOST.action = "NBCW2101.do";
-				}
-				document.HOST.__type.value = "0023";
-				document.HOST.__fid.value = "NBGFD212";
-				document.HOST.B_ID.value = "4";
-				document.HOST.target = "_self";
-				document.HOST.submit();
-			}
-			function ldfdownload() {
-				indate();
-
-				if ("" == "1") {
-					document.HOST.action = "SSONBCW2101.do";
-				} else {
-					document.HOST.action = "NBCW2101.do";
-				}
-				document.HOST.__type.value = "0023";
-				document.HOST.__fid.value = "NBGFD212";
-				document.HOST.B_ID.value = "6";
-				document.HOST.target = "_blank";
-				document.HOST.submit();
-				document.HOST.MailSent.value = "1";
-			}
-			function indate() {
-				var today = new Date();
-				var downYear = today.getUTCFullYear();
-				var downMonth = today.getUTCMonth() + 1;
-				var downDate = today.getUTCDate();
-				var downHours = today.getHours();
-				var downMinutes = today.getMinutes();
-				var downSeconds = today.getSeconds();
-				if (downMonth < 10) {
-					downMonth = "0" + downMonth;
-				}
-				if (downDate < 10) {
-					downDate = "0" + downDate;
-				}
-				if (downHours < 10) {
-					downHours = "0" + downHours;
-				}
-				if (downMinutes < 10) {
-					downMinutes = "0" + downMinutes;
-				}
-				if (downSeconds < 10) {
-					downSeconds = "0" + downSeconds;
-				}
-				document.HOST.NBGFD211G13_DL_001.value =
-					"" +
-					downYear +
-					downMonth +
-					downDate +
-					downHours +
-					downMinutes +
-					downSeconds;
-			}
-			function toggleBoxD(id) {
-				if ($("#blkId_" + id).hasClass("ocUp")) {
-					$("#blkContId_" + id).toggleClass("dn do");
-					$("#blkId_" + id).toggleClass("ocDown ocUp");
-				} else {
-					$(".do").each(function () {
-						$(this).toggleClass("dn do");
-					});
-					$(".ocUp").each(function () {
-						$(this).toggleClass("ocDown ocUp");
-					});
-					$("#blkContId_" + id).toggleClass("dn do");
-					$("#blkId_" + id).toggleClass("ocDown ocUp");
+					return false;
 				}
 			}
-			function toggleBoxh3() {
-				$("#Idh3D").toggleClass("dn");
+
+			function setPageUnLock() {
+				page_lock_flag = "0";
 			}
-			$(function () {
-				toggleBoxD("app");
-			});
-
-			$(function () {
-				var diff = window.innerWidth - 584 - 20;
-				$("#thumb-next").click(function () {
-					$(".thumb-cont").css({
-						transform: "translate3d(" + diff + "px, 0px, 0px)",
-					});
-					$(".thumb-cont").css({
-						"-webkit-transform": "translate3d(" + diff + "px, 0px, 0px)",
-					});
-					$("#thumb-prev,#thumb-next").animate({ width: "toggle" }, "slow");
-					$(".thumb02").addClass("activeThumb");
-					$(".thumb01").removeClass("activeThumb");
-				});
-				$("#thumb-prev").click(function () {
-					$(".thumb-cont").css({ transform: "translate3d(0px, 0px, 0px)" });
-					$(".thumb-cont").css({
-						"-webkit-transform": "translate3d(0px, 0px, 0px)",
-					});
-					$("#thumb-prev,#thumb-next").animate({ width: "toggle" }, "slow");
-					$(".thumb01").addClass("activeThumb");
-					$(".thumb02").removeClass("activeThumb");
-				});
-
-				$(window).bind("resize", function () {
-					if ($(window).height() > $(window).width()) {
-						$("#thumb-next").css("display", "block");
-					} else {
-						$("#thumb-prev,#thumb-next").css("display", "none");
-						$(".thumb01").addClass("activeThumb");
-						$(".thumb02").removeClass("activeThumb");
-					}
-					$(".thumb-cont").css({ transform: "translate3d(0px, 0px, 0px)" });
-					$(".thumb-cont").css({
-						"-webkit-transform": "translate3d(0px, 0px, 0px)",
-					});
-				});
-
-				$("#thumb-next").click(function () {
-					clickedElementId = "account_opening_thumb_next";
-					_satellite.track("clickElement");
-				});
-				$("#thumb-prev").click(function () {
-					clickedElementId = "account_opening_thumb_prev";
-					_satellite.track("clickElement");
-				});
-			});
-
-			$(function () {
-				var ua = navigator.userAgent;
-
-				var curOS = typeOfOS(ua);
-				if (curOS == "Android") {
-					$("#appStoreArea,#googleQr").hide();
-				} else if (curOS == "iOS") {
-					$("#googlePlayArea,#appQr").hide();
-				}
-			});
-			//-->
 		</script>
-		<script src="https://logintest.japannetbank.co.jp/common/js/adobe/fdb40d642a7524d383849d9e1c4fbc3f56afb2dd/s-code-contents-47a13c2ea24d03cb7bb9f007369da5c885ff795d-staging.js"></script>
-		<script src="https://www.googleadservices.com/pagead/conversion/806111613/?random=1613541865543&amp;cv=9&amp;fst=1613541865543&amp;num=1&amp;label=67zmCLfe9IIBEP2SsYAD&amp;guid=ON&amp;resp=GooglemKTybQhCsO&amp;u_h=640&amp;u_w=360&amp;u_ah=640&amp;u_aw=360&amp;u_cd=30&amp;u_his=8&amp;u_tz=540&amp;u_java=false&amp;u_nplug=0&amp;u_nmime=0&amp;sendb=1&amp;ig=1&amp;frm=0&amp;url=https%3A%2F%2Flogintest.japannetbank.co.jp%2Fwctx%2FNBCW2101.do&amp;ref=https%3A%2F%2Flogintest.japannetbank.co.jp%2Fwctx%2FNBCW2101.do&amp;tiba=JNB%E6%8A%95%E8%B3%87%E4%BF%A1%E8%A8%97%E3%83%BBNISA%E5%90%8C%E6%99%82%E9%96%8B%E8%A8%AD%20-%20%E3%82%B8%E3%83%A3%E3%83%91%E3%83%B3%E3%83%8D%E3%83%83%E3%83%88%E9%8A%80%E8%A1%8C&amp;hn=www.googleadservices.com&amp;rfmt=3&amp;fmt=4"></script>
-		<script
-			type="text/javascript"
-			src="https://b91.yahoo.co.jp/pagead/conversion_async.js"
-		></script>
-		<script
-			type="text/javascript"
-			async=""
-			src="//munchkin.marketo.net/munchkin.js"
-		></script>
-		<script src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/780888625/?random=1613541866516&amp;cv=9&amp;fst=1613541866516&amp;num=1&amp;bg=ffffff&amp;guid=ON&amp;resp=GooglemKTybQhCsO&amp;eid=376635470&amp;u_h=640&amp;u_w=360&amp;u_ah=640&amp;u_aw=360&amp;u_cd=30&amp;u_his=8&amp;u_tz=540&amp;u_java=false&amp;u_nplug=0&amp;u_nmime=0&amp;gtm=2oa230&amp;sendb=1&amp;ig=1&amp;data=event%3Dgtag.config&amp;frm=0&amp;url=https%3A%2F%2Flogintest.japannetbank.co.jp%2Fwctx%2FNBCW2101.do&amp;ref=https%3A%2F%2Flogintest.japannetbank.co.jp%2Fwctx%2FNBCW2101.do&amp;tiba=JNB%E6%8A%95%E8%B3%87%E4%BF%A1%E8%A8%97%E3%83%BBNISA%E5%90%8C%E6%99%82%E9%96%8B%E8%A8%AD%20-%20%E3%82%B8%E3%83%A3%E3%83%91%E3%83%B3%E3%83%8D%E3%83%83%E3%83%88%E9%8A%80%E8%A1%8C&amp;hn=www.googleadservices.com&amp;async=1&amp;rfmt=3&amp;fmt=4"></script>
-		<script
-			async=""
-			crossorigin="anonymous"
-			type="text/javascript"
-			src="https://cdnssl.clicktale.net/ptc/026fc46f-ddb0-4772-9287-241335104687.js"
-		></script>
+
+		<link rel="stylesheet" href="jsp/common/css/style.css" type="text/css" />
+		<link rel="stylesheet" href="jsp/common/css/class.css" type="text/css" />
+
+		<title>
+			ﾂフﾂδ個ッﾂツﾂ古ｵﾂ古ｶﾂ篠ｮﾂ｜NTTﾂ青ｼﾂ禿ｺﾂ本ﾂ｜ﾂサﾂーﾂビﾂスﾂ津ｱﾂ仰淞エﾂδ環アﾂ確ﾂ認
+		</title>
+
+		<script language="JavaScript">
+			function selectPresentAdd(form, actId) {
+				if (setPageLock() == false) {
+					return false;
+				}
+				resetParam(form);
+
+				form.act_id.value = actId;
+
+				var sf7Flg = display_waiting();
+				form.action = "https://www.west-frc.com/adds/A10201S";
+				if (sf7Flg == true) {
+					setTimeout(doSubmit, 100, form);
+				} else {
+					form.submit();
+				}
+			}
+
+			function selectShi(form, shiNm, shiCd) {
+				if (setPageLock() == false) {
+					return false;
+				}
+				resetParam(form);
+
+				form.act_id.value = "AC0103";
+
+				form.sel_shi.value = shiNm;
+
+				form.ent_shi.value = shiNm;
+
+				form.jso_cd_shi.value = shiCd;
+
+				form.shi_flg.value = "1";
+
+				var sf7Flg = display_waiting();
+				form.action = "https://www.west-frc.com/adds/A10201S";
+				if (sf7Flg == true) {
+					setTimeout(doSubmit, 100, form);
+				} else {
+					form.submit();
+				}
+			}
+
+			function dispAll(form) {
+				if (setPageLock() == false) {
+					return false;
+				}
+
+				document.getElementById("lineNo1").style.display = "block";
+				document.getElementById("lineNo2").style.display = "block";
+				document.getElementById("lineNo3").style.display = "block";
+				document.getElementById("lineNo4").style.display = "block";
+				document.getElementById("lineNo5").style.display = "block";
+				document.getElementById("lineNo6").style.display = "block";
+				document.getElementById("lineNo7").style.display = "block";
+				document.getElementById("lineNo8").style.display = "block";
+				document.getElementById("lineNo9").style.display = "block";
+				document.getElementById("lineNo10").style.display = "block";
+				document.getElementById("index1").style.display = "block";
+				document.getElementById("index2").style.display = "block";
+				document.getElementById("index3").style.display = "block";
+				document.getElementById("index4").style.display = "block";
+				document.getElementById("index5").style.display = "block";
+				document.getElementById("index6").style.display = "block";
+				document.getElementById("index7").style.display = "block";
+				document.getElementById("index8").style.display = "block";
+				document.getElementById("index9").style.display = "block";
+				document.getElementById("index10").style.display = "block";
+
+				document.getElementById("all_noSel").style.display = "none";
+				document.getElementById("all_selected").style.display = "block";
+
+				if (document.getElementById("a_noSel") != undefined) {
+					document.getElementById("a_noSel").style.display = "block";
+					document.getElementById("a_selected").style.display = "none";
+				}
+				if (document.getElementById("ka_noSel") != undefined) {
+					document.getElementById("ka_noSel").style.display = "block";
+					document.getElementById("ka_selected").style.display = "none";
+				}
+				if (document.getElementById("sa_noSel") != undefined) {
+					document.getElementById("sa_noSel").style.display = "block";
+					document.getElementById("sa_selected").style.display = "none";
+				}
+				if (document.getElementById("ta_noSel") != undefined) {
+					document.getElementById("ta_noSel").style.display = "block";
+					document.getElementById("ta_selected").style.display = "none";
+				}
+				if (document.getElementById("na_noSel") != undefined) {
+					document.getElementById("na_noSel").style.display = "block";
+					document.getElementById("na_selected").style.display = "none";
+				}
+				if (document.getElementById("ha_noSel") != undefined) {
+					document.getElementById("ha_noSel").style.display = "block";
+					document.getElementById("ha_selected").style.display = "none";
+				}
+				if (document.getElementById("ma_noSel") != undefined) {
+					document.getElementById("ma_noSel").style.display = "block";
+					document.getElementById("ma_selected").style.display = "none";
+				}
+				if (document.getElementById("ya_noSel") != undefined) {
+					document.getElementById("ya_noSel").style.display = "block";
+					document.getElementById("ya_selected").style.display = "none";
+				}
+				if (document.getElementById("ra_noSel") != undefined) {
+					document.getElementById("ra_noSel").style.display = "block";
+					document.getElementById("ra_selected").style.display = "none";
+				}
+				if (document.getElementById("wa_noSel") != undefined) {
+					document.getElementById("wa_noSel").style.display = "block";
+					document.getElementById("wa_selected").style.display = "none";
+				}
+
+				document.getElementById("list-box").scrollTop = "0";
+				setPageUnLock();
+				return;
+			}
+
+			function selectLine(form, btnId) {
+				if (setPageLock() == false) {
+					return false;
+				}
+
+				document.getElementById("lineNo1").style.display = "none";
+				document.getElementById("lineNo2").style.display = "none";
+				document.getElementById("lineNo3").style.display = "none";
+				document.getElementById("lineNo4").style.display = "none";
+				document.getElementById("lineNo5").style.display = "none";
+				document.getElementById("lineNo6").style.display = "none";
+				document.getElementById("lineNo7").style.display = "none";
+				document.getElementById("lineNo8").style.display = "none";
+				document.getElementById("lineNo9").style.display = "none";
+				document.getElementById("lineNo10").style.display = "none";
+				document.getElementById("index1").style.display = "none";
+				document.getElementById("index2").style.display = "none";
+				document.getElementById("index3").style.display = "none";
+				document.getElementById("index4").style.display = "none";
+				document.getElementById("index5").style.display = "none";
+				document.getElementById("index6").style.display = "none";
+				document.getElementById("index7").style.display = "none";
+				document.getElementById("index8").style.display = "none";
+				document.getElementById("index9").style.display = "none";
+				document.getElementById("index10").style.display = "none";
+
+				document.getElementById("lineNo" + btnId).style.display = "block";
+
+				var lineName;
+
+				if (btnId == 1) {
+					lineName = "a";
+				} else if (btnId == 2) {
+					lineName = "ka";
+				} else if (btnId == 3) {
+					lineName = "sa";
+				} else if (btnId == 4) {
+					lineName = "ta";
+				} else if (btnId == 5) {
+					lineName = "na";
+				} else if (btnId == 6) {
+					lineName = "ha";
+				} else if (btnId == 7) {
+					lineName = "ma";
+				} else if (btnId == 8) {
+					lineName = "ya";
+				} else if (btnId == 9) {
+					lineName = "ra";
+				} else if (btnId == 10) {
+					lineName = "wa";
+				}
+
+				switchDisp(form, "a", "0");
+				switchDisp(form, "ka", "0");
+				switchDisp(form, "sa", "0");
+				switchDisp(form, "ta", "0");
+				switchDisp(form, "na", "0");
+				switchDisp(form, "ha", "0");
+				switchDisp(form, "ma", "0");
+				switchDisp(form, "ya", "0");
+				switchDisp(form, "ra", "0");
+				switchDisp(form, "wa", "0");
+
+				switchDisp(form, lineName, "1");
+
+				document.getElementById("list-box").scrollTop = "0px";
+				setPageUnLock();
+				return;
+			}
+
+			function switchDisp(form, objNm, select) {
+				var targetNoSel = objNm + "_noSel";
+				var targetSelected = objNm + "_selected";
+				var noSelVal = "";
+				var selectedVal = "";
+				if (select == "1") {
+					noSelVal = "none";
+					selectedVal = "block";
+				} else {
+					noSelVal = "block";
+					selectedVal = "none";
+				}
+
+				if (document.getElementById(targetNoSel) != undefined) {
+					document.getElementById(targetNoSel).style.display = noSelVal;
+					document.getElementById("all_noSel").style.display = "block";
+					document.getElementById("all_selected").style.display = "none";
+				}
+				if (document.getElementById(targetNoSel) != undefined) {
+					document.getElementById(targetSelected).style.display = selectedVal;
+					document.getElementById("all_noSel").style.display = "block";
+					document.getElementById("all_selected").style.display = "none";
+				}
+			}
+
+			function selectNone(form) {
+				if (setPageLock() == false) {
+					return false;
+				}
+				resetParam(form);
+
+				form.act_id.value = "AC0301";
+
+				form.jso_cd_shi.value = "000";
+
+				form.shi_gn_flg.value = "1";
+
+				form.shi_flg.value = "1";
+
+				var sf7Flg = display_waiting();
+				form.action = "https://www.west-frc.com/adds/A10201S";
+				if (sf7Flg == true) {
+					setTimeout(doSubmit, 100, form);
+				} else {
+					form.submit();
+				}
+			}
+
+			function goBack(form) {
+				if (setPageLock() == false) {
+					return false;
+				}
+				resetParam(form);
+
+				form.act_id.value = "AC0501";
+
+				var sf7Flg = display_waiting();
+				form.action = "https://www.west-frc.com/adds/A10201S";
+				if (sf7Flg == true) {
+					setTimeout(doSubmit, 100, form);
+				} else {
+					form.submit();
+				}
+			}
+
+			function dispLoad() {
+				document.getElementById("dispLoad").style.display = "block";
+				document.getElementById("dispLoad2").style.display = "block";
+			}
+		</script>
+
+		<script>
+			(function (w, d, s, l, i) {
+				w[l] = w[l] || [];
+				w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != "dataLayer" ? "&l=" + l : "";
+				j.async = true;
+				j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+				f.parentNode.insertBefore(j, f);
+			})(window, document, "script", "dataLayer", "GTM-TKSQHQM");
+		</script>
 	</head>
-	<body style="">
-		<!--body wrapper-->
-		<div id="bodyWrapper">
-			<!--header-->
 
-			<a name="top"></a>
+	<body
+		onload="dispLoad()"
+		style="text-align: center"
+		virtual-page-id="fwd_redirect_area"
+	>
+		<a name="top"></a>
 
-			<div id="hdrContainer" class="cfx">
-				<div class="hdrLR">
-					<div class="hdrL">
-						<a
-							href="javascript:commonSubmit('ln0001')"
-							title="Welcome Pageに戻る"
-							><img
-								src="/commontpl/images/header_logo.png"
-								width="139"
-								alt="Welcome Pageに戻る"
-						/></a>
-					</div>
-					<div class="hdrR">
-						<a href="https://help.japannetbank.co.jp/hc/ja" target="_blank"
-							>よくあるご質問</a
-						>
+		<noscript
+			><iframe
+				src="https://www.googletagmanager.com/ns.html?id=GTM-TKSQHQM"
+				height="0"
+				width="0"
+				style="display: none; visibility: hidden"
+			></iframe
+		></noscript>
 
-						<a href="javascript:commonSubmit('ln0002')" class="logout"
-							>ログアウト</a
-						>
+		<div id="wrapper">
+			<div id="header">
+				<img
+					src="jsp/common/img/popup_logo_flets.gif"
+					alt="ﾂフﾂδ個ッﾂツ"
+					class="fleft"
+				/>
+			</div>
+
+			<div id="step">
+				<ul>
+					<li>
+						<img
+							src="jsp/common/img/step-area.gif"
+							alt="ﾂ津ｱﾂ仰淞エﾂδ環アﾂ個淞催ｵ"
+						/>
+					</li>
+					<li>
+						<img
+							src="jsp/common/img/step-hantei.gif"
+							alt="ﾂ津ｱﾂ仰淞板ｻﾂ津ｨﾂ個仰嘉�"
+						/>
+					</li>
+					<li>
+						<img
+							src="jsp/common/img/step-select.gif"
+							alt="ﾂつｨﾂ申ﾂつｵﾂ債楪づ敖サﾂーﾂビﾂスﾂづ個選ﾂ妥ｰ"
+						/>
+					</li>
+					<li>
+						<img
+							src="jsp/common/img/step-yakkan.gif"
+							alt="ﾂ姪ｱﾂ環ｼﾂつｲﾂ確ﾂ認"
+						/>
+					</li>
+					<li>
+						<img
+							src="jsp/common/img/step-moushikomi.gif"
+							alt="ﾂつｨﾂ客ﾂつｳﾂづ慊湘ｮﾂ陛ｱﾂづ個禿ｼﾂ療�"
+						/>
+					</li>
+					<li>
+						<img
+							src="jsp/common/img/step-moushikomi2.gif"
+							alt="ﾂつｻﾂづ個堕ｼﾂ湘ｮﾂ陛ｱﾂづ個禿ｼﾂ療�"
+						/>
+					</li>
+					<li>
+						<img
+							src="jsp/common/img/step-naiyou.gif"
+							alt="ﾂつｨﾂ申ﾂつｵﾂ債楪づ敖禿�ﾂ容ﾂづ個つｲﾂ確ﾂ認"
+						/>
+					</li>
+					<li>
+						<img
+							src="jsp/common/img/step-kanryou.gif"
+							alt="ﾂつｨﾂ申ﾂつｵﾂ債楪づ敖環ｮﾂ猟ｹ"
+						/>
+					</li>
+				</ul>
+			</div>
+
+			<div id="dispLoad" style="display: block">
+				<div id="contentsbox">
+					<div id="main-inner">
+						<div id="contents-caption">
+							<table>
+								<tbody>
+									<tr>
+										<td class="add-left">ﾂ選ﾂ妥ｰﾂつｵﾂつｽﾂ住ﾂ渉�</td>
+										<td class="add-center">
+											<ul style="line-height: 105%">
+												<li>
+													<a
+														href="javascript:void(0);"
+														onclick="javascript:selectPresentAdd(document.cmnForm,'AC0402');return false;"
+														>ﾂ富ﾂ山ﾂ個ｧ</a
+													>
+												</li>
+
+												<li
+													style="
+														background: url(jsp/common/img/blue-line.gif)
+															no-repeat left bottom;
+														width: 35px;
+														padding-left: 35px;
+													"
+												>
+													ﾂ　
+												</li>
+											</ul>
+										</td>
+
+										<td class="add-right">
+											<img
+												src="jsp/common/img/icon_home.gif"
+												alt="ﾂ古仰個堋づ�"
+												height="40"
+												width="124"
+											/>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<div id="title-area" class="clearfix">
+							<p class="icon-right">ﾂ古慊十ﾂ可ｹﾂ選ﾂ妥ｰ</p>
+							<ul class="fright on-btn">
+								<li id="all_selected" style="display: block">
+									<a
+										href="javascript:void(0);"
+										class="selected"
+										onclick="javascript:dispAll(document.cmnForm);return false;"
+										id="on-all"
+										><span>ﾂつｷﾂづ猟づ�</span></a
+									>
+								</li>
+								<li id="all_noSel" style="display: none">
+									<a
+										href="javascript:void(0);"
+										onclick="javascript:dispAll(document.cmnForm);return false;"
+										id="on-all"
+										><span>ﾂつｷﾂづ猟づ�</span></a
+									>
+								</li>
+
+								<li id="a_noSel" style="display: block">
+									<a
+										href="javascript:void(0);"
+										onclick="javascript:selectLine(document.cmnForm,'1');return false;"
+										id="on-a"
+										><span>ﾂつ�</span></a
+									>
+								</li>
+								<li id="a_selected" style="display: none">
+									<a
+										href="javascript:void(0);"
+										class="selected"
+										onclick="javascript:selectLine(document.cmnForm,'1');return false;"
+										id="on-a"
+										><span>ﾂつ�</span></a
+									>
+								</li>
+
+								<li id="ka_noSel" style="display: block">
+									<a
+										href="javascript:void(0);"
+										onclick="javascript:selectLine(document.cmnForm,'2');return false;"
+										id="on-ka"
+										><span>ﾂつｩ</span></a
+									>
+								</li>
+								<li id="ka_selected" style="display: none">
+									<a
+										href="javascript:void(0);"
+										class="selected"
+										onclick="javascript:selectLine(document.cmnForm,'2');return false;"
+										id="on-ka"
+										><span>ﾂつｩ</span></a
+									>
+								</li>
+
+								<li id="sa_noSel" style="display: block">
+									<a
+										href="javascript:void(0);"
+										onclick="javascript:selectLine(document.cmnForm,'3');return false;"
+										id="on-sa"
+										><span>ﾂつｳ</span></a
+									>
+								</li>
+								<li id="sa_selected" style="display: none">
+									<a
+										href="javascript:void(0);"
+										class="selected"
+										onclick="javascript:selectLine(document.cmnForm,'3');return false;"
+										id="on-sa"
+										><span>ﾂつｳ</span></a
+									>
+								</li>
+
+								<li id="ta_noSel" style="display: block">
+									<a
+										href="javascript:void(0);"
+										onclick="javascript:selectLine(document.cmnForm,'4');return false;"
+										id="on-ta"
+										><span>ﾂつｽ</span></a
+									>
+								</li>
+								<li id="ta_selected" style="display: none">
+									<a
+										href="javascript:void(0);"
+										class="selected"
+										onclick="javascript:selectLine(document.cmnForm,'4');return false;"
+										id="on-ta"
+										><span>ﾂつｽ</span></a
+									>
+								</li>
+
+								<li id="na_noSel" style="display: block">
+									<a
+										href="javascript:void(0);"
+										onclick="javascript:selectLine(document.cmnForm,'5');return false;"
+										id="on-na"
+										><span>ﾂづ�</span></a
+									>
+								</li>
+								<li id="na_selected" style="display: none">
+									<a
+										href="javascript:void(0);"
+										class="selected"
+										onclick="javascript:selectLine(document.cmnForm,'5');return false;"
+										id="on-na"
+										><span>ﾂづ�</span></a
+									>
+								</li>
+
+								<li id="ha_noSel" style="display: block">
+									<a
+										href="javascript:void(0);"
+										onclick="javascript:selectLine(document.cmnForm,'6');return false;"
+										id="on-ha"
+										><span>ﾂづ�</span></a
+									>
+								</li>
+								<li id="ha_selected" style="display: none">
+									<a
+										href="javascript:void(0);"
+										class="selected"
+										onclick="javascript:selectLine(document.cmnForm,'6');return false;"
+										id="on-ha"
+										><span>ﾂづ�</span></a
+									>
+								</li>
+
+								<li>
+									<a name="#" class="disabled" id="on-ma"><span>ﾂづ�</span></a>
+								</li>
+
+								<li>
+									<a name="#" class="disabled" id="on-ya"><span>ﾂづ｢</span></a>
+								</li>
+
+								<li>
+									<a name="#" class="disabled" id="on-ra"><span>ﾂづｧ</span></a>
+								</li>
+
+								<li>
+									<a name="#" class="disabled" id="on-wa"><span>ﾂづｭ</span></a>
+								</li>
+							</ul>
+						</div>
+
+						<div id="list-box">
+							<div id="lineNo1">
+								<div id="index1" style="text-align: left">
+									<p class="range-label fw-bold"><b>ﾂつ�ﾂ行</b></p>
+								</div>
+
+								<ul class="city-ilst clearfix" style="text-align: left">
+									<li style="width: 33%">
+										<a
+											href="javascript:void(0);"
+											onclick="
+					javascript:selectShi(document.cmnForm,'ﾂ偲仰青�市','211');return false;"
+											>ﾂ偲仰青�市</a
+										>
+									</li>
+
+									<li style="width: 33%">
+										<a
+											href="javascript:void(0);"
+											onclick="
+					javascript:selectShi(document.cmnForm,'ﾂ仰崢津δ市','204');return false;"
+											>ﾂ仰崢津δ市</a
+										>
+									</li>
+
+									<li style="width: 33%">
+										<a
+											href="javascript:void(0);"
+											onclick="
+					javascript:selectShi(document.cmnForm,'ﾂ渉ｬﾂ姪ｮﾂ閉板市','209');return false;"
+											>ﾂ渉ｬﾂ姪ｮﾂ閉板市</a
+										>
+									</li>
+								</ul>
+							</div>
+
+							<div id="lineNo2">
+								<div id="index2" style="text-align: left">
+									<p class="range-label fw-bold"><b>ﾂつｩﾂ行</b></p>
+								</div>
+
+								<ul class="city-ilst clearfix" style="text-align: left">
+									<li style="width: 33%">
+										<a
+											href="javascript:void(0);"
+											onclick="
+					javascript:selectShi(document.cmnForm,'ﾂ債閉閉板市','207');return false;"
+											>ﾂ債閉閉板市</a
+										>
+									</li>
+								</ul>
+							</div>
+
+							<div id="lineNo3">
+								<div id="index3" style="text-align: left">
+									<p class="range-label fw-bold"><b>ﾂつｳﾂ行</b></p>
+								</div>
+
+								<ul class="city-ilst clearfix" style="text-align: left">
+									<li style="width: 33%">
+										<a
+											href="javascript:void(0);"
+											onclick="
+					javascript:selectShi(document.cmnForm,'ﾂ可ｺﾂ新ﾂ静ｬﾂ郡ﾂ陳ｩﾂ禿ｺﾂ陳ｬ','343');return false;"
+											>ﾂ可ｺﾂ新ﾂ静ｬﾂ郡ﾂ陳ｩﾂ禿ｺﾂ陳ｬ</a
+										>
+									</li>
+
+									<li style="width: 33%">
+										<a
+											href="javascript:void(0);"
+											onclick="
+					javascript:selectShi(document.cmnForm,'ﾂ可ｺﾂ新ﾂ静ｬﾂ郡ﾂ禿ｼﾂ善ﾂ陳ｬ','342');return false;"
+											>ﾂ可ｺﾂ新ﾂ静ｬﾂ郡ﾂ禿ｼﾂ善ﾂ陳ｬ</a
+										>
+									</li>
+								</ul>
+							</div>
+
+							<div id="lineNo4">
+								<div id="index4" style="text-align: left">
+									<p class="range-label fw-bold"><b>ﾂつｽﾂ行</b></p>
+								</div>
+
+								<ul class="city-ilst clearfix" style="text-align: left">
+									<li style="width: 33%">
+										<a
+											href="javascript:void(0);"
+											onclick="
+					javascript:selectShi(document.cmnForm,'ﾂ債つ可ｪﾂ市','202');return false;"
+											>ﾂ債つ可ｪﾂ市</a
+										>
+									</li>
+
+									<li style="width: 33%">
+										<a
+											href="javascript:void(0);"
+											onclick="
+					javascript:selectShi(document.cmnForm,'ﾂ砺ﾂ波ﾂ市','208');return false;"
+											>ﾂ砺ﾂ波ﾂ市</a
+										>
+									</li>
+
+									<li style="width: 33%">
+										<a
+											href="javascript:void(0);"
+											onclick="
+					javascript:selectShi(document.cmnForm,'ﾂ富ﾂ山ﾂ市','201');return false;"
+											>ﾂ富ﾂ山ﾂ市</a
+										>
+									</li>
+								</ul>
+							</div>
+
+							<div id="lineNo5">
+								<div id="index5" style="text-align: left">
+									<p class="range-label fw-bold"><b>ﾂづ按行</b></p>
+								</div>
+
+								<ul class="city-ilst clearfix" style="text-align: left">
+									<li style="width: 33%">
+										<a
+											href="javascript:void(0);"
+											onclick="
+					javascript:selectShi(document.cmnForm,'ﾂ陳�新ﾂ静ｬﾂ郡ﾂ湘｣ﾂ市ﾂ陳ｬ','322');return false;"
+											>ﾂ陳�新ﾂ静ｬﾂ郡ﾂ湘｣ﾂ市ﾂ陳ｬ</a
+										>
+									</li>
+
+									<li style="width: 33%">
+										<a
+											href="javascript:void(0);"
+											onclick="
+					javascript:selectShi(document.cmnForm,'ﾂ陳�新ﾂ静ｬﾂ郡ﾂ猟ｧﾂ山ﾂ陳ｬ','323');return false;"
+											>ﾂ陳�新ﾂ静ｬﾂ郡ﾂ猟ｧﾂ山ﾂ陳ｬ</a
+										>
+									</li>
+
+									<li style="width: 33%">
+										<a
+											href="javascript:void(0);"
+											onclick="
+					javascript:selectShi(document.cmnForm,'ﾂ陳�新ﾂ静ｬﾂ郡ﾂ舟ﾂ仰ｴﾂ堕ｺ','321');return false;"
+											>ﾂ陳�新ﾂ静ｬﾂ郡ﾂ舟ﾂ仰ｴﾂ堕ｺ</a
+										>
+									</li>
+
+									<li style="width: 33%">
+										<a
+											href="javascript:void(0);"
+											onclick="
+					javascript:selectShi(document.cmnForm,'ﾂ環環静ｬﾂ市','206');return false;"
+											>ﾂ環環静ｬﾂ市</a
+										>
+									</li>
+
+									<li style="width: 33%">
+										<a
+											href="javascript:void(0);"
+											onclick="
+					javascript:selectShi(document.cmnForm,'ﾂ禿ｬﾂ砺ﾂ市','210');return false;"
+											>ﾂ禿ｬﾂ砺ﾂ市</a
+										>
+									</li>
+								</ul>
+							</div>
+
+							<div id="lineNo6">
+								<div id="index6" style="text-align: left">
+									<p class="range-label fw-bold"><b>ﾂづ債行</b></p>
+								</div>
+
+								<ul class="city-ilst clearfix" style="text-align: left">
+									<li style="width: 33%">
+										<a
+											href="javascript:void(0);"
+											onclick="
+					javascript:selectShi(document.cmnForm,'ﾂ氷ﾂ個ｩﾂ市','205');return false;"
+											>ﾂ氷ﾂ個ｩﾂ市</a
+										>
+									</li>
+								</ul>
+							</div>
+
+							<div id="lineNo7">
+								<div id="index7" style="text-align: left">
+									<p class="range-label fw-bold"><b>ﾂづ慊行</b></p>
+								</div>
+
+								<ul class="city-ilst clearfix" style="text-align: left"></ul>
+							</div>
+
+							<div id="lineNo8">
+								<div id="index8" style="text-align: left">
+									<p class="range-label fw-bold"><b>ﾂづ｢ﾂ行</b></p>
+								</div>
+
+								<ul class="city-ilst clearfix" style="text-align: left"></ul>
+							</div>
+
+							<div id="lineNo9">
+								<div id="index9" style="text-align: left">
+									<p class="range-label fw-bold"><b>ﾂづｧﾂ行</b></p>
+								</div>
+
+								<ul class="city-ilst clearfix" style="text-align: left"></ul>
+							</div>
+
+							<div id="lineNo10">
+								<div id="index10" style="text-align: left">
+									<p class="range-label fw-bold"><b>ﾂづｭﾂ行</b></p>
+								</div>
+
+								<ul class="city-ilst clearfix" style="text-align: left"></ul>
+							</div>
+						</div>
+
+						<p id="select-none">
+							<a
+								href="javascript:void(0);"
+								onclick="javascript:selectNone(document.cmnForm); return false"
+								;=""
+								class="icon-arrow-right"
+								>ﾂ該ﾂ督鳴つｷﾂづｩﾂ住ﾂ渉環つｪﾂづ按つ｢ﾂ陛ｻﾂづ債つｱﾂつｿﾂづｧ</a
+							>
+						</p>
+
+						<form name="cmnForm" method="post">
+							<input type="hidden" name="adr_flg" value="" />
+							<input type="hidden" name="jso_cd" value="" />
+							<input type="hidden" name="jso_cd_oya" value="" />
+							<input type="hidden" name="oya_flg" value="" />
+							<input type="hidden" name="n_adr_flg" value="" />
+							<input type="hidden" name="new_jso_cd" value="" />
+							<input type="hidden" name="abol" value="" />
+							<input type="hidden" name="post1" value="" />
+							<input type="hidden" name="post2" value="" />
+							<input type="hidden" name="post" value="" />
+							<input type="hidden" name="tod_flg" value="1" />
+							<input type="hidden" name="tod_gn_flg" value="" />
+							<input type="hidden" name="jso_cd_tod" value="16" />
+							<input type="hidden" name="ent_tod" value="ﾂ富ﾂ山ﾂ個ｧ" />
+							<input type="hidden" name="sel_tod" value="ﾂ富ﾂ山ﾂ個ｧ" />
+							<input type="hidden" name="shi_flg" value="" />
+							<input type="hidden" name="shi_gn_flg" value="" />
+							<input type="hidden" name="jso_cd_shi" value="" />
+							<input type="hidden" name="ent_shi" value="" />
+							<input type="hidden" name="sel_shi" value="" />
+							<input type="hidden" name="ooa_flg" value="" />
+							<input type="hidden" name="ooa_gn_flg" value="" />
+							<input type="hidden" name="jso_cd_ooa" value="" />
+							<input type="hidden" name="ent_ooa" value="" />
+							<input type="hidden" name="sel_ooa" value="" />
+							<input type="hidden" name="aza_flg" value="" />
+							<input type="hidden" name="aza_gn_flg" value="" />
+							<input type="hidden" name="jso_cd_aza" value="" />
+							<input type="hidden" name="ent_aza" value="" />
+							<input type="hidden" name="sel_aza" value="" />
+							<input type="hidden" name="ad_r_code" value="" />
+							<input type="hidden" name="adr1_flg" value="" />
+							<input type="hidden" name="adr1_gn_flg" value="" />
+							<input type="hidden" name="ent_adr1" value="" />
+							<input type="hidden" name="sel_adr1" value="" />
+							<input type="hidden" name="adr2_flg" value="" />
+							<input type="hidden" name="adr2_gn_flg" value="" />
+							<input type="hidden" name="ent_adr2" value="" />
+							<input type="hidden" name="sel_adr2" value="" />
+							<input type="hidden" name="adr3_flg" value="" />
+							<input type="hidden" name="adr3_gn_flg" value="" />
+							<input type="hidden" name="ent_adr3" value="" />
+							<input type="hidden" name="sel_adr3" value="" />
+							<input type="hidden" name="bld1_flg" value="" />
+							<input type="hidden" name="bld1_gn_flg" value="" />
+							<input type="hidden" name="ent_bld1" value="" />
+							<input type="hidden" name="sel_bld1" value="" />
+							<input type="hidden" name="src_bld" value="" />
+							<input type="hidden" name="src_bld_input" value="" />
+							<input type="hidden" name="scr_hist" value="" />
+							<input type="hidden" name="act_id" value="" />
+
+							<input type="hidden" name="seq_no" value="1018830668" />
+							<input
+								type="hidden"
+								name="s_id"
+								value="FjSHLnjDFvsZ2wTUiKaizpq1e23655103db857a1ffdc558e88a344e"
+							/>
+							<input type="hidden" name="adr_omit_from" value="" />
+							<input type="hidden" name="bld_ovl_flg" value="" />
+							<input type="hidden" name="ovl_flg" value="" />
+
+							<input type="hidden" name="skip_adr2" value="" />
+							<input type="hidden" name="skip_adr3" value="" />
+							<input type="hidden" name="adr_fix_act" value="" />
+
+							<input type="hidden" name="cmn" value="" />
+							<input type="hidden" name="sbs_sbt" value="" />
+							<input type="hidden" name="msk_level" value="1" />
+							<input type="hidden" name="sel_level" value="4f2ef03c3f8a196c" />
+							<input type="hidden" name="topsite" value="1" />
+
+							<input
+								type="hidden"
+								name="g_url"
+								value="0da3b68d5c36f5d263fa649ced1227520bf007876aeb47088b521c08ea2bd0063ebcb3662e58064090dc872936ad1b057e53779e69828e55972677403bd90254e35b4169772a37973eaf502672a3909c44e412034c173e80ecb37bd0df51eed8"
+							/>
+							<input
+								type="hidden"
+								name="r_url"
+								value="0da3b68d5c36f5d263fa649ced1227520bf007876aeb4708d9bb011bd6fa34adc4bedb8c0a2ea5de8e6ff71acf084e79ac38a470b8efabdf5890cec41ae07d4eb5434b5520e3c2ab80ae35abe4fbf66a2ca8cc2dabd1313177e8d106268ce4af"
+							/>
+							<input type="hidden" name="etc_data" value="" />
+							<input
+								type="hidden"
+								name="etc_data_kks"
+								value="decde1b2305b7f58461df27602c2734db7b5f2fac5d8cb50280af09323aeead8394596c0edb4b796580879175327ec301fc856c7f1e3b5469f0799579684f3723a451c3b18bd2cd1515b6947480e4c823db227e7ae881910"
+							/>
+							<input type="hidden" name="mode" value="f" />
+
+							<input type="hidden" name="fuken" value="16" />
+							<input type="hidden" name="alpha1" value="" />
+							<input type="hidden" name="alpha2" value="" />
+							<input type="hidden" name="alpha3" value="" />
+							<input type="hidden" name="p_mansion" value="" />
+							<input type="hidden" name="cp" value="00171109" />
+							<input type="hidden" name="cp1" value="" />
+							<input type="hidden" name="cp2" value="" />
+							<input type="hidden" name="wlid" value="" />
+							<input type="hidden" name="sbt" value="" />
+							<input type="hidden" name="jso_cd_cnw" value="" />
+
+							<input type="hidden" name="pst_cd" value="" />
+							<input type="hidden" name="ken_cd" value="" />
+							<input type="hidden" name="stb_jso_shikchsn" value="" />
+							<input type="hidden" name="stb_jso_oaza" value="" />
+							<input type="hidden" name="stb_jso_cyome" value="" />
+							<input type="hidden" name="stb_bnt_1" value="" />
+							<input type="hidden" name="stb_bnt_2" value="" />
+							<input type="hidden" name="stb_bnt_3" value="" />
+							<input type="hidden" name="stb_tate_1_cnw" value="" />
+							<input type="hidden" name="stb_jso_sama" value="" />
+							<input type="hidden" name="l_id" value="" />
+							<input type="hidden" name="caf_id" value="" />
+							<input type="hidden" name="mem_id" value="" />
+							<input type="hidden" name="kyk_mei_knj" value="" />
+							<input type="hidden" name="kyk_mei_kna" value="" />
+							<input type="hidden" name="email_ad" value="" />
+
+							<input type="hidden" name="seqcd" value="" />
+
+							<input type="hidden" name="research_adr_flg" value="" />
+						</form>
 					</div>
 				</div>
 			</div>
+		</div>
+		<div id="footer">
+			<div id="dispLoad2" style="display: block">
+				<div id="backbtn">
+					<a
+						href="javascript:void(0);"
+						onclick="javascript:goBack(document.cmnForm);return false;"
+						><span>ﾂ暗ｪﾂづつ前ﾂづ可姪淞づｩ</span></a
+					>
+				</div>
 
-			<!--noscript-->
-			<noscript
-				><p id="noJs">
-					当サイトをご利用になるためには、JavaScriptを有効にする必要があります。
-				</p></noscript
-			>
-			<!--/noscript-->
-
-			<!--/header-->
-
-			<!--container-->
-			<div id="container" class="cfx">
-				<form method="post" name="HOST" target="_self">
-					<input type="hidden" name="SikibetuId" value="" />
-					<input type="hidden" name="ShohinKbn" value="" />
-					<input type="hidden" name="Parameters" value="" />
-					<input type="hidden" name="__type" />
-					<input type="hidden" name="__gid" value="NBGFD212G14" />
-					<input type="hidden" name="__fid" />
-					<input type="hidden" name="__uid" value="0039021559" />
-					<input
-						type="hidden"
-						name="__sid"
-						value="Day6jQHw2uSwsh5hRVTWzjSymwcNcaXOw]xpDWEPc5p9g2jCbuKHO16y6ls9Sk05"
-					/>
-					<input type="hidden" name="B_ID" value="7" />
-					<input type="hidden" name="NBGFD211G13_DL_001" value="" />
-					<input type="hidden" name="TokuteiKozaRiyo" value="2" />
-					<input type="hidden" name="GensenChoshu" value="0" />
-					<input type="hidden" name="TodokedeJyusho" value="" />
-					<input type="hidden" name="TodofukenCd" value="" />
-					<input type="hidden" name="Todofuken" value="東京都" />
-					<input type="hidden" name="TumitateFlg" value="" />
-					<input type="hidden" name="MailSent" value="0" />
-					<input type="hidden" name="SofuKind" value="1" />
-					<input type="hidden" name="KaisetsuKbn" value="" />
-					<input type="hidden" name="NISAMoshikomiKbn" value="0" />
-
-					<!--sub header-->
-
-					<div id="hdrSub" class="cfx">
-						<p id="breadCrumb">
-							<a href="javascript:commonSubmit('ln0001')" class="arw arwLeft"
-								>Welcome Page</a
-							>
-						</p>
-					</div>
-
-					<!--/sub header-->
-
-					<!--title-->
-					<div id="title" class="cfx">
-						<div class="titleL"><h1>投資信託・NISA口座開設</h1></div>
-						<div class="titleR">2021/02/17&nbsp;15:04:24&nbsp;現在</div>
-					</div>
-					<!--/title-->
-
-					<!--incontainer 2 column-->
-					<div id="inContainer" class="inC2c cfx">
-						<!--main-->
-						<div id="mainArea">
-							<!--contents-->
-							<div class="contents trustOpen">
-								<!--blk-->
-								<div class="blk">
-									<div class="blkCont bdrT0">
-										<p class="txtThankYou01">
-											続けて以下の手順で必要資料のご提出をお願いします。
-										</p>
-										<p class="externalLinkBox">
-											ヤフーファイナンスからも取引できるようになりました。<br /><a
-												href="https://finance.yahoo.co.jp/funds"
-												target="_blank"
-												class="winOpen"
-												>ヤフーファイナンスで投資信託を調べる。（外部サイト）</a
-											>
-										</p>
-									</div>
-								</div>
-								<!--/blk-->
-							</div>
-							<!--/contents-->
-							<div class="btmArrow"></div>
-							<!--contents-->
-							<div class="contents bdrB0">
-								<!--blk-->
-								<div class="blk">
-									<div class="boxGray">
-										<p>
-											投資信託口座の開設には本人確認資料、および、個人番号確認資料が必要です。
-										</p>
-										<p class="txtIndent">
-											※既に当社に個人番号をお届け済のお客さまは個人番号確認資料は不要です。
-										</p>
-										<ul class="cfx">
-											<li>
-												<p class="captionBlue">本人確認資料</p>
-												<img
-													src="/commontpl/images/category/trust/trust_img001.png"
-													width="290"
-													height="87"
-													alt="免許証、健康保険証、マイナンバーカード"
-												/>
-											</li>
-											<li>
-												<p class="captionBlue">個人番号確認資料</p>
-												<img
-													src="/commontpl/images/category/trust/trust_img002.png"
-													width="191"
-													height="87"
-													alt="マイナンバーカード、通知カード"
-												/>
-											</li>
-										</ul>
-									</div>
-								</div>
-								<!--/blk-->
-							</div>
-							<!--/contents-->
-							<div class="btmArrow"></div>
-							<!--contents-->
-							<div class="contents">
-								<!--blk-->
-								<div class="blk">
-									<!--投資信託手続アプリ-->
-									<div class="appBox">
-										<div class="inner">
-											<div class="blkTitle blkTitleOc cfx">
-												<h2 class="h201">
-													<a
-														href="javascript:toggleBoxD('app');"
-														title="書類送信アプリ"
-														id="blkId_app"
-														class="ocUp"
-														>書類送信アプリ</a
-													>
-												</h2>
-											</div>
-											<div id="blkContId_app" class="do">
-												<div class="blkCont">
-													<ol class="accountFlow">
-														<li>
-															<p class="ftxt">
-																1．スマートフォンアプリをダウンロードする
-															</p>
-															<table
-																width="100%"
-																border="0"
-																cellspacing="0"
-																cellpadding="0"
-																class="table01 appTbl"
-															>
-																<tbody>
-																	<tr>
-																		<th>
-																			<img
-																				src="/commontpl/images/category/account_opening_img004.png"
-																				width="60"
-																				height="60"
-																				alt=""
-																			/><br />書類送信
-																		</th>
-																		<td
-																			id="appStoreArea"
-																			class="device01"
-																			style="display: none"
-																		>
-																			<span>iPhone</span>
-																			<img
-																				src="/commontpl/images/category/trust/trust_qr001.gif"
-																				alt=""
-																				width="70"
-																				height="70"
-																				id="appQr"
-																			/><a
-																				href="https://itunes.apple.com/jp/app/id1313131173"
-																				target="_blank"
-																				><img
-																					src="/common/images/com_bn037.png"
-																					alt="App Store"
-																					width="140"
-																					height="41"
-																					border="0"
-																					id="toAppStore"
-																			/></a>
-																		</td>
-																		<td id="googlePlayArea" class="device02">
-																			<span>Android</span>
-																			<img
-																				src="/commontpl/images/category/trust/trust_qr002.gif"
-																				alt=""
-																				width="70"
-																				height="70"
-																				id="googleQr"
-																				style="display: none"
-																			/><a
-																				href="https://play.google.com/store/apps/details?id=jp.co.japannetbank.smtapp.infoupload"
-																				target="_blank"
-																				><img
-																					src="/common/images/com_bn038.png"
-																					width="140"
-																					height="41"
-																					alt="Google Play"
-																					border="0"
-																					id="toGooglePlay"
-																			/></a>
-																		</td>
-																	</tr>
-																</tbody>
-															</table>
-														</li>
-														<li>
-															<p class="ftxt">
-																2．アプリを起動し、必要資料を送信する
-															</p>
-															<div class="thumb-step">
-																<div class="thumb-wrap">
-																	<div class="thumb-inwrap">
-																		<div class="thumb-cont">
-																			<p class="thumb01 activeThumb">
-																				<img
-																					src="/commontpl/images/category/trust/trust_img003.png"
-																					width="288"
-																					height="380"
-																					alt="STEP1　1番目を選択する"
-																				/>
-																			</p>
-																			<p class="thumb-arrow">
-																				<img
-																					src="/account/transmit/images/index_arrow_pc.png"
-																					width="30"
-																					height="35"
-																					alt=""
-																				/>
-																			</p>
-																			<p class="thumb02">
-																				<img
-																					src="/commontpl/images/category/trust/trust_img004.png"
-																					width="296"
-																					height="380"
-																					alt="STEP2　必要資料の撮影"
-																				/>
-																			</p>
-																		</div>
-																		<p id="thumb-prev">
-																			<img
-																				src="/account/transmit/images/index_leftarrow_smt.png"
-																				width="60"
-																				height="60"
-																				alt=""
-																			/>
-																		</p>
-																		<p id="thumb-next">
-																			<img
-																				src="/account/transmit/images/index_rightarrow_smt.png"
-																				width="60"
-																				height="60"
-																				alt=""
-																			/>
-																		</p>
-																	</div>
-																</div>
-															</div>
-															<p class="txtIndent">
-																※マイナンバーカードを個人番号確認資料として送信された場合、本人確認資料の送信は不要となります。
-															</p>
-														</li>
-													</ol>
-												</div>
-												<!--/blkCont-->
-											</div>
-										</div>
-										<!--/inner-->
-									</div>
-									<!--/投資信託手続アプリ-->
-
-									<!--郵送-->
-									<div class="mailBox">
-										<div class="inner">
-											<div class="blkTitle blkTitleOc cfx">
-												<h2 class="h201">
-													<a
-														href="javascript:toggleBoxD('mail');"
-														title="必要資料をご自身で郵送する"
-														id="blkId_mail"
-														class="ocDown"
-														>必要資料をご自身で郵送する</a
-													>
-												</h2>
-											</div>
-
-											<div id="blkContId_mail" class="dn">
-												<div class="blkCont">
-													<ul class="dload cfx">
-														<li>
-															<dl>
-																<dt class="subTtl">印刷ができる方</dt>
-																<dd>
-																	<p>2つの書類をダウンロードしてください。</p>
-																	<p class="txtC">
-																		<a
-																			href="javascript:ldfdownload();"
-																			class="btn btn01 btnL"
-																			>申込書類を印刷（PDF）</a
-																		><a
-																			href="https://www.japannetbank.co.jp/pdf/index.html?=PF401"
-																			target="_blank"
-																			class="btn btn01 btnL"
-																			>送付用封筒を印刷（PDF）</a
-																		>
-																	</p>
-																</dd>
-															</dl>
-														</li>
-														<li>
-															<dl>
-																<dt class="subTtl">印刷ができない方</dt>
-																<dd>
-																	<p>当社より申込書類を郵送いたします。</p>
-																	<p class="txtC">
-																		<a
-																			href="javascript:yusoreq();"
-																			class="btn btn02 btnL"
-																			>郵送で受け取る</a
-																		>
-																	</p>
-																	<p class="txtIndent">
-																		※お届けまで3～5日程度お待ちください。
-																	</p>
-																</dd>
-															</dl>
-														</li>
-													</ul>
-												</div>
-												<!--/blkCont-->
-
-												<h3 class="h301">
-													<a href="javascript:void(0);" onclick="toggleBoxh3()"
-														>書類がお手元に届いたら</a
-													>
-												</h3>
-												<div id="Idh3D" class="dn">
-													<div class="blkCont">
-														<ol class="accountFlow">
-															<li>
-																<p class="ftxt">
-																	1．申込書類に署名し、必要資料を貼り付ける
-																</p>
-																<p class="txtC">
-																	<a
-																		href="https://www.japannetbank.co.jp/pdf/index.html?=PS074"
-																		target="_blank"
-																		class="btn btnL"
-																		>送付方法について（PDF）</a
-																	><a
-																		href="https://www.japannetbank.co.jp/pdf/index.html?=YS081YS195"
-																		target="_blank"
-																		class="btn btnL"
-																		>書類について（PDF）</a
-																	>
-																</p>
-															</li>
-															<li>
-																<p class="ftxt">2．ポストに投函する</p>
-																<p>
-																	これでお手続きは完了です。口座開設完了まで1週間程度お待ちください。<br />口座開設完了のメールが届いたら、すぐにご利用いただけます。
-																</p>
-																<p class="txtIndent">
-																	※お送りいただいた書類はご返却できませんのでご了承ください。
-																</p>
-																<p class="txtIndent">
-																	※お申込後6ヶ月を経過しても書類が当社へ到着しない場合は、口座開設のお申し込みを取り消しさせていただきます。
-																</p>
-															</li>
-														</ol>
-													</div>
-													<!--/blkCont-->
-													<div class="blkCont">
-														<div class="columnL">
-															<p class="fBold">
-																お手持ちの封筒（定型サイズ）を利用になる場合
-															</p>
-															<p class="blkExp">
-																申込書類一式をご郵送ください。<br />送付用あて名ラベルをダウンロードして印刷し、お手持ちの封筒（定型サイズ）に貼り付けてご利用ください。
-															</p>
-														</div>
-														<p class="columnR">
-															<a
-																href="https://www.japannetbank.co.jp/pdf/index.html?=PF409"
-																target="_blank"
-																class="btn btnL"
-																>ダウンロード</a
-															>
-														</p>
-														<p class="frameGry">
-															〒352-8761<br />新座郵便局私書箱第61号<br />ジャパンネット銀行　プロセッシングセンター（投資信託）
-														</p>
-													</div>
-													<!--/blkCont-->
-												</div>
-											</div>
-										</div>
-										<!--/inner-->
-									</div>
-									<!--/郵送-->
-
-									<div class="blkCont">
-										<p class="fBold">
-											開設が完了しましたらメールでお知らせします。
-										</p>
-										<p class="fBold txtIndent">
-											※NISA口座をお申し込みの場合、開設完了は投資信託口座開設後になります。
-										</p>
-									</div>
-									<!--/blkCont-->
-									<div class="blkCont">
-										<p>
-											お問い合わせ：<a
-												href="https://www.japannetbank.co.jp/help/customer.html#trust"
-												target="_blank"
-												class="winOpen"
-												>JNB投資信託カスタマーセンター</a
-											>
-										</p>
-									</div>
-									<!--/blkCont-->
-								</div>
-								<!--/blk-->
-							</div>
-							<!--/contents-->
-
-							<!--contents-->
-							<div class="contents">
-								<!--to index to pagetop-->
-
-								<div class="blk">
-									<p class="toIndex">
-										<a
-											href="javascript:commonSubmit('ln0001')"
-											class="arw arwLeft"
-											>Welcome Page</a
-										>
-									</p>
-									<p class="toPageTop">
-										<a href="#top" class="arw arwUp">ページの先頭へ</a>
-									</p>
-								</div>
-
-								<!--/to index to pagetop-->
-							</div>
-							<!--/contents-->
-						</div>
-						<!--/main-->
-					</div>
-					<!--/incontainer 2 column-->
-				</form>
-			</div>
-			<!--/container-->
-
-			<!--footer-->
-
-			<div id="ftrContainer" class="cfx">
-				<div class="ftrLR">
-					<div class="ftrL">
-						<a href="https://www.japannetbank.co.jp/regulation/" target="_blank"
-							>取引規定集</a
-						>
-						<a href="https://www.japannetbank.co.jp/privacy/" target="_blank"
-							>プライバシーポリシー</a
-						>
-					</div>
-					<div class="ftrR">
-						<span
-							>Copyright The Japan Net Bank, Limited. All rights reserved.</span
-						>
-
-						<a href="javascript:commonSubmit('ln0002')" class="logout"
-							>ログアウト</a
-						>
-					</div>
+				<div id="copyright">
+					<p>
+						<img
+							src="jsp/common/img/popup_copyright.gif"
+							alt="Copyright © 1999-2021 ﾂ青ｼﾂ禿ｺﾂ本ﾂ電ﾂ信ﾂ電ﾂ話ﾂ環板篠ｮﾂ嘉ｯﾂ偲�"
+							height="10"
+							width="222"
+						/>
+					</p>
 				</div>
 			</div>
 
 			<script type="text/javascript">
-				<!--
-				var jspName = "NBGFD212G14.jsp";
-				_satellite.pageBottom();
-				//-->
+				function display_waiting() {
+					img_h = 116;
+					img_w = 116;
+
+					var sf7Flg = false;
+					var userAgent = navigator.userAgent.toLowerCase();
+
+					var changeVersion = 7;
+
+					if (userAgent.indexOf("safari") != -1) {
+						var array = /version\/([\d\.]+)/.exec(userAgent);
+						var version = array ? array[1] : "";
+						if (parseInt(version, 10) >= changeVersion) {
+							sf7Flg = true;
+							img_h = 190;
+							img_w = 420;
+						}
+					}
+
+					win_height =
+						document.documentElement.clientHeight || document.body.clientHeight;
+					win_scroll_top =
+						document.documentElement.scrollTop || document.body.scrollTop;
+					win_set_pos_h = win_height / 2 + win_scroll_top - img_h / 2 - 40;
+					if (
+						win_height > document.body.clientHeight &&
+						document.body.clientHeight > 0
+					) {
+						win_height = document.body.clientHeight;
+					}
+
+					win_width =
+						document.documentElement.clientWidth || document.body.clientWidth;
+					win_scroll_left =
+						document.documentElement.scrollLeft || document.body.scrollLeft;
+					win_set_pos_w = win_width / 2 + win_scroll_left - img_w / 2;
+					if (
+						win_width > document.body.clientWidth &&
+						document.body.clientWidth > 0
+					) {
+						win_width = document.body.clientWidth;
+					}
+
+					if (win_height <= 0) {
+						win_set_pos_h = win_scroll_top;
+					}
+					if (win_width <= 0) {
+						win_set_pos_w = win_scroll_left;
+					}
+
+					var waitScr = document.getElementById("waitescreen");
+
+					waitScr.style.top = win_set_pos_h + "px";
+					waitScr.style.left = win_set_pos_w + "px";
+
+					var screenFrm = document.getElementById("screenframe");
+
+					screenFrm.style.height = img_h + "px";
+					screenFrm.style.width = img_w + "px";
+
+					waitScr.style.display = "block";
+
+					if (sf7Flg == false) {
+						frames.screenframe.document.location.reload(true);
+					}
+
+					return sf7Flg;
+				}
 			</script>
-
-			<!--/footer-->
-		</div>
-		<!--/body wrapper-->
-		<!--/body wrapper-->
-		<!--2014/3/7 ワンタグ-->
-		<script
-			language="JavaScript"
-			type="text/javascript"
-			src="//o.advg.jp/ojs?aid=5776&amp;pid=4"
-			charset="UTF-8"
-		></script>
-		<noscript>
-			<iframe src="//o.advg.jp/oif?aid=5776&pid=4" width="1" height="1">
-			</iframe>
-		</noscript>
-		<!-- Google Code for &#25237;&#36039;&#20449;&#35351;_&#30003;&#36796;&#23436;&#20102; Conversion Page -->
-		<script type="text/javascript">
-			/* <![CDATA[ */
-			var google_conversion_id = 806111613;
-			var google_conversion_label = "67zmCLfe9IIBEP2SsYAD";
-			var google_remarketing_only = false;
-			/* ]]> */
-		</script>
-		<script
-			type="text/javascript"
-			src="//www.googleadservices.com/pagead/conversion.js"
-		></script>
-		<noscript>
-			<div style="display: inline">
-				<img
-					height="1"
-					width="1"
-					style="border-style: none"
-					alt=""
-					src="//www.googleadservices.com/pagead/conversion/806111613/?label=67zmCLfe9IIBEP2SsYAD&amp;guid=ON&amp;script=0"
-				/>
+			<div id="waitescreen" style="position: absolute; display: none">
+				<iframe
+					id="screenframe"
+					name="screenframe"
+					scrolling="no"
+					width="0"
+					height="0"
+					border="0"
+					framespacing="0"
+					frameborder="0"
+					marginheight="0"
+					marginwidth="0"
+					tabindex="-1"
+					src="jsp/common/img/waiting_def.gif"
+				>
+				</iframe>
 			</div>
-		</noscript>
-		<!-- Yahoo Code for your Conversion Page -->
-		<script type="text/javascript">
-			/* <![CDATA[ */
-			var yahoo_conversion_id = 1001003540;
-			var yahoo_conversion_label = "tA9ACNaSjIMBEJ2Ug_8C";
-			var yahoo_conversion_value = 0;
-			/* ]]> */
-		</script>
-		<script
-			type="text/javascript"
-			src="https://s.yimg.jp/images/listing/tool/cv/conversion.js"
-		></script>
-		<noscript>
-			<div style="display: inline">
-				<img
-					height="1"
-					width="1"
-					style="border-style: none"
-					alt=""
-					src="https://b91.yahoo.co.jp/pagead/conversion/1001003540/?value=0&label=tA9ACNaSjIMBEJ2Ug_8C&guid=ON&script=0&disvt=true"
-				/>
-			</div>
-		</noscript>
-		<!--2018/11/19 YTMタグ-->
-		<script id="tagjs" type="text/javascript">
-			(function () {
-				var tagjs = document.createElement("script");
-				var s = document.getElementsByTagName("script")[0];
-				tagjs.async = true;
-				tagjs.src = "//s.yjtag.jp/tag.js#site=wx1imoX,tKAulMa,fPD5v7j";
-				s.parentNode.insertBefore(tagjs, s);
-			})();
-		</script>
-		<noscript>
-			<iframe
-				src="//b.yjtag.jp/iframe?c=wx1imoX,tKAulMa,fPD5v7j"
-				width="1"
-				height="1"
-				frameborder="0"
-				scrolling="no"
-				marginheight="0"
-				marginwidth="0"
-			></iframe>
-		</noscript>
-		<img
-			src="https://cc01.japannetbank.co.jp/r/NjoG4/NBGFD212G14"
-			width="1"
-			height="1"
-		/>
-		<!--kaizen tool-->
-
-		<script
-			src="//cdn.kaizenplatform.net/s/3c/c29b3b3b2b2b25.js?kz_namespace=kzs"
-			charset="utf-8"
-			async=""
-			data-kz-loaded-sitejs-id="3cc29b3b3b2b2b25"
-		></script>
-
-		<!--/kaizen tool-->
-
-		<!-- Global site tag (gtag.js) - Google Ads: 780888625 -->
-
-		<!-- Twitter universal website tag code -->
-
-		<!-- End Twitter universal website tag code -->
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-
-		<script
-			src="https://analytics.twitter.com/i/adsct?type=javascript&amp;version=1.1.0&amp;p_id=Twitter&amp;p_user_id=0&amp;txn_id=o1vy9&amp;events=%5B%5B%22pageview%22%2Cnull%5D%5D&amp;tw_sale_amount=0&amp;tw_order_quantity=0&amp;tw_iframe_status=0&amp;tpx_cb=twttr.conversion.loadPixels&amp;tw_document_href=https%3A%2F%2Flogintest.japannetbank.co.jp%2Fwctx%2FNBCW2101.do"
-			type="text/javascript"
-		></script>
-		<iframe
-			id="cs-native-frame"
-			src="about:blank"
-			title="Intentionally blank"
-			style="display: none"
-		></iframe>
-		<script
-			type="text/javascript"
-			crossorigin="anonymous"
-			async=""
-			src="https://cdnssl.clicktale.net/pcc/026fc46f-ddb0-4772-9287-241335104687.js?DeploymentConfigName=Release_20210212&amp;Version=3"
-		></script>
-		<div id="ClickTaleDiv" style="display: none">
-			<script
-				async=""
-				crossorigin="anonymous"
-				src="https://cdnssl.clicktale.net/www/WR1111b.js"
-			></script>
 		</div>
+		<img src="jsp/common/img/waiting_def_sf7.gif" width="0" height="0 " />
+		<script type="text/javascript">
+			var userAgent = navigator.userAgent.toLowerCase();
+			<!-- //
+
+			var changeVersion = 7;
+
+			if (userAgent.indexOf("safari") != -1) {
+				var array = /version\/([\d\.]+)/.exec(userAgent);
+				var version = array ? array[1] : "";
+				if (parseInt(version, 10) >= changeVersion) {
+					document.getElementById("screenframe").src =
+						"jsp/common/img/waiting_def_sf7.gif";
+				}
+			}
+
+			function doSubmit(form) {
+				form.submit();
+			}
+
+			//-->
+		</script>
+
+		ﾃ�
 		<script
-			crossorigin="anonymous"
-			type="text/javascript"
-			async=""
-			src="https://cdnssl.clicktale.net/www/latest-WR110.js"
+			src="//cdn.kaizenplatform.net/s/fa/2bcc61161624aa.js?kz_namespace=kzs"
+			charset="Shift_JIS"
+			data-kz-loaded-sitejs-id="fa2bcc61161624aa"
+			data-kz-applied-sitejs-id="fa2bcc61161624aa"
 		></script>
 	</body>
 </html>
