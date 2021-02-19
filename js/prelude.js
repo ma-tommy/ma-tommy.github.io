@@ -20,6 +20,7 @@ var loginHeader = $("#loginHeader").text();
 console.log("loginHeader : " + loginHeader);
 console.log("deploy1");
 
+// カスタム変数のやり方
 if (loginHeader == "1") {
 	kzs("setCustomVariable", "isLogin", loginHeader);
 }
