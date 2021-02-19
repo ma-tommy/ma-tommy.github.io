@@ -1,1160 +1,914 @@
-<html lang="ja">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
-
-		<meta http-equiv="Content-Script-Type" content="text/javascript" />
-		<meta http-equiv="Content-Style-Type" content="text/css" />
-		<meta name="title" content="NTT WEST Official Web site" />
-		<meta
-			name="copyright"
-			content="Copyright (C) NIPPON TELEGRAPH AND TELEPHONE WEST CORPORATION"
-		/>
-
-		<script
-			type="text/javascript"
-			async=""
-			src="https://www.google-analytics.com/analytics.js"
-		></script>
-		<script
-			async=""
-			src="https://www.googletagmanager.com/gtm.js?id=GTM-TKSQHQM"
-		></script>
-		<script type="text/javascript" src="jsp/common/js/common.js"></script>
-
-		<script language="JavaScript">
-			function resetParam(form) {
-				form.adr_flg.value = "";
-				form.jso_cd.value = "";
-				form.jso_cd_oya.value = "";
-				form.oya_flg.value = "";
-				form.n_adr_flg.value = "";
-				form.new_jso_cd.value = "";
-				form.abol.value = "";
-				form.post1.value = "";
-				form.post2.value = "";
-				form.post.value = "";
-				form.tod_flg.value = "1";
-				form.tod_gn_flg.value = "";
-				form.jso_cd_tod.value = "16";
-				form.ent_tod.value = "ﾂ富ﾂ山ﾂ個ｧ";
-				form.sel_tod.value = "ﾂ富ﾂ山ﾂ個ｧ";
-				form.shi_flg.value = "";
-				form.shi_gn_flg.value = "";
-				form.jso_cd_shi.value = "";
-				form.ent_shi.value = "";
-				form.sel_shi.value = "";
-				form.ooa_flg.value = "";
-				form.ooa_gn_flg.value = "";
-				form.jso_cd_ooa.value = "";
-				form.ent_ooa.value = "";
-				form.sel_ooa.value = "";
-				form.aza_flg.value = "";
-				form.aza_gn_flg.value = "";
-				form.jso_cd_aza.value = "";
-				form.ent_aza.value = "";
-				form.sel_aza.value = "";
-				form.ad_r_code.value = "";
-				form.adr1_flg.value = "";
-				form.adr1_gn_flg.value = "";
-				form.ent_adr1.value = "";
-				form.sel_adr1.value = "";
-				form.adr2_flg.value = "";
-				form.adr2_gn_flg.value = "";
-				form.ent_adr2.value = "";
-				form.sel_adr2.value = "";
-				form.adr3_flg.value = "";
-				form.adr3_gn_flg.value = "";
-				form.ent_adr3.value = "";
-				form.sel_adr3.value = "";
-				form.bld1_flg.value = "";
-				form.bld1_gn_flg.value = "";
-				form.ent_bld1.value = "";
-				form.sel_bld1.value = "";
-				form.src_bld.value = "";
-				form.src_bld_input.value = "";
-				form.scr_hist.value = "";
-				form.act_id.value = "";
-
-				form.p_mansion.value = "";
-
-				form.cp.value = "00171109";
-				form.cp1.value = "";
-				form.cp2.value = "";
-				form.wlid.value = "";
-
-				form.etc_data.value = "";
-				form.cmn.value = "";
-				form.seq_no.value = "1018830668";
-				form.s_id.value =
-					"FjSHLnjDFvsZ2wTUiKaizpq1e23655103db857a1ffdc558e88a344e";
-				form.adr_omit_from.value = "";
-				form.bld_ovl_flg.value = "";
-				form.ovl_flg.value = "";
-
-				form.research_adr_flg.value = "";
-			}
-		</script>
-
-		<script language="JavaScript">
-			var page_lock_flag = "0";
-
-			function setPageLock() {
-				if (page_lock_flag == "0") {
-					page_lock_flag = "1";
-					return true;
-				} else {
-					return false;
-				}
-			}
-
-			function setPageUnLock() {
-				page_lock_flag = "0";
-			}
-		</script>
-
-		<link rel="stylesheet" href="jsp/common/css/style.css" type="text/css" />
-		<link rel="stylesheet" href="jsp/common/css/class.css" type="text/css" />
-
-		<title>
-			ﾂフﾂδ個ッﾂツﾂ古ｵﾂ古ｶﾂ篠ｮﾂ｜NTTﾂ青ｼﾂ禿ｺﾂ本ﾂ｜ﾂサﾂーﾂビﾂスﾂ津ｱﾂ仰淞エﾂδ環アﾂ確ﾂ認
-		</title>
-
-		<script language="JavaScript">
-			function selectPresentAdd(form, actId) {
-				if (setPageLock() == false) {
-					return false;
-				}
-				resetParam(form);
-
-				form.act_id.value = actId;
-
-				var sf7Flg = display_waiting();
-				form.action = "https://www.west-frc.com/adds/A10201S";
-				if (sf7Flg == true) {
-					setTimeout(doSubmit, 100, form);
-				} else {
-					form.submit();
-				}
-			}
-
-			function selectShi(form, shiNm, shiCd) {
-				if (setPageLock() == false) {
-					return false;
-				}
-				resetParam(form);
-
-				form.act_id.value = "AC0103";
-
-				form.sel_shi.value = shiNm;
-
-				form.ent_shi.value = shiNm;
-
-				form.jso_cd_shi.value = shiCd;
-
-				form.shi_flg.value = "1";
-
-				var sf7Flg = display_waiting();
-				form.action = "https://www.west-frc.com/adds/A10201S";
-				if (sf7Flg == true) {
-					setTimeout(doSubmit, 100, form);
-				} else {
-					form.submit();
-				}
-			}
-
-			function dispAll(form) {
-				if (setPageLock() == false) {
-					return false;
-				}
-
-				document.getElementById("lineNo1").style.display = "block";
-				document.getElementById("lineNo2").style.display = "block";
-				document.getElementById("lineNo3").style.display = "block";
-				document.getElementById("lineNo4").style.display = "block";
-				document.getElementById("lineNo5").style.display = "block";
-				document.getElementById("lineNo6").style.display = "block";
-				document.getElementById("lineNo7").style.display = "block";
-				document.getElementById("lineNo8").style.display = "block";
-				document.getElementById("lineNo9").style.display = "block";
-				document.getElementById("lineNo10").style.display = "block";
-				document.getElementById("index1").style.display = "block";
-				document.getElementById("index2").style.display = "block";
-				document.getElementById("index3").style.display = "block";
-				document.getElementById("index4").style.display = "block";
-				document.getElementById("index5").style.display = "block";
-				document.getElementById("index6").style.display = "block";
-				document.getElementById("index7").style.display = "block";
-				document.getElementById("index8").style.display = "block";
-				document.getElementById("index9").style.display = "block";
-				document.getElementById("index10").style.display = "block";
-
-				document.getElementById("all_noSel").style.display = "none";
-				document.getElementById("all_selected").style.display = "block";
-
-				if (document.getElementById("a_noSel") != undefined) {
-					document.getElementById("a_noSel").style.display = "block";
-					document.getElementById("a_selected").style.display = "none";
-				}
-				if (document.getElementById("ka_noSel") != undefined) {
-					document.getElementById("ka_noSel").style.display = "block";
-					document.getElementById("ka_selected").style.display = "none";
-				}
-				if (document.getElementById("sa_noSel") != undefined) {
-					document.getElementById("sa_noSel").style.display = "block";
-					document.getElementById("sa_selected").style.display = "none";
-				}
-				if (document.getElementById("ta_noSel") != undefined) {
-					document.getElementById("ta_noSel").style.display = "block";
-					document.getElementById("ta_selected").style.display = "none";
-				}
-				if (document.getElementById("na_noSel") != undefined) {
-					document.getElementById("na_noSel").style.display = "block";
-					document.getElementById("na_selected").style.display = "none";
-				}
-				if (document.getElementById("ha_noSel") != undefined) {
-					document.getElementById("ha_noSel").style.display = "block";
-					document.getElementById("ha_selected").style.display = "none";
-				}
-				if (document.getElementById("ma_noSel") != undefined) {
-					document.getElementById("ma_noSel").style.display = "block";
-					document.getElementById("ma_selected").style.display = "none";
-				}
-				if (document.getElementById("ya_noSel") != undefined) {
-					document.getElementById("ya_noSel").style.display = "block";
-					document.getElementById("ya_selected").style.display = "none";
-				}
-				if (document.getElementById("ra_noSel") != undefined) {
-					document.getElementById("ra_noSel").style.display = "block";
-					document.getElementById("ra_selected").style.display = "none";
-				}
-				if (document.getElementById("wa_noSel") != undefined) {
-					document.getElementById("wa_noSel").style.display = "block";
-					document.getElementById("wa_selected").style.display = "none";
-				}
-
-				document.getElementById("list-box").scrollTop = "0";
-				setPageUnLock();
-				return;
-			}
-
-			function selectLine(form, btnId) {
-				if (setPageLock() == false) {
-					return false;
-				}
-
-				document.getElementById("lineNo1").style.display = "none";
-				document.getElementById("lineNo2").style.display = "none";
-				document.getElementById("lineNo3").style.display = "none";
-				document.getElementById("lineNo4").style.display = "none";
-				document.getElementById("lineNo5").style.display = "none";
-				document.getElementById("lineNo6").style.display = "none";
-				document.getElementById("lineNo7").style.display = "none";
-				document.getElementById("lineNo8").style.display = "none";
-				document.getElementById("lineNo9").style.display = "none";
-				document.getElementById("lineNo10").style.display = "none";
-				document.getElementById("index1").style.display = "none";
-				document.getElementById("index2").style.display = "none";
-				document.getElementById("index3").style.display = "none";
-				document.getElementById("index4").style.display = "none";
-				document.getElementById("index5").style.display = "none";
-				document.getElementById("index6").style.display = "none";
-				document.getElementById("index7").style.display = "none";
-				document.getElementById("index8").style.display = "none";
-				document.getElementById("index9").style.display = "none";
-				document.getElementById("index10").style.display = "none";
-
-				document.getElementById("lineNo" + btnId).style.display = "block";
-
-				var lineName;
-
-				if (btnId == 1) {
-					lineName = "a";
-				} else if (btnId == 2) {
-					lineName = "ka";
-				} else if (btnId == 3) {
-					lineName = "sa";
-				} else if (btnId == 4) {
-					lineName = "ta";
-				} else if (btnId == 5) {
-					lineName = "na";
-				} else if (btnId == 6) {
-					lineName = "ha";
-				} else if (btnId == 7) {
-					lineName = "ma";
-				} else if (btnId == 8) {
-					lineName = "ya";
-				} else if (btnId == 9) {
-					lineName = "ra";
-				} else if (btnId == 10) {
-					lineName = "wa";
-				}
-
-				switchDisp(form, "a", "0");
-				switchDisp(form, "ka", "0");
-				switchDisp(form, "sa", "0");
-				switchDisp(form, "ta", "0");
-				switchDisp(form, "na", "0");
-				switchDisp(form, "ha", "0");
-				switchDisp(form, "ma", "0");
-				switchDisp(form, "ya", "0");
-				switchDisp(form, "ra", "0");
-				switchDisp(form, "wa", "0");
-
-				switchDisp(form, lineName, "1");
-
-				document.getElementById("list-box").scrollTop = "0px";
-				setPageUnLock();
-				return;
-			}
-
-			function switchDisp(form, objNm, select) {
-				var targetNoSel = objNm + "_noSel";
-				var targetSelected = objNm + "_selected";
-				var noSelVal = "";
-				var selectedVal = "";
-				if (select == "1") {
-					noSelVal = "none";
-					selectedVal = "block";
-				} else {
-					noSelVal = "block";
-					selectedVal = "none";
-				}
-
-				if (document.getElementById(targetNoSel) != undefined) {
-					document.getElementById(targetNoSel).style.display = noSelVal;
-					document.getElementById("all_noSel").style.display = "block";
-					document.getElementById("all_selected").style.display = "none";
-				}
-				if (document.getElementById(targetNoSel) != undefined) {
-					document.getElementById(targetSelected).style.display = selectedVal;
-					document.getElementById("all_noSel").style.display = "block";
-					document.getElementById("all_selected").style.display = "none";
-				}
-			}
-
-			function selectNone(form) {
-				if (setPageLock() == false) {
-					return false;
-				}
-				resetParam(form);
-
-				form.act_id.value = "AC0301";
-
-				form.jso_cd_shi.value = "000";
-
-				form.shi_gn_flg.value = "1";
-
-				form.shi_flg.value = "1";
-
-				var sf7Flg = display_waiting();
-				form.action = "https://www.west-frc.com/adds/A10201S";
-				if (sf7Flg == true) {
-					setTimeout(doSubmit, 100, form);
-				} else {
-					form.submit();
-				}
-			}
-
-			function goBack(form) {
-				if (setPageLock() == false) {
-					return false;
-				}
-				resetParam(form);
-
-				form.act_id.value = "AC0501";
-
-				var sf7Flg = display_waiting();
-				form.action = "https://www.west-frc.com/adds/A10201S";
-				if (sf7Flg == true) {
-					setTimeout(doSubmit, 100, form);
-				} else {
-					form.submit();
-				}
-			}
-
-			function dispLoad() {
-				document.getElementById("dispLoad").style.display = "block";
-				document.getElementById("dispLoad2").style.display = "block";
-			}
-		</script>
-
-		<script>
-			(function (w, d, s, l, i) {
-				w[l] = w[l] || [];
-				w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-				var f = d.getElementsByTagName(s)[0],
-					j = d.createElement(s),
-					dl = l != "dataLayer" ? "&l=" + l : "";
-				j.async = true;
-				j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-				f.parentNode.insertBefore(j, f);
-			})(window, document, "script", "dataLayer", "GTM-TKSQHQM");
-		</script>
-	</head>
-
-	<body
-		onload="dispLoad()"
-		style="text-align: center"
-		virtual-page-id="fwd_redirect_area"
-	>
-		<a name="top"></a>
-
-		<noscript
-			><iframe
-				src="https://www.googletagmanager.com/ns.html?id=GTM-TKSQHQM"
-				height="0"
-				width="0"
-				style="display: none; visibility: hidden"
-			></iframe
-		></noscript>
-
-		<div id="wrapper">
-			<div id="header">
-				<img
-					src="jsp/common/img/popup_logo_flets.gif"
-					alt="ﾂフﾂδ個ッﾂツ"
-					class="fleft"
-				/>
-			</div>
-
-			<div id="step">
-				<ul>
-					<li>
-						<img
-							src="jsp/common/img/step-area.gif"
-							alt="ﾂ津ｱﾂ仰淞エﾂδ環アﾂ個淞催ｵ"
-						/>
-					</li>
-					<li>
-						<img
-							src="jsp/common/img/step-hantei.gif"
-							alt="ﾂ津ｱﾂ仰淞板ｻﾂ津ｨﾂ個仰嘉�"
-						/>
-					</li>
-					<li>
-						<img
-							src="jsp/common/img/step-select.gif"
-							alt="ﾂつｨﾂ申ﾂつｵﾂ債楪づ敖サﾂーﾂビﾂスﾂづ個選ﾂ妥ｰ"
-						/>
-					</li>
-					<li>
-						<img
-							src="jsp/common/img/step-yakkan.gif"
-							alt="ﾂ姪ｱﾂ環ｼﾂつｲﾂ確ﾂ認"
-						/>
-					</li>
-					<li>
-						<img
-							src="jsp/common/img/step-moushikomi.gif"
-							alt="ﾂつｨﾂ客ﾂつｳﾂづ慊湘ｮﾂ陛ｱﾂづ個禿ｼﾂ療�"
-						/>
-					</li>
-					<li>
-						<img
-							src="jsp/common/img/step-moushikomi2.gif"
-							alt="ﾂつｻﾂづ個堕ｼﾂ湘ｮﾂ陛ｱﾂづ個禿ｼﾂ療�"
-						/>
-					</li>
-					<li>
-						<img
-							src="jsp/common/img/step-naiyou.gif"
-							alt="ﾂつｨﾂ申ﾂつｵﾂ債楪づ敖禿�ﾂ容ﾂづ個つｲﾂ確ﾂ認"
-						/>
-					</li>
-					<li>
-						<img
-							src="jsp/common/img/step-kanryou.gif"
-							alt="ﾂつｨﾂ申ﾂつｵﾂ債楪づ敖環ｮﾂ猟ｹ"
-						/>
-					</li>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="robots" content="noindex,nofollow,noarchive">
+	<title>外国株／マネックス証券</title>
+	<link rel="shortcut icon" href="https://mxp1.monex.co.jp/favicon.ico" type="image/vnd.microsoft.icon">
+	<link rel="icon" href="https://mxp1.monex.co.jp/favicon.ico" type="image/vnd.microsoft.icon">
+	<link rel="stylesheet" href="https://mxp1.monex.co.jp/pc/static/css/jquery-ui-1.12.1/jquery-ui.css?ver=20200721" type="text/css" media="screen,all">
+	<link rel="stylesheet" href="https://mxp1.monex.co.jp/pc/static/css/next-style.css?ver=20200721" type="text/css" media="screen,all">
+	<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-G6CZ"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+	<script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-G6CZ"></script>
+	<script type="text/javascript" src="https://mxp1.monex.co.jp/pc/static/js/jquery-1.12.4.min.js?ver=20200721"></script>
+	<script type="text/javascript" src="https://mxp1.monex.co.jp/pc/static/js/setting.js?ver=20200721"></script>
+	<script type="text/javascript" src="https://mxp1.monex.co.jp/pc/static/js/default_ver2.js?ver=20200721"></script>
+	<script type="text/javascript" src="https://mxp1.monex.co.jp/pc/static/js/sessionkeep.js?ver=20200721"></script>
+	<script type="text/javascript" src="https://mxp1.monex.co.jp/pc/static/js/cookieOperate.js?ver=20200721"></script>
+	<script type="text/javascript" src="https://mxp1.monex.co.jp/pc/static/js/jquery.cookie.js?ver=20200721"></script>
+	<script type="text/javascript" src="https://mxp1.monex.co.jp/pc/static/js/insightCommon.js?ver=20200721"></script>
+	<script type="text/javascript" src="https://mxp1.monex.co.jp/pc/static/js/jquery.popupwindow.js?ver=20200721"></script>
+	<script type="text/javascript" src="https://mxp1.monex.co.jp/pc/static/js/ticker.js?ver=20200721"></script>
+	<script type="text/javascript" src="https://mxp1.monex.co.jp/pc/static/js/isaCommon.js?ver=20200721"></script>
+	<script type="text/javascript" src="https://mxp1.monex.co.jp/pc/static/js/temp_reform.js?ver=20200721"></script>
+	<script type="text/javascript" src="https://mxp1.monex.co.jp/pc/static/js/usStockTrading.js?ver=20200721"></script>
+  </head>
+  <body id="gn_service-" style="">
+	<!--[GOOGLEBLOCK]-->
+	<script type="text/javascript">
+	  var dataLayer = [{
+			"tracktype": "1"
+		  }];
+	</script>
+	<!-- Google Tag Manager --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-G6CZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<script type="text/javascript">
+	  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-G6CZ');
+	</script>
+	<!-- End Google Tag Manager -->
+	<!--/[GOOGLEBLOCK]-->
+	<div class="reader"> <a id="pl-pagetop" name="pl-pagetop">ページの先頭です。</a> </div>
+	<div class="reader skip"> <a href="#pl-pagetext">本文へジャンプする。</a> </div>
+	<!-- ヘッダー -->
+	<script type="text/javascript">
+	  var accountOpenFlg = "false";
+	</script>
+	<script type="text/javascript" src="https://mxp1.monex.co.jp/pc/static/js/custom1.0.js?ver=20200721"></script>
+	<script type="text/javascript" src="https://mxp1.monex.co.jp/pc/static/js/gnavi_ver2.js?ver=20200721"></script>
+	<script type="text/javascript">
+	  <!--
+	  
+	  
+		  keepUrl = "";
+	  
+		  // 自動ログアウト停止
+		  (function () {
+	  
+			  
+			  var d_Now = new Date();
+	  
+			  if( "kei" == "tou" ){
+				  keep();
+			  } else {
+				  if (false){
+					  setTimeout("keep()",1740*1000);
+				  }
+			  }
+		  }());
+		  
+		  // 29分毎にセッション維持用のURL呼び出す
+		  function keep(){
+			  var stopFlg;
+			  var state; 
+	  
+			  var d_Now = new Date();
+			  var watchDogUrl = "https://mxp1.monex.co.jp/pc/common/ext/WatchDog.jsp?" + d_Now.getHours() + d_Now.getMinutes() + d_Now.getSeconds();
+			  var watchDogMstUrl = "";
+			  if ( "" != "" ) {
+				  watchDogMstUrl = "?" + d_Now.getHours() + d_Now.getMinutes() + d_Now.getSeconds();
+			  }
+	  
+			  
+			  if(watchDogUrl){
+				  $.ajax({
+					  type: "GET",
+					  url: watchDogUrl,
+					  cache: false,
+					  dataType: "jsonp",
+					  async: false,
+	  
+					  success: function(data) {
+						  var jsStr = JSON.stringify(data);
+						  var jsObject = JSON.parse(jsStr);
+						  var jsData = jsObject["data"][0];
+						  state = jsData["session_state"];
+						  stopFlg = jsData["auto_stop_flg"];
+	  
+						  if(state != "session-ng" && stopFlg == "true"){
+							  
+							  if(watchDogMstUrl){ 
+								  var dimg = new Image();
+								  dimg.src = watchDogMstUrl;
+							  }
+							  setTimeout("keep()",1740*1000);
+						  }
+					  }
+				  });
+			  }
+	  
+		  }
+		  
+		  // attrSrcKeyの取得
+		  function getAttrSrcKey(){
+			  return "?attrSrcKey=1313f14154e3d00d11";
+		  }
+	  -->
+	</script>
+	<script src="https://cdn.kaizenplatform.net/s/4e/16dc75d4117611.js?kz_namespace=kzs" charset="utf-8" data-kz-loaded-sitejs-id="4e16dc75d4117611"></script>
+  
+	<div id="header">
+	  <div id="navi-header" riot-tag="navi-header">
+		<div id="header_common">
+		  <div id="hd_top" role="banner">
+			<div id="logo" style="text-align:left"> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/home/Announce?attrSrcKey=1313f14154e3d00d11">
+					  <img src="data:image/png;base64,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" alt="マネックス証券"></a> </div>
+			<div id="hd_nav" class="mem">
+			  <ul id="hd_links">
+				<li> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/home/SiteMap?attrSrcKey=1313f14154e3d00d11">サイトマップ</a> </li>
+				<li> <a href="https://info.monex.co.jp/support/index.html">ヘルプ・お問合せ</a> </li>
+			  </ul>
+			  <div id="form_box">
+				<form id="nav_stock_search" name="nav_stock_search" action="https://mxp1.monex.co.jp/pc/servlet/ITS/stock/StkDescList?attrSrcKey=1313f14154e3d00d11" method="post" onsubmit="convDscrCDFulltoHalf('hedfocuson'); convDscrNmHalftoFull('hedfocuson'); return sendCheck()"> <input type="text" id="txt_order-buy" name="dscrCDsearch" maxlength="20" autocomplete="off" class="text_box size_s" placeholder="銘柄コード"> <input type="submit" value="買い注文" class="btn_order-buy"> </form>
+				<ul class="lst_link">
+				  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/stock/StkOrderLst?attrSrcKey=1313f14154e3d00d11">注文約定一覧</a></li>
+				  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/stock/MrgRefundList?attrSrcKey=1313f14154e3d00d11">建玉一覧</a></li>
 				</ul>
+				<form id="nav_insight_search" name="nav_insight_search" action="https://mxp1.monex.co.jp/pc/servlet/ITS/info/TransitionSsoForInsight?attrSrcKey=1313f14154e3d00d11" method="post" onsubmit="return sendCheck()"> <input type="hidden" name="page" value="search"> <input type="text" id="" name="dscr" maxlength="20" autocomplete="off" class="text_box" placeholder="株価照会・銘柄検索"> <input type="image" src="https://mxp1.monex.co.jp/pc/static/img/common/ic_search.png" value="株価照会・銘柄検索" class="btn type-icon"> </form>
+			  </div>
+			  <p class="btn_logout"><a href="https://mxp1.monex.co.jp/pc/ITS/login/Logout.jsp?attrSrcKey=1313f14154e3d00d11">ログアウト</a></p>
 			</div>
-
-			<div id="dispLoad" style="display: block">
-				<div id="contentsbox">
-					<div id="main-inner">
-						<div id="contents-caption">
-							<table>
-								<tbody>
-									<tr>
-										<td class="add-left">ﾂ選ﾂ妥ｰﾂつｵﾂつｽﾂ住ﾂ渉�</td>
-										<td class="add-center">
-											<ul style="line-height: 105%">
-												<li>
-													<a
-														href="javascript:void(0);"
-														onclick="javascript:selectPresentAdd(document.cmnForm,'AC0402');return false;"
-														>ﾂ富ﾂ山ﾂ個ｧ</a
-													>
-												</li>
-
-												<li
-													style="
-														background: url(jsp/common/img/blue-line.gif)
-															no-repeat left bottom;
-														width: 35px;
-														padding-left: 35px;
-													"
-												>
-													ﾂ　
-												</li>
-											</ul>
-										</td>
-
-										<td class="add-right">
-											<img
-												src="jsp/common/img/icon_home.gif"
-												alt="ﾂ古仰個堋づ�"
-												height="40"
-												width="124"
-											/>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-
-						<div id="title-area" class="clearfix">
-							<p class="icon-right">ﾂ古慊十ﾂ可ｹﾂ選ﾂ妥ｰ</p>
-							<ul class="fright on-btn">
-								<li id="all_selected" style="display: block">
-									<a
-										href="javascript:void(0);"
-										class="selected"
-										onclick="javascript:dispAll(document.cmnForm);return false;"
-										id="on-all"
-										><span>ﾂつｷﾂづ猟づ�</span></a
-									>
-								</li>
-								<li id="all_noSel" style="display: none">
-									<a
-										href="javascript:void(0);"
-										onclick="javascript:dispAll(document.cmnForm);return false;"
-										id="on-all"
-										><span>ﾂつｷﾂづ猟づ�</span></a
-									>
-								</li>
-
-								<li id="a_noSel" style="display: block">
-									<a
-										href="javascript:void(0);"
-										onclick="javascript:selectLine(document.cmnForm,'1');return false;"
-										id="on-a"
-										><span>ﾂつ�</span></a
-									>
-								</li>
-								<li id="a_selected" style="display: none">
-									<a
-										href="javascript:void(0);"
-										class="selected"
-										onclick="javascript:selectLine(document.cmnForm,'1');return false;"
-										id="on-a"
-										><span>ﾂつ�</span></a
-									>
-								</li>
-
-								<li id="ka_noSel" style="display: block">
-									<a
-										href="javascript:void(0);"
-										onclick="javascript:selectLine(document.cmnForm,'2');return false;"
-										id="on-ka"
-										><span>ﾂつｩ</span></a
-									>
-								</li>
-								<li id="ka_selected" style="display: none">
-									<a
-										href="javascript:void(0);"
-										class="selected"
-										onclick="javascript:selectLine(document.cmnForm,'2');return false;"
-										id="on-ka"
-										><span>ﾂつｩ</span></a
-									>
-								</li>
-
-								<li id="sa_noSel" style="display: block">
-									<a
-										href="javascript:void(0);"
-										onclick="javascript:selectLine(document.cmnForm,'3');return false;"
-										id="on-sa"
-										><span>ﾂつｳ</span></a
-									>
-								</li>
-								<li id="sa_selected" style="display: none">
-									<a
-										href="javascript:void(0);"
-										class="selected"
-										onclick="javascript:selectLine(document.cmnForm,'3');return false;"
-										id="on-sa"
-										><span>ﾂつｳ</span></a
-									>
-								</li>
-
-								<li id="ta_noSel" style="display: block">
-									<a
-										href="javascript:void(0);"
-										onclick="javascript:selectLine(document.cmnForm,'4');return false;"
-										id="on-ta"
-										><span>ﾂつｽ</span></a
-									>
-								</li>
-								<li id="ta_selected" style="display: none">
-									<a
-										href="javascript:void(0);"
-										class="selected"
-										onclick="javascript:selectLine(document.cmnForm,'4');return false;"
-										id="on-ta"
-										><span>ﾂつｽ</span></a
-									>
-								</li>
-
-								<li id="na_noSel" style="display: block">
-									<a
-										href="javascript:void(0);"
-										onclick="javascript:selectLine(document.cmnForm,'5');return false;"
-										id="on-na"
-										><span>ﾂづ�</span></a
-									>
-								</li>
-								<li id="na_selected" style="display: none">
-									<a
-										href="javascript:void(0);"
-										class="selected"
-										onclick="javascript:selectLine(document.cmnForm,'5');return false;"
-										id="on-na"
-										><span>ﾂづ�</span></a
-									>
-								</li>
-
-								<li id="ha_noSel" style="display: block">
-									<a
-										href="javascript:void(0);"
-										onclick="javascript:selectLine(document.cmnForm,'6');return false;"
-										id="on-ha"
-										><span>ﾂづ�</span></a
-									>
-								</li>
-								<li id="ha_selected" style="display: none">
-									<a
-										href="javascript:void(0);"
-										class="selected"
-										onclick="javascript:selectLine(document.cmnForm,'6');return false;"
-										id="on-ha"
-										><span>ﾂづ�</span></a
-									>
-								</li>
-
-								<li>
-									<a name="#" class="disabled" id="on-ma"><span>ﾂづ�</span></a>
-								</li>
-
-								<li>
-									<a name="#" class="disabled" id="on-ya"><span>ﾂづ｢</span></a>
-								</li>
-
-								<li>
-									<a name="#" class="disabled" id="on-ra"><span>ﾂづｧ</span></a>
-								</li>
-
-								<li>
-									<a name="#" class="disabled" id="on-wa"><span>ﾂづｭ</span></a>
-								</li>
-							</ul>
-						</div>
-
-						<div id="list-box">
-							<div id="lineNo1">
-								<div id="index1" style="text-align: left">
-									<p class="range-label fw-bold"><b>ﾂつ�ﾂ行</b></p>
-								</div>
-
-								<ul class="city-ilst clearfix" style="text-align: left">
-									<li style="width: 33%">
-										<a
-											href="javascript:void(0);"
-											onclick="
-					javascript:selectShi(document.cmnForm,'ﾂ偲仰青�市','211');return false;"
-											>ﾂ偲仰青�市</a
-										>
-									</li>
-
-									<li style="width: 33%">
-										<a
-											href="javascript:void(0);"
-											onclick="
-					javascript:selectShi(document.cmnForm,'ﾂ仰崢津δ市','204');return false;"
-											>ﾂ仰崢津δ市</a
-										>
-									</li>
-
-									<li style="width: 33%">
-										<a
-											href="javascript:void(0);"
-											onclick="
-					javascript:selectShi(document.cmnForm,'ﾂ渉ｬﾂ姪ｮﾂ閉板市','209');return false;"
-											>ﾂ渉ｬﾂ姪ｮﾂ閉板市</a
-										>
-									</li>
-								</ul>
-							</div>
-
-							<div id="lineNo2">
-								<div id="index2" style="text-align: left">
-									<p class="range-label fw-bold"><b>ﾂつｩﾂ行</b></p>
-								</div>
-
-								<ul class="city-ilst clearfix" style="text-align: left">
-									<li style="width: 33%">
-										<a
-											href="javascript:void(0);"
-											onclick="
-					javascript:selectShi(document.cmnForm,'ﾂ債閉閉板市','207');return false;"
-											>ﾂ債閉閉板市</a
-										>
-									</li>
-								</ul>
-							</div>
-
-							<div id="lineNo3">
-								<div id="index3" style="text-align: left">
-									<p class="range-label fw-bold"><b>ﾂつｳﾂ行</b></p>
-								</div>
-
-								<ul class="city-ilst clearfix" style="text-align: left">
-									<li style="width: 33%">
-										<a
-											href="javascript:void(0);"
-											onclick="
-					javascript:selectShi(document.cmnForm,'ﾂ可ｺﾂ新ﾂ静ｬﾂ郡ﾂ陳ｩﾂ禿ｺﾂ陳ｬ','343');return false;"
-											>ﾂ可ｺﾂ新ﾂ静ｬﾂ郡ﾂ陳ｩﾂ禿ｺﾂ陳ｬ</a
-										>
-									</li>
-
-									<li style="width: 33%">
-										<a
-											href="javascript:void(0);"
-											onclick="
-					javascript:selectShi(document.cmnForm,'ﾂ可ｺﾂ新ﾂ静ｬﾂ郡ﾂ禿ｼﾂ善ﾂ陳ｬ','342');return false;"
-											>ﾂ可ｺﾂ新ﾂ静ｬﾂ郡ﾂ禿ｼﾂ善ﾂ陳ｬ</a
-										>
-									</li>
-								</ul>
-							</div>
-
-							<div id="lineNo4">
-								<div id="index4" style="text-align: left">
-									<p class="range-label fw-bold"><b>ﾂつｽﾂ行</b></p>
-								</div>
-
-								<ul class="city-ilst clearfix" style="text-align: left">
-									<li style="width: 33%">
-										<a
-											href="javascript:void(0);"
-											onclick="
-					javascript:selectShi(document.cmnForm,'ﾂ債つ可ｪﾂ市','202');return false;"
-											>ﾂ債つ可ｪﾂ市</a
-										>
-									</li>
-
-									<li style="width: 33%">
-										<a
-											href="javascript:void(0);"
-											onclick="
-					javascript:selectShi(document.cmnForm,'ﾂ砺ﾂ波ﾂ市','208');return false;"
-											>ﾂ砺ﾂ波ﾂ市</a
-										>
-									</li>
-
-									<li style="width: 33%">
-										<a
-											href="javascript:void(0);"
-											onclick="
-					javascript:selectShi(document.cmnForm,'ﾂ富ﾂ山ﾂ市','201');return false;"
-											>ﾂ富ﾂ山ﾂ市</a
-										>
-									</li>
-								</ul>
-							</div>
-
-							<div id="lineNo5">
-								<div id="index5" style="text-align: left">
-									<p class="range-label fw-bold"><b>ﾂづ按行</b></p>
-								</div>
-
-								<ul class="city-ilst clearfix" style="text-align: left">
-									<li style="width: 33%">
-										<a
-											href="javascript:void(0);"
-											onclick="
-					javascript:selectShi(document.cmnForm,'ﾂ陳�新ﾂ静ｬﾂ郡ﾂ湘｣ﾂ市ﾂ陳ｬ','322');return false;"
-											>ﾂ陳�新ﾂ静ｬﾂ郡ﾂ湘｣ﾂ市ﾂ陳ｬ</a
-										>
-									</li>
-
-									<li style="width: 33%">
-										<a
-											href="javascript:void(0);"
-											onclick="
-					javascript:selectShi(document.cmnForm,'ﾂ陳�新ﾂ静ｬﾂ郡ﾂ猟ｧﾂ山ﾂ陳ｬ','323');return false;"
-											>ﾂ陳�新ﾂ静ｬﾂ郡ﾂ猟ｧﾂ山ﾂ陳ｬ</a
-										>
-									</li>
-
-									<li style="width: 33%">
-										<a
-											href="javascript:void(0);"
-											onclick="
-					javascript:selectShi(document.cmnForm,'ﾂ陳�新ﾂ静ｬﾂ郡ﾂ舟ﾂ仰ｴﾂ堕ｺ','321');return false;"
-											>ﾂ陳�新ﾂ静ｬﾂ郡ﾂ舟ﾂ仰ｴﾂ堕ｺ</a
-										>
-									</li>
-
-									<li style="width: 33%">
-										<a
-											href="javascript:void(0);"
-											onclick="
-					javascript:selectShi(document.cmnForm,'ﾂ環環静ｬﾂ市','206');return false;"
-											>ﾂ環環静ｬﾂ市</a
-										>
-									</li>
-
-									<li style="width: 33%">
-										<a
-											href="javascript:void(0);"
-											onclick="
-					javascript:selectShi(document.cmnForm,'ﾂ禿ｬﾂ砺ﾂ市','210');return false;"
-											>ﾂ禿ｬﾂ砺ﾂ市</a
-										>
-									</li>
-								</ul>
-							</div>
-
-							<div id="lineNo6">
-								<div id="index6" style="text-align: left">
-									<p class="range-label fw-bold"><b>ﾂづ債行</b></p>
-								</div>
-
-								<ul class="city-ilst clearfix" style="text-align: left">
-									<li style="width: 33%">
-										<a
-											href="javascript:void(0);"
-											onclick="
-					javascript:selectShi(document.cmnForm,'ﾂ氷ﾂ個ｩﾂ市','205');return false;"
-											>ﾂ氷ﾂ個ｩﾂ市</a
-										>
-									</li>
-								</ul>
-							</div>
-
-							<div id="lineNo7">
-								<div id="index7" style="text-align: left">
-									<p class="range-label fw-bold"><b>ﾂづ慊行</b></p>
-								</div>
-
-								<ul class="city-ilst clearfix" style="text-align: left"></ul>
-							</div>
-
-							<div id="lineNo8">
-								<div id="index8" style="text-align: left">
-									<p class="range-label fw-bold"><b>ﾂづ｢ﾂ行</b></p>
-								</div>
-
-								<ul class="city-ilst clearfix" style="text-align: left"></ul>
-							</div>
-
-							<div id="lineNo9">
-								<div id="index9" style="text-align: left">
-									<p class="range-label fw-bold"><b>ﾂづｧﾂ行</b></p>
-								</div>
-
-								<ul class="city-ilst clearfix" style="text-align: left"></ul>
-							</div>
-
-							<div id="lineNo10">
-								<div id="index10" style="text-align: left">
-									<p class="range-label fw-bold"><b>ﾂづｭﾂ行</b></p>
-								</div>
-
-								<ul class="city-ilst clearfix" style="text-align: left"></ul>
-							</div>
-						</div>
-
-						<p id="select-none">
-							<a
-								href="javascript:void(0);"
-								onclick="javascript:selectNone(document.cmnForm); return false"
-								;=""
-								class="icon-arrow-right"
-								>ﾂ該ﾂ督鳴つｷﾂづｩﾂ住ﾂ渉環つｪﾂづ按つ｢ﾂ陛ｻﾂづ債つｱﾂつｿﾂづｧ</a
-							>
-						</p>
-
-						<form name="cmnForm" method="post">
-							<input type="hidden" name="adr_flg" value="" />
-							<input type="hidden" name="jso_cd" value="" />
-							<input type="hidden" name="jso_cd_oya" value="" />
-							<input type="hidden" name="oya_flg" value="" />
-							<input type="hidden" name="n_adr_flg" value="" />
-							<input type="hidden" name="new_jso_cd" value="" />
-							<input type="hidden" name="abol" value="" />
-							<input type="hidden" name="post1" value="" />
-							<input type="hidden" name="post2" value="" />
-							<input type="hidden" name="post" value="" />
-							<input type="hidden" name="tod_flg" value="1" />
-							<input type="hidden" name="tod_gn_flg" value="" />
-							<input type="hidden" name="jso_cd_tod" value="16" />
-							<input type="hidden" name="ent_tod" value="ﾂ富ﾂ山ﾂ個ｧ" />
-							<input type="hidden" name="sel_tod" value="ﾂ富ﾂ山ﾂ個ｧ" />
-							<input type="hidden" name="shi_flg" value="" />
-							<input type="hidden" name="shi_gn_flg" value="" />
-							<input type="hidden" name="jso_cd_shi" value="" />
-							<input type="hidden" name="ent_shi" value="" />
-							<input type="hidden" name="sel_shi" value="" />
-							<input type="hidden" name="ooa_flg" value="" />
-							<input type="hidden" name="ooa_gn_flg" value="" />
-							<input type="hidden" name="jso_cd_ooa" value="" />
-							<input type="hidden" name="ent_ooa" value="" />
-							<input type="hidden" name="sel_ooa" value="" />
-							<input type="hidden" name="aza_flg" value="" />
-							<input type="hidden" name="aza_gn_flg" value="" />
-							<input type="hidden" name="jso_cd_aza" value="" />
-							<input type="hidden" name="ent_aza" value="" />
-							<input type="hidden" name="sel_aza" value="" />
-							<input type="hidden" name="ad_r_code" value="" />
-							<input type="hidden" name="adr1_flg" value="" />
-							<input type="hidden" name="adr1_gn_flg" value="" />
-							<input type="hidden" name="ent_adr1" value="" />
-							<input type="hidden" name="sel_adr1" value="" />
-							<input type="hidden" name="adr2_flg" value="" />
-							<input type="hidden" name="adr2_gn_flg" value="" />
-							<input type="hidden" name="ent_adr2" value="" />
-							<input type="hidden" name="sel_adr2" value="" />
-							<input type="hidden" name="adr3_flg" value="" />
-							<input type="hidden" name="adr3_gn_flg" value="" />
-							<input type="hidden" name="ent_adr3" value="" />
-							<input type="hidden" name="sel_adr3" value="" />
-							<input type="hidden" name="bld1_flg" value="" />
-							<input type="hidden" name="bld1_gn_flg" value="" />
-							<input type="hidden" name="ent_bld1" value="" />
-							<input type="hidden" name="sel_bld1" value="" />
-							<input type="hidden" name="src_bld" value="" />
-							<input type="hidden" name="src_bld_input" value="" />
-							<input type="hidden" name="scr_hist" value="" />
-							<input type="hidden" name="act_id" value="" />
-
-							<input type="hidden" name="seq_no" value="1018830668" />
-							<input
-								type="hidden"
-								name="s_id"
-								value="FjSHLnjDFvsZ2wTUiKaizpq1e23655103db857a1ffdc558e88a344e"
-							/>
-							<input type="hidden" name="adr_omit_from" value="" />
-							<input type="hidden" name="bld_ovl_flg" value="" />
-							<input type="hidden" name="ovl_flg" value="" />
-
-							<input type="hidden" name="skip_adr2" value="" />
-							<input type="hidden" name="skip_adr3" value="" />
-							<input type="hidden" name="adr_fix_act" value="" />
-
-							<input type="hidden" name="cmn" value="" />
-							<input type="hidden" name="sbs_sbt" value="" />
-							<input type="hidden" name="msk_level" value="1" />
-							<input type="hidden" name="sel_level" value="4f2ef03c3f8a196c" />
-							<input type="hidden" name="topsite" value="1" />
-
-							<input
-								type="hidden"
-								name="g_url"
-								value="0da3b68d5c36f5d263fa649ced1227520bf007876aeb47088b521c08ea2bd0063ebcb3662e58064090dc872936ad1b057e53779e69828e55972677403bd90254e35b4169772a37973eaf502672a3909c44e412034c173e80ecb37bd0df51eed8"
-							/>
-							<input
-								type="hidden"
-								name="r_url"
-								value="0da3b68d5c36f5d263fa649ced1227520bf007876aeb4708d9bb011bd6fa34adc4bedb8c0a2ea5de8e6ff71acf084e79ac38a470b8efabdf5890cec41ae07d4eb5434b5520e3c2ab80ae35abe4fbf66a2ca8cc2dabd1313177e8d106268ce4af"
-							/>
-							<input type="hidden" name="etc_data" value="" />
-							<input
-								type="hidden"
-								name="etc_data_kks"
-								value="decde1b2305b7f58461df27602c2734db7b5f2fac5d8cb50280af09323aeead8394596c0edb4b796580879175327ec301fc856c7f1e3b5469f0799579684f3723a451c3b18bd2cd1515b6947480e4c823db227e7ae881910"
-							/>
-							<input type="hidden" name="mode" value="f" />
-
-							<input type="hidden" name="fuken" value="16" />
-							<input type="hidden" name="alpha1" value="" />
-							<input type="hidden" name="alpha2" value="" />
-							<input type="hidden" name="alpha3" value="" />
-							<input type="hidden" name="p_mansion" value="" />
-							<input type="hidden" name="cp" value="00171109" />
-							<input type="hidden" name="cp1" value="" />
-							<input type="hidden" name="cp2" value="" />
-							<input type="hidden" name="wlid" value="" />
-							<input type="hidden" name="sbt" value="" />
-							<input type="hidden" name="jso_cd_cnw" value="" />
-
-							<input type="hidden" name="pst_cd" value="" />
-							<input type="hidden" name="ken_cd" value="" />
-							<input type="hidden" name="stb_jso_shikchsn" value="" />
-							<input type="hidden" name="stb_jso_oaza" value="" />
-							<input type="hidden" name="stb_jso_cyome" value="" />
-							<input type="hidden" name="stb_bnt_1" value="" />
-							<input type="hidden" name="stb_bnt_2" value="" />
-							<input type="hidden" name="stb_bnt_3" value="" />
-							<input type="hidden" name="stb_tate_1_cnw" value="" />
-							<input type="hidden" name="stb_jso_sama" value="" />
-							<input type="hidden" name="l_id" value="" />
-							<input type="hidden" name="caf_id" value="" />
-							<input type="hidden" name="mem_id" value="" />
-							<input type="hidden" name="kyk_mei_knj" value="" />
-							<input type="hidden" name="kyk_mei_kna" value="" />
-							<input type="hidden" name="email_ad" value="" />
-
-							<input type="hidden" name="seqcd" value="" />
-
-							<input type="hidden" name="research_adr_flg" value="" />
-						</form>
+		  </div>
+		  <div id="global_nav" role="navigation" class="mem">
+			<div class="gnav-top-inner">
+			  <ul id="gnav">
+				<li class="nav01 gnav-item-home gnav-item-mypage-use gn_home" data-inproc="f"> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/home/Announce?attrSrcKey=1313f14154e3d00d11">MY PAGE</a>
+				  <div class="gnav-megadrop hid">
+					<p class="gnav-megadrop-title"><strong>お気に入り</strong> [<a href="https://mxp1.monex.co.jp/pc/servlet/ITS/home/CustomMenu?attrSrcKey=1313f14154e3d00d11">登録</a>]</p>
+					<div id="favorite-list" riot-tag="navi-ui-favorite-list">
+					  <ul id="subMenu"></ul>
 					</div>
-				</div>
+				  </div>
+				</li>
+				<li class="nav02 gnav-item-asset gnav-item-reporthelp gn_custAsset" data-inproc="f"> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/asset/AmountList?attrSrcKey=1313f14154e3d00d11">保有残高・口座管理</a>
+				  <div class="gnav-megadrop hid">
+					<p class="gnav-megadrop-title"> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/asset/AmountList?attrSrcKey=1313f14154e3d00d11">保有残高・口座管理</a> </p>
+					<div class="gnav-megadrop-separate-wrap">
+					  <div class="gnav-megadrop-separate first-child">
+						<p class="gnav-megadrop-title-sub"> <strong>資産</strong> </p>
+						<ul>
+						  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/asset/AmountList?attrSrcKey=1313f14154e3d00d11">保有残高</a></li>
+						  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/asset/MoneyToSpareSummary?attrSrcKey=1313f14154e3d00d11">余力情報</a></li>
+						  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/stock/MrgRefundList?attrSrcKey=1313f14154e3d00d11">信用建玉一覧</a></li>
+						  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/asset/MoneyToSpare?attrSrcKey=1313f14154e3d00d11">信用余力情報</a></li>
+						  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/asset/AstDistribution?attrSrcKey=1313f14154e3d00d11">資産配分状況</a></li>
+						  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/login/TransitionSsoForInternal?encodePrm=bsk2wv8wsbsujekx6l1usrqxyobdo1zxdc8n6hnfieyn2wmpkgfmgcv2g19qjp2eevc59mo3psf6k&amp;attrSrcKey=1313f14154e3d00d11">マネックスポイント</a></li>
+						</ul>
+					  </div>
+					  <div class="gnav-megadrop-separate">
+						<p class="gnav-megadrop-title-sub"> <strong>履歴</strong> </p>
+						<ul>
+						  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/asset/DealArchiveTop?attrSrcKey=1313f14154e3d00d11">取引履歴・損益</a></li>
+						  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/asset/ClearAcc?attrSrcKey=1313f14154e3d00d11">精算表</a></li>
+						  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/asset/DealArchive?attrSrcKey=1313f14154e3d00d11">取引履歴</a></li>
+						  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/asset/SailPlDetail?attrSrcKey=1313f14154e3d00d11">売却損益明細</a></li>
+						  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/asset/TotalReturn?attrSrcKey=1313f14154e3d00d11">投資信託トータルリターン</a></li>
+						  <li><a href="https://labs.monex.co.jp/view/index.html">MONEX VIEW β（資産推移）</a></li>
+						</ul>
+					  </div>
+					  <div class="gnav-megadrop-separate">
+						<p class="gnav-megadrop-title-sub"> <strong>書面</strong> </p>
+						<ul>
+						  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/customer/DocSearch?attrSrcKey=1313f14154e3d00d11">電子交付書面</a></li>
+						  <li><a href="https://info.monex.co.jp/support/change.html">手続き書類請求</a></li>
+						</ul>
+					  </div>
+					  <div class="gnav-megadrop-separate">
+						<p class="gnav-megadrop-title-sub"> <strong>口座情報</strong> </p>
+						<ul>
+						  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/login/TransitionSsoForInternal?encodePrm=vrdk49821vjmi1854xuiz2tb6jtragg2iphfpum1s2cj2xjkwpnxr4p3u826qn1yrgwb020blkrf1p62ry53x3dgyqevzusc&amp;attrSrcKey=1313f14154e3d00d11">お客様情報　確認・変更</a></li>
+						  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/login/TransitionSsoForInternal?encodePrm=bsk2wv8wsbsujekx6l1usrqxyobdo1zxdc8n6hnfieyn2wmpkgfmgcv2g19qjy4qg3u71ly0987h8&amp;attrSrcKey=1313f14154e3d00d11">アラートメール登録状況</a></li>
+						  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/login/TransitionSsoForInternal?encodePrm=bsk2wv8wsbsujekx6l1usrqxyobdo1zxdc8n6hnfieyn2wmpkgfmgcv2g19qjp2q4yee3vfo4bnq4&amp;attrSrcKey=1313f14154e3d00d11">各種口座開設状況</a></li>
+						  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/login/TransitionSsoForInternal?encodePrm=bsk2wv8wsbsujekx6l1usrqxyobdo1zxdc8n6hnfieyn2wmpkgfmgcv2g19qjp13ij35wnlu3nh0c&amp;attrSrcKey=1313f14154e3d00d11">分配金の受取方法</a></li>
+						  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/login/TransitionSsoForInternal?encodePrm=bsk2wv8wsbsujekx6l1usrqxyobdo1zxdc8n6hnfieyn2wmpkgfmgcv2g19qjp31v1gmy478iuw9o&amp;attrSrcKey=1313f14154e3d00d11">利金・償還金の受取方法</a></li>
+						  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/login/TransitionSsoForInternal?encodePrm=bsk2wv8wsbsujekx6l1usrqxyobdo1zxdc8n6hnfieyn2wmpkgfmgcv2gmrsting9c9lk9ao7r07w&amp;attrSrcKey=1313f14154e3d00d11">株式売買手数料</a></li>
+						</ul>
+					  </div>
+					</div>
+				  </div>
+				</li>
+				<li class="nav03 gnav-item-inoutcash gn_iocash" data-inproc="f"> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/iocash/InOutCashTop?attrSrcKey=1313f14154e3d00d11">入出金</a>
+				  <div class="gnav-megadrop hid">
+					<p class="gnav-megadrop-title"> <strong><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/iocash/InOutCashTop?attrSrcKey=1313f14154e3d00d11">入出金</a></strong> </p>
+					<ul>
+					  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/iocash/NlTransferSelect?attrSrcKey=1313f14154e3d00d11">入金指示</a></li>
+					  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/iocash/NlTransferLst?attrSrcKey=1313f14154e3d00d11">入金指示照会</a></li>
+					  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/iocash/InvMoneyWithdrawList?attrSrcKey=1313f14154e3d00d11">定期自動入金申込</a></li>
+					  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/iocash/InvMoneyAsg?attrSrcKey=1313f14154e3d00d11">出金指示</a></li>
+					  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/iocash/InvMoneyList?attrSrcKey=1313f14154e3d00d11">出金指示照会</a></li>
+					  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/iocash/CollatTransferTop?attrSrcKey=1313f14154e3d00d11">資金振替</a></li>
+					  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/asset/ClearAcc?attrSrcKey=1313f14154e3d00d11">精算表（入出金履歴）</a></li>
+					</ul>
+				  </div>
+				</li>
+				<li class="nav04 gnav-item-marketinformation gnav-item-insight gnav-item-site-insight gn_info" data-inproc="f"> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/info/TransitionSsoForInsight?encodePrm=4l518flxm0qwidbsq9qbo5h71dbyw70&amp;attrSrcKey=1313f14154e3d00d11">投資情報</a>
+				  <div class="gnav-megadrop hid">
+					<p class="gnav-megadrop-title"> <strong><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/info/TransitionSsoForInsight?encodePrm=4l518flxm0qwidbsq9qbo5h71dbyw70&amp;attrSrcKey=1313f14154e3d00d11">投資情報</a></strong> </p>
+					<ul>
+					  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/info/TransitionSsoForInsight?encodePrm=3jf7ua9l9norb2a7q1qb86sbtmdbwu8i4&amp;attrSrcKey=1313f14154e3d00d11">マーケットボード</a></li>
+					  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/info/TransitionSsoForInsight?encodePrm=lqhu80aqt6zkcb4cjlo&amp;attrSrcKey=1313f14154e3d00d11">ニュース</a></li>
+					  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/info/TransitionSsoForInsight?encodePrm=9zh1n4e7tzf30h8ff1y5ggbv0&amp;attrSrcKey=1313f14154e3d00d11">ランキング</a></li>
+					  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/info/TransitionSsoForInsight?encodePrm=lqhu80aqt733wdygg8c&amp;attrSrcKey=1313f14154e3d00d11">スクリーニング</a></li>
+					  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/info/InfoToolList?attrSrcKey=1313f14154e3d00d11">ツール</a></li>
+					  <li><a href="https://info.monex.co.jp/invest/mail-service.html">メールサービス</a></li>
+					</ul>
+				  </div>
+				</li>
+				<li class="nav05 gnav-item-report gn_report" data-inproc="f"> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/report/ReportList?attrSrcKey=1313f14154e3d00d11">レポート・セミナー</a>
+				  <div class="gnav-megadrop hid">
+					<p class="gnav-megadrop-title"> <strong><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/report/ReportList?attrSrcKey=1313f14154e3d00d11">レポート・セミナー</a></strong> </p>
+					<ul>
+					  <li><a href="https://media.monex.co.jp/" target="_blank" class="ic-window" clickcount="moneyclip-001">マネクリ</a></li>
+					  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/report/AnalystBackNumber?encodePrm=16ck0ko5f7rouqtolld39htd9hk5swnvpxo1hvycbp940l6jtwneolx74iekdpnm3qos&amp;attrSrcKey=1313f14154e3d00d11">アナリストレポート</a></li>
+					</ul>
+				  </div>
+				</li>
+				<li class="nav06 gnav-item-service gnav-item-fees gnav-item-service gnav-item-stock gnav-item-sinyo gnav-item-fund gnav-item-etf gnav-item-foreignstock gnav-item-usstock gnav-item-chinastock gnav-item-bond gnav-item-fx gnav-item-MonexTraderFX gnav-item-futures gnav-item-msvlife gnav-item-gold gnav-item-clickkabu gnav-item-order-type gnav-item-dividened gnav-item-rights gnav-item-etn gnav-item-transfer gnav-item-fundtransfer gnav-item-market-information gnav-item-saisoncard gnav-item-signal gnav-item-signalfutures gnav-item-signalusstock gnav-item-monexview gnav-item-monexvision gnav-item-monexone gnav-item-accountant gnav-item-referential-treatment gnav-item-mylogin gnav-item-houjin gnav-item-denshikoufu gnav-item-alert-mail gnav-item-deposit gnav-item-site-annex gn_service current is-current" data-inproc="f"> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/home/ProductsServiceTop?attrSrcKey=1313f14154e3d00d11">商品・サービス</a>
+				  <div class="gnav-megadrop anim hid">
+					<p class="gnav-megadrop-title"> <strong><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/home/ProductsServiceTop?attrSrcKey=1313f14154e3d00d11">商品・サービス一覧</a></strong> </p>
+					<ul>
+					  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/stock/StockTop?attrSrcKey=1313f14154e3d00d11">株式取引</a></li>
+					  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/stock/MarginAcCloseTop?attrSrcKey=1313f14154e3d00d11">信用取引</a></li>
+					  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/stock/IPOTop?attrSrcKey=1313f14154e3d00d11">新規公開株（IPO）／公募・売出（PO）</a></li>
+					  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/stock/BunbaiTop?attrSrcKey=1313f14154e3d00d11">立会外分売</a></li>
+					  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/stock/HakabuTop?attrSrcKey=1313f14154e3d00d11">単元未満株</a></li>
+					  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/stkloan/KashikabuTop?attrSrcKey=1313f14154e3d00d11">貸株サービス</a></li>
+					  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/foreign/ForeignStockTop?attrSrcKey=1313f14154e3d00d11">外国株</a></li>
+					  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/fund/FundTop?attrSrcKey=1313f14154e3d00d11">投資信託・投信つみたて</a></li>
+					  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/login/TransitionSsoForInternal?encodePrm=17490rsee36e7y5taykh3y43qavnq9yr5c4eqfq73lkna59uqmarqxgbzw6nkqxwjnbw&amp;attrSrcKey=1313f14154e3d00d11">債券</a></li>
+					  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/fx/FXPLUSTop?attrSrcKey=1313f14154e3d00d11">FX（外国為替証拠金取引）</a></li>
+					  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/crypto/CryptoTop?attrSrcKey=1313f14154e3d00d11">暗号資産CFD</a></li>
+					  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/option/OpTop?attrSrcKey=1313f14154e3d00d11">先物・オプション</a></li>
+					  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/wrap/WrapTop?attrSrcKey=1313f14154e3d00d11">ラップ（投資一任サービス）</a></li>
+					  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/gold/MonexGoldTop?attrSrcKey=1313f14154e3d00d11">マネックス・ゴールド</a></li>
+					  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/click/Click365Top?attrSrcKey=1313f14154e3d00d11">くりっく株365</a></li>
+					  <li><a href="https://info.monex.co.jp/nisa/index.html">NISA・つみたてNISA</a></li>
+					  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/login/TransitionSsoForInternal?encodePrm=b9ajz316paaxsaxi7kgbgtfxdq90q20t5ibybg3gvmwp4lqhyu9uumvs93hq87c3iuvpqo8gyuhc63wrdawudw3kh23mszu82mmxw91o&amp;attrSrcKey=1313f14154e3d00d11">個人型確定拠出年金 iDeCo</a></li>
+					  <li><a href="https://info.monex.co.jp/msp/web_inheritance/index.html">財産管理・相続</a></li>
+					  <li><a href="https://labs.monex.co.jp/portal/index.html">MONEX LABS TOOLS</a></li>
+					</ul>
+				  </div>
+				</li>
+			  </ul>
 			</div>
+		  </div>
 		</div>
-		<div id="footer">
-			<div id="dispLoad2" style="display: block">
-				<div id="backbtn">
-					<a
-						href="javascript:void(0);"
-						onclick="javascript:goBack(document.cmnForm);return false;"
-						><span>ﾂ暗ｪﾂづつ前ﾂづ可姪淞づｩ</span></a
-					>
-				</div>
-
-				<div id="copyright">
-					<p>
-						<img
-							src="jsp/common/img/popup_copyright.gif"
-							alt="Copyright © 1999-2021 ﾂ青ｼﾂ禿ｺﾂ本ﾂ電ﾂ信ﾂ電ﾂ話ﾂ環板篠ｮﾂ嘉ｯﾂ偲�"
-							height="10"
-							width="222"
-						/>
-					</p>
-				</div>
-			</div>
-
-			<script type="text/javascript">
-				function display_waiting() {
-					img_h = 116;
-					img_w = 116;
-
-					var sf7Flg = false;
-					var userAgent = navigator.userAgent.toLowerCase();
-
-					var changeVersion = 7;
-
-					if (userAgent.indexOf("safari") != -1) {
-						var array = /version\/([\d\.]+)/.exec(userAgent);
-						var version = array ? array[1] : "";
-						if (parseInt(version, 10) >= changeVersion) {
-							sf7Flg = true;
-							img_h = 190;
-							img_w = 420;
-						}
-					}
-
-					win_height =
-						document.documentElement.clientHeight || document.body.clientHeight;
-					win_scroll_top =
-						document.documentElement.scrollTop || document.body.scrollTop;
-					win_set_pos_h = win_height / 2 + win_scroll_top - img_h / 2 - 40;
-					if (
-						win_height > document.body.clientHeight &&
-						document.body.clientHeight > 0
-					) {
-						win_height = document.body.clientHeight;
-					}
-
-					win_width =
-						document.documentElement.clientWidth || document.body.clientWidth;
-					win_scroll_left =
-						document.documentElement.scrollLeft || document.body.scrollLeft;
-					win_set_pos_w = win_width / 2 + win_scroll_left - img_w / 2;
-					if (
-						win_width > document.body.clientWidth &&
-						document.body.clientWidth > 0
-					) {
-						win_width = document.body.clientWidth;
-					}
-
-					if (win_height <= 0) {
-						win_set_pos_h = win_scroll_top;
-					}
-					if (win_width <= 0) {
-						win_set_pos_w = win_scroll_left;
-					}
-
-					var waitScr = document.getElementById("waitescreen");
-
-					waitScr.style.top = win_set_pos_h + "px";
-					waitScr.style.left = win_set_pos_w + "px";
-
-					var screenFrm = document.getElementById("screenframe");
-
-					screenFrm.style.height = img_h + "px";
-					screenFrm.style.width = img_w + "px";
-
-					waitScr.style.display = "block";
-
-					if (sf7Flg == false) {
-						frames.screenframe.document.location.reload(true);
-					}
-
-					return sf7Flg;
-				}
-			</script>
-			<div id="waitescreen" style="position: absolute; display: none">
-				<iframe
-					id="screenframe"
-					name="screenframe"
-					scrolling="no"
-					width="0"
-					height="0"
-					border="0"
-					framespacing="0"
-					frameborder="0"
-					marginheight="0"
-					marginwidth="0"
-					tabindex="-1"
-					src="jsp/common/img/waiting_def.gif"
-				>
-				</iframe>
-			</div>
+	  </div>
+	  <div id="navi-header-sub" riot-tag="navi-header-sub">
+		<div id="cfd_product_nav" role="navigation">
+		  <ul>
+			<li class="side"><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/stock/StockTop?attrSrcKey=1313f14154e3d00d11">株式取引</a></li>
+			<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/stock/MarginAcCloseTop?attrSrcKey=1313f14154e3d00d11">信用取引</a></li>
+			<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/foreign/ForeignStockTop?attrSrcKey=1313f14154e3d00d11">米国株･中国株</a></li>
+			<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/fund/FundTop?attrSrcKey=1313f14154e3d00d11">投信・積立</a></li>
+			<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/login/TransitionSsoForInternal?encodePrm=17490rsee36e7y5taykh3y43qavnq9yr5c4eqfq73lkna59uqmarqxgbzw6nkqxwjnbw&amp;attrSrcKey=1313f14154e3d00d11">債券</a></li>
+			<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/fx/FXPLUSTop?attrSrcKey=1313f14154e3d00d11">FX</a></li>
+			<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/crypto/CryptoTop?attrSrcKey=1313f14154e3d00d11">暗号資産</a></li>
+			<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/option/OpTop?attrSrcKey=1313f14154e3d00d11">先物･オプション</a></li>
+			<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/click/Click365Top?attrSrcKey=1313f14154e3d00d11">くりっく株365</a></li>
+			<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/gold/MonexGoldTop?attrSrcKey=1313f14154e3d00d11">金･プラチナ</a></li>
+			<li><a href="https://info.monex.co.jp/robot-adviser/index.html">ロボアド</a></li>
+			<li><a href="https://info.monex.co.jp/nisa/index.html">NISA</a></li>
+			<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/login/TransitionSsoForInternal?encodePrm=b9ajz316paaxsaxi7kgbgtfxdq90q20t5ibybg3gvmwp4lqhyu9uumvs93hq87c3iuvpqo8gyuhc63wrdawudw3kh23mszu82mmxw91o&amp;attrSrcKey=1313f14154e3d00d11">iDeCo</a></li>
+		  </ul>
 		</div>
-		<img src="jsp/common/img/waiting_def_sf7.gif" width="0" height="0 " />
-		<script type="text/javascript">
-			var userAgent = navigator.userAgent.toLowerCase();
-			<!-- //
-
-			var changeVersion = 7;
-
-			if (userAgent.indexOf("safari") != -1) {
-				var array = /version\/([\d\.]+)/.exec(userAgent);
-				var version = array ? array[1] : "";
-				if (parseInt(version, 10) >= changeVersion) {
-					document.getElementById("screenframe").src =
-						"jsp/common/img/waiting_def_sf7.gif";
-				}
-			}
-
-			function doSubmit(form) {
-				form.submit();
-			}
-
-			//-->
-		</script>
-
-		ﾃ�
-		<script
-			src="//cdn.kaizenplatform.net/s/fa/2bcc61161624aa.js?kz_namespace=kzs"
-			charset="Shift_JIS"
-			data-kz-loaded-sitejs-id="fa2bcc61161624aa"
-			data-kz-applied-sitejs-id="fa2bcc61161624aa"
-		></script>
-	</body>
-</html>
+	  </div> <input type="hidden" value="https://mxp1.monex.co.jp/pc" id="context"> <input type="hidden" value="https://info.monex.co.jp/" id="infoAddress"> <input type="hidden" value="https://labs.monex.co.jp/" id="labsAddress"> <input type="hidden" value="kei" id="affiliationFlg"> </div>
+	<div class="reader"> <a id="pl-topicpath" name="pl-topicpath">サイト内の現在位置を表示しています。</a> </div>
+	<div class="l-header-info">
+	  <!-- パンくず -->
+	  <div class="topic member" style="display: block;">
+		<ul class="__bcList __u-cf">
+		  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/home/Announce?attrSrcKey=1313f14154e3d00d11">MY PAGE</a></li>
+		  <li class="last">外国株</li>
+		</ul>
+	  </div>
+	  <!-- 顧客情報 -->
+	  <div class="topic-user"> 改善　テスト&nbsp;様&nbsp;&nbsp;123-123456 <span class="redB lm5"></span> </div>
+	</div>
+	<div class="reader"> <a id="pl-pagetext" name="pl-pagetext">ここから本文です。</a> </div>
+	<div class="l-main">
+	  <div class="container">
+		<!-- タイトル -->
+		<div class="top-utility" id="titleHeader">
+		  <div class="top-utility-left">
+			<h1 class="heading-title-01 type-top-utility">外国株</h1>
+		  </div>
+		  <div id="chart_base" class="top-utility-right"></div>
+		</div>
+		<!-- /.top-utility -->
+		<!--
+  <div style="background:#fff; border:4px solid #d84e4e; margin:5px 0 5px 0; padding:1px 10px 10px;">
+  <p style="background-image:url(/pc/static/img/common/ic_warning_xs.png); background-position: 0px 1px; background-repeat:no-repeat; margin:10px 0; padding:0;" class="open_close_t"> 
+  <span style="margin:10px 10px 5px 24px; padding:0px; font-weight:bold; color:#e01515;"> 
+  【米国株】Webアプリへのログインがしづらい状況について（2020年7月14日　23:17更新）
+  </p>
+  <p style="padding: 0 10px 0 26px;"> 
+  2020年7月14日22:30～23:07にかけて米国株Webアプリへログインしづらい状況が発生しておりました。<br />
+  現在は復旧しております<br />
+  お客様にご不便おかけしましたこと、お詫び申し上げます。 
+   <br /> </p> </div>
+  -->
+		<!--
+  <div class="zabton type-info type-firstblock"><div class="zabton-inner type-03 act-table-accordion">
+  <h2 class="box-title"><span class="ic-info">米国株取引に係る契約締結前交付書面改定についてのご案内（6月27日（土）11:00改版）</span><a href="javascript: void(0);" class="accordion-table-link" style="margin-left: 24px;">非表示 ▲</a></h2>
+  <div class="text-block accordion-table-inner">
+  <p>
+  <li><a href="https://info.monex.co.jp/news/2020/20200612_01.html">米国株取引に係る契約締結前交付書面改定のお知らせ</a>
+  </br>
+  <span style="color:#e01515;">　※改定後、初回取引時にはウェブサイトにて改定後の書面をご確認いただく必要がございます。</span></a>
+  <li><a href="https://faq.monex.co.jp/faq/show/3098" target="_blank">米国株スマートフォンアプリで「未閲読書面がある」と表示されログインができません。</a>　
+  </p>
+  </div>
+  </div>
+  </div>
+  -->
+		<!--
+  <div style="background:#fff; border:4px solid #d84e4e; margin:5px 0 5px 0; padding:1px 10px 10px;">
+  <p style="background-image:url(/pc/static/img/common/ic_warning_xs.png); background-position: 0px 1px; background-repeat:no-repeat; margin:10px 0; padding:0;" class="open_close_t"> 
+  <span style="margin:10px 10px 5px 24px; padding:0px; font-weight:bold; color:#e01515;"> 
+  【復旧】【米国株】Webアプリ、スマートフォンアプリの残高照会の表示遅延について（2020年6月11日　23:25更新）
+  </p>
+  <p style="padding: 0 10px 0 26px;"> 
+  2020年6月11日21:30頃～23:00にかけて、米国株Webアプリ、スマートフォンアプリにおいて「残高照会」リストの表示遅延が発生しておりました。<br />
+  現在は復旧しております。<br />
+  お客様にご不便おかけいたしましたこと、お詫び申し上げます。 
+   <br /> </p> </div>
+  -->
+		<!--
+  <div style="background:#fff; border:4px solid #d84e4e; margin:5px 0 5px 0; padding:1px 10px 10px;">
+  <p style="background-image:url(/pc/static/img/common/ic_warning_xs.png); background-position: 0px 1px; background-repeat:no-repeat; margin:10px 0; padding:0;" class="open_close_t">
+  <span style="margin:10px 10px 5px 24px; padding:0px; font-weight:bold; color:#e01515;">
+  【復旧済み】【米国株】ウェブ取引画面、スマートフォンアプリの買付可能額の不正表示について（2020年6月12日　17:30掲載）
+  </p>
+  <p style="padding: 0 10px 0 26px;">
+  2020年5月中旬ごろから2020年6月12日（金）までの間、火曜日から土曜日の日本時間14:30～19:30において、米国株ウェブ取引画面・スマートフォンアプリにおいて、買付可能額の表示が一部のお客様において一時的に不正となる場合がございました。<br />
+  現在は復旧しております。<br />
+  お客様にご迷惑をおかけしておりましたこと、お詫び申し上げます。
+  <br /> </p> </div>
+  -->
+		<!--
+  <div style="background:#fff; border:4px solid #d84e4e; margin:5px 0 5px 0; padding:1px 10px 10px;">
+  <p style="background-image:url(/pc/static/img/common/ic_warning_xs.png); background-position: 0px 1px; background-repeat:no-repeat; margin:10px 0; padding:0;" class="open_close_t">
+  <span style="margin:10px 10px 5px 24px; padding:0px; font-weight:bold; color:#e01515;">
+  【復旧済み】【米国株】ウェブ取引画面チャートの日足が表示されない（2020年7月20日　22:40掲載）
+  </p>
+  <p style="padding: 0 10px 0 26px;">
+  本日、米国株ウェブ取引画面のチャートにて7月17日の日足が表示されず、日足チャートを表示した際にサイズが最適化されない事象が発生しておりました。現在すでに復旧しておりますが、すでにウェブ取引画面にログインしているお客様は一度ログオフの上再度ログインいただきますようお願いいたします。
+  <br />
+  お客様にご迷惑をおかけしておりましたこと、お詫び申し上げます。
+  <br /> </p> </div>
+  --></div>
+	  <!-- include2 -->
+	  <div class="maininfo">
+		<div class="container">
+		  <div class="row">
+			<div class="col-xs-9">
+			  <div class="maininfo-block type-01 s-ta-c"> <a href="https://info.monex.co.jp/foreign-stock/start.html" onclick="return linkCheck()">
+						  <img src="https://mxp1.monex.co.jp/pc/static/img/category/foreign/stock_top_msg.png" alt="" style="max-width:100%;">
+					  </a> </div>
+			  <div class="maininfo-block type-01">
+				<div class="maininfo-block-inner">
+				  <div class="maininfo-block-cell type-07">
+					<div class="col-xs-5">
+					  <h2 class="maininfo-block-title">米国株</h2>
+					</div>
+					<div class="col-xs-7 s-mb-10"> <a class="text-link type-detail s-w-170" href="https://mxp1.monex.co.jp/pc/servlet/ITS/foreign/UsStockTop?attrSrcKey=1313f14154e3d00d11" onclick="return linkCheck()">米国株 サービス詳細</a> </div>
+					<div class="col-xs-5 s-pr-0"> <img class="s-w-130" src="https://mxp1.monex.co.jp/pc/static/img/common/ic_usa.png" alt=""> </div>
+					<div class="col-xs-7">
+					  <div class="s-ta-c">
+						<div> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/common/ForeignStkSiteConnect?encodePrm=7wsyrjusj4xkcw0w2ofdgq18d4c&amp;attrSrcKey=1313f14154e3d00d11" target="_blank" onclick="return checkPermissionBrowser()" class="btn type-conversion type-justify type-size-l type-02">米国株取引<img src="https://mxp1.monex.co.jp/pc/static/img/common/ic_window_w.png" alt=""></a> </div>
+						<div class="s-mt-10"> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/common/ForeignStkSiteConnect?encodePrm=63r8lpbjcjl0di1kqyej20j6gp1f0&amp;attrSrcKey=1313f14154e3d00d11" target="_blank" onclick="return checkPermissionBrowser()" class="btn type-nisa type-justify type-size-l type-02">米国株取引 NISA<img src="https://mxp1.monex.co.jp/pc/static/img/common/ic_window_w.png" alt=""></a>
+						  <div class="s-mt-5">
+							<div class="ic-window s-ta-r s-mt-5"> <a href="https://info.monex.co.jp/us-stock/guide/environment.html" target="_blank">米国株推奨環境</a> </div>
+						  </div>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				  <div class="maininfo-block-cell type-07">
+					<div class="col-xs-5">
+					  <h2 class="maininfo-block-title">中国株</h2>
+					</div>
+					<div class="col-xs-7 s-mb-10"> <a class="text-link type-detail s-w-170" href="https://mxp1.monex.co.jp/pc/servlet/ITS/foreign/ChinaStockTop?attrSrcKey=1313f14154e3d00d11" onclick="return linkCheck()">中国株 サービス詳細</a> </div>
+					<div class="col-xs-5 s-pr-0"> <img class="s-w-130" src="https://mxp1.monex.co.jp/pc/static/img/common/ic_chn.png" alt=""> </div>
+					<div class="col-xs-7">
+					  <div class="btn-block-inner"> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/common/ForeignStkSiteConnect?encodePrm=7wsyrjusj4xkcw0w2ofdgq18enw&amp;attrSrcKey=1313f14154e3d00d11" target="_blank" onclick="" class="btn type-conversion type-justify type-size-l type-02">中国株取引/NISA<img src="https://mxp1.monex.co.jp/pc/static/img/common/ic_window_w.png" alt=""></a> </div>
+					</div>
+				  </div>
+				</div>
+				<div class="maininfo-block-inner">
+				  <div class="maininfo-block-cell s-ta-c type-08"> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/iocash/AccountTransferForForeignStock?attrSrcKey=1313f14154e3d00d11" class="btn type-border type-size-l" onclick="return linkCheck()">
+								  振替（日本円）
+							  </a>
+					<p class="s-mt-2">（証券総合取引口座から管理サイトへ振替）</p>
+				  </div>
+				  <div class="maininfo-block-cell s-ta-c type-08"> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/common/ForeignStkSiteConnect?encodePrm=7wsyrjusj4xkcw0w2ofdgq18enw&amp;attrSrcKey=1313f14154e3d00d11" target="_blank" onclick="" class="btn type-conversion type-size-l">管理サイト（為替振替・口座管理）<img src="https://mxp1.monex.co.jp/pc/static/img/common/ic_window_w.png" alt=""></a>
+					<p class="s-mt-2">（為替振替、残高、取引履歴の確認、投資情報）</p>
+				  </div>
+				</div>
+				<div class="maininfo-block-inner">
+				  <div class="maininfo-block-cell s-ta-c type-07">
+					<ul class="link-list type-inline type-center type-inaction">
+					  <li class="s-w-450"><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/login/TransitionSsoForInternal?encodePrm=bsk2wv8wsbsujekx6l1usrqxyobdo1zxdc8n6hnfieyn2wmpkgfmgcv2g6mv51w0vyxtkgxr3gc7w&amp;attrSrcKey=1313f14154e3d00d11" onclick="return linkCheck()">取引口座情報（取引パスワード等）</a></li>
+					</ul>
+				  </div>
+				</div>
+			  </div>
+			  <!-- /.maininfo-block -->
+			</div>
+			<div class="col-xs-3">
+			  <div class="local-navi-block">
+				<h2 class="local-navi-block-title">外国株</h2>
+				<ul class="link-list type-local-navi">
+				  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/foreign/UsStockTop?attrSrcKey=1313f14154e3d00d11" onclick="return linkCheck()">米国株</a></li>
+				  <li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/foreign/ChinaStockTop?attrSrcKey=1313f14154e3d00d11" onclick="return linkCheck()">中国株</a></li>
+				  <li><a href="https://info.monex.co.jp/etf/overseas.html">海外ETF</a></li>
+				</ul>
+			  </div>
+			  <p> <a href="https://info.monex.co.jp/us-stock/guide/index.html"><img alt="取引ガイド" src="https://mxp1.monex.co.jp/pc/static/img/category/foreign/guide-222-58.png"></a> </p>
+			  <p> <a href="https://info.monex.co.jp/us-stock/guide/caution.html"><img alt="【米国株】取引におけるご注意事項" src="https://info.monex.co.jp//image/banner/us-stock/us-stock-alert.png"></a> </p>
+			  <p> <a href="https://info.monex.co.jp/china-stock/rule/notes.html"><img alt="【中国株】取引におけるご注意事項" src="https://info.monex.co.jp//image/banner/china-stock/china-stock-alert.png"></a> </p>
+			  <p> <a href="https://info.monex.co.jp/us-stock/guide/move.html">操作動画一覧</a> </p>
+			</div>
+		  </div>
+		</div>
+		<div class="container">
+		  <div class="col-xs-9">
+			<div class="btn-block"> <a href="https://info.monex.co.jp/sp/us-stock/tool/move.html" class="btn type-border type-size-l">スマートフォンでお取引の方はこちら</a> </div>
+		  </div>
+		</div>
+		<div class="container">
+		  <div class="row">
+			<div class="col-xs-9 text-block">
+			  <div class="zabton type-linkgroup-01 s-ta-c">
+				<ul class="ancar-link-list type-inline">
+				  <li class="ic-anchor-link"><a href="#usMarketInfo">米国株投資情報</a></li>
+				  <li class="ic-anchor-link"><a href="#nisa">NISA取引について</a></li>
+				  <li class="ic-anchor-link"><a href="#guide">取引までの流れ</a></li>
+				</ul>
+			  </div>
+			  <h2 class="heading-title-02">最新情報</h2>
+			  <div class="row">
+				<div class="col-xs-12">
+				  <div id="foreignStocks_table" class="maininfo-block type-02">
+					<dl class="news-list-block-inner"> <dt class="date">7月21日</dt> <dt><span class="info type-05 s-w-80">お知らせ</span></dt>
+					  <dd><a href="https://info.monex.co.jp/news/holiday/20200723.html" onclick="return linkCheck()">7月23日、24日もFX・米国株などはお取引可能です</a></dd>
+					</dl>
+					<dl class="news-list-block-inner"> <dt class="date">7月20日</dt> <dt><span class="info type-02 s-w-80">米国株</span></dt>
+					  <dd><a href="https://info.monex.co.jp/news/2020/20200720_02.html" onclick="return linkCheck()">【グローバルX】AI関連など新たなETF4銘柄を追加！</a></dd>
+					</dl>
+					<dl class="news-list-block-inner"> <dt class="date">7月6日</dt> <dt><span class="info type-05 s-w-80">セミナー</span></dt>
+					  <dd><a href="https://info.monex.co.jp/news/2020/20200706_01.html" onclick="return linkCheck()">【米国発情報満載】ハッチの米国株マーケットセミナー</a></dd>
+					</dl>
+					<dl class="news-list-block-inner"> <dt class="date">7月2日</dt> <dt><span class="info type-02 s-w-80">米国株</span></dt>
+					  <dd><a href="https://info.monex.co.jp/news/2020/20200702_01.html" onclick="return linkCheck()">ブラックロック 米国ETF3銘柄の経費率引き下げ</a></dd>
+					</dl>
+					<dl class="news-list-block-inner"> <dt class="date">6月29日</dt> <dt><span class="info type-05 s-w-80">マーケット</span></dt>
+					  <dd><a href="https://info.monex.co.jp/fx/fx-plus/seminar/weekly.html" onclick="return linkCheck()">【動画で為替解説】『株高=米ドル安、株安=米ドル高』の意味</a></dd>
+					</dl>
+				  </div>
+				</div>
+			  </div>
+			  <h2 class="heading-title-02">米国株ランキング</h2>
+			  <div class="row">
+				<div class="col-xs-6">
+				  <h3 class="heading-title-03">売買代金ランキング</h3>
+				  <div class="maininfo-block type-02">
+					<p class="s-ta-r s-m-0">（時点：2020年7月13日～2020年7月17日） </p>
+					<table class="table-block type-bg-03 type-border-01 s-m-0">
+					  <colgroup>
+						<col width="30">
+						<col width="90">
+						<col>
+						<col width="70"> </colgroup>
+					  <tbody>
+						<tr>
+						  <th class="heading-02 al-c"></th>
+						  <th class="heading-02 al-c"><b>ティッカー</b></th>
+						  <th class="heading-02 al-c"><b>銘柄名</b></th>
+						  <th class="heading-02 al-c"><b>前週比</b></th>
+						</tr>
+						<tr class="list_line1">
+						  <td class="al-c"><img src="https://mxp1.monex.co.jp/pc/static/img/dummy/icon_rank_01_m.gif" width="16" height="16" alt="1位"></td>
+						  <td>TSLA</td>
+						  <td>テスラ</td>
+						  <td class="al-c"><b>→
+  </b></td>
+						</tr>
+						<tr class="list_line2">
+						  <td class="al-c"><img src="https://mxp1.monex.co.jp/pc/static/img/dummy/icon_rank_02_m.gif" width="16" height="16" alt="2位"></td>
+						  <td>AMZN</td>
+						  <td>アマゾン</td>
+						  <td class="al-c"><b>→
+  </b></td>
+						</tr>
+						<tr class="list_line1">
+						  <td class="al-c"><img src="https://mxp1.monex.co.jp/pc/static/img/dummy/icon_rank_03_m.gif" width="16" height="16" alt="3位"></td>
+						  <td>BNTX</td>
+						  <td>バイオンテック</td>
+						  <td class="al-c"><b>NEW
+  </b></td>
+						</tr>
+						<tr class="list_line2">
+						  <td class="al-c"><img src="https://mxp1.monex.co.jp/pc/static/img/dummy/icon_rank_04_m.gif" width="16" height="16" alt="4位"></td>
+						  <td>VIR</td>
+						  <td>VIRバイオテクノロジー</td>
+						  <td class="al-c"><b>NEW
+  </b></td>
+						</tr>
+						<tr class="list_line1">
+						  <td class="al-c"><img src="https://mxp1.monex.co.jp/pc/static/img/dummy/icon_rank_05_m.gif" width="16" height="16" alt="5位"></td>
+						  <td>MRNA</td>
+						  <td>モデルナ</td>
+						  <td class="al-c"><b>NEW
+  </b></td>
+						</tr>
+					  </tbody>
+					</table>
+				  </div>
+				</div>
+				<div class="col-xs-6">
+				  <h3 class="heading-title-03">配当利回りランキング</h3>
+				  <div class="maininfo-block type-02">
+					<p class="s-ta-r s-m-0">（時点：2020年6月末） </p>
+					<table class="table-block type-bg-03 type-border-01 s-m-0">
+					  <colgroup>
+						<col width="30">
+						<col width="80">
+						<col>
+						<col width="80"> </colgroup>
+					  <tbody>
+						<tr>
+						  <th class="heading-02 al-c"></th>
+						  <th class="heading-02 al-c"><b>ティッカー</b></th>
+						  <th class="heading-02 al-c"><b>銘柄名</b></th>
+						  <th class="heading-02 al-c"><b>配当利回り</b></th>
+						</tr>
+						<tr class="list_line1">
+						  <td class="al-c"><img src="https://mxp1.monex.co.jp/pc/static/img/dummy/icon_rank_01_m.gif" width="16" height="16" alt="1位"></td>
+						  <td>MO</td>
+						  <td>アルトリア</td>
+						  <td class="al-c">8.56% </td>
+						</tr>
+						<tr class="list_line2">
+						  <td class="al-c"><img src="https://mxp1.monex.co.jp/pc/static/img/dummy/icon_rank_02_m.gif" width="16" height="16" alt="2位"></td>
+						  <td>WFC</td>
+						  <td>Wファーゴ</td>
+						  <td class="al-c">7.97% </td>
+						</tr>
+						<tr class="list_line1">
+						  <td class="al-c"><img src="https://mxp1.monex.co.jp/pc/static/img/dummy/icon_rank_03_m.gif" width="16" height="16" alt="3位"></td>
+						  <td>XOM</td>
+						  <td>エクソン</td>
+						  <td class="al-c">7.78% </td>
+						</tr>
+						<tr class="list_line2">
+						  <td class="al-c"><img src="https://mxp1.monex.co.jp/pc/static/img/dummy/icon_rank_04_m.gif" width="16" height="16" alt="4位"></td>
+						  <td>KMI</td>
+						  <td>キンダーモルガン</td>
+						  <td class="al-c">6.92% </td>
+						</tr>
+						<tr class="list_line1">
+						  <td class="al-c"><img src="https://mxp1.monex.co.jp/pc/static/img/dummy/icon_rank_05_m.gif" width="16" height="16" alt="5位"></td>
+						  <td>T</td>
+						  <td>AT&amp;T</td>
+						  <td class="al-c">6.88% </td>
+						</tr>
+					  </tbody>
+					</table>
+				  </div>
+				</div>
+			  </div>
+			  <p class="block-more-info"><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/foreign/UsStockTop?attrSrcKey=1313f14154e3d00d11" onclick="return linkCheck();">ランキング詳細</a></p>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	  <div class="container">
+		<h2 class="heading-title-02" id="usMarketInfo">米国株投資情報</h2>
+		<div class="row">
+		  <div class="col-xs-6">
+			<h3 class="heading-title-03">広瀬隆雄のやっぱり米国株</h3>
+			<div class="link-detail-block type-withicon">
+			  <div class="link-list"> <a href="https://media.monex.co.jp/articles/-/14582" target="_blank">
+									  <img src="https://media.monex.co.jp/mwimgs/0/d/198/img_0d7ce4e92d7efd2e869a9682259ac06f202383.jpg" alt="">
+								  </a>
+				<p class="link-detail-info">07/20</p>
+				<p class="link-detail-name"><a href="https://media.monex.co.jp/articles/-/14582" target="_blank" class="ic-window">【7月20日、21日の決算発表予定】アイビーエム、コカコーラ、ロッキード・マーチン、他</a></p>
+			  </div>
+			  <p class="block-more-info type-separate"><a href="https://media.monex.co.jp/category/us-stock" target="_blank" class="ic-window">バックナンバー</a></p>
+			</div>
+		  </div>
+		  <div class="col-xs-6">
+			<h3 class="heading-title-03">石原順の米国株トレンド５銘柄</h3>
+			<div class="link-detail-block type-withicon">
+			  <div class="link-list"> <a href="https://media.monex.co.jp/articles/-/14610" target="_blank">
+									  <img src="https://media.monex.co.jp/mwimgs/9/e/198/img_9eb4dd4515f8ebca03e5c07259ecf023551666.png" alt="">
+								  </a>
+				<p class="link-detail-info">07/21</p>
+				<p class="link-detail-name"><a href="https://media.monex.co.jp/articles/-/14610" target="_blank" class="ic-window">「世界の優れたCEOランキング」、「CEO信頼感指数」で見る株式市場の推移</a></p>
+			  </div>
+			  <p class="block-more-info type-separate"><a href="https://media.monex.co.jp/category/us-trend" target="_blank" class="ic-window">バックナンバー</a></p>
+			</div>
+		  </div>
+		</div>
+		<div class="row">
+		  <div class="col-xs-6">
+			<h3 class="heading-title-03">マーケット概況（主に米国市場の概況を随時解説）</h3>
+			<div class="link-detail-block type-withicon">
+			  <div class="news-list-block">
+				<dl class="news-list-block-inner"> <dt class="date">7/20</dt>
+				  <dd> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/report/AccessHistoryInput?encodePrm=2k0kghjfc3bq0ysn1d1euhdco6gv0th3t41fg6lhvihxo6ydwpvc862qf6d17zfwesjeqbcyxhahc7ameoqx0i067znt6um2u8izyinilflky5wg0afufhxwtcga6a1rfwxb1v8tyonw1pn5tw8sikdk52ffjv3o7y9eoja4&amp;attrSrcKey=1313f14154e3d00d11" target="_blank">７月２０日の米国株相場レポート</a> <span class="img-pdf">（453KB）</span> </dd>
+				</dl>
+				<dl class="news-list-block-inner"> <dt class="date">7/20</dt>
+				  <dd> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/report/AccessHistoryInput?encodePrm=2k0kghjfc3bq0ysn1d1euhdco6gv0th3t41fg6lhvihxo6ydwpvc862qf6d17zfwesjeqbcyxhahc7ameoqx0i065r4svc172afxzz5vct2ynjz8y63jt4086hngm7qsfz5tlhc6lqsv1s6p87m5fj63eaurp0f7ost1qmjg&amp;attrSrcKey=1313f14154e3d00d11" target="_blank">７月２０日週の米国株投資戦略レポート</a> <span class="img-pdf">（1104KB）</span> </dd>
+				</dl>
+				<dl class="news-list-block-inner"> <dt class="date">7/17</dt>
+				  <dd> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/report/AccessHistoryInput?encodePrm=2k0kghjfc3bq0ysn1d1euhdco6gv0th3t41fg6lhvihxo6ydwpvc862qf6d17zfwesjeqbcyxhahc7ameoqx0i065r1wi80e8z2nty0a2ytv4fojpxnop4pu0eqdldw3yi87xcpnwyg8hti39ztwfcyuntc55t0tiqslvt0c&amp;attrSrcKey=1313f14154e3d00d11" target="_blank">７月１７日の米国株相場レポート</a> <span class="img-pdf">（590KB）</span> </dd>
+				</dl>
+				<dl class="news-list-block-inner"> <dt class="date">7/16</dt>
+				  <dd> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/report/AccessHistoryInput?encodePrm=2k0kghjfc3bq0ysn1d1euhdco6gv0th3t41fg6lhvihxo6ydwpvc862qf6d17zfwesjeqbcyxhahc7ameoqx0i065qw1kgom7cn12frzpkogu4usgnpl84evn12ek6jf2ogsz7kndk47rh7m7aaq4o3g38dic276m95kwejg&amp;attrSrcKey=1313f14154e3d00d11" target="_blank">７月１６日の米国株相場レポート</a> <span class="img-pdf">（628KB）</span> </dd>
+				</dl>
+				<dl class="news-list-block-inner"> <dt class="date">7/15</dt>
+				  <dd> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/report/AccessHistoryInput?encodePrm=2k0kghjfc3bq0ysn1d1euhdco6gv0th3t41fg6lhvihxo6ydwpvc862qf6d17zfwesjeqbcyxhahc7ameoqx0i065qt4d1vxsw8rot4n9k33p34wn5wtmzbnqrqjco24woixjvxy5erhjjp71jaeq9prbdd0ufxly5dugpzw&amp;attrSrcKey=1313f14154e3d00d11" target="_blank">７月１５日の米国株相場レポート</a> <span class="img-pdf">（552KB）</span> </dd>
+				</dl>
+				<p class="block-more-info type-small">[提供：こころトレード研究所]</p>
+			  </div>
+			  <p class="block-more-info"> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/report/UsStockBackNumber?encodePrm=1nl0gbd0a4gq1o72wd8l07msr8fosub0ejanlf0&amp;attrSrcKey=1313f14154e3d00d11" onclick="return linkCheck()">一覧</a> </p>
+			</div>
+		  </div>
+		  <div class="col-xs-6">
+			<h3 class="heading-title-03">米国株銘柄レポート（企業レポート）</h3>
+			<div class="link-detail-block type-withicon">
+			  <dl class="news-list-block-inner"> <dt class="date">7/20</dt>
+				<dd> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/report/AccessHistoryInput?encodePrm=2k0kghjfc3bq0ysn1d1euhdco6gv0th3t41fg6lhvihxo6ydwpvc862qf6d17zfz783df0rzdz6zmf14is019f6tr89itomvir5s7wdse4f0ewyu07v52vw9j7j833u4xj69ytgpiltescahgdec6em4a1lrob7ugla6ogws&amp;attrSrcKey=1313f14154e3d00d11" target="_blank">インターナショナル･ビジネス･マシーンズ(IBM)決算速報</a> <span class="img-pdf">（198KB）</span> </dd>
+			  </dl>
+			  <dl class="news-list-block-inner"> <dt class="date">7/20</dt>
+				<dd> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/report/AccessHistoryInput?encodePrm=2k0kghjfc3bq0ysn1d1euhdco6gv0th3t41fg6lhvihxo6ydwpvc862qf6d17zfz783df0rzdz6zmf14is019f6tr89ipwae2m15tg72humh7oafok710qo5tfqdk9rb7ysqqx36p6owbufraxhtvmlb9vf1b0cy5c29uv18&amp;attrSrcKey=1313f14154e3d00d11" target="_blank">ハリバートン(HAL)決算速報</a> <span class="img-pdf">（218KB）</span> </dd>
+			  </dl>
+			  <dl class="news-list-block-inner"> <dt class="date">7/20</dt>
+				<dd> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/report/AccessHistoryInput?encodePrm=2k0kghjfc3bq0ysn1d1euhdco6gv0th3t41fg6lhvihxo6ydwpvc862qf6d17zfz783df0rzdz6zmf14is019f6toznm19ophcktovjtzdurdy2je7evadg30i0gzdlnqk3nmek0ngh8ryaor12xsf6lsmbqwya3g4lh24rg&amp;attrSrcKey=1313f14154e3d00d11" target="_blank">インチュイティブ･サージカル（ISRG）</a> <span class="img-pdf">（277KB）</span> </dd>
+			  </dl>
+			  <dl class="news-list-block-inner"> <dt class="date">7/16</dt>
+				<dd> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/report/AccessHistoryInput?encodePrm=2k0kghjfc3bq0ysn1d1euhdco6gv0th3t41fg6lhvihxo6ydwpvc862qf6d17zfz783df0rzdz6zmf14is019f6tozknvrro1m0yp780gx4lfq92nsl35xbxoagz2cey6grz7zjm2izwfk3q8ay1p0lnz7mo3mafypuj7zbw&amp;attrSrcKey=1313f14154e3d00d11" target="_blank">ジョンソン･アンド･ジョンソン(JNJ)決算速報</a> <span class="img-pdf">（268KB）</span> </dd>
+			  </dl>
+			  <dl class="news-list-block-inner"> <dt class="date">7/16</dt>
+				<dd> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/report/AccessHistoryInput?encodePrm=2k0kghjfc3bq0ysn1d1euhdco6gv0th3t41fg6lhvihxo6ydwpvc862qf6d17zfz783df0rzdz6zmf14is019f6tozhrmg3cofsaxm953co13umrr7tc439n7zcqkcn3ek7wrram75rsc39ufj2azmf88warxpqy3x206roc&amp;attrSrcKey=1313f14154e3d00d11" target="_blank">アルコア (AA)決算速報</a> <span class="img-pdf">（267KB）</span> </dd>
+			  </dl>
+			  <dl class="news-list-block-inner"> <dt class="date">7/16</dt>
+				<dd> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/report/AccessHistoryInput?encodePrm=2k0kghjfc3bq0ysn1d1euhdco6gv0th3t41fg6lhvihxo6ydwpvc862qf6d17zfz783df0rzdz6zmf14is019f6tozhrinqv8anoj62f72vhwlydfk581y1ji7jw1ik9ozudjux3dqn9vlf4a35souef8q41kew1snu3d5ss&amp;attrSrcKey=1313f14154e3d00d11" target="_blank">ゴールドマンサックスグループ(GS)決算速報</a> <span class="img-pdf">（307KB）</span> </dd>
+			  </dl>
+			  <dl class="news-list-block-inner"> <dt class="date">7/16</dt>
+				<dd> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/report/AccessHistoryInput?encodePrm=2k0kghjfc3bq0ysn1d1euhdco6gv0th3t41fg6lhvihxo6ydwpvc862qf6d17zfz783df0rzdz6zmf14is019f6tozhreveds5j24pvpat2ypd9z3wh3zstfsfr1iohfzfgubyjkkbirf3ke4n9ae2dm8jxb7415hem6jjx8&amp;attrSrcKey=1313f14154e3d00d11" target="_blank">ネットフリックス（NFLX）決算速報</a> <span class="img-pdf">（281KB）</span> </dd>
+			  </dl>
+			  <dl class="news-list-block-inner"> <dt class="date">7/16</dt>
+				<dd> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/report/AccessHistoryInput?encodePrm=2k0kghjfc3bq0ysn1d1euhdco6gv0th3t41fg6lhvihxo6ydwpvc862qf6d17zfz783df0rzdz6zmf14is019f6tozhrb31wc0efq9ozejafi4lks8szxnlc2ny6zuem9v3b4261qwe8ylpnz7cs3act8dqktt6965e9py1o&amp;attrSrcKey=1313f14154e3d00d11" target="_blank">バンクオブアメリカ(BAC)決算速報</a> <span class="img-pdf">（276KB）</span> </dd>
+			  </dl>
+			  <dl class="news-list-block-inner"> <dt class="date">7/16</dt>
+				<dd> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/report/AccessHistoryInput?encodePrm=2k0kghjfc3bq0ysn1d1euhdco6gv0th3t41fg6lhvihxo6ydwpvc862qf6d17zfz783df0rzdz6zmf14is019f6tozhr7apevv9tbti9i9hwavx6gl4vvid8cw5ch0bskaprw5sixh9qi3uxtrg9sic087jugibcuw6cwc64&amp;attrSrcKey=1313f14154e3d00d11" target="_blank">モルガンスタンレー(MS)決算速報</a> <span class="img-pdf">（276KB）</span> </dd>
+			  </dl>
+			  <p class="block-more-info type-small">[提供：こころトレード研究所]</p>
+			</div>
+			<p class="block-more-info"> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/report/UsStockBackNumber?encodePrm=1nl0gbd0a4gq1o72wd8l07msr8fosub0ejanmyk&amp;attrSrcKey=1313f14154e3d00d11" onclick="return linkCheck()">一覧</a> </p>
+		  </div>
+		</div>
+		<div class="row">
+		  <div class="col-xs-6">
+			<h3 class="heading-title-03">オンラインセミナー</h3>
+			<div class="link-detail-block">
+			  <div class="link-detail-block">
+				<p class="link-detail-name">米国株月次オンラインセミナー（7月）</p>
+				<p class="text-block"> 7月27日（月） 20：30～<br> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/seminar/OnlineSeminar?sno=5182">セミナー詳細</a> </p>
+			  </div>
+			</div>
+			<ul class="block-more-info link-list">
+			  <li><a href="https://media.monex.co.jp/category/us-movie">過去の米国株オンラインセミナー</a></li>
+			</ul>
+		  </div>
+		  <div class="col-xs-6">
+			<h3 class="heading-title-03">バロンズ・ダイジェスト（毎週火曜配信）</h3>
+			<div class="news-list-block">
+			  <dl class="news-list-block-inner"> <dt class="date">7/20</dt>
+				<dd> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/report/AccessHistoryInput?encodePrm=3b936ogjarxc4pieazbwrzh0kyvn7onwano10ix1ke6jg3952dd97zt6b11mlv8aofoiypp80zzxays2o7jad3ujpxyi2hfrzn2y3wiy1eazl58sionjj0evxn27lgkyke9qfx4dwr8liqoxnmch7ct930ghwtaw00pv30&amp;attrSrcKey=1313f14154e3d00d11" target="_blank">指数プロバイダーはテスラにさえも多大な影響を持つ
+							  </a> <span class="img-pdf">（2327KB）</span> </dd>
+			  </dl>
+			</div>
+			<div class="news-list-block">
+			  <dl class="news-list-block-inner"> <dt class="date">7/13</dt>
+				<dd> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/report/AccessHistoryInput?encodePrm=3b936ogjarxc4pieazbwrzh0kyvn7onwano10ix1ke6jg3952dd97zt6b11mlv8aofoiypp80zzxays2o7jad3ujk4dzitmsqwdp631aeu7sd4durljqjb6rl7wcqxebgvuf2p111ku4mi03kofxed21qyxp7bny87yffg&amp;attrSrcKey=1313f14154e3d00d11" target="_blank">投資のプロが推奨する37銘柄
+							  </a> <span class="img-pdf">（3084KB）</span> </dd>
+			  </dl>
+			</div>
+			<p class="block-more-info type-small">[提供：ダウ・ジョーンズおよび時事通信社]</p>
+			<p class="block-more-info"> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/report/ReportBackNumber?encodePrm=1nl0gbd0a4gq1o72wd8l07msr8fosub0ejandp8&amp;attrSrcKey=1313f14154e3d00d11" onclick="return linkCheck()">一覧</a> </p>
+		  </div>
+		</div>
+		<div class="row">
+		  <div class="col-xs-6">
+			<h3 class="heading-title-03">米国株厳選銘柄レポートBOOK(四半期更新)</h3>
+			<p>米国の個別銘柄50銘柄とETF16銘柄を選定しています。マネックス証券に口座をお持ちのお客様はどなたでもご覧いただけます。初心者の銘柄選びにも最適の一冊です。（提供：亜州IR）</p>
+			<p><a href="https://info.monex.co.jp/us-stock/market/book.html">最新の銘柄レポート</a></p>
+		  </div>
+		</div>
+		<div class="row">
+		  <div class="col-xs-6">
+			<h3 class="heading-title-03">DZHフィナンシャルリサーチ「銘柄・市場レポート」</h3>
+			<h4 class="heading-title-04">USマーケットデイリー（毎営業日配信）</h4>
+			<div class="news-list-block">
+			  <dl class="news-list-block-inner"> <dt class="date">7/20</dt>
+				<dd> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/report/AccessHistoryInput?encodePrm=3b936ogjarxc4pieazbwrzh0kyvn7onwano10ix1ke6jg3952dd97zt6b11mlv8ealfu7zb9ruorwuem45zpnt0011but3zredqly7a962v9duweriwgquya9wrbraw69nyzy9u0vr5d2w1zh3iac9s81ts0lm2g2bcxwc&amp;attrSrcKey=1313f14154e3d00d11" target="_blank">ナスダックが最高値更新　アマゾン、テスラが大幅高 
+							  </a> <span class="img-pdf">（340KB）</span> </dd>
+			  </dl>
+			</div>
+			<h4 class="heading-title-04">個別銘柄分析（毎週火曜配信）</h4>
+			<div class="news-list-block">
+			  <dl class="news-list-block-inner"> <dt class="date">7/21</dt>
+				<dd> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/report/AccessHistoryInput?encodePrm=3b936ogjarxc4pieazbwrzh0kyvn7onwano10ix1ke6jg3952dd97zt6b11mlv8hwr75h8xbipdmiq15k4g4yi5ghx7sznejmu0jof7aok0iv91n523udwirixz12uhenbvrprymm40wef8alpbd6ttnyfao03cwcwgzvg&amp;attrSrcKey=1313f14154e3d00d11" target="_blank">ネットフリックスが大幅反落 
+							  </a> <span class="img-pdf">（393KB）</span> </dd>
+			  </dl>
+			</div>
+		  </div>
+		</div>
+		<h2 class="heading-title-02" id="nisa">米国株・中国株もNISAで！</h2>
+		<p> マネックス証券では、米国株および中国株の非課税（NISA）取引が可能です。<br> しかも、買付時の国内手数料（税込）を恒久的に全額キャッシュバックいたします（実質無料）。<br> ぜひ、マネックス証券のNISA口座でのお取引をご検討ください。<br> <a href="https://info.monex.co.jp/archive/new2014/news1405_31.html">詳しくはこちら</a><br> NISA口座で米国株をお取引いただくには、事前にNISA口座への資金の割り当てが必要です。<br> <a href="https://info.monex.co.jp/nisa/guide_us.html">詳しくはこちら</a> </p>
+	  </div>
+	  <!-- include1 -->
+	  <div class="container">
+		<h2 class="heading-title-02" id="guide">取引までの流れ</h2>
+		<div class="tab-block act-tab">
+		  <ul class="tab">
+			<li class="is-current"><a href="javascript:void(0);">米国株</a></li>
+			<li class=""><a href="javascript:void(0);">中国株</a></li>
+		  </ul>
+		  <div class="tab-target is-current">
+			<div class="col-xs-9 col-sm-6" style="margin-left: 12%">
+			  <div style="margin-top: 15px;"> <span>米国株のお取引を始めるには、外国株取引口座を開設後、<br>①資金振替（円資金の移動）<br>②為替振替（円を米ドルへ交換）、もしくは円貨資金の連携指示が必要です。</span> </div>
+			  <p> <img src="https://mxp1.monex.co.jp/pc/static/img/category/foreign/stock_step_usa.png" alt=""> </p>
+			  <ul class="block-more-info link-list type-inline type-right">
+				<li> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/iocash/AccountTransferForForeignStock?attrSrcKey=1313f14154e3d00d11">資金振替</a> </li>
+				<li style="width: 270px;"> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/common/ForeignStkSiteConnect?encodePrm=7wsyrjusj4xkcw0w2ofdgq18enw&amp;attrSrcKey=1313f14154e3d00d11" target="_blank"><span class="ic-window">為替振替</span></a> </li>
+				<li style="width: 190px;"> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/common/ForeignStkSiteConnect?encodePrm=7wsyrjusj4xkcw0w2ofdgq18d4c&amp;attrSrcKey=1313f14154e3d00d11" target="_blank"><span class="ic-window">米国株取引</span></a> </li>
+			  </ul>
+			  <p class="s-ta-r"> <a href="https://info.monex.co.jp/us-stock/guide/index.html"><span>取引までの流れを詳細に見る</span></a> </p>
+			</div>
+		  </div>
+		  <div class="tab-target">
+			<div class="col-xs-9 col-sm-6" style="margin-left: 12%; height: 319px;">
+			  <div style="margin-top: 15px;"> <span>中国株取引の際は、資金振替（円資金の移動）が事前に必要です。（取引は円のままで可能）</span> </div>
+			  <p> <img src="https://mxp1.monex.co.jp/pc/static/img/category/foreign/stock_step_china.png" alt=""> </p>
+			  <ul class="block-more-info link-list type-inline type-right">
+				<li style=""> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/iocash/AccountTransferForForeignStock?attrSrcKey=1313f14154e3d00d11"><span>資金振替</span></a> </li>
+				<li style="width: 485px;"> <a href="https://mxp1.monex.co.jp/pc/servlet/ITS/common/ForeignStkSiteConnect?encodePrm=7wsyrjusj4xkcw0w2ofdgq18enw&amp;attrSrcKey=1313f14154e3d00d11" target="_blank"><span class="ic-window">中国株取引</span></a> </li>
+			  </ul>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<!-- フッター -->
+	<div class="reader"><a name="pl-footermenu">ここからフッターメニューです。</a></div>
+	<div class="l-footer">
+	  <div id="footer-navi" class="footer-navi">
+		<div class="footer-navi-1st box-container">
+		  <div class="grid-cmn">
+			<div class="col4_01">
+			  <dl class="footer-link-list"> <dt><a class="link-list-title" href="https://mxp1.monex.co.jp/pc/servlet/ITS/home/Announce?attrSrcKey=1313f14154e3d00d11">MY PAGE</a></dt> </dl>
+			  <dl class="footer-link-list"> <dt><a class="link-list-title" href="https://mxp1.monex.co.jp/pc/servlet/ITS/asset/AmountList?attrSrcKey=1313f14154e3d00d11">保有残高・口座管理</a></dt>
+				<dd>
+				  <ul class="link-list">
+					<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/asset/AmountList?attrSrcKey=1313f14154e3d00d11">残高照会</a></li>
+					<li class="separate"><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/login/TransitionSsoForInternal?encodePrm=bsk2wv8wsbsujekx6l1usrqxyobdo1zxdc8n6hnfieyn2wmpkgfmgcv2g19qjp2eevc59mo3psf6k&amp;attrSrcKey=1313f14154e3d00d11">ポイント</a></li>
+					<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/asset/DealArchiveTop?attrSrcKey=1313f14154e3d00d11">取引履歴</a></li>
+					<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/asset/ClearAcc?attrSrcKey=1313f14154e3d00d11">精算表</a></li>
+					<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/login/TransitionSsoForInternal?encodePrm=vrdk49821vjmi1854xuiz2tb6jtragg2iphfpum1s2cj2xjkwpnxr4p3u826qn1yrgwb020blkrf1p62ry53x3dgyqevzusc&amp;attrSrcKey=1313f14154e3d00d11">登録内容確認・変更</a></li>
+					<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/customer/DocSearch?attrSrcKey=1313f14154e3d00d11">電子交付（取引報告書　等）</a></li>
+					<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/login/TransitionSsoForInternal?encodePrm=bsk2wv8wsbsujekx6l1usrqxyobdo1zxdc8n6hnfieyn2wmpkgfmgcv2g19qjy4qg3u71ly0987h8&amp;attrSrcKey=1313f14154e3d00d11">アラートメール登録</a></li>
+					<li><a href="https://info.monex.co.jp/support/change.html">変更・照会手続き</a></li>
+					<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/login/TransitionSsoForInternal?encodePrm=bsk2wv8wsbsujekx6l1usrqxyobdo1zxdc8n6hnfieyn2wmpkgfmgcv2gmrsting9c9lk9ao7r07w&amp;attrSrcKey=1313f14154e3d00d11">株式売買手数料</a></li>
+				  </ul>
+				</dd>
+			  </dl>
+			</div>
+			<div class="col4_01">
+			  <dl class="footer-link-list"> <dt><a class="link-list-title" href="https://mxp1.monex.co.jp/pc/servlet/ITS/info/TransitionSsoForInsight?encodePrm=4l518flxm0qwidbsq9qbo5h71dbyw70&amp;attrSrcKey=1313f14154e3d00d11">投資情報</a></dt>
+				<dd>
+				  <ul class="link-list">
+					<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/info/TransitionSsoForInsight?encodePrm=4l518flxm0qwidbsq9qbo5h71dbyw70&amp;attrSrcKey=1313f14154e3d00d11">マーケット情報</a></li>
+					<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/info/TransitionSsoForInsight?encodePrm=lqhu80aqt733wdygg8c&amp;attrSrcKey=1313f14154e3d00d11">スクリーニング</a></li>
+					<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/info/TransitionSsoForInsight?encodePrm=9zh1n4e7tzf30h8ff1y5ggbv0&amp;attrSrcKey=1313f14154e3d00d11">株式ランキング</a></li>
+					<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/login/TransitionSsoForInternal?encodePrm=bsk2wv8wsbsujekx6l1usrqxyobdo1zxdc8n6hnfieyn2wmpkgfmgcv2hdpibk4fmxfibp0qtowrg&amp;attrSrcKey=1313f14154e3d00d11" onclick="return linkCheck()">国内株式決算カレンダー</a></li>
+					<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/login/TransitionSsoForInternal?encodePrm=bsk2wv8wsbsujekx6l1usrqxyobdo1zxdc8n6hnfieyn2wmpkgfmgcv2hdpibk5333k006jvmrduk&amp;attrSrcKey=1313f14154e3d00d11" onclick="return linkCheck()">米国株式決算カレンダー</a></li>
+					<li class="separate"><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/report/EconomyIndexCalendar?encodePrm=35sq8d8zry7rfs9vcnbskn6kqjvguqz8s&amp;attrSrcKey=1313f14154e3d00d11">経済指標カレンダー</a></li>
+					<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/info/TransitionSsoForInsight?encodePrm=lqhu80aqt6zkcb4cjlo&amp;attrSrcKey=1313f14154e3d00d11">ニュース</a></li>
+					<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/report/AnalystBackNumber?narrowDownFlg=true&amp;beforeDay7=true&amp;attrSrcKey=1313f14154e3d00d11">アナリストレポート</a></li>
+					<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/report/ReportBackNumber?encodePrm=4ggqel4aun1c6mp2cvxtfr21ej39ilk2v0ilnisjddjf96blnn18afsibg&amp;attrSrcKey=1313f14154e3d00d11">マーケット展望</a></li>
+					<li><a href="https://media.monex.co.jp/" target="_blank" class="ic-window" clickcount="moneyclip-001">マネクリ</a></li>
+				  </ul>
+				</dd>
+			  </dl>
+			</div>
+			<div class="col4_01">
+			  <dl class="footer-link-list"> <dt><a class="link-list-title" href="https://mxp1.monex.co.jp/pc/servlet/ITS/info/InfoToolList?attrSrcKey=1313f14154e3d00d11">ツール</a></dt>
+				<dd>
+				  <ul class="link-list">
+					<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/info/TransitionSsoForInsight?encodePrm=3jf7ua9l9norb2a7q1qb86sbtmdbwu8i4&amp;attrSrcKey=1313f14154e3d00d11">マーケットボード</a></li>
+					<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/info/InfoToolList?attrSrcKey=1313f14154e3d00d11">プレミアムウェブ</a></li>
+					<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/info/InfoToolCommonActivate?encodePrm=5y1xlqqnz87xhs35bqa6mjhvzglbg&amp;attrSrcKey=1313f14154e3d00d11" target="_blank" class="ic-window" clickcount="footer-chartfolio-001">チャートフォリオ</a></li>
+					<li><a href="https://labs.monex.co.jp/oretra/">俺の投資力診断</a></li>
+				  </ul>
+				</dd>
+			  </dl>
+			  <dl class="footer-link-list"> <dt><a class="link-list-title" href="https://info.monex.co.jp/invest/mail-service.html">メール</a></dt>
+				<dd>
+				  <ul class="link-list">
+					<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/info/PremiumMailList?attrSrcKey=1313f14154e3d00d11">プレミアムメール</a></li>
+					<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/customer/PriceAlertMail?attrSrcKey=1313f14154e3d00d11">株価アラートメール</a></li>
+					<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/login/TransitionSsoForInternal?encodePrm=bsk2wv8wsbsujekx6l1usrqxyobdo1zxdc8n6hnfieyn2wmpkgfmgcv2g19qjy4qg3u71ly0987h8&amp;attrSrcKey=1313f14154e3d00d11">アラートメール登録</a></li>
+				  </ul>
+				</dd>
+			  </dl>
+			</div>
+			<div class="col4_01">
+			  <dl class="footer-link-list"> <dt><a class="link-list-title" href="https://mxp1.monex.co.jp/pc/servlet/ITS/stock/StkOrderLst?attrSrcKey=1313f14154e3d00d11">注文約定一覧</a></dt>
+				<dd>
+				  <ul class="link-list">
+					<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/stock/StockTop?attrSrcKey=1313f14154e3d00d11">株式</a></li>
+					<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/fund/FundTop?attrSrcKey=1313f14154e3d00d11">投資信託・投信つみたて</a></li>
+					<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/login/TransitionSsoForInternal?encodePrm=17490rsee36e7y5taykh3y43qavnq9yr5c4eqfq73lkna59uqmarqxgbzw6nkqxwjnbw&amp;attrSrcKey=1313f14154e3d00d11">債券</a></li>
+					<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/option/OpTop?attrSrcKey=1313f14154e3d00d11">先物・オプション</a></li>
+					<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/stock/HakabuTop?attrSrcKey=1313f14154e3d00d11">ワン株（単元未満株）</a></li>
+				  </ul>
+				</dd>
+			  </dl>
+			  <dl class="footer-link-list">
+				<dd>
+				  <ul class="link-list">
+					<li><a href="https://info.monex.co.jp/news/index.html">最新情報</a></li>
+					<li><a href="https://info.monex.co.jp/policy/sitepolicy.html">当サイトのご利用にあたって</a></li>
+					<li><a href="https://info.monex.co.jp/support/index.html">ヘルプ・お問合せ</a></li>
+					<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/home/SiteMap?attrSrcKey=1313f14154e3d00d11">サイトマップ</a></li>
+				  </ul>
+				</dd>
+			  </dl>
+			</div>
+			<p class="ic-top"><a href="#pl-pagetop"><img src="https://mxp1.monex.co.jp/pc/static/img/common/ic_pagetop.png"></a></p>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<div id="navi-footer" riot-tag="navi-footer">
+	  <div id="footer_common">
+		<div id="ft_nav" role="navigation">
+		  <ul>
+			<li class="side"><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/home/Announce?attrSrcKey=1313f14154e3d00d11">MY PAGE</a></li>
+			<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/asset/AmountList?attrSrcKey=1313f14154e3d00d11">保有残高・口座管理</a></li>
+			<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/iocash/InOutCashTop?attrSrcKey=1313f14154e3d00d11">入出金</a></li>
+			<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/info/TransitionSsoForInsight?encodePrm=4l518flxm0qwidbsq9qbo5h71dbyw70&amp;attrSrcKey=1313f14154e3d00d11">投資情報</a></li>
+			<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/report/ReportList?attrSrcKey=1313f14154e3d00d11">レポートセミナー</a></li>
+			<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/home/ProductsServiceTop?attrSrcKey=1313f14154e3d00d11">商品・サービス一覧</a></li>
+		  </ul>
+		</div>
+		<div id="cfd_ft_product_nav" role="navigation">
+		  <ul>
+			<li class="side"><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/stock/StockTop?attrSrcKey=1313f14154e3d00d11">株式取引</a></li>
+			<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/stock/MarginAcCloseTop?attrSrcKey=1313f14154e3d00d11">信用取引</a></li>
+			<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/foreign/ForeignStockTop?attrSrcKey=1313f14154e3d00d11">米国株･中国株</a></li>
+			<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/fund/FundTop?attrSrcKey=1313f14154e3d00d11">投資信託</a></li>
+			<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/login/TransitionSsoForInternal?encodePrm=17490rsee36e7y5taykh3y43qavnq9yr5c4eqfq73lkna59uqmarqxgbzw6nkqxwjnbw&amp;attrSrcKey=1313f14154e3d00d11">債券</a></li>
+			<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/fx/FXPLUSTop?attrSrcKey=1313f14154e3d00d11">FX</a></li>
+			<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/crypto/CryptoTop?attrSrcKey=1313f14154e3d00d11">暗号資産</a></li>
+			<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/option/OpTop?attrSrcKey=1313f14154e3d00d11">先物･オプション</a></li>
+			<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/click/Click365Top?attrSrcKey=1313f14154e3d00d11">くりっく株365</a></li>
+			<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/gold/MonexGoldTop?attrSrcKey=1313f14154e3d00d11">金･プラチナ</a></li>
+			<li><a href="https://info.monex.co.jp/robot-adviser/index.html">ロボアド</a></li>
+			<li><a href="https://info.monex.co.jp/nisa/index.html">NISA</a></li>
+			<li><a href="https://mxp1.monex.co.jp/pc/servlet/ITS/login/TransitionSsoForInternal?encodePrm=b9ajz316paaxsaxi7kgbgtfxdq90q20t5ibybg3gvmwp4lqhyu9uumvs93hq87c3iuvpqo8gyuhc63wrdawudw3kh23mszu82mmxw91o&amp;attrSrcKey=1313f14154e3d00d11">iDeCo</a></li>
+		  </ul>
+		</div>
+		<div id="ft_btm" style="text-align: left;" role="contentinfo">
+		  <div class="ft_inner">
+			<div class="ft_logo no_copy"> <a href="http://www.monex.co.jp/">
+						  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOoAAAAUCAAAAACmZ/77AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8xMi8wNy0xMDo1NzowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1ZjE0OWFiMy0xNjNkLTQzYWMtYjcxYy0wYzc4Y2YwODZlOTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6REEwMzc3ODZFQ0QzMTFFNTg5Rjc4QUM3NjY0QTBGREEiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6REEwMzc3ODVFQ0QzMTFFNTg5Rjc4QUM3NjY0QTBGREEiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDplYWRkYTFkMy02OWRkLTRkMzEtOWY4Yy1hZGZiYzAyY2QxMTQiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDplNDIyMmUwZS0xMWZlLTExNzktYWM3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" alt="マネックス証券株式会社">
+					  </a>
+			  <p>COPYRIGHT © MONEX, Inc.</p>
+			</div>
+			<div class="ft_info">
+			  <ul>
+				<li>金融商品取引業者　関東財務局長（金商）第165号</li>
+				<li>加入協会：日本証券業協会、一般社団法人 金融先物取引業協会、</li>
+				<li style="text-indent: 5em;">一般社団法人 日本暗号資産取引業協会、一般社団法人 日本投資顧問業協会</li>
+				<li><a href="https://info.monex.co.jp/policy/risk/china.html">リスク・手数料などの重要事項</a></li>
+			  </ul>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  
+  </body></html>
