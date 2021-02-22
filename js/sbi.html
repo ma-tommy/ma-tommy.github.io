@@ -6,42 +6,215 @@
 			src="//cdn.kaizenplatform.net/s/fa/2bcc61161624aa.js?kz_namespace=kzs"
 			charset="utf-8"
 		></script>
+        <style type="text/css">
+             .block_header {
+                padding: 5px 100px 5px 100px;
+                height: 100px;
+                width: 100px;
+                background: rgb(246, 156, 85);
+                border: 1px red solid;
+                border-radius: 10px;
+                text-align: center;
+             }
+             .container_table {
+                 display: table;
+                 table-layout:fixed;
+             }
+             .table_row {
+                display: table-row;
+             }
+             .table_cell {
+                display: table-cell;
+
+             }
+             .container {
+                margin: 30px;
+                display: grid;
+                grid-template-columns: 10% 20%;
+                /* grid-template-rows: 100%; */
+                
+            }
+            .grid_age_label {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            .grid_age_input {
+                grid-column: 2;
+                grid-row: 1;
+            }
+
+            .grid_job_label {
+                grid-column: 1;
+                grid-row: 2;
+            }
+
+            .grid_job_input {
+                grid-column: 2;
+                grid-row: 2;
+            }
+
+            .grid_annual_income_label {
+                grid-column: 1;
+                grid-row: 3;
+            }
+
+            .grid_annual_income_input {
+                grid-column: 2;
+                grid-row: 3;
+            }
+
+            .grid_insurance_label {
+                grid-column: 1/3;
+                grid-row: 4;
+            }
+
+            .grid_insurance_value {
+                grid-column: 1/3;
+                grid-row: 5;
+            }
+
+            .grid_insurance_caution {
+                grid-column: 1/3;
+                grid-row: 6;
+            }
+
+            .grid_insurance_input_label {
+                grid-column: 1/3;
+                grid-row: 7;
+            }
+
+            .grid_insurance_input_value {
+                grid-column: 2/3;
+                grid-row: 8;
+            }
+
+            .grid_insurance_input_error_limmt {
+                grid-column: 2/3;
+                grid-row: 9;
+            }
+
+            .grid_insurance_input_caution {
+                grid-column: 2/3;
+                grid-row: 10;
+            }
+
+            .grid_yazirusi {
+                grid-column: 1/3;
+                grid-row: 11;
+            }
+
+            .grid_yaer_deduction_label {
+                grid-column: 1/3;
+                grid-row: 12;
+            }
+
+            .grid_yaer_deduction_value {
+                grid-column: 1/3;
+                grid-row: 13;
+            }
+
+            .grid_yaer_deduction_value #yaer_deduction {
+                color: red;
+                font: bold;
+            }
+
+            .sum_deduction_label {
+                grid-column: 1/3;
+                grid-row: 14;
+            }
+
+            .sum_deduction_value {
+                grid-column: 1/3;
+                grid-row: 15;
+            }
+
+            .sum_deduction_value #sum_deduction {
+                color: red;
+                font: bold;
+            }
+
+        </style>
 	</head>
 	<body>
-		<h1>SBIシミュレーション</h1>
         <div>
-            <span>年齢</span>
-            <input type="text" id="age" style="margin-right: 10px" value=''></input>
+            <span class="block_header">所得控除額 わくわく電卓</span>
         </div>
-        <div>
-            <span>職業</span>
-            <select id="num1">
-                <option value="1">自営業(個人事業主)</option>
-                <option value="2">公務員</option>
-                <option value="3">会社員(企業型DCなし、確定給付企業年金(DB)なし) </option>
-                <option value="4">会社員(企業型DCあり、確定給付企業年金(DB)なし)</option>
-                <option value="5">会社員(企業型DCなし、確定給付企業年金(DB)あり) </option>
-                <option value="6">会社員(企業型DCあり、確定給付企業年金(DB)あり) </option>
-            </select>
-        </div>
-        <div>
-                </span> <span>年収</span>
-                <input type="text" id="money1" style="margin-right: 10px" value='100'></input>
-        </div>
-        <div>
-            <span>掛け金上限</span>
-            <span name="product" style="margin-right: 10px">23000</span>
-        </div>
-        <div>
-            <span>掛け金</span>
-            <input type="number" value="0" step="1000">
-        <div>
-            <input type="button" onclick="onAClick()" value="Next">
+        <div class="container">    
+            
+                <span class="grid_age_label">年齢</span>
+                <select class="grid_age_value">
+                    <option selected disabled hidden>
+                      年齢を選択してください
+                    </option>
+                  </select>
+            
+                <span class="grid_job_label">職業</span>
+                <select class="grid_job_value">
+                    <option value="1">自営業(個人事業主)</option>
+                    <option value="2">公務員</option>
+                    <option value="3">会社員(企業型DCなし、確定給付企業年金(DB)なし) </option>
+                    <option value="4">会社員(企業型DCあり、確定給付企業年金(DB)なし)</option>
+                    <option value="5">会社員(企業型DCなし、確定給付企業年金(DB)あり) </option>
+                    <option value="6">会社員(企業型DCあり、確定給付企業年金(DB)あり) </option>
+                </select>
+            
+                <span class="grid_annual_income_label">年収</span>
+                <input type="text" value='100' class="grid_annual_income_value"></input>
+            
+                <span class='grid_insurance_label'>あなたの毎月の掛金上限はこちら↓</span>
+                <input type="text" disabled class="grid_insurance_value" value="23,000円/月">
+                <span class="grid_insurance_caution">※職業によって、掛金上限額は異なります。</span>
+            
+                
+                <span class="grid_insurance_input_label">毎月の掛金予定額を入力ください</span>
+                <input type="number" class="grid_insurance_input_value" value="0" step="1000">
+                <span class="grid_insurance_input_error_limmt">※掛け金の上限を超えています</span>
+                <span class="grid_insurance_input_caution">※iDeCoの掛金は5,000円以上1,000円刻みです。</span>
+
+                <span class="grid_yazirusi">⬇️</span>
+            
+                <span class="grid_yaer_deduction_label">iDeCoを活用することで、</span><br>
+                <div class="grid_yaer_deduction_value">
+                    年間
+                    <span id="yaer_deduction">0</span><span>円
+                </div>
+                <span class="sum_deduction_label">60歳まで活用した場合、</span><br>
+                <div class="sum_deduction_value">
+                    合計
+                    <span id="sum_deduction">0</span>
+                    円の
+                </div>
+                <div>
+                    <span>所得税が控除されます。</span><br>
+                    <span>専業主婦(夫)の場合、所得自体がないため「所得控除」はありません。運用益、受取り時の節税メリットのみです。</span><br>
+                    <span>※あくまでも簡易シミュレーションです。　節税金額を示唆・保証するものではありません。<br>
+                        ※課税所得は年収から必要経費や保険料等の各種控除を差し引いた金額であり、個人によってその額は大きく異なってきます。あくまで一例としてご参考ください。<br>
+                        ※税率は2020年12月8日現在の税率にて試算しています。税率が変更となった場合には結果も異なります。<br>
+                        ※復興特別所得税、配偶者控除（配偶者特別控除）は考慮していません。<br>
+                    </span>
+                </div>
+            </div>
         </div>
         <script>
-            function onClick() {
-                alert('a');
+
+            // セレクトボックスの初期化
+            // 年齢
+            const AGE_RANGE = {'MIN': 20, 'MAX': 59};
+            
+            /// jQueryによるセレクトボックス初期化
+            var keys = Object.keys(optionCntList);
+            for (let i = AGE_RANGE.MIN; i <= AGE_RANGE.MAX; i++) {
+                var option = $('<option>')
+                .text(i)
+                .val(i);
+                $(".grid_age_value").append(option);
             }
+
+            var CalcSimulation = function (){ this.init.apply(this, arguments); };
+            CalcSimulation.prototype = {
+                // メインの税計算
+            };
         </script>
 	</body>
 </html>
