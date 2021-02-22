@@ -7,6 +7,11 @@
 			charset="utf-8"
 		></script>
         <style type="text/css">
+            .container {
+                margin: 30px;    
+                background-color: yellow;
+                text-align: center;
+            }
              .block_header {
                 padding: 5px 100px 5px 100px;
                 height: 100px;
@@ -27,7 +32,7 @@
                 display: table-cell;
 
              }
-             .container {
+            .grid_container {
                 margin: 30px;
                 display: grid;
                 grid-template-columns: 10% 20%;
@@ -99,14 +104,12 @@
                 grid-row: 10;
             }
 
-            .grid_yazirusi {
-                grid-column: 1/3;
-                grid-row: 11;
+            .yazirusi {
+                text-align: center;
             }
 
-            .grid_yaer_deduction_label {
-                grid-column: 1/3;
-                grid-row: 12;
+            .yaer_deduction_label {
+                
             }
 
             .grid_yaer_deduction_value {
@@ -137,17 +140,19 @@
         </style>
 	</head>
 	<body>
-        <div>
-            <span class="block_header">所得控除額 わくわく電卓</span>
-        </div>
         <div class="container">    
+            <div>
+                <span class="block_header">所得控除額 わくわく電卓</span>
+            </div>
+            <div class="grid_container">
+            
             
                 <span class="grid_age_label">年齢</span>
                 <select class="grid_age_value">
                     <option selected disabled hidden>
-                      年齢を選択してください
+                    年齢を選択してください
                     </option>
-                  </select>
+                </select>
             
                 <span class="grid_job_label">職業</span>
                 <select class="grid_job_value">
@@ -170,11 +175,13 @@
                 <span class="grid_insurance_input_label">毎月の掛金予定額を入力ください</span>
                 <input type="number" class="grid_insurance_input_value" value="0" step="1000">
                 <span class="grid_insurance_input_error_limmt">※掛け金の上限を超えています</span>
-                <span class="grid_insurance_input_caution">※iDeCoの掛金は5,000円以上1,000円刻みです。</span>
-
-                <span class="grid_yazirusi">⬇️</span>
-            
-                <span class="grid_yaer_deduction_label">iDeCoを活用することで、</span><br>
+                <span></span><span class="grid_insurance_input_caution">※iDeCoの掛金は5,000円以上1,000円刻みです。</span>
+            </div>
+            <div>
+                <p class="yazirusi">⬇️</p>
+                <div>
+                    <span class="grid_yaer_deduction_label">iDeCoを活用することで、</span><br>
+                </div>
                 <div class="grid_yaer_deduction_value">
                     年間
                     <span id="yaer_deduction">0</span><span>円
@@ -185,15 +192,13 @@
                     <span id="sum_deduction">0</span>
                     円の
                 </div>
-                <div>
-                    <span>所得税が控除されます。</span><br>
-                    <span>専業主婦(夫)の場合、所得自体がないため「所得控除」はありません。運用益、受取り時の節税メリットのみです。</span><br>
-                    <span>※あくまでも簡易シミュレーションです。　節税金額を示唆・保証するものではありません。<br>
-                        ※課税所得は年収から必要経費や保険料等の各種控除を差し引いた金額であり、個人によってその額は大きく異なってきます。あくまで一例としてご参考ください。<br>
-                        ※税率は2020年12月8日現在の税率にて試算しています。税率が変更となった場合には結果も異なります。<br>
-                        ※復興特別所得税、配偶者控除（配偶者特別控除）は考慮していません。<br>
-                    </span>
-                </div>
+                <span>所得税が控除されます。</span><br>
+                <span>専業主婦(夫)の場合、所得自体がないため「所得控除」はありません。運用益、受取り時の節税メリットのみです。</span><br>
+                <span>※あくまでも簡易シミュレーションです。　節税金額を示唆・保証するものではありません。<br>
+                    ※課税所得は年収から必要経費や保険料等の各種控除を差し引いた金額であり、個人によってその額は大きく異なってきます。あくまで一例としてご参考ください。<br>
+                    ※税率は2020年12月8日現在の税率にて試算しています。税率が変更となった場合には結果も異なります。<br>
+                    ※復興特別所得税、配偶者控除（配偶者特別控除）は考慮していません。<br>
+                </span>
             </div>
         </div>
         <script>
