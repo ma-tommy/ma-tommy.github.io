@@ -27,22 +27,21 @@
         <div>
                 </span> <span>年収</span>
                 <input type="text" id="money1" style="margin-right: 10px" value='100'></input>
-            
         </div>
         <div>
-            <span>商品　:　</span>
-            <span name="product" style="margin-right: 10px">soffer</span>
-            <span>数量　:　</span>
-            <select id="num2">
-                <option value="1">1つ</option>
-                <option value="2">2つ</option>
-                <option value="3">3つ</option>
-                <option value="4">4つ</option>
-            </select>
-        </span> <span>金額　:　</span>
-        <input type="text" id="money2" style="margin-right: 10px" value='100'></input>
+            <span>掛け金上限</span>
+            <span name="product" style="margin-right: 10px">23000</span>
+        </div>
+        <div>
+            <span>掛け金</span>
+            <input type="range" step="1000">
         <div>
             <input type="button" onclick="onAClick()" value="Next">
         </div>
+        <script>
+            function onClick() {
+                alert('a');
+            }
+        </script>
 	</body>
 </html>
