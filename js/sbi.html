@@ -11,14 +11,23 @@
                 margin: 30px;
                 text-align: center;
             }
-             .block_header {
-                padding: 5px 100px 5px 100px;
+            .block_header {
+                width: 100%;
+                /* background: rgb(246, 156, 85);
+                border: 1px red solid;
+                border-radius: 10px;
+                text-align: center; */
+                background: red;
+                text-align: center;
+             }
+             .block_header_str {
+                padding: 5px 150px 5px 150px;
                 height: 100px;
-                width: 100px;
+                width: 100%;
                 background: rgb(246, 156, 85);
                 border: 1px red solid;
                 border-radius: 10px;
-                text-align: center;
+                
              }
              .container_table {
                  display: table;
@@ -80,7 +89,6 @@
                 grid-column: 1/3;
                 grid-row: 4;
                 width: 100%;
-                text-align: end;
             }
 
             .grid_insurance_value {
@@ -151,8 +159,8 @@
 	</head>
 	<body>
         <div class="container">    
-            <div>
-                <span class="block_header">所得控除額 わくわく電卓</span>
+            <div class="block_header">
+                <span class="block_header_str">所得控除額 わくわく電卓</span>
             </div>
             <div class="grid_container">
             
@@ -215,8 +223,8 @@
                         ※課税所得は年収から必要経費や保険料等の各種控除を差し引いた金額であり、個人によってその額は大きく異なってきます。あくまで一例としてご参考ください。
                         ※税率は2020年12月8日現在の税率にて試算しています。税率が変更となった場合には結果も異なります。
                         ※復興特別所得税、配偶者控除（配偶者特別控除）は考慮していません。
-                </span>
-            </div>
+                  </textarea>
+                </div>
         </div>
         <script>
 
