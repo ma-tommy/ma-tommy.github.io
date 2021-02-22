@@ -71,6 +71,12 @@
                 text-align: end;
             }
 
+            .grid_annual_income_value {
+                grid-column: 2;
+                grid-row: 3;
+                text-align: end;
+            }
+
             .grid_annual_income_input {
                 grid-column: 2;
                 grid-row: 3;
@@ -85,6 +91,7 @@
             .grid_insurance_value {
                 grid-column: 2/3;
                 grid-row: 5;
+                text-align: center;
             }
 
             .grid_insurance_caution {
@@ -100,6 +107,7 @@
             .grid_insurance_input_value {
                 grid-column: 2/3;
                 grid-row: 8;
+                text-align: end;
             }
 
             .grid_insurance_input_error_limmt {
@@ -171,7 +179,7 @@
                 </select>
             
                 <span class="grid_annual_income_label">年収</span>
-                <input type="text" value='100' class="grid_annual_income_value"></input>
+                <input type="number" value='0' class="grid_annual_income_value" step="10000"></input>
             
                 <span class='grid_insurance_label'>あなたの毎月の掛金上限はこちら↓</span>
                 <input type="text" disabled class="grid_insurance_value" value="23,000円/月">
@@ -179,7 +187,7 @@
             
                 
                 <span class="grid_insurance_input_label">毎月の掛金予定額を入力ください</span>
-                <input type="number" class="grid_insurance_input_value" value="0" step="1000">
+                <input type="number" class="grid_insurance_input_value" value="0" step="1000" >
                 <span class="grid_insurance_input_error_limmt">※掛け金の上限を超えています</span>
                 <span></span><span class="grid_insurance_input_caution">※iDeCoの掛金は5,000円以上1,000円刻みです。</span>
             </div>
@@ -219,7 +227,6 @@
             const AGE_RANGE = {'MIN': 20, 'MAX': 59};
             
             /// jQueryによるセレクトボックス初期化
-            var keys = Object.keys(optionCntList);
             for (let i = AGE_RANGE.MIN; i <= AGE_RANGE.MAX; i++) {
                 var option = $('<option>')
                 .text(i)
