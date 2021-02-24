@@ -50,6 +50,7 @@
             .grid_age_input {
                 grid-column: 2;
                 grid-row: 1;
+                text-align: center;
             }
 
             .grid_job_label {
@@ -122,6 +123,7 @@
 
             .yazirusi {
                 text-align: center;
+                margin-bottom: 1em;
             }
 
             .yaer_deduction_label {
@@ -182,7 +184,7 @@
                 <input type="number" value='0' class="grid_annual_income_value" step="10000"></input>
             
                 <span class='grid_insurance_label'>あなたの毎月の掛金上限はこちら↓</span>
-                <input type="text" disabled class="grid_insurance_value" value="23,000円/月">
+                <input type="text" disabled class="grid_insurance_value" onchange="setInsuranceValue">
                 <span class="grid_insurance_caution">※職業によって、掛金上限額は異なります。</span>
             
                 
@@ -224,14 +226,31 @@
 
             // セレクトボックスの初期化
             // 年齢
-            const AGE_RANGE = {'MIN': 20, 'MAX': 59};
-            
-            /// jQueryによるセレクトボックス初期化
+            const AGE_RANGE = { MIN: 20, MAX: 59 };
+            // 職業
+            const JOB_LIST = [
+                { label: "自営業(個人事業主)", value: 0, money:  68000},
+                { label: "専業主婦（夫）", value: 1, money:  23000},
+                { label: "会社員(企業型DCなし、確定給付企業年金(DB)なし)", value: 2, money: 23000},
+                { label: "会社員(企業型DCあり、確定給付企業年金(DB)なし)", value: 3, money: 20000 },
+                { label: "会社員(企業型DCなし、確定給付企業年金(DB)あり)", value: 4, money: 12000 },
+                { label: "会社員(企業型DCあり、確定給付企業年金(DB)あり)", value: 5, money: 12000 },
+                { label: "公務員", value: 6, money: 12000 },
+            ];
+
             for (let i = AGE_RANGE.MIN; i <= AGE_RANGE.MAX; i++) {
-                var option = $('<option>')
-                .text(i)
-                .val(i);
+                var option = $("<option>").text(i).val(i);
                 $(".grid_age_value").append(option);
+            }
+
+            for (let i = 0; i < JOB_LIST.length; i++) {
+                var option = $("<option>").text(JOB_LIST[i].label).val(JOB_LIST[i].value);
+                $(".grid_job_value").append(option);
+            }
+
+            function setInsuranceValue() {
+                const insurance = $('.grid_insurance_value');
+                insurance.value('"23,001110円/月"');
             }
 
             var CalcSimulation = function (){ this.init.apply(this, arguments); };

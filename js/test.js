@@ -6,8 +6,6 @@
 		<div class="container">    
             <span class="block_header">所得控除額 わくわく電卓</span>
             <div class="grid_container">
-            
-            
                 <span class="grid_age_label">年齢</span>
                 <select class="grid_age_value">
                     <option selected disabled hidden>
@@ -17,12 +15,9 @@
             
                 <span class="grid_job_label">職業</span>
                 <select class="grid_job_value">
-                    <option value="1">自営業(個人事業主)</option>
-                    <option value="2">公務員</option>
-                    <option value="3">会社員(企業型DCなし、確定給付企業年金(DB)なし) </option>
-                    <option value="4">会社員(企業型DCあり、確定給付企業年金(DB)なし)</option>
-                    <option value="5">会社員(企業型DCなし、確定給付企業年金(DB)あり) </option>
-                    <option value="6">会社員(企業型DCあり、確定給付企業年金(DB)あり) </option>
+					<option selected disabled hidden>
+					職業を選択してください
+					</option>
                 </select>
             
                 <span class="grid_annual_income_label">年収</span>
@@ -71,6 +66,30 @@
 	})();
 	$("#simulation").append(makeHtml);
 
+	// セレクトボックスの初期化
+	// 年齢
+	const AGE_RANGE = { MIN: 20, MAX: 59 };
+	// 職業
+	const JOB_LIST = [
+		{ label: "自営業(個人事業主)", value: 0 },
+		{ label: "専業主婦（夫）", value: 1 },
+		{ label: "会社員(企業型DCなし、確定給付企業年金(DB)なし)", value: 2 },
+		{ label: "会社員(企業型DCあり、確定給付企業年金(DB)なし)", value: 3 },
+		{ label: "会社員(企業型DCなし、確定給付企業年金(DB)あり)", value: 4 },
+		{ label: "会社員(企業型DCあり、確定給付企業年金(DB)あり)", value: 5 },
+		{ label: "公務員", value: 6 },
+	];
+
+	for (let i = AGE_RANGE.MIN; i <= AGE_RANGE.MAX; i++) {
+		var option = $("<option>").text(i).val(i);
+		$(".grid_age_value").append(option);
+	}
+
+	for (let i = 0; i < JOB_LIST.length; i++) {
+		var option = $("<option>").text(JOB_LIST[i].label).val(JOB_LIST[i].value);
+		$(".grid_job_value").append(option);
+	}
+
 	var s = `
 	.container {
 		margin: 30px;
@@ -115,6 +134,7 @@
 	.grid_age_input {
 		grid-column: 2;
 		grid-row: 1;
+		text-align: center;
 	}
 
 	.grid_job_label {
@@ -187,14 +207,15 @@
 
 	.yazirusi {
 		text-align: center;
+		margin-bottom: 1em;
 	}
 
 	.yaer_deduction_label {
-		
+		margin-bottom: 1em;
 	}
 
 	.yaer_deduction_value {
-	 
+		margin-bottom: 1em;
 	}
 
 	.yaer_deduction_value #yaer_deduction {
@@ -203,11 +224,11 @@
 	}
 
 	.sum_deduction_label {
-	 
+		margin-bottom: 1em;
 	}
 
 	.sum_deduction_value {
-	 
+		margin-bottom: 1em;
 	}
 
 	.sum_deduction_value #sum_deduction {
