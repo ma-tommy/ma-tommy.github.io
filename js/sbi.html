@@ -171,20 +171,17 @@
                 </select>
             
                 <span class="grid_job_label">職業</span>
-                <select class="grid_job_value">
-                    <option value="1">自営業(個人事業主)</option>
-                    <option value="2">公務員</option>
-                    <option value="3">会社員(企業型DCなし、確定給付企業年金(DB)なし) </option>
-                    <option value="4">会社員(企業型DCあり、確定給付企業年金(DB)なし)</option>
-                    <option value="5">会社員(企業型DCなし、確定給付企業年金(DB)あり) </option>
-                    <option value="6">会社員(企業型DCあり、確定給付企業年金(DB)あり) </option>
+                <select class="grid_job_value" onchange="setInsuranceValue()">
+                    <option selected disabled hidden>
+                        職業を選択してください
+                    </option>
                 </select>
             
                 <span class="grid_annual_income_label">年収</span>
                 <input type="number" value='0' class="grid_annual_income_value" step="10000"></input>
             
                 <span class='grid_insurance_label'>あなたの毎月の掛金上限はこちら↓</span>
-                <input type="text" disabled class="grid_insurance_value" onchange="setInsuranceValue()">
+                <input type="text" disabled class="grid_insurance_value">
                 <span class="grid_insurance_caution">※職業によって、掛金上限額は異なります。</span>
             
                 
