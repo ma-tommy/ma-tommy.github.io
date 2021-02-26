@@ -171,7 +171,7 @@
                 </select>
             
                 <span class="grid_job_label">職業</span>
-                <select class="grid_job_value" onchange="setInsuranceValue()">
+                <select class="grid_job_value">
                     <option selected disabled hidden>
                         職業を選択してください
                     </option>
@@ -243,11 +243,6 @@
             for (let i = 0; i < JOB_LIST.length; i++) {
                 var option = $("<option>").text(JOB_LIST[i].label).val(JOB_LIST[i].value);
                 $(".grid_job_value").append(option);
-            }
-
-            function setInsuranceValue() {
-                const insurance = $('.grid_insurance_value')[0];
-                insurance.value('"23,001110円/月"');
             }
 
             var CalcSimulation = function (){ this.init.apply(this, arguments); };

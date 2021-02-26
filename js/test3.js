@@ -184,39 +184,39 @@
 			this.insurance = this.Util.convertInt(insurance);
 
 			if (!this.annualIncome || !this.insurance) {
-				console.log(
+				kzs.console.log(
 					`年収：${this.annualIncome} 毎月の掛け金：${this.insurance}`
 				);
 				return 0;
 			}
-			console.log("年齢 = " + this.age);
-			console.log("職業 = " + this.job);
-			console.log("年収 = " + this.annualIncome);
-			console.log("掛け金上限 = " + this.insuranceLimit);
-			console.log("毎月の掛け金 = " + this.insurance);
-			console.log("年間の積み立て = " + calc._getYearInsurance());
+			kzs.console.log("年齢 = " + this.age);
+			kzs.console.log("職業 = " + this.job);
+			kzs.console.log("年収 = " + this.annualIncome);
+			kzs.console.log("掛け金上限 = " + this.insuranceLimit);
+			kzs.console.log("毎月の掛け金 = " + this.insurance);
+			kzs.console.log("年間の積み立て = " + calc._getYearInsurance());
 
-			console.log("給与所得控除率 = " + calc._getSalaryIncomeDeductionRate());
-			console.log("固定控除額 = " + calc._getFixedDeductionAmount());
-			console.log(
+			kzs.console.log("給与所得控除率 = " + calc._getSalaryIncomeDeductionRate());
+			kzs.console.log("固定控除額 = " + calc._getFixedDeductionAmount());
+			kzs.console.log(
 				"社会保険控除率 = " + calc._getSocialInsuranceDeductionRate()
 			);
-			console.log("課税所得 = " + calc._getTaxableIncome());
-			console.log("iDeCo前課税所得 = " + calc._getIdecoBeforeTaxableIncome());
-			console.log("iDeCo前所得税率 = " + calc._getIdecoBeforeIncomeTaxRate());
-			console.log("iDeCo前所得税額 = " + calc._getIdecoBeforeIncomeTax());
-			console.log("iDeCo前住民税額 = " + calc._getIdecoBeforeResidentTax());
-			console.log("iDeCo前合計税額 = " + calc._getIdecoBeforeSumTaxSaving());
-			console.log("iDeCo後課税所得 = " + calc._getIdecoafterTaxableIncome());
-			console.log("iDeCo後所得税率 = " + calc._getIdecoAfterIncomeTaxRate());
-			console.log("iDeCo後所得税額 = " + calc._getIdecoAfterIncomeTax());
-			console.log("iDeCo後住民税額 = " + calc._getIdecoAfterResidentTax());
-			console.log("iDeCo後合計税額 = " + calc._getIdecoAfterSumTax());
-			console.log("年間節税額 = " + calc._getYearTaxSaving());
+			kzs.console.log("課税所得 = " + calc._getTaxableIncome());
+			kzs.console.log("iDeCo前課税所得 = " + calc._getIdecoBeforeTaxableIncome());
+			kzs.console.log("iDeCo前所得税率 = " + calc._getIdecoBeforeIncomeTaxRate());
+			kzs.console.log("iDeCo前所得税額 = " + calc._getIdecoBeforeIncomeTax());
+			kzs.console.log("iDeCo前住民税額 = " + calc._getIdecoBeforeResidentTax());
+			kzs.console.log("iDeCo前合計税額 = " + calc._getIdecoBeforeSumTaxSaving());
+			kzs.console.log("iDeCo後課税所得 = " + calc._getIdecoafterTaxableIncome());
+			kzs.console.log("iDeCo後所得税率 = " + calc._getIdecoAfterIncomeTaxRate());
+			kzs.console.log("iDeCo後所得税額 = " + calc._getIdecoAfterIncomeTax());
+			kzs.console.log("iDeCo後住民税額 = " + calc._getIdecoAfterResidentTax());
+			kzs.console.log("iDeCo後合計税額 = " + calc._getIdecoAfterSumTax());
+			kzs.console.log("年間節税額 = " + calc._getYearTaxSaving());
 
 			// 毎月の積立金額 <= 掛金上限
 			if (this.insurance <= this.insuranceLimit) {
-				console.log("毎月の積立金額 <= 掛金上限");
+				kzs.console.log("毎月の積立金額 <= 掛金上限");
 				return this._getYearTaxSaving();
 			}
 

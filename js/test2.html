@@ -1,157 +1,56 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<script
-			src="//cdn.kaizenplatform.net/s/fa/2bcc61161624aa.js?kz_namespace=kzs"
-			charset="utf-8"
-		></script>
-        <style type="text/css">
-             .block_header {
-                padding: 5px 100px 5px 100px;
-                height: 100px;
-                width: 100px;
-                background: rgb(246, 156, 85);
-                border: 1px red solid;
-                border-radius: 10px;
-                text-align: center;
-             }
-             .container_table {
-                 display: table;
-                 table-layout:fixed;
-             }
-             .table_row {
-                display: table-row;
-             }
-             .table_cell {
-                display: table-cell;
+<div id="kzs_container">    
+    <span id="kzs_block_header">所得控除額 わくわく電卓</span>
+    <div id="kzs_grid_container">
+        <span id="kzs_grid_age_label">年齢</span>
+        <select id="kzs_grid_age_value">
+        </select>
+    
+        <span id="kzs_grid_job_label">職業</span>
+        <select id="kzs_grid_job_value">
+        </select>
+    
+        <span id="kzs_grid_annual_income_label">年収</span>
+        <input type="number" value='0' id="kzs_grid_annual_income_value" step="10000"></input>
+    
+        <span id='kzs_grid_annual_income_caution_message'></span>
 
-             }
-             .container {
-                margin: 30px;
-                display: grid;
-                /* grid-template-columns: 160px 160px 160px 160px 160px;
-                grid-template-rows: 120px 120px 120px 120px 120px;
-                border: solid #ff6a00 1px; */
-            }
-            .grid_age_label {
-                grid-column: 1;
-                grid-row: 1;
-            }
-
-            .grid_age_input {
-                grid-column: 2;
-                grid-row: 1;
-            }
-
-            .grid_job_label {
-                grid-column: 1;
-                grid-row: 2;
-            }
-
-            .grid_job_input {
-                grid-column: 2;
-                grid-row: 2;
-            }
-
-            .grid_annual_income_label {
-                grid-column: 1;
-                grid-row: 3;
-            }
-
-            .grid_annual_income_input {
-                grid-column: 2;
-                grid-row: 3;
-            }
-
-            .grid_insurance_value {
-                grid-column: 1/3;
-                grid-row: 4;
-            }
-
-            .grid_insurance_input_value {
-                grid-column: 2/3;
-                grid-row: 5;
-            }
-
-        </style>
-	</head>
-	<body>
-        <!-- <div class="Container">
-            <div class="GridItem1">項目1</div>
-            <div class="GridItem2">項目2</div>
-            <div class="GridItem3">項目3</div>
-            <div class="GridItem4">項目4</div>
-            <div class="GridItem5">項目5</div>
-            <div class="GridItem6">項目6</div>
-          </div> -->
+        <span id='kzs_grid_insurance_limit_label'>あなたの毎月の掛金上限はこちら↓</span>
+        <input type="text" disabled id="kzs_grid_insurance_limit_value" value="">
+        <span id="kzs_grid_insurance_limit_caution">※職業によって、掛金上限額は異なります。</span>
+    
+        
+        <span id="kzs_grid_insurance_input_label">毎月の掛金予定額を入力ください</span>
+        <input type="number" id="kzs_grid_insurance_input_value" value="0" step="1000" >
+        <span id="kzs_grid_insurance_input_error_limmt">※掛け金の上限を超えています</span>
+        <span></span><span id="kzs_grid_insurance_input_caution">※iDeCoの掛金は5,000円以上1,000円刻みです。</span>
+    </div>
+    
+        <p id="#kzs_yazirusi">⬇️</p>
         <div>
-            <span class="block_header">所得控除額 わくわく電卓</span>
+            <span id="kzs_yaer_deduction_label">iDeCoを活用することで、</span><br>
         </div>
-        <div class="container">    
-            
-                <span class="grid_age_label">年齢</span>
-                <select class="grid_age_value">
-                    <option selected disabled hidden>
-                      年齢を選択してください
-                    </option>
-                  </select>
-            
-                  <span class="grid_job_label">職業</span>
-                <select class="grid_job_value">
-                    <option value="1">自営業(個人事業主)</option>
-                    <option value="2">公務員</option>
-                    <option value="3">会社員(企業型DCなし、確定給付企業年金(DB)なし) </option>
-                    <option value="4">会社員(企業型DCあり、確定給付企業年金(DB)なし)</option>
-                    <option value="5">会社員(企業型DCなし、確定給付企業年金(DB)あり) </option>
-                    <option value="6">会社員(企業型DCあり、確定給付企業年金(DB)あり) </option>
-                </select>
-            
-                <span class="grid_annual_income_label">年収</span>
-                <input type="text" value='100' class="grid_annual_income_value"></input>
-            
-                <span id='job_message'>あなたの毎月の掛金上限はこちら↓</span>
-                <span>あなたの毎月の掛金上限はこちら↓</span>
-                <span>掛け金上限</span>
-                <span  class="grid_insurance_value">23000</span>
-                <span>※職業によって、掛金上限額は異なります。</span>
-            
-                
-                <span>掛け金</span>
-                <input type="number" class="grid_insurance_input_value" value="0" step="1000">
-                <span>※iDeCoの掛金は5,000円以上1,000円刻みです。</span>
-            
-                <span>iDeCoを活用することで、</span><br>
-                <span>年間</span><span id="yaer-deduction">0</span><span>円</span><br>
-                <span>合計</span><span id="sum-deduction">0</span><span>円の</span><br>
-                <span>所得税が控除されます。</span><br>
-                <span>専業主婦(夫)の場合、所得自体がないため「所得控除」はありません。運用益、受取り時の節税メリットのみです。</span><br>
-                <span>※あくまでも簡易シミュレーションです。　節税金額を示唆・保証するものではありません。<br>
-                    ※課税所得は年収から必要経費や保険料等の各種控除を差し引いた金額であり、個人によってその額は大きく異なってきます。あくまで一例としてご参考ください。<br>
-                    ※税率は2020年12月8日現在の税率にて試算しています。税率が変更となった場合には結果も異なります。<br>
-                    ※復興特別所得税、配偶者控除（配偶者特別控除）は考慮していません。<br>
-                </span>
-            </div>
+        <div id="kzs_yaer_deduction_value">
+            <span id="kzs_yaer_deduction_caption">年間</span>
+            <span id="kzs_yaer_deduction">0</span><span>
+            <span id="kzs_yaer_deduction_unit">円</span>
         </div>
-        <script>
-
-            // セレクトボックスの初期化
-            // 年齢
-            const AGE_RANGE = {'MIN': 20, 'MAX': 59};
+        <span id="kzs_sum_deduction_label">60歳まで活用した場合、</span><br>
+        <div id="kzs_sum_deduction_value">
+            <span id="kzs_sum_deduction_caption">合計</span>
+            <span id="kzs_sum_deduction">0</span>
+            <span id="kzs_sum_deduction_unit">円の</span>
+        </div>
+        <div>
+            所得税が控除されます。
+        </div>
+        <div>
+            専業主婦(夫)の場合、所得自体がないため「所得控除」はありません。運用益、受取り時の節税メリットのみです。
+        </div>
+        <div id="kzs_bottom_message">
+            <p>※あくまでも簡易シミュレーションです。　節税金額を示唆・保証するものではありません。</p>
             
-            /// jQueryによるセレクトボックス初期化
-            var keys = Object.keys(optionCntList);
-            for (let i = AGE_RANGE.MIN; i <= AGE_RANGE.MAX; i++) {
-                var option = $('<option>')
-                .text(i)
-                .val(i);
-                $("#select_age").append(option);
-            }
-
-            var CalcSimulation = function (){ this.init.apply(this, arguments); };
-            CalcSimulation.prototype = {
-                // メインの税計算
-            };
-        </script>
-	</body>
-</html>
+            <p>※課税所得は年収から必要経費や保険料等の各種控除を差し引いた金額であり、個人によってその額は大きく異なってきます。あくまで一例としてご参考ください。</p>
+            <p>※税率は2020年12月8日現在の税率にて試算しています。税率が変更となった場合には結果も異なります。</p>
+            <p>※復興特別所得税、配偶者控除（配偶者特別控除）は考慮していません。</p>
+        </div>
+</div>
