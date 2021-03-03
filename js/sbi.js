@@ -21,17 +21,18 @@
 				</select>
 			
 				<span id="kzs_grid_annual_income_label">年収</span>
-				<input type="text" value='0' id="kzs_grid_annual_income_value" step="1" min="0"></input>
+				<input type="number" value='0' id="kzs_grid_annual_income_value" step="1" min="0"></input>
 			</div>
 			<p id='kzs_grid_annual_income_caution_message'></p>
 
 			<p id='kzs_grid_insurance_limit_label'>あなたの毎月の掛金上限はこちら↓</p>
 			<input type="text" disabled id="kzs_grid_insurance_limit_value" value="">
 			<p id="kzs_grid_insurance_limit_caution">※職業によって、掛金上限額は異なります。</p>
+			
 				
 			<p id="kzs_grid_insurance_input_label">毎月の掛金予定額を入力ください</p>
-			<input type="text" id="kzs_grid_insurance_input_value" value="0" step="1000" min="0">
-			<p id='kzs_grid_error_message'></p>
+			<input type="number" id="kzs_grid_insurance_input_value" value="0" step="1000" min="0">
+			<p id="kzs_grid_insurance_input_error_limmt">※掛け金の上限を超えています</p>
 			<p id="kzs_grid_insurance_input_caution">※iDeCoの掛金は5,000円以上1,000円刻みです。</p>
 			
 			<p>⬇️</p>
@@ -61,6 +62,91 @@
 	})();
 	$("#kzs_simulation").append(makeHtml);
 
+	// セレクトボックスの初期化
+	// 年齢
+	const AGE_RANGE = { MIN: 20, MAX: 59 };
+	// 掛け金上限の単位
+	const INSURANCE_LIMIT_ADD_UNIT = "円/月";
+	// 職業
+	const JOB_LIST = [
+		{ label: "自営業(個人事業主)", value: 0, money: 68000 },
+		{ label: "専業主婦（夫）", value: 1, money: 23000 },
+		{
+			label: "会社員(企業型DCなし、確定給付企業年金(DB)なし)",
+			value: 2,
+			money: 23000,
+		},
+		{
+			label: "会社員(企業型DCあり、確定給付企業年金(DB)なし)",
+			value: 3,
+			money: 20000,
+		},
+		{
+			label: "会社員(企業型DCなし、確定給付企業年金(DB)あり)",
+			value: 4,
+			money: 12000,
+		},
+		{
+			label: "会社員(企業型DCあり、確定給付企業年金(DB)あり)",
+			value: 5,
+			money: 12000,
+		},
+		{ label: "公務員", value: 6, money: 12000 },
+	];
+
+	for (let i = AGE_RANGE.MIN; i <= AGE_RANGE.MAX; i++) {
+		if (i == AGE_RANGE.MIN) {
+			$("#kzs_grid_age_value").append(
+				$("<option>").text("年齢を選択してください").val(-1)
+			);
+		}
+		$("#kzs_grid_age_value").append($("<option>").text(i).val(i));
+	}
+
+	for (let i = 0; i < JOB_LIST.length; i++) {
+		if (i == 0) {
+			$("#kzs_grid_job_value").append(
+				$("<option>").text("職業を選択してください").val(-1)
+			);
+		}
+		$("#kzs_grid_job_value").append(
+			$("<option>").text(JOB_LIST[i].label).val(JOB_LIST[i].value)
+		);
+	}
+
+	// 掛け金上限の初期化
+	$("#kzs_grid_insurance_limit_value").val(0 + INSURANCE_LIMIT_ADD_UNIT);
+
+	// 簡易UnitTest
+	const assert = (message, expect) => {
+		console.log(message + expect ? "OK" : "NG");
+	};
+
+	class Util {
+		convertInt(value) {
+			return value ? parseInt(value) : 0;
+		}
+		convertFloat(value) {
+			return value ? parseFloat(value) : 0;
+		}
+		roundDown(value, digit) {
+			return Math.floor(value * Math.pow(10, digit)) / Math.pow(10, digit);
+		}
+		removeComma(number) {
+			return number.replace(/,/g, "");
+		}
+	}
+
+	const util = new Util();
+	assert("convertInt target empty = ", util.convertInt() === 0);
+	assert('convertInt target "1" = ', util.convertInt("1") === 1);
+	assert('convertInt target "A" = ', !isNaN(util.convertInt("A")));
+	assert("convertFloat target empty = ", util.convertFloat() === 0);
+	assert('convertFloat target "1.2" = ', util.convertFloat("1.2") === 1.2);
+	assert('convertFloat target "A" = ', !isNaN(util.convertFloat("A")));
+	assert(util.roundDown(1.2345, 1) === 1.2);
+	assert(util.removeComma("1,000") === "1000");
+
 	const Util = function () {
 		this.init.apply(this, arguments);
 	};
@@ -68,19 +154,16 @@
 	Util.prototype = {
 		init: function () {},
 		convertInt: function (value) {
-			return value ? Number(value) : 0;
+			return value ? parseInt(value) : 0;
 		},
 		convertFloat: function (value) {
-			return value ? Number(value) : 0;
+			return value ? parseFloat(value) : 0;
 		},
 		roundDown: function (value, digit) {
 			return Math.floor(value * Math.pow(10, digit)) / Math.pow(10, digit);
 		},
-		removeComma: function (value) {
-			if (value.hasOwnProperty("replace")) {
-				return value;
-			}
-			return value.replace(/,/g, "");
+		removeComma: function (number) {
+			return number.replace(/,/g, "");
 		},
 	};
 
@@ -89,37 +172,6 @@
 	};
 	// 計算クラス
 	Calc.prototype = {
-		// 年齢
-		AGE_RANGE: { MIN: 20, MAX: 59 },
-		// 掛け金上限の単位
-		INSURANCE_LIMIT_ADD_UNIT: "円/月",
-		// 職業
-		JOB_LIST: [
-			{ label: "自営業(個人事業主)", value: 0, money: 68000 },
-			{ label: "専業主婦（夫）", value: 1, money: 23000 },
-			{
-				label: "会社員(企業型DCなし、確定給付企業年金(DB)なし)",
-				value: 2,
-				money: 23000,
-			},
-			{
-				label: "会社員(企業型DCあり、確定給付企業年金(DB)なし)",
-				value: 3,
-				money: 20000,
-			},
-			{
-				label: "会社員(企業型DCなし、確定給付企業年金(DB)あり)",
-				value: 4,
-				money: 12000,
-			},
-			{
-				label: "会社員(企業型DCあり、確定給付企業年金(DB)あり)",
-				value: 5,
-				money: 12000,
-			},
-			{ label: "公務員", value: 6, money: 12000 },
-		],
-
 		init: function () {
 			this.Util = new Util();
 			// 給与所得控除率, 固定控除額
@@ -154,16 +206,6 @@
 			this.CARE_INSURANCE_AGE = 40;
 			// 基礎控除(万円)
 			this.BASIC_DEDUCTION = 38;
-			// 計算済み制御フラグ
-			this.calcFlg = false;
-			// 年齢
-			this.age = null;
-			// 職業
-			this.job = null;
-			// 年収
-			this.annualIncome = null;
-			// 毎月の掛け金
-			this.insurance = null;
 		},
 
 		/**
@@ -174,47 +216,40 @@
 		 * @param insuranceLimit 掛け金上限
 		 * @param insurance 掛け金
 		 */
-		getTaxSaving: function (age, job, annualIncome, insuranceLimit, insurance) {
+		getTaxSaving: function (
+			age,
+			job,
+			annualIncome,
+			insuranceLimit,
+			insurance,
+			jobList
+		) {
+			// 年齢
+			this.age = this.Util.convertInt(age);
+			// 職業
+			this.job = job;
+			// 年収
+			this.annualIncome = this.Util.convertFloat(annualIncome);
 			// 掛け金上限
-			this.insuranceLimit = this.Util.convertInt(
-				this.Util.removeComma(insuranceLimit).replace(
-					kzsCalc.INSURANCE_LIMIT_ADD_UNIT,
-					""
-				)
-			);
-			// 返却値
-			const result = {
-				errorList: [
-					{ itemName: "age", message: "" },
-					{ itemName: "job", message: "" },
-					{ itemName: "annual_income", message: "" },
-					{ itemName: "insurance", message: "" },
-				],
-				isDoProc: false,
-				yearTaxSaving: 0,
-				sumDeduction: 0,
-			};
-			// 入力項目チェック
-			const isValidate = this._validate(
-				result,
-				age,
-				job,
-				annualIncome,
-				insurance
-			);
+			this.insuranceLimit = insuranceLimit;
+			// 毎月の掛け金
+			this.insurance = this.Util.convertInt(insurance);
+			// 職業リスト
+			this.jobList = jobList;
 
-			console.log("validate = " + JSON.stringify(result.errorList));
-			if (!isValidate) {
-				return result;
+			if (!this.age || !this.job || !this.annualIncome || !this.insurance) {
+				console.log(
+					`年齢：${this.age} 職業： ${this.job} 年収：${this.annualIncome} 毎月の掛け金：${this.insurance}`
+				);
+				return 0;
 			}
-
 			console.log("年齢 = " + this.age);
 			console.log("職業 = " + this.job);
 			console.log("年収 = " + this.annualIncome);
 			console.log("掛け金上限 = " + this.insuranceLimit);
 			console.log("毎月の掛け金 = " + this.insurance);
 			console.log("年間の積み立て = " + this._getYearInsurance());
-			console.log("職業一覧 = " + this.JOB_LIST);
+
 			console.log("給与所得控除率 = " + this._getSalaryIncomeDeductionRate());
 			console.log("固定控除額 = " + this._getFixedDeductionAmount());
 			console.log(
@@ -233,120 +268,24 @@
 			console.log("iDeCo後合計税額 = " + this._getIdecoAfterSumTax());
 			console.log("年間節税額 = " + this._getYearTaxSaving());
 
-			result.yearTaxSaving = this._getYearTaxSaving();
-			result.sumDeduction =
-				result.yearTaxSaving * (this.AGE_RANGE.MAX + 1 - age);
-			return result;
-		},
-
-		_validate: function (result, age, job, annualIncome, insurance) {
-			let isError = false;
-			// 年齢
-			const _age = this.Util.convertInt(age);
-			// 職業
-			const _job = this.Util.convertInt(job);
-			// 年収
-			const _annualIncome = this.Util.convertFloat(
-				this.Util.removeComma(annualIncome)
-			);
-			// 毎月の掛け金
-			const _insurance = this.Util.convertInt(this.Util.removeComma(insurance));
-			console.log("年齢 = " + _age);
-			console.log("職業 = " + _job);
-			console.log("年収 = " + _annualIncome);
-			console.log("毎月の掛け金 = " + _insurance);
-			console.log("毎月のLimit掛け金 = " + this.insuranceLimit);
-			console.log("---------");
-			// 各項目が未入力の（=計算が行える状態に一度もなっていない)場合は弾く
-			if (
-				(this.age == null && (_age < 0 || _age == null)) ||
-				(this.job == null && (_job < 0 || _job == null)) ||
-				(this.annualIncome == null &&
-					_job != this.JOB_LIST[1].value &&
-					_annualIncome == 0) ||
-				(this.insurance == null && _insurance == 0)
-			) {
-				console.log(
-					`年齢：${this.age} 職業： ${this.job} 年収：${this.annualIncome} 毎月の掛け金：${this.insurance}`
-				);
-				return false;
-			}
-
-			// 計算が行える状態となっているのでisDoProcをtrueに更新
-			result.isDoProc = true;
-
-			const setErrorMessage = function (itemName, message) {
-				const index = result.errorList.findIndex(function (x) {
-					return x.itemName == itemName;
-				});
-				result.errorList[index].message = message;
-				isError = true;
-			};
-			// 年齢
-			if (this.age >= 0 && _age < 0) {
-				setErrorMessage("age", "年齢を選択してください");
-			}
-
-			// 職業
-			if (this.job >= 0 && _job < 0) {
-				setErrorMessage("job", "職業を選択してください");
-			}
-
-			if (
-				(this.annualIncome >= 0 || this.annualIncome == null) &&
-				_job != this.JOB_LIST[1].value &&
-				_job >= 0 &&
-				_annualIncome == 0
-			) {
-				// 年収(職業が1（専業主婦（夫）且 未選択)以外の場合)
-				setErrorMessage("annual_income", "年収に金額を入力してください");
-			} else if (isNaN(_annualIncome)) {
-				setErrorMessage("annual_income", "年収には半角数値を入力してください");
-			}
-
-			// 毎月の掛け金
-			if (this.insurance >= 0 && _insurance < 5000) {
-				setErrorMessage(
-					"insurance",
-					"毎月の掛金には5,000以上を入力してください"
-				);
-			} else if (_insurance > this.insuranceLimit && job >= 0) {
-				setErrorMessage("insurance", "※掛け金の上限を超えていますå");
-			} else if (isNaN(_insurance)) {
-				setErrorMessage(
-					"insurance",
-					"毎月の掛金には半角数値を入力してください"
-				);
-			}
-
-			// エラーの場合
-			if (isError) {
-				console.log(
-					`年齢：${this.age} 職業： ${this.job} 年収：${this.annualIncome} 毎月の掛け金：${this.insurance}`
-				);
-				return false;
-			}
-
-			// 年齢
-			this.age = _age;
-			// 職業
-			this.job = _job;
-			// 年収
-			this.annualIncome = _annualIncome;
-			// 毎月の掛け金
-			this.insurance = _insurance;
-			console.log("年齢 = " + this.age);
-			console.log("職業 = " + this.job);
-			console.log("年収 = " + this.annualIncome);
-			console.log("毎月の掛け金 = " + this.insurance);
-
-			return true;
+			// 毎月の積立金額 <= 掛金上限（メッセージを出すので画面側)
+			// if (this.insurance <= this.insuranceLimit) {
+			// 	const result = this._getYearTaxSaving();
+			// 	console.log("毎月の積立金額 <= 掛金上限 = " + result);
+			// 	// return this._getYearTaxSaving();
+			// 	return result;
+			// }
+			return this._getYearTaxSaving();
 		},
 
 		// 年間の積立金額
 		_getYearInsurance: function () {
 			// 毎月の掛け金 * 12 /10000
-			return (this.insurance * 12) / 10000;
+			return (
+				(this.Util.convertInt($("#kzs_grid_insurance_input_value").val()) *
+					12) /
+				10000
+			);
 		},
 
 		// 年収から給与所得控除率, 控除額を取得
@@ -403,7 +342,7 @@
 		// iDeCo前課税所得
 		_getIdecoBeforeTaxableIncome: function () {
 			// 個人事業主なら年収、個人事業主以外は課税所得
-			if (this.job == this.JOB_LIST[0].value) {
+			if (this.job == this.jobList[0].value) {
 				return this.annualIncome;
 			}
 			return this._getTaxableIncome();
@@ -460,10 +399,9 @@
 
 		// iDeCo後課税所得
 		_getIdecoafterTaxableIncome: function () {
-			if (this.job == this.JOB_LIST[0].value) {
+			if (this.job == this.jobList[0].value) {
 				// 自営業の場合(年収 - 年間の積立金額)
-				const calc = this.annualIncome - this._getYearInsurance();
-				return calc > 0 ? calc : 0;
+				return this.annualIncome - this._getYearInsurance();
 			}
 			// 自営業以外の場合(iDeCo前課税所得 - 年間の積立金額)
 			return this._getIdecoBeforeTaxableIncome() - this._getYearInsurance();
@@ -515,39 +453,30 @@
 	// 各項目のChangeイベントの追加
 	(function () {
 		const getInsuranceLimit = function (value) {
-			return kzsUtil.convertInt(
-				kzsUtil.removeComma(value).replace(kzsCalc.INSURANCE_LIMIT_ADD_UNIT, "")
+			return window.kzsUtil.convertInt(
+				window.kzsUtil.removeComma(value).replace(INSURANCE_LIMIT_ADD_UNIT, "")
 			);
 		};
 
 		const calcTaxSaving = function (age, job, annualIncome, insurance) {
-			const result = kzsCalc.getTaxSaving(
+			const taxSaving = window.kzsCalc.getTaxSaving(
 				age ?? $("#kzs_grid_age_value").val(),
 				job ?? $("#kzs_grid_job_value").val(),
 				annualIncome ?? $("#kzs_grid_annual_income_value").val(),
 				getInsuranceLimit($("#kzs_grid_insurance_limit_value").val()),
-				insurance ?? $("#kzs_grid_insurance_input_value").val()
-				// annualIncome ??
-				// 	$("#kzs_grid_annual_income_value").val().toLocaleString(),
-				// $("#kzs_grid_insurance_limit_value").val(),
-				// insurance ?? $("#kzs_grid_insurance_input_value").val().toLocaleString()
+				insurance ?? $("#kzs_grid_insurance_input_value").val(),
+				JOB_LIST
 			);
-			// エラーメッセージ暫定対応
-			// show error message
-			$("#kzs_grid_error_message").text("");
-			result.errorList.forEach(function (x) {
-				if (x.message != "") {
-					$("#kzs_grid_error_message").text(x.message);
-				}
-			});
-			$("#kzs_grid_error_message").text() == ""
-				? $("#kzs_grid_error_message").hide()
-				: $("#kzs_grid_error_message").show();
 
 			// 年間の節税金額
-			$("#kzs_yaer_deduction").text(result.yearTaxSaving.toLocaleString());
+			$("#kzs_yaer_deduction").text(taxSaving.toLocaleString());
 			// 節税金額の合計
-			$("#kzs_sum_deduction").text(result.sumDeduction.toLocaleString());
+			$("#kzs_sum_deduction").text(
+				(
+					taxSaving *
+					(AGE_RANGE.MAX + 1 - $("#kzs_grid_age_value").val())
+				).toLocaleString()
+			);
 		};
 
 		// 年齢の変更
@@ -560,20 +489,19 @@
 			$("#kzs_grid_insurance_limit_value").val(
 				(event.currentTarget.value == -1
 					? 0
-					: kzsCalc.JOB_LIST[
-							event.currentTarget.value
-					  ].money.toLocaleString()) + kzsCalc.INSURANCE_LIMIT_ADD_UNIT
+					: JOB_LIST[event.currentTarget.value].money.toLocaleString()) +
+					INSURANCE_LIMIT_ADD_UNIT
 			);
 			// 各のメッセージを変更
 			$("#kzs_grid_annual_income_caution_message").text("");
 			$("#kzs_grid_annual_income_value").prop("disabled", false);
 			$("#kzs_housewife_message").hide();
-			if (event.currentTarget.value == kzsCalc.JOB_LIST[0].value) {
+			if (event.currentTarget.value == JOB_LIST[0].value) {
 				// 自営業の場合
 				$("#kzs_grid_annual_income_caution_message").text(
 					"自営業(個人事業主)の場合、課税所得額を入力ください。"
 				);
-			} else if (event.currentTarget.value == kzsCalc.JOB_LIST[1].value) {
+			} else if (event.currentTarget.value == JOB_LIST[1].value) {
 				// 専業主婦(夫)の場合
 				$("#kzs_grid_annual_income_caution_message").text(
 					"専業主婦(夫)の場合、所得自体がないため年収入力はできません。"
@@ -591,37 +519,22 @@
 		});
 		// 毎月の掛け金の変更
 		$("#kzs_grid_insurance_input_value").on("change", function (event) {
-			calcTaxSaving(null, null, null, null, event.currentTarget.value);
+			// 上限を超えた設定の場合
+			if (
+				getInsuranceLimit($("#kzs_grid_insurance_limit_value").val()) <
+				event.currentTarget.value
+			) {
+				$("#kzs_grid_insurance_input_error_limmt").show();
+				// 年間の節税金額
+				$("#kzs_yaer_deduction").text(0);
+				// 節税金額の合計
+				$("#kzs_sum_deduction").text(0);
+			} else {
+				$("#kzs_grid_insurance_input_error_limmt").hide();
+				calcTaxSaving(null, null, null, null, event.currentTarget.value);
+			}
 		});
 	})();
-
-	// セレクトボックスの初期化
-	for (let i = kzsCalc.AGE_RANGE.MIN; i <= kzsCalc.AGE_RANGE.MAX; i++) {
-		if (i == kzsCalc.AGE_RANGE.MIN) {
-			$("#kzs_grid_age_value").append(
-				$("<option>").text("年齢を選択してください").val(-1)
-			);
-		}
-		$("#kzs_grid_age_value").append($("<option>").text(i).val(i));
-	}
-
-	for (let i = 0; i < kzsCalc.JOB_LIST.length; i++) {
-		if (i == 0) {
-			$("#kzs_grid_job_value").append(
-				$("<option>").text("職業を選択してください").val(-1)
-			);
-		}
-		$("#kzs_grid_job_value").append(
-			$("<option>")
-				.text(kzsCalc.JOB_LIST[i].label)
-				.val(kzsCalc.JOB_LIST[i].value)
-		);
-	}
-
-	// 掛け金上限の初期化
-	$("#kzs_grid_insurance_limit_value").val(
-		0 + kzsCalc.INSURANCE_LIMIT_ADD_UNIT
-	);
 
 	var s = `
 	#kzs_simulation {
@@ -748,7 +661,7 @@
 		font-size: 25px;
 	}
 	
-	#kzs_grid_error_message {
+	#kzs_grid_insurance_input_error_limmt {
 		color: red;
 		display: none;
 	}

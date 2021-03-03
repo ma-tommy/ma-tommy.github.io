@@ -1,0 +1,588 @@
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1"
+		/>
+
+		<title>
+			本人確認用書類のアップロード｜派遣・人材派遣は【オー人事.net】派遣会社のスタッフサービス
+		</title>
+		<meta name="robots" content="noindex,nofollow,noarchive" />
+		<meta name="format-detection" content="telephone=no" />
+		<link
+			rel="stylesheet"
+			href="https://test.022022.net/sp/css/common_n.css"
+			type="text/css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://test.022022.net/sp/registration/css/colorbox.css"
+			type="text/css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://test.022022.net/sp/registration/css/common.css"
+			type="text/css"
+		/>
+		<!--20150818修正ここから-->
+
+		<script
+			type="text/javascript"
+			src="https://s.yimg.jp/images/listing/tool/cv/ytag.js"
+		></script>
+		<script
+			type="text/javascript"
+			src="https://www.googletagmanager.com/gtag/js?id=AW-816659614"
+		></script>
+		<script
+			type="text/javascript"
+			src="https://s.yimg.jp/images/listing/tool/cv/ytag.js"
+		></script>
+		<script
+			type="text/javascript"
+			src="//yjtag.yahoo.co.jp/tag?site=kNDmxX5&amp;referrer=https%3A%2F%2Ftest.022022.net%2Fservice%2Fsp%2Fsu22101&amp;docReferrer=https%3A%2F%2Ftest.022022.net%2Fservice%2Fsp%2Fsu22051&amp;H=-4dzwrba"
+		></script>
+		<script async="" src="//s.yjtag.jp/tag.js#site=kNDmxX5"></script>
+
+		<script
+			type="text/javascript"
+			src="https://test.022022.net/sp/registration/js/jquery-1.11.3.min.js"
+		></script>
+		<!--20150818修正ここまで-->
+		<script
+			type="text/javascript"
+			src="https://test.022022.net/sp/registration/js/common.js"
+		></script>
+		<script
+			type="text/javascript"
+			src="https://test.022022.net/sp/registration/js/form.js"
+		></script>
+		<script
+			type="text/javascript"
+			src="https://test.022022.net/sp/registration/js/jquery.colorbox.js"
+		></script>
+		<script
+			type="text/javascript"
+			src="https://test.022022.net/sp/registration/js/iscroll.js"
+		></script>
+		<script
+			type="text/javascript"
+			src="https://test.022022.net/sp/registration/js/input.index.js"
+		></script>
+		<script
+			type="text/javascript"
+			src="https://test.022022.net/sp/registration/input/js/upload.js"
+		></script>
+
+		<script>
+			$(function () {
+				var f = document.forms[0];
+				if (
+					f.certificateFrontLength != null &&
+					f.certificateFrontLength.value > 0
+				) {
+					var frontDisp = $(this).find("#frontDisp");
+					var image = frontDisp.children().children();
+					var fileUploder = frontDisp.find(".fileUploder");
+					var fileReset = frontDisp.find(".fileReset");
+					var onUrl =
+						"https://test.022022.net/sp/registration/input/img/img_upload_on.gif";
+
+					image.attr("src", onUrl);
+					fileUploder.hide();
+					fileReset.show();
+				}
+
+				if (
+					f.certificateBackLength != null &&
+					f.certificateBackLength.value > 0
+				) {
+					var backDisp = $(this).find("#backDisp");
+					var image = backDisp.children().children();
+					var fileUploder = backDisp.find(".fileUploder");
+					var fileReset = backDisp.find(".fileReset");
+					var onUrl =
+						"https://test.022022.net/sp/registration/input/img/img_upload_on.gif";
+
+					image.attr("src", onUrl);
+					fileUploder.hide();
+					fileReset.show();
+				}
+
+				if (f.facePhotoLength != null && f.facePhotoLength.value > 0) {
+					var faceDisp = $(this).find("#faceDisp");
+					var image = faceDisp.children().children();
+					var fileUploder = faceDisp.find(".fileUploder02");
+					var fileReset = faceDisp.find(".fileReset02");
+					var onUrl =
+						"https://test.022022.net/sp/registration/input/img/img_upload_on02.gif";
+
+					image.attr("src", onUrl);
+					fileUploder.hide();
+					fileReset.show();
+				}
+
+				$(".iframe2").colorbox({
+					iframe: true,
+					closeButton: false,
+					width: "93%",
+					height: "63%",
+				});
+				$(".iframe").colorbox({ iframe: true, width: "93%", height: "93%" });
+			});
+		</script>
+
+		<script src="//assets.adobedtm.com/e9ecbd518dbe/b892b660c5ab/launch-6008168d71a1-development.min.js"></script>
+		<script
+			src="https://assets.adobedtm.com/e9ecbd518dbe/b892b660c5ab/3ec7be695e5f/EX7e69f650342442c89973cda93a673933-libraryCode_source.min.js"
+			async=""
+		></script>
+	</head>
+	<body class="upload">
+		<!-- ScreenID:22101 -->
+		<!-- header -->
+
+		<header class="header">
+			<p class="fs11 color999">派遣のお仕事情報が満載なオー人事net</p>
+			<h1>
+				<img
+					src="https://test.022022.net/sp/registration/img/header_title.gif"
+					alt="スタッフサービス オー人事net"
+					width="67%"
+				/>
+			</h1>
+			<p class="btnCancel">
+				<a href="#" class="modalWin_resize" id="tempSave">一時保存</a>
+			</p>
+		</header>
+
+		<!-- /header -->
+
+		<section class="wrapper">
+			<form
+				name="su22101form"
+				method="post"
+				action="https://test.022022.net/service/do/su22101"
+			>
+				<input
+					type="hidden"
+					name="org.apache.struts.taglib.html.TOKEN"
+					value="469ff67273b946c160a2708f7b8a991c"
+				/>
+				<input type="hidden" name="act" value="" />
+				<input type="hidden" name="certificateFrontLength" value="" />
+				<input type="hidden" name="certificateBackLength" value="" />
+				<input type="hidden" name="facePhotoLength" value="" />
+				<input type="hidden" name="certificateFrontFlag" value="" />
+				<input type="hidden" name="certificateBackFlag" value="" />
+				<input type="hidden" name="facePhotoFlag" value="" />
+
+				<div class="pageTit"></div>
+				<!--20150814修正ここから-->
+
+				<p class="mt10 mb10">
+					<img
+						src="https://test.022022.net/sp/registration/input/img/flow_top16.gif"
+						width="100%"
+						alt=""
+					/>
+				</p>
+
+				<!--20150814修正ここまで-->
+				<div class="p2p">
+					<div class="registrationForm_ttl upload">
+						<h3><span>本人確認用書類のアップロード</span></h3>
+						<a
+							href="https://test.022022.net/sp/registration/input/pop/attention.html"
+							class="modalWin_resize"
+							>ご入力の注意点</a
+						>
+					</div>
+
+					<p class="mt10 fs12 color666 fontBold">
+						本人確認書類は2種類の登録が必要です。
+					</p>
+					<p class="fs12 mt10">
+						<a class="underline" href="#uploadStep01">1.本人確認書類の登録</a>
+					</p>
+					<p class="fs12 mt10">
+						<a class="underline" href="#uploadStep02">2.顔写真の登録</a>
+					</p>
+
+					<dl class="fs17 mt20 colorBlue fontBold note displayBlock">
+						<dt id="uploadStep01">1.</dt>
+						<dd>本人確認書類の登録</dd>
+					</dl>
+					<div class="attention02 boxSizing">
+						<p class="exclamationIcon03 color333 fontBold">ご確認ください</p>
+						<p class="color333 mt10 indent1em">
+							・
+							免許証/パスポート/個人番号カード/公的医療保険の被保険者証/住民票のいずれかの書類をアップロードしてください。
+						</p>
+						<p class="color333 mt10 indent1em">
+							・ 「氏名」「生年月日」が確認できるように撮影してください。
+						</p>
+						<p class="ta_r mt10">
+							<a
+								class="colorLink modalWin_min underline fontBold"
+								target="_blank"
+								href="https://test.022022.net/sp/registration/input/pop/upload_point.html"
+								>もっと見る &gt;&gt;</a
+							>
+						</p>
+					</div>
+
+					<div class="mainBg mt15">
+						<div class="p2p">
+							<div class="clearfix">
+								<div id="frontDisp" class="floatL w49">
+									<p class="fs12 color666">画像1</p>
+									<!--20150814修正ここから-->
+									<div class="mt5">
+										<img
+											src="https://test.022022.net/sp/registration/input/img/img_upload01.gif"
+											width="100%"
+											alt=""
+										/>
+									</div>
+									<!--20150814修正ここまで-->
+									<div class="clearfix mt5">
+										<div class="fileUploder floatL w100 mr0">
+											<input
+												type="text"
+												class="txt btnBlue"
+												placeholder="選択"
+												disabled="disabled"
+											/>
+											<input
+												type="file"
+												class="uploader up01"
+												id="certificate-front"
+												name="certificateFront"
+												accept="image/gif,image/jpeg,image/png"
+											/>
+										</div>
+										<div class="fileReset btnWhite reset01 floatL fs13">
+											取消
+										</div>
+										<div class="fileThumb floatR mr0"></div>
+									</div>
+								</div>
+								<div id="backDisp" class="floatR w49">
+									<p class="fs12 color666">
+										画像2 <span class="fs11"><sup>※</sup></span>
+									</p>
+									<!--20150814修正ここから-->
+									<div class="mt5">
+										<img
+											src="https://test.022022.net/sp/registration/input/img/img_upload02.gif"
+											width="100%"
+											alt=""
+										/>
+									</div>
+									<!--20150814修正ここまで-->
+									<div class="clearfix mt5">
+										<div class="fileUploder floatL w100 mr0">
+											<input
+												type="text"
+												class="txt btnBlue"
+												placeholder="選択"
+												disabled="disabled"
+											/>
+											<input
+												type="file"
+												class="uploader up02"
+												id="certificate-back"
+												name="certificateBack"
+												accept="image/gif,image/jpeg,image/png"
+											/>
+										</div>
+										<div class="fileReset btnWhite reset02 floatL fs13">
+											取消
+										</div>
+										<div class="fileThumb floatR mr0"></div>
+									</div>
+								</div>
+								<p class="f_none pt20 indent1em fs11">
+									※免許証の裏に記載がある場合は、両面の画像をアップロードしてください。
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<dl class="fs17 mt20 colorBlue fontBold note displayBlock">
+						<dt id="uploadStep02">2.</dt>
+						<dd>顔写真の登録</dd>
+					</dl>
+
+					<div class="attention02 boxSizing">
+						<p class="exclamationIcon03 color333 fontBold">ご確認ください</p>
+						<p class="color333 mt10 indent1em">
+							・ 顔写真は社内システムで管理し、本人確認の目的でのみ利用します。
+						</p>
+						<p class="color333 mt10 indent1em">
+							・
+							正面を向き、ご本人の顔がはっきり確認できる写真をアップロードしてください。
+						</p>
+						<p class="ta_r mt10">
+							<a
+								class="colorLink modalWin_min underline fontBold"
+								target="_blank"
+								href="https://test.022022.net/sp/registration/input/pop/upload_point.html"
+								>もっと見る &gt;&gt;</a
+							>
+						</p>
+					</div>
+					<div class="mainBg mt15">
+						<div class="p2p">
+							<div id="faceDisp" class="w49 ta_c marginAuto">
+								<div class="mt5 ml5">
+									<img
+										src="https://test.022022.net/sp/registration/input/img/ph_sample01.png"
+										width="100%"
+										alt=""
+									/>
+								</div>
+								<div class="clearfix mt5">
+									<div class="fileUploder02 floatL w100 mr0">
+										<input
+											type="text"
+											class="txt btnBlue"
+											placeholder="選択"
+											disabled="disabled"
+										/>
+										<input
+											type="file"
+											class="uploader02 up01"
+											id="face-photo"
+											name="facePhoto"
+											accept="image/gif,image/jpeg,image/png"
+										/>
+									</div>
+									<div class="fileReset02 btnWhite reset01 floatL fs13">
+										取消
+									</div>
+									<div class="fileThumb02 floatR mr0"></div>
+								</div>
+							</div>
+							<div class="borderDotTop mt20 pt20">
+								<p class="color666 ta_c">
+									このような写真をアップロードしてください。
+								</p>
+								<div class="clearfix mt10">
+									<p class="floatL w30 mr5 ta_c">
+										<span class="fs12">推奨</span
+										><img
+											src="https://test.022022.net/sp/registration/input/img/ph_sample02.png"
+											width="100%"
+											alt=""
+										/>
+									</p>
+									<p class="floatL w30 ml15 ta_c">
+										<span class="fs12">OK</span
+										><img
+											src="https://test.022022.net/sp/registration/input/img/ph_sample03.png"
+											width="100%"
+											alt=""
+										/>
+									</p>
+									<p class="floatR w30 ta_c">
+										<span class="fs12">OK</span
+										><img
+											src="https://test.022022.net/sp/registration/input/img/ph_sample04.png"
+											width="100%"
+											alt=""
+										/>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="btmBtArea">
+					<p class="fs11 alignC">
+						<a
+							class="underline modalWin_min"
+							href="https://test.022022.net/sp/policy/privacy05.html"
+							>個人情報の利用目的・取り扱いについて</a
+						><br />に同意して
+					</p>
+
+					<p class="mb10 mt10">
+						<a
+							href="javascript:void(0)"
+							onclick="doSubmit();return false;"
+							class="btnOrange"
+							>次へ</a
+						>
+					</p>
+
+					<p class="fs11 alignC">入力内容は後ほど変更することができます。</p>
+
+					<!--20150831修正ここから-->
+					<div class="mt40">
+						<p class="fs11">
+							登録手続きに関するお問い合わせは下記電話番号までご連絡ください。
+						</p>
+						<div class="mt8">
+							<a href="tel:0120022022" class="btnTel"
+								><img
+									src="https://test.022022.net/sp/registration/img/txt_number.png"
+									width="225"
+									alt="携帯・PHSもOK 通話料無料 0120-022-022"
+							/></a>
+						</div>
+					</div>
+					<!--20150831修正ここまで-->
+
+					<p class="pagetop"><a href="#">ページ上部へ</a></p>
+				</div>
+			</form>
+		</section>
+
+		<!-- footer -->
+
+		<footer class="footer">
+			<p>Copyright © STAFFSERVICE. All rights reserved</p>
+		</footer>
+		<!-- /footer -->
+
+		<!-- SiteCatalyst [BEGIN] -->
+		<script language="JavaScript">
+			var trace_p = "sm007129";
+		</script>
+		<script src="https://test.022022.net/js/sitecatalyst/sp/code_to_paste.js"></script>
+		<!-- / SiteCatalyst [END] -->
+
+		<script type="text/javascript">
+			(function () {
+				var tagjs = document.createElement("script");
+				var s = document.getElementsByTagName("script")[0];
+				tagjs.async = true;
+				tagjs.src = "//s.yjtag.jp/tag.js#site=kNDmxX5";
+				s.parentNode.insertBefore(tagjs, s);
+			})();
+		</script>
+		<noscript>
+			<iframe
+				src="//b.yjtag.jp/iframe?c=kNDmxX5"
+				width="1"
+				height="1"
+				frameborder="0"
+				scrolling="no"
+				marginheight="0"
+				marginwidth="0"
+			></iframe>
+		</noscript>
+
+		<script>
+			//submit
+			var submitFlag = false;
+			function doSubmit() {
+				//２度押し防止
+				if (submitFlag) {
+					return;
+				}
+				submitFlag = true;
+
+				var f = document.forms[0];
+
+				f.enctype = "multipart/form-data";
+				f.act.value = "submit";
+				f.action = "https://test.022022.net/service/sp/su22102";
+				f.submit();
+			}
+
+			function tempSubmit() {
+				var f = document.forms[0];
+
+				f.enctype = "multipart/form-data";
+				f.act.value = "tempSave";
+				f.action = "https://test.022022.net/service/sp/su22102";
+				f.submit();
+			}
+
+			$("#tempSave").on("click", function () {
+				var act = document.forms[0].elements["act"].value;
+				document.forms[0].act.value = "tempSave";
+				if (act != "tempSave") {
+					var f = document.forms[0];
+
+					f.enctype = "multipart/form-data";
+					f.act.value = "tempSave";
+					$("#tempSave")
+						.attr("href", "javascript:void(0)")
+						.attr("onclick", "tempSubmit();return false;")
+						.removeClass("modalWin_resize");
+					$("#tempSave").trigger("click");
+				}
+			});
+			window.onload = function () {
+				var act = document.forms[0].elements["act"].value;
+				if (act === "tempSave") {
+					$("#tempSave")
+						.attr(
+							"href",
+							"https://test.022022.net/service/sp/su22111?act=tempSave"
+						)
+						.removeAttr("onclick")
+						.addClass("modalWin_resize");
+					$("#tempSave").trigger("click");
+				}
+				document.forms[0].act.value = "";
+			};
+		</script>
+
+		<div id="cboxOverlay" style="display: none"></div>
+		<div
+			id="colorbox"
+			class=""
+			role="dialog"
+			tabindex="-1"
+			style="display: none"
+		>
+			<div id="cboxWrapper">
+				<div>
+					<div id="cboxTopLeft" style="float: left"></div>
+					<div id="cboxTopCenter" style="float: left"></div>
+					<div id="cboxTopRight" style="float: left"></div>
+				</div>
+				<div style="clear: left">
+					<div id="cboxMiddleLeft" style="float: left"></div>
+					<div id="cboxContent" style="float: left">
+						<div id="cboxTitle" style="float: left"></div>
+						<div id="cboxCurrent" style="float: left"></div>
+						<button type="button" id="cboxPrevious"></button
+						><button type="button" id="cboxNext"></button
+						><button id="cboxSlideshow"></button>
+						<div id="cboxLoadingOverlay" style="float: left"></div>
+						<div id="cboxLoadingGraphic" style="float: left"></div>
+					</div>
+					<div id="cboxMiddleRight" style="float: left"></div>
+				</div>
+				<div style="clear: left">
+					<div id="cboxBottomLeft" style="float: left"></div>
+					<div id="cboxBottomCenter" style="float: left"></div>
+					<div id="cboxBottomRight" style="float: left"></div>
+				</div>
+			</div>
+			<div
+				style="
+					position: absolute;
+					width: 9999px;
+					visibility: hidden;
+					display: none;
+					max-width: none;
+				"
+			></div>
+		</div>
+		<!-- Global site tag (gtag.js) - Google Ads: 816659614 -->
+		<script
+			src="//cdn.kaizenplatform.net/s/c6/5243b0eb174a1e.js?kz_namespace=kzs"
+			charset="utf-8"
+		></script>
+	</body>
+</html>
