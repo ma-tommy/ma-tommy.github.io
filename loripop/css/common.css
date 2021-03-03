@@ -499,14 +499,14 @@ body {
 }
 .exclamationIcon03 {
 	text-indent: 20px;
-	background: url(../img/2/icon_exclamation03.png) no-repeat left 0;
+	background: url(/sp/registration/img/icon_exclamation03.png) no-repeat left 0;
 	-moz-background-size: 15px 15px;
 	-o-background-size: 15px 15px;
 	-webkit-background-size: 15px 15px;
 	background-size: 15px 15px;
 }
 .exclamationIcon04 {
-	background: url(../img/2/icon_exclamation.gif) no-repeat left 2px;
+	background: url(/sp/registration/img/icon_exclamation.gif) no-repeat left 2px;
 	-moz-background-size: 15px 15px;
 	-o-background-size: 15px 15px;
 	-webkit-background-size: 15px 15px;
@@ -543,7 +543,7 @@ body {
 	height: 35px;
 	margin-top: 35px;
 	padding-top: 25px;
-	background: url(../img/2/footer.gif) no-repeat #38b5d5;
+	background: url(/sp/registration/img/footer.gif) no-repeat #38b5d5;
 	-moz-background-size: 100%;
 	-o-background-size: 100%;
 	-webkit-background-size: 100%;
@@ -621,7 +621,7 @@ body {
 .borderDotTop {
 	margin-top: 20px;
 	padding-top: 20px;
-	background: url(../img/2/border_dotted01.gif) repeat-x;
+	background: url(/sp/registration/img/border_dotted01.gif) repeat-x;
 	-moz-background-size: 2px 1px;
 	-o-background-size: 2px 1px;
 	-webkit-background-size: 2px 1px;
@@ -758,7 +758,7 @@ body {
 
 .iconEquired {
 	padding-right: 32px;
-	background: url(../img/2/icon_equired.gif) no-repeat right;
+	background: url(/sp/registration/img/icon_equired.gif) no-repeat right;
 	-moz-background-size: 27px 15px;
 	-o-background-size: 27px 15px;
 	-webkit-background-size: 27px 15px;
@@ -820,7 +820,7 @@ body {
 }
 .pagetop a {
 	padding-right: 20px;
-	background: url(../img/2/ico_pagetop.gif) no-repeat right 3px;
+	background: url(/sp/registration/img/ico_pagetop.gif) no-repeat right 3px;
 	font-size: 14px;
 	color: #666;
 	-moz-background-size: 11px 13px;
@@ -2530,7 +2530,7 @@ select {
 	font-size: 15px;
 }
 .registrationForm_ttl a {
-	background: url(./img/1/ico_attention.png) no-repeat 0 1px;
+	background: url(/sp/img_n/ico_attention.png) no-repeat 0 1px;
 	background-size: 13px;
 	font-size: 12px;
 	text-decoration: underline;
@@ -2697,7 +2697,7 @@ select {
 }
 .addJob a span {
 	display: block;
-	background: #1a76d3 url("./sp/registration/img/icon_plus.gif") no-repeat 40px
+	background: #1a76d3 url("/sp/registration/img/icon_plus.gif") no-repeat 40px
 		center;
 	background-size: 15px 15px;
 	border: solid 1px #2d72b8;
@@ -2758,7 +2758,8 @@ select {
 .registrationForm_check li a {
 	display: flex;
 	align-items: center;
-	background: url(./img/2/ico_form_arrow2.png) no-repeat right 5px center;
+	background: url(/sp/registration/img/ico_form_arrow2.png) no-repeat right 5px
+		center;
 	background-size: 5px 7px;
 	width: 100%;
 	height: 55px;
