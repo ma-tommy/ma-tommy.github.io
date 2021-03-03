@@ -2520,7 +2520,7 @@ select {
 	font-size: 15px;
 }
 .registrationForm_ttl a {
-	background: url(/sp/img_n/ico_attention.png) no-repeat 0 1px;
+	background: url(../img/ico_attention.png) no-repeat 0 1px;
 	background-size: 13px;
 	font-size: 12px;
 	text-decoration: underline;
