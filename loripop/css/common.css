@@ -1,0 +1,3040 @@
+@charset "UTF-8";
+/* ============================================
+	共通
+============================================ */
+body {
+	color: #333;
+}
+
+.floatL {
+	float: left;
+}
+
+.floatR {
+	float: right;
+}
+
+.w12 {
+	width: 12% !important;
+}
+
+.w20 {
+	width: 20% !important;
+}
+
+.w22 {
+	width: 22% !important;
+}
+
+.w25 {
+	width: 25% !important;
+}
+
+.w30 {
+	width: 30% !important;
+}
+
+.w40 {
+	width: 40% !important;
+}
+
+.w47 {
+	width: 47% !important;
+}
+
+.w48 {
+	width: 48% !important;
+}
+
+.w49 {
+	width: 49% !important;
+}
+
+.w50 {
+	width: 50% !important;
+}
+
+.w60 {
+	width: 60% !important;
+}
+
+.w70 {
+	width: 70% !important;
+}
+/* TPR3 Ph2 2020.11.02 ここから修正 */
+
+.w75 {
+	width: 75% !important;
+}
+/* TPR3 Ph2 2020.11.02 ここまで修正 */
+
+.w80 {
+	width: 80% !important;
+}
+
+.w90 {
+	width: 90% !important;
+}
+
+.w94 {
+	width: 94% !important;
+}
+
+.w96 {
+	width: 96% !important;
+}
+
+.w100 {
+	width: 100% !important;
+}
+
+.w3em {
+	width: 3em !important;
+}
+
+.w4em {
+	width: 4em !important;
+}
+
+.mt1em {
+	margin-top: 1em !important;
+}
+
+.mt0 {
+	margin-top: 0px !important;
+}
+
+.mt5 {
+	margin-top: 5px !important;
+}
+
+.mt8 {
+	margin-top: 8px !important;
+}
+
+.mt10 {
+	margin-top: 10px !important;
+}
+
+.mt12 {
+	margin-top: 12px !important;
+}
+
+.mt15 {
+	margin-top: 15px !important;
+}
+
+.mt20 {
+	margin-top: 20px !important;
+}
+
+.mt25 {
+	margin-top: 25px !important;
+}
+
+.mt30 {
+	margin-top: 30px !important;
+}
+
+.mt35 {
+	margin-top: 35px !important;
+}
+
+.mt40 {
+	margin-top: 40px !important;
+}
+
+.mt50 {
+	margin-top: 50px !important;
+}
+
+.mt80 {
+	margin-top: 80px !important;
+}
+
+.mb0 {
+	margin-bottom: 0 !important;
+}
+
+.mb5 {
+	margin-bottom: 5px !important;
+}
+
+.mb6 {
+	margin-bottom: 6px !important;
+}
+
+.mb8 {
+	margin-bottom: 8px !important;
+}
+
+.mb10 {
+	margin-bottom: 10px !important;
+}
+
+.mb15 {
+	margin-bottom: 15px !important;
+}
+
+.mb20 {
+	margin-bottom: 20px !important;
+}
+
+.mb25 {
+	margin-bottom: 25px !important;
+}
+
+.mb30 {
+	margin-bottom: 30px !important;
+}
+
+.mb40 {
+	margin-bottom: 40px !important;
+}
+
+.mb50 {
+	margin-bottom: 50px !important;
+}
+
+.ml5 {
+	margin-left: 5px !important;
+}
+
+.ml10 {
+	margin-left: 10px !important;
+}
+
+.ml15 {
+	margin-left: 15px !important;
+}
+
+.ml2p {
+	margin-left: 2% !important;
+}
+
+.mr0 {
+	margin-right: 0px !important;
+}
+
+.mr5 {
+	margin-right: 5px !important;
+}
+
+.mr10 {
+	margin-right: 10px !important;
+}
+
+.marginAuto {
+	margin: 0 auto;
+}
+
+.p0 {
+	padding: 0px !important;
+}
+
+.p10 {
+	padding: 10px !important;
+}
+
+.pt0 {
+	padding-top: 0px !important;
+}
+
+.pt1 {
+	padding-top: 1px !important;
+}
+
+.pt5 {
+	padding-top: 5px !important;
+}
+
+.pt10 {
+	padding-top: 10px !important;
+}
+
+.pt20 {
+	padding-top: 20px !important;
+}
+
+.pt40 {
+	padding-top: 40px !important;
+}
+
+.pb0 {
+	padding-bottom: 0px !important;
+}
+
+.pb10 {
+	padding-bottom: 10px !important;
+}
+
+.pb20 {
+	padding-bottom: 20px !important;
+}
+.pl10 {
+	padding-left: 10px !important;
+}
+.pm0 {
+	padding-bottom: 0px !important;
+	margin-bottom: 0px !important;
+}
+
+.pl20 {
+	padding-left: 20px !important;
+}
+
+.pr20 {
+	padding-right: 20px !important;
+}
+
+.p2p {
+	padding-left: 2% !important;
+	padding-right: 2% !important;
+}
+
+.p3p {
+	padding-left: 3% !important;
+	padding-right: 3% !important;
+}
+
+.p4p {
+	padding-left: 4% !important;
+	padding-right: 4% !important;
+}
+
+.p5p {
+	padding-left: 5% !important;
+	padding-right: 5% !important;
+}
+.wrapper .indent0 {
+	text-indent: 0;
+}
+
+.indent1em {
+	text-indent: -1em;
+	padding-left: 1em;
+}
+
+.verticalMiddle {
+	vertical-align: middle !important;
+}
+
+.fs10 {
+	font-size: 10px !important;
+}
+
+.fs11 {
+	font-size: 11px !important;
+}
+
+.fs12 {
+	font-size: 12px !important;
+}
+
+.fs13 {
+	font-size: 13px !important;
+}
+
+.fs14 {
+	font-size: 14px !important;
+}
+
+.fs15 {
+	font-size: 15px !important;
+}
+
+.fs16 {
+	font-size: 16px !important;
+}
+
+.fs17 {
+	font-size: 17px !important;
+}
+.fs18 {
+	font-size: 18px !important;
+}
+.fs20 {
+	font-size: 20px !important;
+}
+.fs22 {
+	font-size: 22px !important;
+}
+
+.alignC {
+	text-align: center !important;
+}
+
+.alignL {
+	text-align: left !important;
+}
+
+.alignR {
+	text-align: right !important;
+}
+
+.displayBlock {
+	display: block !important;
+}
+
+.displayInBlock {
+	display: inline-block !important;
+}
+
+.inline {
+	display: inline !important;
+}
+
+.displayNone {
+	display: none;
+}
+
+.fontNormal {
+	font-weight: normal;
+}
+
+.fontBold {
+	font-weight: bold;
+}
+
+.lHeight0 {
+	line-height: 0;
+}
+
+.errorRed {
+	color: #ff6666;
+}
+
+.color333 {
+	color: #333;
+}
+
+.color666 {
+	color: #666;
+}
+
+.color999 {
+	color: #999;
+}
+
+.colorRed {
+	color: #ff0000;
+}
+
+.colorOrange {
+	color: #fc7d19;
+}
+
+.colorOrange02 {
+	color: #f57113;
+}
+
+.colorBlue {
+	color: #42b2d6;
+}
+.colorGreen {
+	color: #21c274;
+}
+.underline {
+	text-decoration: underline;
+}
+
+.borderBtm {
+	border-bottom: solid 1px #666;
+}
+
+.imeJapanese {
+	ime-mode: active;
+}
+
+.imeRoman {
+	ime-mode: disabled;
+}
+
+.note {
+	display: inline-block;
+}
+.note dt {
+	float: left;
+	margin-right: 5px;
+}
+.note dd {
+	overflow: hidden;
+}
+
+/* Clearfix */
+.note:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.blankIcon {
+	background: url(/sp/registration/img/icon_blank01.gif) no-repeat right top;
+	padding-right: 17px;
+	-moz-background-size: 13px auto;
+	-o-background-size: 13px auto;
+	-webkit-background-size: 13px auto;
+	background-size: 13px auto;
+	text-decoration: underline;
+}
+
+.exclamationIcon {
+	text-indent: 12px;
+	background: url(/sp/registration/img/icon_exclamation.gif) no-repeat left 1px;
+	-moz-background-size: 11px 12px;
+	-o-background-size: 11px 12px;
+	-webkit-background-size: 11px 12px;
+	background-size: 11px 12px;
+}
+
+.exclamationIcon02 {
+	text-indent: 20px;
+	background: url(/sp/registration/img/icon_exclamation.gif) no-repeat left 1px;
+	-moz-background-size: 15px 15px;
+	-o-background-size: 15px 15px;
+	-webkit-background-size: 15px 15px;
+	background-size: 15px 15px;
+}
+.exclamationIcon03 {
+	text-indent: 20px;
+	background: url(/sp/registration/img/icon_exclamation03.png) no-repeat left 0;
+	-moz-background-size: 15px 15px;
+	-o-background-size: 15px 15px;
+	-webkit-background-size: 15px 15px;
+	background-size: 15px 15px;
+}
+.exclamationIcon04 {
+	background: url(/sp/registration/img/icon_exclamation.gif) no-repeat left 2px;
+	-moz-background-size: 15px 15px;
+	-o-background-size: 15px 15px;
+	-webkit-background-size: 15px 15px;
+	background-size: 15px 15px;
+	padding-left: 20px;
+}
+
+.boxSizing {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* area
+------------------------------------------- */
+.header {
+	position: relative;
+	margin: 7px 7px 10px;
+}
+
+.header .btnCancel {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.header .btnCancel a {
+	font-size: 11px;
+	padding: 3px 17px;
+}
+
+.footer {
+	width: 100%;
+	height: 35px;
+	margin-top: 35px;
+	padding-top: 25px;
+	background: url(/sp/registration/img/footer.gif) no-repeat #38b5d5;
+	-moz-background-size: 100%;
+	-o-background-size: 100%;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+	text-align: center;
+	color: #fff;
+	font-size: 11px;
+}
+
+.footer p {
+	font-weight: bold;
+}
+
+.btmBtArea {
+	margin-top: 20px;
+	padding: 0 2%;
+}
+
+.introArea {
+	margin: 0 3% 10px;
+	border: solid 1px #40b5d3;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.mainBg {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background: #fff9f3;
+}
+.mainBg02 {
+	padding-top: 10px;
+	padding-bottom: 20px;
+	background: #fff9f3;
+}
+
+.mainBlueBg {
+	margin: 15px 2%;
+	padding: 20px 2%;
+	background: #e5faff;
+	color: #666;
+}
+
+.borderArea {
+	margin-top: 5px;
+	padding: 19px 2.8%;
+	border: solid 1px #fbbe92;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	background: #fff;
+}
+.experience .borderArea {
+	padding: 19px 0 0 !important;
+}
+
+.borderArea.type02 {
+	padding: 2.8%;
+}
+
+.borderBlueArea {
+	margin-top: 10px;
+	padding: 10px 2.8%;
+	border: solid 1px #38b5d5;
+}
+
+.borderBlueArea textarea {
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	border: solid 1px #acacac;
+}
+
+.borderDotTop {
+	margin-top: 20px;
+	padding-top: 20px;
+	background: url(/sp/registration/img/border_dotted01.gif) repeat-x;
+	-moz-background-size: 2px 1px;
+	-o-background-size: 2px 1px;
+	-webkit-background-size: 2px 1px;
+	background-size: 2px 1px;
+}
+
+.blueLineArea {
+	border: solid 1px #38b5d5;
+	padding: 10px 2%;
+	margin-top: 10px;
+}
+
+.introArea .introTitle {
+	padding: 6px 9px 5px;
+	color: #40b5d3;
+	font-size: 11.5px;
+	font-weight: bold;
+	background: #d0f5fd;
+	border-radius: 3px 3px 0px 0px / 3px 3px 0px 0px;
+	-moz-border-radius: 3px 3px 0px 0px / 3px 3px 0px 0px;
+	-webkit-border-radius: 3px 3px 0px 0px / 3px 3px 0px 0px;
+	border-bottom: solid 1px #40b5d3;
+}
+.introArea .entryTit {
+	padding: 5px 3px 3px;
+	font-size: 11px;
+	color: #ff6600;
+}
+.introArea .entryAreaBtm {
+	padding: 5px 6px 4px;
+	background: url(/sp/registration/img/border_dotted02.gif) repeat-x;
+	-moz-background-size: 2px 1px;
+	-o-background-size: 2px 1px;
+	-webkit-background-size: 2px 1px;
+	background-size: 2px 1px;
+	font-size: 10.5px;
+}
+.introArea .entryAreaBtm dt {
+	float: left;
+	margin-right: 1em;
+	-moz-background-size: 8px 8px;
+	-o-background-size: 8px 8px;
+	-webkit-background-size: 8px 8px;
+	background-size: 8px 8px;
+	color: #40b5d3;
+}
+.introArea .entryAreaBtm dd {
+	float: left;
+}
+.introArea .entryAreaBtm dd a {
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.errorForm {
+	margin-bottom: 20px;
+	border: solid 1px #ccc;
+	font-size: 12px;
+}
+.errorForm .errorHead {
+	padding: 12px 0 11px 51px;
+	background: #eeeeee url("/sp/registration/img/ico_alert.png") no-repeat scroll
+		19px 10px;
+	color: #ff6666;
+	font-weight: bold;
+}
+.errorForm .errorCont {
+	margin: 0 15px;
+	padding: 15px 0;
+}
+.errorForm .errorTxt {
+	padding-top: 10px;
+}
+.errorForm .errorTxt li {
+	text-indent: -1em;
+	padding-left: 1em;
+}
+.errorForm .errorTxt span {
+	color: #ff6666;
+	text-decoration: underline;
+}
+.errorForm .errorTxt span a {
+	color: #11a7d7;
+	text-decoration: underline;
+}
+
+.attention {
+	margin-top: 20px;
+	padding: 20px 10px;
+	background-color: #e5faff;
+	color: #ff0000;
+}
+.attention02 {
+	margin-top: 10px;
+	padding: 10px 10px;
+	background-color: #e5faff;
+	color: #ff6666;
+	font-size: 11px;
+}
+
+.errorTxt {
+	color: #333;
+}
+
+/* title
+------------------------------------------- */
+.pageTit {
+	padding: 7px 0 4px;
+	border-top: solid 1px #32a8ce;
+	border-bottom: solid 1px #32a8ce;
+}
+
+.areaTitle {
+	font-size: 18px;
+}
+
+.blockTitle {
+	margin-bottom: 10px;
+	font-size: 13px;
+	color: #333;
+	font-weight: bold;
+}
+.blockTitle img {
+	margin-left: 5px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.blueBgTitle {
+	padding: 10px 12px;
+	background-color: #38b5d5;
+	color: #fff;
+}
+
+.iconEquired {
+	padding-right: 32px;
+	background: url(/sp/registration/img/icon_equired.gif) no-repeat right;
+	-moz-background-size: 27px 15px;
+	-o-background-size: 27px 15px;
+	-webkit-background-size: 27px 15px;
+	background-size: 27px 15px;
+	min-height: 15px;
+	display: inline-block;
+}
+
+.iconOptional {
+	padding-right: 32px;
+	background: url(/sp/registration/img/icon_optional.gif) no-repeat right;
+	-moz-background-size: 27px 15px;
+	-o-background-size: 27px 15px;
+	-webkit-background-size: 27px 15px;
+	background-size: 27px 15px;
+	min-height: 15px;
+	display: inline-block;
+}
+
+.icoEntryMail {
+	background: url(/sp/registration/img/ico_entryMail.png) no-repeat left;
+	-moz-background-size: 21px 14px;
+	-o-background-size: 21px 14px;
+	-webkit-background-size: 21px 14px;
+	background-size: 21px 14px;
+	padding: 5px 0 5px 30px;
+}
+/* TPR3 Ph2 2020.11.11 ここから修正 */
+.icoEntryMail2 {
+	background: url(/sp/mypage/img_n/ico_entryMail.png) 0 0 no-repeat;
+	padding-left: 52px;
+	min-height: 28px;
+}
+/* TPR3 Ph2 2020.11.11 ここまで修正 */
+
+.titBlueBg {
+	padding: 10px;
+	background-color: #38b5d5;
+	color: #fff;
+}
+
+.titBlueLine {
+	padding-bottom: 3px;
+	border-bottom: 2px solid #38b5d5;
+	color: #2ba295;
+	font-weight: bold;
+}
+
+.titBlueLine02 {
+	padding-bottom: 3px;
+	border-bottom: 1px solid #1aa0e5;
+	color: #1aa0e5;
+	font-weight: bold;
+}
+
+.pagetop {
+	margin: 30px 0 40px;
+	text-align: right;
+}
+.pagetop a {
+	padding-right: 20px;
+	background: url(/sp/registration/img/ico_pagetop.gif) no-repeat right 3px;
+	font-size: 14px;
+	color: #666;
+	-moz-background-size: 11px 13px;
+	-o-background-size: 11px 13px;
+	-webkit-background-size: 11px 13px;
+	background-size: 11px 13px;
+}
+
+/* button
+------------------------------------------- */
+.btnOrange {
+	position: relative;
+	border: 1px solid #af6505;
+	padding: 12px 0 10px;
+	text-align: center;
+	color: #ffffff;
+	font-size: 17px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow: #666 0px 0px 2px;
+	-webkit-box-shadow: #666 0px 0px 2px;
+	box-shadow: #666 0px 0px 2px;
+	background-color: #ff790b;
+	background: -webkit-gradient(
+		linear,
+		0 0,
+		0 bottom,
+		from(#ff790b),
+		to(#f26a0d)
+	);
+	background: -webkit-linear-gradient(#ff790b, #f26a0d);
+	background: -moz-linear-gradient(#ff790b, #f26a0d);
+	background: -ms-linear-gradient(#ff790b, #f26a0d);
+	background: -o-linear-gradient(#ff790b, #f26a0d);
+	background: linear-gradient(#ff790b, #f26a0d);
+	background-repeat: no-repeat;
+	display: block;
+	font-weight: bold;
+}
+.btnOrange:after {
+	background: url(/sp/registration/img/icon_bt_arw.png) no-repeat;
+	-moz-background-size: 7px 10px;
+	-o-background-size: 7px 10px;
+	-webkit-background-size: 7px 10px;
+	background-size: 7px 10px;
+	content: "";
+	height: 10px;
+	position: absolute;
+	right: 10px;
+	top: -webkit-calc(50% - (10px / 2));
+	top: -moz-calc(50% - (10px / 2));
+	top: calc(50% - (10px / 2));
+	width: 7px;
+}
+/* TPR3 Ph2 2020.11.02 ここから修正 */
+.btnOrange.noArw:after {
+	background: none;
+}
+
+.btnGray {
+	background: #d8d8d8;
+	border: solid 1px #acacac;
+}
+.btnGray2 {
+	background: #ccc;
+	border-radius: 4px;
+	color: #fff;
+	font-size: 17px;
+	font-weight: bold;
+	text-align: center;
+	padding: 12px 0 10px;
+}
+/* TPR3 Ph2 2020.11.02 ここまで修正 */
+
+.noArw:after {
+	background: none;
+}
+
+.btnWhite {
+	position: relative;
+	border: 1px solid #42b0cb;
+	padding: 12px 0 10px;
+	text-align: center;
+	font-size: 17px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	background-color: #ffffff;
+	background: -webkit-gradient(
+		linear,
+		0 0,
+		0 bottom,
+		from(#ffffff),
+		to(#f9f9f9)
+	);
+	background: -webkit-linear-gradient(#ffffff, #f9f9f9);
+	background: -moz-linear-gradient(#ffffff, #f9f9f9);
+	background: -ms-linear-gradient(#ffffff, #f9f9f9);
+	background: -o-linear-gradient(#ffffff, #f9f9f9);
+	background: linear-gradient(#ffffff, #f9f9f9);
+	display: block;
+	color: #666;
+	font-weight: bold;
+}
+
+.btnWhiteArw:after {
+	background: url(/sp/registration/img/icon_bt_arw02.png) no-repeat;
+	-moz-background-size: 7px 10px;
+	-o-background-size: 7px 10px;
+	-webkit-background-size: 7px 10px;
+	background-size: 7px 10px;
+	content: "";
+	height: 10px;
+	position: absolute;
+	right: 10px;
+	top: -webkit-calc(50% - (10px / 2));
+	top: -moz-calc(50% - (10px / 2));
+	top: calc(50% - (10px / 2));
+	width: 7px;
+}
+
+.btnBlue {
+	position: relative;
+	border: 1px solid #2465a6;
+	padding: 12px 0 10px;
+	text-align: center;
+	font-size: 17px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	background-color: #4f9de0;
+	background: -webkit-gradient(
+		linear,
+		0 0,
+		0 bottom,
+		from(#4f9de0),
+		to(#417eb3)
+	);
+	background: -webkit-linear-gradient(#4f9de0, #417eb3);
+	background: -moz-linear-gradient(#4f9de0, #417eb3);
+	background: -ms-linear-gradient(#4f9de0, #417eb3);
+	background: -o-linear-gradient(#4f9de0, #417eb3);
+	background: linear-gradient(#4f9de0, #417eb3);
+	display: block;
+	color: #fff;
+}
+
+.btnPink {
+	border: 1px solid #ff9ccb;
+	padding: 8px 20px 6px;
+	text-align: center;
+	font-size: 13px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	background-color: #ff9ccb;
+	background: -webkit-gradient(
+		linear,
+		0 0,
+		0 bottom,
+		from(#ff9ccb),
+		to(#ff72b4)
+	);
+	background: -webkit-linear-gradient(#ff9ccb, #ff72b4);
+	background: -moz-linear-gradient(#ff9ccb, #ff72b4);
+	background: -ms-linear-gradient(#ff9ccb, #ff72b4);
+	background: -o-linear-gradient(#ff9ccb, #ff72b4);
+	background: linear-gradient(#ff9ccb, #ff72b4);
+	display: inline-block;
+	color: #fff;
+	font-weight: bold;
+}
+
+.btnBlueBorder {
+	padding: 12px 12px 10px;
+	border: solid 1px #43b1c2;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	display: inline-block;
+	color: #333;
+}
+
+.btnImgPd12 {
+	padding: 12px 0;
+}
+
+.btnTel {
+	position: relative;
+	border: 1px solid #fc7d19;
+	padding: 12px 0 10px;
+	text-align: center;
+	color: #ffffff;
+	font-size: 17px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow: #666 0px 0px 2px;
+	-webkit-box-shadow: #666 0px 0px 2px;
+	box-shadow: #666 0px 0px 2px;
+	background-color: #ffffff;
+	display: block;
+	font-weight: bold;
+}
+
+/* list
+------------------------------------------- */
+.floatList li {
+	float: left;
+	margin-right: 6px;
+	margin-bottom: 6px;
+}
+.floatList li:last-child {
+	margin-right: 0;
+	margin-bottom: 0;
+}
+
+.halfList label {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.halfList li {
+	float: left;
+	width: 46.5%;
+}
+.halfList li:last-child {
+	float: right;
+	margin-right: 0;
+	margin-bottom: 0;
+}
+.halfList .radiobtn_label {
+	width: 100%;
+	padding: 0;
+}
+.halfList .radiobtn_label span {
+	display: block;
+	padding: 10px 15px 10px 35px;
+}
+
+.radioListBlock li {
+	margin-bottom: 20px;
+}
+.radioListBlock li:last-child {
+	margin-bottom: 0;
+}
+
+.formDlArea {
+	padding-bottom: 14px;
+	background: url(/sp/registration/img/border_dotted03.gif) repeat-x left bottom;
+	-moz-background-size: 3px;
+	-o-background-size: 3px;
+	-webkit-background-size: 3px;
+	background-size: 3px;
+}
+.formDlArea dt {
+	margin-top: 10px;
+	padding: 14px 10px;
+	background: url(/sp/registration/img/border_dotted03.gif) repeat-x left top,
+		url(/sp/registration/img/border_dotted03.gif) repeat-x left bottom #e5faff;
+	color: #333;
+	-moz-background-size: 3px;
+	-o-background-size: 3px;
+	-webkit-background-size: 3px;
+	background-size: 3px;
+	font-weight: bold;
+}
+.formDlArea dt h3 {
+	font-weight: bold;
+}
+.formDlArea dd {
+	margin-top: 10px;
+	padding: 0 10px;
+	color: #333;
+}
+
+/* form
+------------------------------------------- */
+input {
+	ime-mode: active;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="tel"],
+input[type="email"],
+input[type="number"] {
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+input:focus::-webkit-input-placeholder,
+isindex:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder {
+	color: transparent;
+}
+
+input,
+select,
+textarea {
+	-webkit-tap-highlight-color: transparent;
+	outline: none;
+}
+
+select {
+	-webkit-appearance: button;
+	-moz-appearance: button;
+	appearance: button;
+	border: 1px solid #ababab;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	color: #333333;
+	/*display: inline-block;*/
+	padding: 10px 5px 8px;
+	text-align: left;
+	background: url(/sp/registration/img/ico_arw_btm.png) 97% 50% no-repeat;
+	-moz-background-size: 8px 7px;
+	-o-background-size: 8px 7px;
+	-webkit-background-size: 8px 7px;
+	background-size: 8px 7px;
+	background-color: #f8f8f8;
+	font-size: 15px;
+	line-height: 15px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	height: 40px;
+}
+
+.selectDsn input {
+	padding: 8px 0;
+	-moz-background-size: 8px 7px;
+	-o-background-size: 8px 7px;
+	-webkit-background-size: 8px 7px;
+	background-size: 8px 7px;
+}
+
+.radiobtn_label {
+	background: url(/sp/registration/img/ico_form_radio01.png) no-repeat 10px
+		center #f8f8f8;
+	-moz-background-size: 15px 15px;
+	-o-background-size: 15px 15px;
+	-webkit-background-size: 15px 15px;
+	background-size: 15px 15px;
+	display: inline-block;
+	padding: 10px 20px 10px 35px;
+	border: 1px solid #ababab;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	font-size: 16px;
+	cursor: pointer;
+}
+/*非活性ボタン*/
+.radiobtn_label.inactive {
+	cursor: default !important;
+	background: url(/registration/img/common/ico_form_radio01.png) no-repeat 10px
+		center #ddd;
+	color: #bbb;
+}
+
+.radiobtn_label_selected {
+	background: url(/sp/registration/img/ico_form_radio01_on.png) no-repeat 10px
+		center #71c6e4;
+	-moz-background-size: 15px 15px;
+	-o-background-size: 15px 15px;
+	-webkit-background-size: 15px 15px;
+	background-size: 15px 15px;
+	border: 1px solid #71c6e4;
+	color: #fff;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.checkbox_label {
+	background: url(/sp/registration/img/ico_form_check01.gif) no-repeat 10px
+		center #f8f8f8;
+	display: inline-block;
+	border: 1px solid #ababab;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	font-size: 15px;
+	cursor: pointer;
+	width: 100%;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-moz-background-size: 14px 14px;
+	-o-background-size: 14px 14px;
+	-webkit-background-size: 14px 14px;
+	background-size: 14px 14px;
+}
+.checkbox_label span {
+	display: block;
+	padding: 10px 15px 10px 35px;
+}
+
+.checkbox_label_selected {
+	background: url(/sp/registration/img/ico_form_check01_on.gif) no-repeat 10px
+		center #6dc6e6;
+	border: 1px solid #6ea9cc;
+	color: #fff;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-moz-background-size: 14px 14px;
+	-o-background-size: 14px 14px;
+	-webkit-background-size: 14px 14px;
+	background-size: 14px 14px;
+}
+
+.fileBlock {
+	font-size: 16px;
+	padding: 10px 15px;
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+	color: #fff;
+	background-color: #6ea9cc;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+.fileBlock input[type="file"] {
+	opacity: 0;
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+	position: absolute;
+	right: 0;
+	top: 0;
+	margin: 0;
+	font-size: 100px;
+	cursor: pointer;
+}
+
+.fileUploder {
+	position: relative;
+	margin-right: 10px;
+	width: 180px;
+	font-size: 13px;
+}
+.fileUploder input::-webkit-input-placeholder {
+	opacity: 1;
+	height: 40px;
+	font-size: 13px;
+	color: #333;
+}
+.fileUploder input:-ms-input-placeholder {
+	opacity: 1;
+	height: 40px;
+	font-size: 13px;
+	color: #333;
+}
+.fileUploder input::-moz-placeholder {
+	opacity: 1;
+	height: 40px;
+	font-size: 13px;
+	color: #333;
+}
+.fileUploder input {
+	opacity: 1;
+	height: 40px;
+	color: #333;
+	font-size: 13px;
+	padding: 1px 7px;
+	background: #f8f8f8 url("/sp/registration/img/ico_form_arrow2.png") no-repeat
+		right 10px center;
+	border: 1px solid #ababab;
+	-moz-background-size: 7px 11px;
+	-o-background-size: 7px 11px;
+	-webkit-background-size: 7px 11px;
+	background-size: 7px 11px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.fileUploder input.btnBlue {
+	background: #1a76d3 url("/sp/registration/img/icon_bt_arw.png") no-repeat
+		right 10px center;
+	background-size: 7px 11px;
+	border: 1px solid #2d72b8;
+	font-weight: bold;
+}
+.fileUploder .btn {
+	position: absolute;
+	top: 0;
+	left: 177px;
+	z-index: 1;
+	display: block;
+	width: 138px;
+	height: 31px;
+	text-indent: -99999px;
+	overflow: hidden;
+	border: none;
+	background: url(img/btn.gif) no-repeat 0 0;
+}
+.fileUploder .btn:hover {
+	background-position: 0 100%;
+}
+.fileUploder .uploader {
+	position: absolute;
+	top: 0;
+	/*↓leftからrightに。ボタンが右にあるので、rightにしないとだめ。IE対策。*/
+	right: 0;
+	/*↓念のため*/
+	z-index: 99;
+	width: 100%;
+	/*↓ここでフォームアイテムの大きさを調整。IE対策*/
+	opacity: 0;
+}
+
+.ui-datepicker-trigger {
+	width: 43px;
+}
+
+.dateInput {
+	height: 17px;
+}
+
+/*本人確認書類のアップのインプットの色変更*/
+.fileUploder input {
+	color: #333;
+}
+.fileUploder input::-webkit-input-placeholder {
+	color: #333;
+}
+.fileUploder input:-ms-input-placeholder {
+	color: #333;
+}
+.fileUploder input::-moz-placeholder {
+	color: #333;
+}
+.fileUploder input.btnBlue {
+	color: #fff;
+}
+.fileUploder input.btnBlue::-webkit-input-placeholder {
+	color: #fff;
+}
+.fileUploder input.btnBlue:-ms-input-placeholder {
+	color: #fff;
+}
+.fileUploder input.btnBlue::-moz-placeholder {
+	color: #fff;
+}
+
+.fileUploder02 {
+	position: relative;
+	margin-right: 10px;
+	width: 180px;
+	font-size: 13px;
+}
+.fileUploder02 input::-webkit-input-placeholder {
+	opacity: 1;
+	height: 40px;
+	font-size: 13px;
+	color: #333;
+}
+.fileUploder02 input:-ms-input-placeholder {
+	opacity: 1;
+	height: 40px;
+	font-size: 13px;
+	color: #333;
+}
+.fileUploder02 input::-moz-placeholder {
+	opacity: 1;
+	height: 40px;
+	font-size: 13px;
+	color: #333;
+}
+.fileUploder02 input {
+	opacity: 1;
+	height: 40px;
+	color: #333;
+	font-size: 13px;
+	padding: 1px 7px;
+	background: #f8f8f8 url("/sp/registration/img/ico_form_arrow2.png") no-repeat
+		right 10px center;
+	border: 1px solid #ababab;
+	-moz-background-size: 7px 11px;
+	-o-background-size: 7px 11px;
+	-webkit-background-size: 7px 11px;
+	background-size: 7px 11px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.fileUploder02 input.btnBlue {
+	background: #1a76d3 url("/sp/registration/img/icon_bt_arw.png") no-repeat
+		right 10px center;
+	background-size: 7px 11px;
+	border: 1px solid #2d72b8;
+	font-weight: bold;
+}
+.fileUploder02 .btn {
+	position: absolute;
+	top: 0;
+	left: 177px;
+	z-index: 1;
+	display: block;
+	width: 138px;
+	height: 31px;
+	text-indent: -99999px;
+	overflow: hidden;
+	border: none;
+	background: url(img/btn.gif) no-repeat 0 0;
+}
+.fileUploder02 .btn:hover {
+	background-position: 0 100%;
+}
+.fileUploder02 .uploader02 {
+	position: absolute;
+	top: 0;
+	/*↓leftからrightに。ボタンが右にあるので、rightにしないとだめ。IE対策。*/
+	right: 0;
+	/*↓念のため*/
+	z-index: 99;
+	width: 100%;
+	/*↓ここでフォームアイテムの大きさを調整。IE対策*/
+	opacity: 0;
+}
+
+/*本人確認書類のアップのインプットの色変更*/
+.fileUploder02 input {
+	color: #333;
+}
+.fileUploder02 input::-webkit-input-placeholder {
+	color: #333;
+}
+.fileUploder02 input:-ms-input-placeholder {
+	color: #333;
+}
+.fileUploder02 input::-moz-placeholder {
+	color: #333;
+}
+.fileUploder02 input.btnBlue {
+	color: #fff;
+}
+.fileUploder02 input.btnBlue::-webkit-input-placeholder {
+	color: #fff;
+}
+.fileUploder02 input.btnBlue:-ms-input-placeholder {
+	color: #fff;
+}
+.fileUploder02 input.btnBlue::-moz-placeholder {
+	color: #fff;
+}
+
+/*date picker override*/
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+	top: 4px;
+	background: #dadada
+		url("/sp/registration/img/jquery_ui/ui-bg_glass_65_ffffff_1x400.png")
+		repeat-x scroll 50% 50%;
+	border: 1px solid #999999;
+	color: #212121;
+	font-weight: normal;
+}
+
+.ui-datepicker .ui-datepicker-prev {
+	left: 2px;
+}
+
+.ui-datepicker .ui-datepicker-next {
+	right: 2px;
+}
+
+.ui-datepicker .ui-datepicker-prev span,
+.ui-datepicker .ui-datepicker-next span {
+	display: block;
+	left: 50%;
+	margin-left: -8px;
+	margin-top: -8px;
+	position: absolute;
+	top: 50%;
+}
+
+#jquery-ui-datepicker {
+	border: 1px solid #ccc;
+	height: 40px;
+	padding: 8px 8px 11px;
+	color: #333333;
+	font-size: 16px;
+	background: #f8f8f8 url("/sp/registration/img/ico_arw_btm.png") no-repeat
+		scroll 97% 50%/8px 7px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#jquery-ui-datepicker::-moz-placeholder {
+	opacity: 1;
+}
+
+.hideSelect {
+	display: none;
+}
+.hideSelect p {
+	margin: 10px 0 8px;
+}
+.hideSelect .floatList li {
+	margin-bottom: 0;
+}
+
+.changeArea {
+	position: relative;
+}
+
+.change01 {
+	position: absolute;
+	width: 100%;
+}
+
+.change02 {
+	position: absolute;
+	display: none;
+	width: 100%;
+}
+
+.hideRadio {
+	display: none;
+	margin-top: 10px;
+}
+.hideRadio p {
+	margin: 5px 0;
+}
+.experience .hideRadio p.addForm {
+	margin: 5px 0 0 !important;
+}
+.hideRadio .floatList li {
+	margin-bottom: 0;
+}
+
+.opened {
+	display: block;
+}
+
+.fileThumb,
+.fileThumb02 {
+	margin-right: 10px;
+}
+.fileReset,
+.fileReset02 {
+	display: none;
+	height: 40px;
+	padding: 10px 8px;
+	color: #333;
+	border: solid 1px #43b1c2;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	cursor: pointer;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.kikan01,
+.kikan02,
+.kikan03,
+.kikan07,
+.kikan08 {
+	text-align: left;
+	padding: 8px 0;
+}
+
+.policyTxt {
+	display: block;
+	margin: 20px 0 10px;
+	text-align: center;
+}
+
+.arrDown img {
+	display: block;
+	margin: 5px auto;
+}
+
+.textareaForm {
+	background: #f8f8f8 none repeat scroll 0 0;
+	border: 1px solid #ababab;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	font-size: 15px;
+	height: 150px;
+	padding: 8px 3%;
+	width: 100%;
+	overflow: auto;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-overflow-scrolling: touch;
+}
+
+.addForm {
+	margin-top: 10px;
+	text-align: center;
+}
+.addForm span {
+	display: inline-block;
+	font-size: 16px;
+	padding: 12px 48px 12px 68px;
+	background: #1a76d3 url("/sp/registration/img/icon_plus.gif") no-repeat 18px
+		center;
+	-moz-background-size: 15px 15px;
+	-o-background-size: 15px 15px;
+	-webkit-background-size: 15px 15px;
+	background-size: 15px 15px;
+	color: #fff;
+	border: solid 1px #2d72b8;
+	cursor: pointer;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.addForm span.text {
+	display: block;
+	font-size: 16px;
+	padding: 0;
+	background: none;
+	border: none;
+	cursor: none;
+	color: #333;
+}
+.addForm img {
+	padding-right: 5px;
+	vertical-align: middle;
+}
+
+.addFormArea {
+	border: 1px solid #23aee2;
+}
+.experience .addFormArea {
+	margin: 0 2.9% 19px;
+}
+
+.addFormArea .inArea {
+	padding: 20px 10px 20px;
+}
+
+.addFormArea .formBlockTitle {
+	padding: 7px 10px 8px;
+	color: #fff;
+	background-color: #23aee2;
+	font-size: 14px;
+}
+
+#cboxLoadedContent {
+	margin-bottom: 65px;
+}
+
+#cboxClose {
+	display: block;
+	height: auto;
+	width: 94%;
+	left: 3%;
+	border: 1px solid #42b0cb;
+	margin-bottom: 10px;
+	padding: 12px 0 10px;
+	text-align: center;
+	color: #6666;
+	font-size: 17px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	background-color: #ffffff;
+	background: -webkit-gradient(
+		linear,
+		0 0,
+		0 bottom,
+		from(#ffffff),
+		to(#f9f9f9)
+	);
+	background: -webkit-linear-gradient(#ffffff, #f9f9f9);
+	background: -moz-linear-gradient(#ffffff, #f9f9f9);
+	background: -ms-linear-gradient(#ffffff, #f9f9f9);
+	background: -o-linear-gradient(#ffffff, #f9f9f9);
+	background: linear-gradient(#ffffff, #f9f9f9);
+	text-indent: 0;
+}
+
+#cboxClose2 {
+	display: none;
+}
+
+/* ============================================
+	profile policy.html
+============================================ */
+.policy .wrapper {
+	margin: 1em 1em 0;
+	line-height: 1.6;
+	font-size: 13px;
+}
+.policy .pageTopTxt {
+	font-weight: bold;
+	margin-bottom: 1em;
+}
+.policy .pageTit01 {
+	background: #e2f3fa;
+	font-size: 15px;
+	padding: 10px 12px;
+}
+.policy ol li {
+	margin: 1em 0;
+	padding-left: 1.25em;
+	text-indent: -1.25em;
+}
+.policy .liMargin01 li {
+	margin: 1em 0;
+	padding-left: 1em;
+	text-indent: -1em;
+}
+.policy .liMargin01 .liMargin02 li {
+	margin: 1em 0;
+	padding-left: 1.5em;
+	text-indent: -1.5em;
+}
+.policy .liMargin01 .liMargin02 .liMargin03 li {
+	margin: 1em 0;
+	padding-left: 1em;
+	text-indent: -1em;
+}
+.policy ul li {
+	padding-left: 1.1em;
+	text-indent: -1.1em;
+}
+
+/* ============================================
+	profile confirm.html
+============================================ */
+.confirm .wrapper {
+	margin: 1em;
+	line-height: 1.6;
+	font-size: 13px;
+}
+.confirm ul li {
+	margin: 1em 0;
+}
+.confirm .pageTit01 {
+	font-size: 16px;
+	font-weight: bold;
+	border-bottom: solid 1px #333;
+}
+
+/* ============================================
+	change
+============================================ */
+.changeUl {
+	width: 100%;
+	display: table;
+}
+.changeUl li {
+	display: table-cell;
+	width: 33.3%;
+	background: url(/sp/registration/img/border_dotted04.gif) repeat-y left top,
+		url(/sp/registration/img/border_dotted04.gif) repeat-y right top;
+	-moz-background-size: 1px 2px;
+	-o-background-size: 1px 2px;
+	-webkit-background-size: 1px 2px;
+	background-size: 1px 2px;
+	font-size: 11px;
+	vertical-align: top;
+	padding: 5px 2px 4px;
+}
+.changeUl .midLi {
+	background: none;
+}
+.changeUl .mainText {
+	padding: 0 6%;
+	text-align: center;
+}
+.changeUl .btLink {
+	margin-top: 5px;
+	padding: 0 5%;
+}
+
+/* ============================================
+	input/upload
+============================================ */
+.upload .fileReset {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+.upload .fileReset a {
+	color: #666;
+}
+.upload .fileReset02 {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+.upload .fileReset02 a {
+	color: #666;
+}
+
+/* ============================================
+	profile/receipt
+============================================ */
+.idArea {
+	margin-bottom: 15px;
+	padding: 2%;
+	border: solid 1px #fdbe8c;
+	background: #fff8f3;
+	font-size: 14px;
+}
+.idArea .leftArea {
+	float: left;
+	margin-top: 2px;
+}
+.idArea .rightArea {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.bgWhite {
+	background: #ffffff !important;
+}
+
+.btWeb02 {
+	padding: 30px 3.5% 20px;
+	background-color: #d1f5fc;
+	text-align: center;
+}
+
+.btmArea .title {
+	margin-bottom: 5px;
+	color: #0fa3b1;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+/* ============================================
+	login
+============================================ */
+.rectBg {
+	background: #e2f3fa;
+	padding: 12px;
+	margin-top: 20px;
+}
+
+.pinkBorderArea {
+	border: 7px solid #ffd3e7;
+	padding: 16px 18px;
+}
+
+/* ============================================
+	input/kensyu.html
+============================================ */
+.kensyuOpen {
+	margin-top: 15px;
+}
+.kensyuOpen .textArea {
+	display: none;
+	padding: 15px 10px;
+	border: solid 1px #00abeb;
+	border-bottom: none;
+}
+.kensyuOpen .btArea {
+	padding: 15px 0;
+	border: solid 1px #00abeb;
+	background: #edfaff;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+}
+.kensyuOpen .btOpened {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	-webkit-border-top-left-radius: 0;
+	-webkit-border-top-right-radius: 0;
+	-moz-border-radius-topleft: 0;
+	-moz-border-radius-topright: 0;
+}
+
+/* ============================================
+	input/system.html
+============================================ */
+.whiteArea {
+	background: #fff;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.sysIcon {
+	padding-left: 17px;
+	color: #44c1f0;
+	font-weight: bold;
+}
+
+.sysIcon.icon01 {
+	background: url("/sp/registration/input/img/ico_system01.gif") no-repeat;
+	-moz-background-size: 15px 15px;
+	-o-background-size: 15px 15px;
+	-webkit-background-size: 15px 15px;
+	background-size: 15px 15px;
+}
+
+.sysIcon.icon02 {
+	background: url("/sp/registration/input/img/ico_system02.gif") no-repeat;
+	-moz-background-size: 15px 15px;
+	-o-background-size: 15px 15px;
+	-webkit-background-size: 15px 15px;
+	background-size: 15px 15px;
+}
+
+.sysIcon.icon03 {
+	background: url("/sp/registration/input/img/ico_system03.gif") no-repeat;
+	-moz-background-size: 15px 15px;
+	-o-background-size: 15px 15px;
+	-webkit-background-size: 15px 15px;
+	background-size: 15px 15px;
+}
+
+.sysIcon.icon04 {
+	background: url("/sp/registration/input/img/ico_system04.gif") no-repeat;
+	-moz-background-size: 15px 15px;
+	-o-background-size: 15px 15px;
+	-webkit-background-size: 15px 15px;
+	background-size: 15px 15px;
+}
+
+/* ============================================
+	lightBox
+============================================ */
+.lightBoxTitle {
+	font-size: 16px;
+	font-weight: bold;
+	border-bottom: solid 1px #333;
+}
+
+.table01 {
+	width: 100%;
+	margin-top: 20px;
+	border-top: solid 1px #d6d6d6;
+	border-left: solid 1px #d6d6d6;
+}
+.table01 th,
+.table01 td {
+	padding: 5px 1px 4px;
+	border-bottom: solid 1px #d6d6d6;
+	border-right: solid 1px #d6d6d6;
+	font-size: 11px;
+}
+.table01 th {
+	background: #009fe8;
+	color: #fff;
+	font-size: 10px;
+	line-height: 1.4;
+}
+.table01 td {
+	text-align: center;
+}
+.table01 tr:nth-child(odd) {
+	background: #f0f0f0;
+}
+.table01.tablePop01 th {
+	width: 16.6%;
+}
+.table01.tablePop01 th:first-child {
+	width: auto;
+}
+.table01.tablePop02 th,
+.table01.tablePop02 td {
+	text-align: left;
+	padding-left: 5px;
+	padding-right: 5px;
+	vertical-align: top;
+}
+.table01.tablePop02 th:first-child {
+	width: 40%;
+}
+/* ============================================
+  input/pop/add_experience.html
+============================================ */
+.greylineBox {
+	border: 4px solid #eee;
+	padding: 20px 0;
+	margin-bottom: 40px;
+}
+.greylineBox .addForm span {
+	width: 93%;
+	background: #1a76d3 url(/sp/registration/img/icon_plus.gif) no-repeat 60px
+		center / 15px 15px;
+	padding: 13px 18px 13px 38px;
+}
+
+@media only screen and (max-width: 330px) {
+	.greylineBox {
+		margin-bottom: 30px;
+		padding: 20px 0;
+	}
+	.greylineBox p {
+		font-size: 13px !important;
+	}
+	.greylineBox .addForm span {
+		width: 93%;
+		background: #1a76d3 url(/sp/registration/img/icon_plus.gif) no-repeat 35px
+			center / 15px 15px;
+		padding: 13px 18px 13px 38px;
+	}
+}
+
+/* ============================================
+============================================ */
+.f_none {
+	clear: both;
+}
+.experience_box .formBlockTitle {
+	margin: 0;
+}
+.experience_addForm .addForm {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.confirm .errorForm ul li {
+	margin: 0;
+}
+
+.add_experience_addForm span {
+	width: 93%;
+	background: #1a76d3 url(/sp/registration/img/icon_plus.gif) no-repeat 60px
+		center / 15px 15px;
+	padding: 13px 18px 13px 38px;
+}
+
+.img_area {
+	margin-bottom: 20px;
+}
+.img_area .btn_img {
+	margin: 0 auto;
+	text-align: center;
+}
+.confirm .hide {
+	display: none;
+}
+.confirm .more {
+	text-decoration: underline;
+}
+
+.branch1 {
+	text-align: right;
+}
+.branch1 a {
+	display: block;
+	margin: 15px 8px 0 0;
+	padding-right: 12px;
+	position: relative;
+}
+.branch1 a:after {
+	content: "";
+	width: 6px;
+	height: 6px;
+	border-style: solid;
+	border-color: #279cc4;
+	border-width: 1px 1px 0px 0px;
+	transform: rotate(45deg);
+	margin-top: -4px;
+	position: absolute;
+	top: 50%;
+	right: 0;
+}
+.branch2 {
+	padding-top: 20px;
+}
+.branch2 a {
+	box-shadow: 0px 1.5px 5px rgba(0, 0, 0, 0.2);
+}
+.branch3 {
+	padding-top: 10px;
+}
+.branch2,
+.branch3 {
+	margin: auto 19px;
+}
+
+.branch2 + .errorForm {
+	margin: 20px 0 5px;
+}
+.branch3 + form .mainBg {
+	border-top: 1px solid #fc7d1a;
+	margin-top: -1px;
+}
+
+/* ============================================
+  エントリーするお仕事
+============================================ */
+.subTit {
+	padding: 17px 10px;
+	font-size: 16px;
+}
+.subTit span {
+	color: #ff6600;
+	font-size: 18px;
+}
+.entryListBox {
+	background: #f3f9ff;
+	padding: 10px;
+	margin-bottom: 20px;
+	border-top: 2px solid #52c1dd;
+	border-bottom: 2px solid #52c1dd;
+}
+.profileBox + .entryListBox {
+	border-top: none;
+}
+.entryListBox > p {
+	color: #ff6600;
+}
+.entryListBox .title {
+	font-size: 14px;
+}
+.entryListBox .sub {
+	font-size: 11px;
+	margin-bottom: 10px;
+}
+.entryListBox .list_entryList li {
+	border: 1px solid #dde6f0;
+	background: #fff;
+	box-sizing: border-box;
+	word-break: break-all;
+}
+.entryListBox .list_entryList li + li {
+	margin-top: 5px;
+}
+.entryListBox .list_entryList li span {
+	display: block;
+	color: #666 !important;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none !important;
+	padding: 10px;
+}
+.entryListBox .entryListBoxBtn {
+	text-align: center;
+	font-size: 14px;
+	position: relative;
+	display: block;
+}
+.entryListBox .entryListBoxBtn a {
+	color: #11a7d7;
+	width: 100%;
+	padding: 15px;
+	display: inline-block;
+	position: relative;
+	text-decoration: underline;
+	box-sizing: border-box;
+	position: relative;
+}
+
+/* 仮登録 */
+.btmArea2 {
+	margin: 40px 19px 0;
+}
+.branch2 a,
+.btmArea2 > p:not(.pagetop) a {
+	display: block;
+	border-radius: 4px;
+	box-shadow: 0px 1.5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.attentionArea {
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 13px;
+	padding-top: 20px;
+	margin: 40px 19px 0;
+}
+.attentionArea > p {
+	font-weight: bold;
+	font-size: 16px;
+	text-align: center;
+	padding-bottom: 15px;
+}
+#attentio-acd dt {
+	display: block;
+	border-top: 1px solid #ddd;
+	padding: 10px 15px;
+	position: relative;
+}
+#attentio-acd dt:before {
+	display: inline-block;
+	content: "";
+	width: 12px;
+	height: 12px;
+	border-top: 2px solid #42b2d6;
+	transform: rotate(90deg);
+	position: absolute;
+	top: 11px;
+	right: 22px;
+}
+#attentio-acd dt:after {
+	display: inline-block;
+	content: "";
+	width: 12px;
+	height: 12px;
+	border-top: 2px solid #42b2d6;
+	transform: translateX(-50%);
+	position: absolute;
+	top: 17px;
+	right: 10px;
+}
+#attentio-acd dt.active:before {
+	display: none;
+}
+#attentio-acd dd {
+	display: none;
+	border-top: 1px dotted #ccc;
+	padding: 15px 5px;
+	margin: 0 10px;
+}
+
+.formDlArea.short dt {
+	margin-top: 5px;
+	padding: 7px 10px 5px;
+}
+
+/* 仮登録完了 */
+.receipt_kaizen .btnOrange {
+	font-size: 18px;
+}
+.receipt_kaizen .mb15.p3p {
+	background: rgba(254, 201, 155, 0.6);
+	padding: 20px 0 25px;
+	margin-top: 20px;
+}
+.receipt_kaizen .titBlueBg {
+	font-size: 16px;
+	text-align: center;
+}
+.receipt_kaizen .titBlueBg span {
+	padding-bottom: 4px;
+}
+
+.kaizen_merit img,
+.kaizen_id_before img {
+	width: 100%;
+}
+.kaizen_merit {
+	margin-top: 35px;
+}
+.kaizen_merit .kaizen_point_text {
+	margin: 20px 0 10px;
+}
+.kaizen_merit .btnOrange {
+	background: none;
+	border: none;
+	color: #222;
+	font-weight: normal;
+	font-size: 16px;
+	text-decoration: underline;
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	padding: 0;
+	position: relative;
+}
+.kaizen_merit .btnOrange:after {
+	display: none;
+}
+.kaizen_merit .btnOrange span {
+	position: relative;
+}
+.kaizen_merit .btnOrange span:after {
+	content: "";
+	display: block;
+	width: 8px;
+	height: 8px;
+	border-left: 1px solid #222;
+	border-top: 1px solid #222;
+	-webkit-transform: rotate(135deg);
+	transform: rotate(135deg);
+	-webkit-transition: 0.3s ease-in-out;
+	-moz-transition: 0.3s ease-in-out;
+	-o-transition: 0.3s ease-in-out;
+	transition: 0.3s ease-in-out;
+	position: absolute;
+	top: 5px;
+	right: -15px;
+}
+.kaizen_merit .btWeb02 {
+	padding: 20px 10px;
+	margin-bottom: 1em;
+}
+.kaizen_merit_inner {
+	background: #d1f5fc;
+	padding: 10px 10px 0;
+}
+.kaizen_id_before {
+	margin-bottom: 10px;
+}
+.kaizen_id_before + .idArea .leftArea {
+	padding: 8px 3px;
+}
+.kaizen_id #rightArea_input,
+.kaizen_pass #rightArea_input02 {
+	width: 60%;
+	float: right;
+}
+.kaizen_pass {
+	margin-top: 10px;
+}
+.kaizen_note {
+	background: #f2f2f2;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+.kaizen_note p:nth-of-type(1) {
+	margin-bottom: 20px !important;
+}
+.kaizen_note p:nth-of-type(2) span {
+	display: block;
+}
+
+/* 基本情報 */
+#basic-acd {
+	color: #1a76d3;
+	font-style: 11px;
+	text-align: right;
+	text-decoration: underline;
+	padding-right: 20px;
+	position: relative;
+}
+#basic-acd:before {
+	display: inline-block;
+	content: "";
+	width: 10px;
+	height: 10px;
+	border-top: 2px solid #1a76d3;
+	transform: rotate(90deg);
+	position: absolute;
+	top: 1px;
+	right: 10px;
+}
+#basic-acd:after {
+	display: inline-block;
+	content: "";
+	width: 10px;
+	height: 10px;
+	border-top: 2px solid #1a76d3;
+	transform: translateX(-50%);
+	position: absolute;
+	top: 6px;
+	right: 0;
+}
+#basic-acd.active:before {
+	display: none;
+}
+.basic-acd-content {
+	display: none;
+}
+
+.borderArea {
+	padding: 15px 2.8% 14px;
+}
+.borderDotTop {
+	margin: 15px 0 5px;
+}
+
+/* 完了画面 */
+/* TPR3 Ph2 2020.11.11 ここから修正 */
+.confirmTextArea {
+	margin-top: 15px;
+}
+.confirmTextArea > p {
+	background: url(/sp/registration/img/icon_exclamation.gif) no-repeat 10px
+		center #e5faff;
+	background-size: 15px 15px;
+	color: #ff0000;
+	font-weight: bold;
+	font-size: 13px;
+	padding: 2.5% 3% 2% 30px;
+	margin-bottom: 5px;
+}
+.confirmTextArea > div {
+	background: #e5faff;
+	color: #666;
+	text-align: center;
+	padding: 2.5% 4%;
+}
+.confirmTextArea > div p {
+	font-size: 13px;
+}
+.confirmTextArea > div span {
+	color: #ff790b;
+	font-weight: bold;
+	font-size: 16px;
+}
+.confirmTextArea > div .fontBold {
+	background: url(/sp/registration/input/img/img_online_arw.png) no-repeat
+		center top #e5faff;
+	background-size: 20px 10px;
+	padding-top: 15px;
+	margin-top: 5px;
+}
+.confirmTextArea > div .tel {
+	margin-top: 2.5%;
+}
+.confirmTextArea.type2 > div {
+	text-align: left;
+}
+.confirmTextArea.type2 > div span {
+	display: block;
+	margin-bottom: 5px;
+}
+@media screen and (min-width: 480px) {
+	.confirmTextArea > div br {
+		display: none;
+	}
+}
+
+#info-acd {
+	border-bottom: 1px solid #bbb;
+	margin-top: 20px;
+}
+#info-acd .ttl {
+	border-top: 1px solid #bbb;
+	font-size: 16px;
+	line-height: 1.2;
+	padding: 17px 20px 15px;
+	position: relative;
+}
+#info-acd .ttl:before {
+	display: inline-block;
+	content: "";
+	width: 12px;
+	height: 12px;
+	border-top: 2px solid #42b2d6;
+	transform: rotate(90deg);
+	position: absolute;
+	top: 18px;
+	right: 22px;
+}
+#info-acd .ttl:after {
+	display: inline-block;
+	content: "";
+	width: 12px;
+	height: 12px;
+	border-top: 2px solid #42b2d6;
+	transform: translateX(-50%);
+	position: absolute;
+	top: 24px;
+	right: 10px;
+}
+#info-acd .ttl.active:before {
+	display: none;
+}
+#info-acd .content {
+	display: none;
+	border-top: 1px dotted #ccc;
+	padding: 15px 2% 5px;
+}
+#info-acd .content > p {
+	margin: 0 3% 15px;
+}
+#info-acd .content .mainBg {
+	margin-bottom: 20px;
+}
+#info-acd .content .whiteArea {
+	color: #666;
+	font-size: 11px;
+	padding: 2%;
+	margin: 0 2%;
+}
+#info-acd .content .whiteArea.aboutMyPage {
+	padding: 5% 3%;
+}
+#info-acd .content.faq > :first-child {
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+#info-acd .content.faq > :first-child + .fs11 {
+}
+#info-acd .content.faq > dl {
+	margin: 0 3%;
+}
+#info-acd .content.faq > dl dd {
+	margin-bottom: 15px;
+}
+#info-acd .content.faq > dl dt,
+#info-acd .content.faq > :first-child {
+	color: #42b2d6;
+}
+
+.registrationForm_ttl {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	margin: 15px 4% 5px;
+}
+.registrationForm_ttl.upload {
+	margin: 15px 4% 5px 2%;
+}
+.registrationForm_ttl h3 {
+	font-size: 18px;
+	font-weight: 600;
+}
+.registrationForm_ttl h3 span {
+	font-size: 15px;
+}
+.registrationForm_ttl a {
+	background: url(/sp/img_n/ico_attention.png) no-repeat 0 1px;
+	background-size: 13px;
+	font-size: 12px;
+	text-decoration: underline;
+	padding: 0 0 5px 18px;
+}
+.registrationForm_ttl + section a[class*="modalWin"] {
+	text-decoration: underline;
+}
+
+.experience .parentSection {
+	background: #fff9f3;
+}
+.experience .parentSection > .wrap {
+	padding: 10px 2%;
+}
+.experience .borderArea .fs10 {
+	padding: 0 10px 19px;
+}
+.experience .addFormArea {
+	background: #fff;
+	margin: 0 2%;
+}
+.experience .hideRadio {
+	margin-top: 0;
+	overflow: hidden;
+}
+.experience .hideRadio p.addForm {
+	display: none;
+	border-top: 1px solid #fff;
+	margin-top: 20px !important;
+}
+
+.experience .checkList,
+.experience .checkList li,
+.experience .checkList li .checkbox_label {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	align-self: stretch;
+}
+.experience .checkList {
+	border-top: 1px solid #ababab;
+	border-left: 1px solid #ababab;
+}
+.experience .checkList li {
+	width: 50%;
+	margin: 0;
+	box-sizing: border-box;
+}
+.experience .checkList li .checkbox_label {
+	min-height: 45px;
+	border-top: none;
+	border-right: 1px solid #ababab;
+	border-bottom: 1px solid #ababab;
+	border-left: none;
+	border-radius: 0;
+	font-size: 13px;
+}
+.experience .checkList li .checkbox_label span {
+	padding: 5px 15px 3px 35px;
+}
+.experience .checkList li:nth-child(2n + 1):last-child .checkbox_label {
+	border-right: 1px solid #ababab;
+	float: left;
+}
+
+/* ============================================
+  一時保存
+============================================ */
+.header .btnCancel {
+	position: relative;
+}
+.header .btnCancel a {
+	display: block;
+	background: #fff4e9;
+	border: 2.5px solid #ff790b;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+	color: #ff7200;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+	padding: 9px 6px 8px 11px;
+	position: fixed;
+	top: 7px;
+	right: -2.5px;
+	z-index: 1;
+}
+
+/* ============================================
+  modal
+============================================ */
+.annotationArea {
+	margin: 1.7em 0.7em 0;
+	z-index: 9999;
+}
+.annotationArea .ttl {
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 1.4;
+	text-align: center;
+	margin: 0.7em;
+}
+.annotationArea > dl dt {
+	font-weight: bold;
+}
+.annotationArea > dl dd + dt {
+	margin-top: 10px;
+}
+.annotationArea .attentionList dl {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	background: #e2f3fa;
+	padding: 10px 0;
+}
+.annotationArea .attentionList dl + dl {
+	margin-top: 10px;
+}
+.annotationArea .attentionList dt,
+.annotationArea .attentionList dd {
+	padding: 0 10px;
+	box-sizing: border-box;
+}
+.annotationArea .attentionList dd {
+	width: 88%;
+	border-left: 1px solid #fff;
+}
+.annotationArea .attentionList dd span {
+	font-weight: bold;
+}
+.annotationArea .attentionList dt {
+	width: 12%;
+	color: #38b5d5;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.breakArea {
+	text-align: center;
+	padding: 0.1em 0 2em;
+}
+.breakArea .links {
+	margin-top: 1.8em;
+}
+.breakArea .links p + p {
+	margin-top: 1.8em;
+}
+
+.addJob {
+	margin-bottom: 25px;
+	position: relative;
+}
+.addJob img {
+	width: 100%;
+}
+.addJob a {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 15px;
+}
+.addJob a span {
+	display: block;
+	background: #1a76d3 url("/sp/registration/img/icon_plus.gif") no-repeat 40px
+		center;
+	background-size: 15px 15px;
+	border: solid 1px #2d72b8;
+	border-radius: 3px;
+	color: #fff;
+	font-size: 16px;
+	text-align: center;
+	padding: 10px 0 10px 20px;
+	margin: 0 15px;
+	box-sizing: border-box;
+}
+.addJob + p a {
+	text-decoration: underline;
+}
+
+/* 期間 */
+.registrationForm.experience .dwbw.undefined {
+	display: none;
+}
+
+.lightBoxTitle {
+	font-size: 18px;
+}
+
+/* js制御 */
+.modal_whiteArea {
+	border-radius: 6px;
+}
+@media only screen and (max-device-width: 320px) and (orientation: portrait) {
+	.annotationArea .ttl .width320 {
+		display: none;
+	}
+}
+@media only screen and (orientation: portrait) {
+	.modal_wrap {
+		display: flex;
+		align-items: center;
+	}
+}
+
+/* ============================================
+  Confirm
+============================================ */
+.registrationForm_check {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.registrationForm_check li {
+	width: 49%;
+	background: linear-gradient(#ffffff, #f9f9f9);
+	border: 1px solid #42b0cb;
+	border-radius: 4px;
+}
+.registrationForm_check li:nth-child(n + 3) {
+	margin-top: 2%;
+}
+.registrationForm_check li a {
+	display: flex;
+	align-items: center;
+	background: url(/sp/registration/img/ico_form_arrow2.png) no-repeat right 5px
+		center;
+	background-size: 5px 7px;
+	width: 100%;
+	height: 55px;
+	color: #333;
+	padding: 0 20px 0 10px;
+	box-sizing: border-box;
+}
+.registrationForm_check li a p {
+	font-size: 15px;
+	line-height: 1;
+}
+.registrationForm_check li a p span {
+	font-size: 12px;
+}
+.registrationForm_check + .experience {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-top: 1px dotted #ccc;
+	padding-top: 10px;
+	margin: 10px 0 2px;
+}
+.registrationForm_check + .experience p {
+	background: url("/sp/registration/img/img_experience.png") no-repeat 0 center;
+	background-size: 40px 48px;
+	font-size: 12px;
+	padding: 8px 0 8px 48px;
+}
+.registrationForm_check + .experience a {
+	display: block;
+	background: #1a76d3 url("/sp/registration/img/icon_plus.gif") no-repeat 10px
+		center;
+	background-size: 10px 10px;
+	border: solid 1px #2d72b8;
+	border-radius: 3px;
+	color: #fff;
+	font-size: 10px;
+	text-align: center;
+	padding: 5px 15px 5px 30px;
+	margin-left: 15px;
+	box-sizing: border-box;
+}
+
+.experience .addFormArea.hide {
+	transition: transform 0.2s ease, opacity 0.2s ease, height 0.4s 0.2s ease,
+		margin-top 0.4s 0.2s, margin-bottom 0.4s 0.2s;
+	opacity: 0;
+	transform: translateX(-100vw);
+	overflow: hidden;
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+.experience .addFormArea .formBlockHeader {
+	position: relative;
+}
+.experience .addFormArea .removeButton {
+	position: absolute;
+	top: 50%;
+	right: 5px;
+	margin-top: -13px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 75px;
+	height: 26px;
+	background: #ffffff;
+	border-radius: 4px;
+	color: #11a7d7;
+	font-size: 12px;
+	cursor: pointer;
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 0.3s linear;
+}
+.experience .addFormArea .removeButton.active {
+	pointer-events: auto;
+	opacity: 1;
+}
+.experience .addFormArea .selectModalTrigger {
+	cursor: pointer;
+}
+.experience .addFormArea .selectModalInput {
+	pointer-events: none;
+}
+.experience .experienceModal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	box-sizing: border-box;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s ease;
+	z-index: 1;
+}
+.experience .experienceModal.active {
+	opacity: 1;
+	pointer-events: auto;
+}
+.experience .experienceModal .modalScroll {
+	display: table;
+	width: 100%;
+	height: 100%;
+	background: rgba(112, 201, 224, 0.4);
+}
+.experience .experienceModal .modalScrollInner {
+	display: table-cell;
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+	vertical-align: middle;
+}
+.experience .experienceModal .modalBox {
+	background: #ffffff;
+	border-radius: 6px;
+}
+.experience .experienceModal .modalBox .button {
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.experience .experienceModal .modalBox .button a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: 10px;
+	margin-right: 10px;
+	min-width: 160px;
+	height: 50px;
+	padding-left: 20px;
+	padding-right: 20px;
+	border: 1px solid #cccccc;
+	border-radius: 4px;
+	box-shadow: 0px 2px 5px rgba(51, 51, 51, 0.3);
+	box-sizing: border-box;
+	font-size: 17px;
+	color: inherit;
+	background: -moz-linear-gradient(
+		top,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(242, 242, 242, 1) 100%
+	);
+	background: -webkit-linear-gradient(
+		top,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(242, 242, 242, 1) 100%
+	);
+	background: linear-gradient(
+		to bottom,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(242, 242, 242, 1) 100%
+	);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f2f2f2',GradientType=0 );
+	cursor: pointer;
+}
+.experience .experienceModal .modalHeader {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	width: 100%;
+	height: 40px;
+	padding: 5px 15px;
+	background: #23aee2;
+	box-sizing: border-box;
+	color: #ffffff;
+	font-size: 13px;
+}
+.experience .experienceModal .modalContent {
+	position: absolute;
+	top: 40px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: auto;
+}
+.experience .experienceModal .modalHeader strong {
+	font-weight: bold;
+}
+.experience .experienceModal .modalHeader .close {
+	position: absolute;
+	top: 50%;
+	right: 5px;
+	margin-top: -13px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 75px;
+	height: 26px;
+	background: #ffffff;
+	color: #11a7d7;
+	font-size: 12px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.experience .experienceModal .modalFooter {
+	padding: 20px 10px 40px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.experience .experienceModal .modalFooter .reset,
+.experience .experienceModal .modalFooter .close {
+	font-size: 13px;
+	text-decoration: underline;
+	cursor: pointer;
+}
+.experience .experienceModal .modalFooter .reset {
+	margin-bottom: 20px;
+}
+.experience .experienceModal.removeModal .modalBox {
+	padding: 40px 20px 20px;
+}
+.experience .experienceModal.removeModal .text {
+	margin-bottom: 15px;
+	font-size: 18px;
+	text-align: center;
+}
+.experience .experienceModal.removeModal .formBlockTitle span {
+	display: none;
+}
+.experience .experienceModal.removeModal .cancel {
+	margin-top: 30px;
+	color: #11a7d7;
+	font-size: 14px;
+	text-align: center;
+	text-decoration: underline;
+	cursor: pointer;
+}
+.experience .experienceModal.selectModal {
+	background: #f3f3f3;
+}
+.experience .experienceModal.selectModal .selectGroupTitle {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	height: 30px;
+	padding: 5px 15px;
+	box-sizing: border-box;
+	color: #ffffff;
+	font-size: 12px;
+	font-weight: bold;
+	background: #70caec;
+}
+.experience .experienceModal.selectModal .selectList {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 10px 5px;
+}
+.experience .experienceModal.selectModal .selectList .item {
+	margin: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: calc(50% - 10px);
+	min-height: 40px;
+	padding: 5px 15px;
+	box-sizing: border-box;
+	background: #ffffff;
+	border-radius: 4px;
+	box-shadow: 0px 1px 3px rgba(51, 51, 51, 0.2);
+	color: inherit;
+	font-size: 13px;
+	cursor: pointer;
+	-webkit-tap-highlight-color: rgb(35, 147, 226, 0.2);
+}
+.experience .experienceModal.selectModal .selectList .item.active {
+	background-color: #ecf9fd;
+}
+/* TPR3 Ph2 2020.11.11 ここまで修正 */
