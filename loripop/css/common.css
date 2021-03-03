@@ -471,7 +471,7 @@ body {
 }
 
 .blankIcon {
-	background: url(/sp/registration/img/icon_blank01.gif) no-repeat right top;
+	background: url(../img/icon_blank01.gif) no-repeat right top;
 	padding-right: 17px;
 	-moz-background-size: 13px auto;
 	-o-background-size: 13px auto;
@@ -482,7 +482,7 @@ body {
 
 .exclamationIcon {
 	text-indent: 12px;
-	background: url(/sp/registration/img/icon_exclamation.gif) no-repeat left 1px;
+	background: url(../img/icon_exclamation.gif) no-repeat left 1px;
 	-moz-background-size: 11px 12px;
 	-o-background-size: 11px 12px;
 	-webkit-background-size: 11px 12px;
@@ -491,7 +491,7 @@ body {
 
 .exclamationIcon02 {
 	text-indent: 20px;
-	background: url(/sp/registration/img/icon_exclamation.gif) no-repeat left 1px;
+	background: url(../img/icon_exclamation.gif) no-repeat left 1px;
 	-moz-background-size: 15px 15px;
 	-o-background-size: 15px 15px;
 	-webkit-background-size: 15px 15px;
@@ -499,14 +499,14 @@ body {
 }
 .exclamationIcon03 {
 	text-indent: 20px;
-	background: url(/sp/registration/img/icon_exclamation03.png) no-repeat left 0;
+	background: url(../img/icon_exclamation03.png) no-repeat left 0;
 	-moz-background-size: 15px 15px;
 	-o-background-size: 15px 15px;
 	-webkit-background-size: 15px 15px;
 	background-size: 15px 15px;
 }
 .exclamationIcon04 {
-	background: url(/sp/registration/img/icon_exclamation.gif) no-repeat left 2px;
+	background: url(../img/icon_exclamation.gif) no-repeat left 2px;
 	-moz-background-size: 15px 15px;
 	-o-background-size: 15px 15px;
 	-webkit-background-size: 15px 15px;
@@ -543,7 +543,7 @@ body {
 	height: 35px;
 	margin-top: 35px;
 	padding-top: 25px;
-	background: url(/sp/registration/img/footer.gif) no-repeat #38b5d5;
+	background: url(../img/footer.gif) no-repeat #38b5d5;
 	-moz-background-size: 100%;
 	-o-background-size: 100%;
 	-webkit-background-size: 100%;
@@ -621,7 +621,7 @@ body {
 .borderDotTop {
 	margin-top: 20px;
 	padding-top: 20px;
-	background: url(/sp/registration/img/border_dotted01.gif) repeat-x;
+	background: url(../img/border_dotted01.gif) repeat-x;
 	-moz-background-size: 2px 1px;
 	-o-background-size: 2px 1px;
 	-webkit-background-size: 2px 1px;
@@ -652,7 +652,7 @@ body {
 }
 .introArea .entryAreaBtm {
 	padding: 5px 6px 4px;
-	background: url(/sp/registration/img/border_dotted02.gif) repeat-x;
+	background: url(../img/border_dotted02.gif) repeat-x;
 	-moz-background-size: 2px 1px;
 	-o-background-size: 2px 1px;
 	-webkit-background-size: 2px 1px;
@@ -683,8 +683,7 @@ body {
 }
 .errorForm .errorHead {
 	padding: 12px 0 11px 51px;
-	background: #eeeeee url("/sp/registration/img/ico_alert.png") no-repeat scroll
-		19px 10px;
+	background: #eeeeee url("../img/ico_alert.png") no-repeat scroll 19px 10px;
 	color: #ff6666;
 	font-weight: bold;
 }
@@ -758,7 +757,7 @@ body {
 
 .iconEquired {
 	padding-right: 32px;
-	background: url(/sp/registration/img/icon_equired.gif) no-repeat right;
+	background: url(../img/icon_equired.gif) no-repeat right;
 	-moz-background-size: 27px 15px;
 	-o-background-size: 27px 15px;
 	-webkit-background-size: 27px 15px;
@@ -769,7 +768,7 @@ body {
 
 .iconOptional {
 	padding-right: 32px;
-	background: url(/sp/registration/img/icon_optional.gif) no-repeat right;
+	background: url(../img/icon_optional.gif) no-repeat right;
 	-moz-background-size: 27px 15px;
 	-o-background-size: 27px 15px;
 	-webkit-background-size: 27px 15px;
@@ -779,7 +778,7 @@ body {
 }
 
 .icoEntryMail {
-	background: url(/sp/registration/img/ico_entryMail.png) no-repeat left;
+	background: url(../img/ico_entryMail.png) no-repeat left;
 	-moz-background-size: 21px 14px;
 	-o-background-size: 21px 14px;
 	-webkit-background-size: 21px 14px;
@@ -820,7 +819,7 @@ body {
 }
 .pagetop a {
 	padding-right: 20px;
-	background: url(/sp/registration/img/ico_pagetop.gif) no-repeat right 3px;
+	background: url(../img/ico_pagetop.gif) no-repeat right 3px;
 	font-size: 14px;
 	color: #666;
 	-moz-background-size: 11px 13px;
@@ -862,7 +861,7 @@ body {
 	font-weight: bold;
 }
 .btnOrange:after {
-	background: url(/sp/registration/img/icon_bt_arw.png) no-repeat;
+	background: url(../img/icon_bt_arw.png) no-repeat;
 	-moz-background-size: 7px 10px;
 	-o-background-size: 7px 10px;
 	-webkit-background-size: 7px 10px;
@@ -928,7 +927,7 @@ body {
 }
 
 .btnWhiteArw:after {
-	background: url(/sp/registration/img/icon_bt_arw02.png) no-repeat;
+	background: url(../img/icon_bt_arw02.png) no-repeat;
 	-moz-background-size: 7px 10px;
 	-o-background-size: 7px 10px;
 	-webkit-background-size: 7px 10px;
@@ -1071,7 +1070,7 @@ body {
 
 .formDlArea {
 	padding-bottom: 14px;
-	background: url(/sp/registration/img/border_dotted03.gif) repeat-x left bottom;
+	background: url(../img/border_dotted03.gif) repeat-x left bottom;
 	-moz-background-size: 3px;
 	-o-background-size: 3px;
 	-webkit-background-size: 3px;
@@ -1080,8 +1079,8 @@ body {
 .formDlArea dt {
 	margin-top: 10px;
 	padding: 14px 10px;
-	background: url(/sp/registration/img/border_dotted03.gif) repeat-x left top,
-		url(/sp/registration/img/border_dotted03.gif) repeat-x left bottom #e5faff;
+	background: url(../img/border_dotted03.gif) repeat-x left top,
+		url(../img/border_dotted03.gif) repeat-x left bottom #e5faff;
 	color: #333;
 	-moz-background-size: 3px;
 	-o-background-size: 3px;
@@ -1142,7 +1141,7 @@ select {
 	/*display: inline-block;*/
 	padding: 10px 5px 8px;
 	text-align: left;
-	background: url(/sp/registration/img/ico_arw_btm.png) 97% 50% no-repeat;
+	background: url(../img/ico_arw_btm.png) 97% 50% no-repeat;
 	-moz-background-size: 8px 7px;
 	-o-background-size: 8px 7px;
 	-webkit-background-size: 8px 7px;
@@ -1165,8 +1164,7 @@ select {
 }
 
 .radiobtn_label {
-	background: url(/sp/registration/img/ico_form_radio01.png) no-repeat 10px
-		center #f8f8f8;
+	background: url(../img/ico_form_radio01.png) no-repeat 10px center #f8f8f8;
 	-moz-background-size: 15px 15px;
 	-o-background-size: 15px 15px;
 	-webkit-background-size: 15px 15px;
@@ -1189,8 +1187,7 @@ select {
 }
 
 .radiobtn_label_selected {
-	background: url(/sp/registration/img/ico_form_radio01_on.png) no-repeat 10px
-		center #71c6e4;
+	background: url(../img/ico_form_radio01_on.png) no-repeat 10px center #71c6e4;
 	-moz-background-size: 15px 15px;
 	-o-background-size: 15px 15px;
 	-webkit-background-size: 15px 15px;
@@ -1203,8 +1200,7 @@ select {
 }
 
 .checkbox_label {
-	background: url(/sp/registration/img/ico_form_check01.gif) no-repeat 10px
-		center #f8f8f8;
+	background: url(../img/ico_form_check01.gif) no-repeat 10px center #f8f8f8;
 	display: inline-block;
 	border: 1px solid #ababab;
 	-moz-border-radius: 3px;
@@ -1227,8 +1223,7 @@ select {
 }
 
 .checkbox_label_selected {
-	background: url(/sp/registration/img/ico_form_check01_on.gif) no-repeat 10px
-		center #6dc6e6;
+	background: url(../img/ico_form_check01_on.gif) no-repeat 10px center #6dc6e6;
 	border: 1px solid #6ea9cc;
 	color: #fff;
 	-moz-border-radius: 3px;
@@ -1293,8 +1288,8 @@ select {
 	color: #333;
 	font-size: 13px;
 	padding: 1px 7px;
-	background: #f8f8f8 url("/sp/registration/img/ico_form_arrow2.png") no-repeat
-		right 10px center;
+	background: #f8f8f8 url("../img/ico_form_arrow2.png") no-repeat right 10px
+		center;
 	border: 1px solid #ababab;
 	-moz-background-size: 7px 11px;
 	-o-background-size: 7px 11px;
@@ -1305,8 +1300,7 @@ select {
 	box-sizing: border-box;
 }
 .fileUploder input.btnBlue {
-	background: #1a76d3 url("/sp/registration/img/icon_bt_arw.png") no-repeat
-		right 10px center;
+	background: #1a76d3 url("../img/icon_bt_arw.png") no-repeat right 10px center;
 	background-size: 7px 11px;
 	border: 1px solid #2d72b8;
 	font-weight: bold;
@@ -1403,8 +1397,8 @@ select {
 	color: #333;
 	font-size: 13px;
 	padding: 1px 7px;
-	background: #f8f8f8 url("/sp/registration/img/ico_form_arrow2.png") no-repeat
-		right 10px center;
+	background: #f8f8f8 url("../img/ico_form_arrow2.png") no-repeat right 10px
+		center;
 	border: 1px solid #ababab;
 	-moz-background-size: 7px 11px;
 	-o-background-size: 7px 11px;
@@ -1415,8 +1409,7 @@ select {
 	box-sizing: border-box;
 }
 .fileUploder02 input.btnBlue {
-	background: #1a76d3 url("/sp/registration/img/icon_bt_arw.png") no-repeat
-		right 10px center;
+	background: #1a76d3 url("../img/icon_bt_arw.png") no-repeat right 10px center;
 	background-size: 7px 11px;
 	border: 1px solid #2d72b8;
 	font-weight: bold;
@@ -1479,8 +1472,7 @@ select {
 .ui-datepicker .ui-datepicker-prev,
 .ui-datepicker .ui-datepicker-next {
 	top: 4px;
-	background: #dadada
-		url("/sp/registration/img/jquery_ui/ui-bg_glass_65_ffffff_1x400.png")
+	background: #dadada url("../img/jquery_ui/ui-bg_glass_65_ffffff_1x400.png")
 		repeat-x scroll 50% 50%;
 	border: 1px solid #999999;
 	color: #212121;
@@ -1511,8 +1503,8 @@ select {
 	padding: 8px 8px 11px;
 	color: #333333;
 	font-size: 16px;
-	background: #f8f8f8 url("/sp/registration/img/ico_arw_btm.png") no-repeat
-		scroll 97% 50%/8px 7px;
+	background: #f8f8f8 url("../img/ico_arw_btm.png") no-repeat scroll 97% 50%/8px
+		7px;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
@@ -1630,8 +1622,7 @@ select {
 	display: inline-block;
 	font-size: 16px;
 	padding: 12px 48px 12px 68px;
-	background: #1a76d3 url("/sp/registration/img/icon_plus.gif") no-repeat 18px
-		center;
+	background: #1a76d3 url("../img/icon_plus.gif") no-repeat 18px center;
 	-moz-background-size: 15px 15px;
 	-o-background-size: 15px 15px;
 	-webkit-background-size: 15px 15px;
@@ -1785,8 +1776,8 @@ select {
 .changeUl li {
 	display: table-cell;
 	width: 33.3%;
-	background: url(/sp/registration/img/border_dotted04.gif) repeat-y left top,
-		url(/sp/registration/img/border_dotted04.gif) repeat-y right top;
+	background: url(../img/border_dotted04.gif) repeat-y left top,
+		url(../img/border_dotted04.gif) repeat-y right top;
 	-moz-background-size: 1px 2px;
 	-o-background-size: 1px 2px;
 	-webkit-background-size: 1px 2px;
@@ -2011,8 +2002,8 @@ select {
 }
 .greylineBox .addForm span {
 	width: 93%;
-	background: #1a76d3 url(/sp/registration/img/icon_plus.gif) no-repeat 60px
-		center / 15px 15px;
+	background: #1a76d3 url(../img/icon_plus.gif) no-repeat 60px center / 15px
+		15px;
 	padding: 13px 18px 13px 38px;
 }
 
@@ -2026,8 +2017,8 @@ select {
 	}
 	.greylineBox .addForm span {
 		width: 93%;
-		background: #1a76d3 url(/sp/registration/img/icon_plus.gif) no-repeat 35px
-			center / 15px 15px;
+		background: #1a76d3 url(../img/icon_plus.gif) no-repeat 35px center / 15px
+			15px;
 		padding: 13px 18px 13px 38px;
 	}
 }
@@ -2051,8 +2042,8 @@ select {
 
 .add_experience_addForm span {
 	width: 93%;
-	background: #1a76d3 url(/sp/registration/img/icon_plus.gif) no-repeat 60px
-		center / 15px 15px;
+	background: #1a76d3 url(../img/icon_plus.gif) no-repeat 60px center / 15px
+		15px;
 	padding: 13px 18px 13px 38px;
 }
 
@@ -2394,8 +2385,7 @@ select {
 	margin-top: 15px;
 }
 .confirmTextArea > p {
-	background: url(/sp/registration/img/icon_exclamation.gif) no-repeat 10px
-		center #e5faff;
+	background: url(../img/icon_exclamation.gif) no-repeat 10px center #e5faff;
 	background-size: 15px 15px;
 	color: #ff0000;
 	font-weight: bold;
@@ -2697,8 +2687,7 @@ select {
 }
 .addJob a span {
 	display: block;
-	background: #1a76d3 url("/sp/registration/img/icon_plus.gif") no-repeat 40px
-		center;
+	background: #1a76d3 url("../img/icon_plus.gif") no-repeat 40px center;
 	background-size: 15px 15px;
 	border: solid 1px #2d72b8;
 	border-radius: 3px;
@@ -2758,8 +2747,7 @@ select {
 .registrationForm_check li a {
 	display: flex;
 	align-items: center;
-	background: url(/sp/registration/img/ico_form_arrow2.png) no-repeat right 5px
-		center;
+	background: url(../img/ico_form_arrow2.png) no-repeat right 5px center;
 	background-size: 5px 7px;
 	width: 100%;
 	height: 55px;
@@ -2783,15 +2771,14 @@ select {
 	margin: 10px 0 2px;
 }
 .registrationForm_check + .experience p {
-	background: url("/sp/registration/img/img_experience.png") no-repeat 0 center;
+	background: url("../img/img_experience.png") no-repeat 0 center;
 	background-size: 40px 48px;
 	font-size: 12px;
 	padding: 8px 0 8px 48px;
 }
 .registrationForm_check + .experience a {
 	display: block;
-	background: #1a76d3 url("/sp/registration/img/icon_plus.gif") no-repeat 10px
-		center;
+	background: #1a76d3 url("../img/icon_plus.gif") no-repeat 10px center;
 	background-size: 10px 10px;
 	border: solid 1px #2d72b8;
 	border-radius: 3px;
