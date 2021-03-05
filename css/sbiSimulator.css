@@ -1,0 +1,142 @@
+#kzs_simulation {
+	color: black;
+}
+#kzs_container {
+	margin: 30px;
+	text-align: center;
+}
+
+#kzs_block_header {
+	padding: 1% 40% 1% 40%;
+	background: rgb(246, 156, 85);
+	border: 1px red solid;
+	border-radius: 10px;
+}
+#kzs_container_table {
+	display: table;
+	table-layout: fixed;
+}
+#kzs_table_row {
+	display: table-row;
+}
+#kzs_table_cell {
+	display: table-cell;
+}
+#kzs_grid_container {
+	margin: 2em;
+	display: grid;
+	grid-template-columns: 30% 60%;
+	place-items: center;
+	justify-items: left;
+	column-gap: 2em;
+	row-gap: 1em;
+}
+#kzs_grid_age_label {
+	grid-column: 1;
+	grid-row: 1;
+	width: 100%;
+	text-align: end;
+}
+
+#kzs_grid_age_input {
+	grid-column: 2;
+	grid-row: 1;
+	text-align: center;
+}
+
+#kzs_grid_job_label {
+	grid-column: 1;
+	grid-row: 2;
+	width: 100%;
+	text-align: end;
+}
+
+#kzs_grid_job_input {
+	grid-column: 2;
+	grid-row: 2;
+}
+
+#kzs_grid_annual_income_label {
+	grid-column: 1;
+	grid-row: 3;
+	width: 100%;
+	text-align: end;
+}
+
+#kzs_grid_annual_income_value {
+	grid-column: 2;
+	grid-row: 3;
+	text-align: end;
+}
+
+#kzs_grid_annual_income_input {
+	grid-column: 2;
+	grid-row: 3;
+}
+
+#kzs_grid_insurance_limit_value {
+	margin-bottom: 1em;
+	text-align: center;
+}
+
+#kzs_grid_insurance_input_value {
+	margin-bottom: 1em;
+	text-align: right;
+}
+
+#kzs_yaer_deduction_value {
+	margin-bottom: 1em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#kzs_yaer_deduction_value #yaer_deduction {
+	color: red;
+	font: bold;
+}
+
+#kzs_sum_deduction_label {
+	margin-bottom: 1em;
+}
+
+#kzs_sum_deduction_value {
+	margin-bottom: 1em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#kzs_sum_deduction_caption,
+#kzs_yaer_deduction_caption {
+	margin-right: 10px;
+}
+
+#kzs_sum_deduction_unit,
+#kzs_yaer_deduction_unit {
+	margin-left: 10px;
+}
+#kzs_yaer_deduction,
+#kzs_sum_deduction {
+	color: red;
+	font-size: 25px;
+}
+
+#kzs_grid_error_message {
+	color: red;
+	display: none;
+}
+
+#kzs_bottom_message {
+	background-color: gray;
+	padding: 30px;
+}
+
+#kzs_bottom_message p {
+	text-align: left;
+}
+
+p {
+	text-align: center;
+	margin-bottom: 1em;
+}
