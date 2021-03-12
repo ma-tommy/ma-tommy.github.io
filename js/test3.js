@@ -1,648 +1,171 @@
-(() => {
-	$(".first-section > div:eq(1)").after('<div id="simulation"></div>');
-
-	const makeHtml = (function () {
-		return `
-		<div id="kzs_container">    
-            <span id="kzs_block_header">所得控除額 わくわく電卓</span>
-            <div id="kzs_grid_container">
-                <span id="kzs_grid_age_label">年齢</span>
-                <select id="kzs_grid_age_value">
-                </select>
-            
-                <span id="kzs_grid_job_label">職業</span>
-                <select id="kzs_grid_job_value">
-                </select>
-            
-                <span id="kzs_grid_annual_income_label">年収</span>
-                <input type="number" value='0' id="kzs_grid_annual_income_value" step="10000"></input>
-            
-                <span id='kzs_grid_insurance_limit_label'>あなたの毎月の掛金上限はこちら↓</span>
-                <input type="text" disabled id="kzs_grid_insurance_limit_value" value="23,000円/月">
-                <span id="kzs_grid_insurance_limit_caution">※職業によって、掛金上限額は異なります。</span>
-            
-                
-                <span id="kzs_grid_insurance_input_label">毎月の掛金予定額を入力ください</span>
-                <input type="number" id="kzs_grid_insurance_input_value" value="0" step="1000" >
-                <span id="kzs_grid_insurance_input_error_limmt">※掛け金の上限を超えています</span>
-                <span></span><span id="kzs_grid_insurance_input_caution">※iDeCoの掛金は5,000円以上1,000円刻みです。</span>
-            </div>
-            <div>
-                <p id="#kzs_yazirusi">⬇️</p>
-                <div>
-                    <span id="kzs_yaer_deduction_label">iDeCoを活用することで、</span><br>
-                </div>
-                <div id="kzs_yaer_deduction_value">
-                    年間
-                    <span id="kzs_yaer_deduction">0</span><span>円
-                </div>
-                <span id="kzs_sum_deduction_label">60歳まで活用した場合、</span><br>
-                <div id="kzs_sum_deduction_value">
-                    合計
-                    <span id="kzs_sum_deduction">0</span>
-                    円の
-                </div>
-                <div>
-                    所得税が控除されます。
-                </div>
-                <div>
-                    専業主婦(夫)の場合、所得自体がないため「所得控除」はありません。運用益、受取り時の節税メリットのみです。
-                </div>
-                <div id="kzs_bottom_message">
-                    <p>※あくまでも簡易シミュレーションです。　節税金額を示唆・保証するものではありません。</p>
-                    
-                    <p>※課税所得は年収から必要経費や保険料等の各種控除を差し引いた金額であり、個人によってその額は大きく異なってきます。あくまで一例としてご参考ください。</p>
-                    <p>※税率は2020年12月8日現在の税率にて試算しています。税率が変更となった場合には結果も異なります。</p>
-                    <p>※復興特別所得税、配偶者控除（配偶者特別控除）は考慮していません。</p>
-                </div>
-        </div>
-		`;
-	})();
-	$("#simulation").append(makeHtml);
-
-	// セレクトボックスの初期化
-	// 年齢
-	const AGE_RANGE = { MIN: 20, MAX: 59 };
-	// 掛け金上限の単位
-	const INSURANCE_LIMIT_ADD_UNIT = "円/月";
-	// 職業
-	const JOB_LIST = [
-		{ label: "自営業(個人事業主)", value: 0, money: 68000 },
-		{ label: "専業主婦（夫）", value: 1, money: 23000 },
-		{
-			label: "会社員(企業型DCなし、確定給付企業年金(DB)なし)",
-			value: 2,
-			money: 23000,
-		},
-		{
-			label: "会社員(企業型DCあり、確定給付企業年金(DB)なし)",
-			value: 3,
-			money: 20000,
-		},
-		{
-			label: "会社員(企業型DCなし、確定給付企業年金(DB)あり)",
-			value: 4,
-			money: 12000,
-		},
-		{
-			label: "会社員(企業型DCあり、確定給付企業年金(DB)あり)",
-			value: 5,
-			money: 12000,
-		},
-		{ label: "公務員", value: 6, money: 12000 },
-	];
-
-	for (let i = AGE_RANGE.MIN; i <= AGE_RANGE.MAX; i++) {
-		$("#kzs_grid_age_value").append($("<option>").text(i).val(i));
-	}
-
-	for (let i = 0; i < JOB_LIST.length; i++) {
-		$("#kzs_grid_job_value").append(
-			$("<option>").text(JOB_LIST[i].label).val(JOB_LIST[i].value)
+var id = setInterval(function () {
+	if (
+		($("img[alt='お知らせ']").length === 0 &&
+			$("[id*='NC_spc_']").length == 4) ||
+		($("img[alt='お知らせ']").length !== 0 && $("[id*='NC_spc_']").length == 5)
+	) {
+		// if ($("[id*='NC_spc_']").length == 4) {
+		clearInterval(id);
+		var $gnavi = $("#gnavi")
+			.attr("style", "margin-top:10px !important;")
+			.detach();
+		var $login_btn = $("#log-btn").detach();
+		var $menu_head_1 = $(
+			"<h5 class='kaizen__menu__head'><p><span>メニューを</span><span></span></p></h5>"
 		);
-	}
-
-	const Util = function () {
-		this.init.apply(this, arguments);
-	};
-
-	Util.prototype = {
-		init: function () {},
-		convertInt: function (value) {
-			return value ? parseInt(value) : 0;
-		},
-		convertFloat: function (value) {
-			return value ? parseFloat(value) : 0;
-		},
-		roundDown: function (value, digit) {
-			return Math.floor(value * Math.pow(10, digit)) / Math.pow(10, digit);
-		},
-		removeComma: function (number) {
-			return number.replace(/,/g, "");
-		},
-	};
-
-	const Calc = function () {
-		this.init.apply(this, arguments);
-	};
-	// 計算クラス
-	Calc.prototype = {
-		init: function () {
-			this.Util = new Util();
-			// 給与所得控除率, 固定控除額
-			this.salaryIncomeDeductionRateIncome = [
-				{ annualIncome: 162.5, rate: 0, money: 55 },
-				{ annualIncome: 180.0, rate: 0.4, money: -10 },
-				{ annualIncome: 360.0, rate: 0.3, money: 8 },
-				{ annualIncome: 660.0, rate: 0.2, money: 44 },
-				{ annualIncome: 850.0, rate: 0.1, money: 110 },
-				{ annualIncome: -1, rate: 0, money: 195 },
-			];
-			// 社会保険料控除率
-			this.socialInsuranceDeductionRate = [
-				{ insurance: "health", rate: 0.0494 },
-				{ insurance: "welfarePension ", rate: 0.0915 },
-				{ insurance: "employment", rate: 0.003 },
-				{ insurance: "care", rate: 0.0079 },
-			];
-			// 所得税率, 所得税固定控除（円）
-			this.incomeTaxRateFixedDeduction = [
-				{ taxableIncome: 195, rate: 0.05105, money: 0 },
-				{ taxableIncome: 330, rate: 0.1021, money: 97500 },
-				{ taxableIncome: 695, rate: 0.2042, money: 427500 },
-				{ taxableIncome: 900, rate: 0.23483, money: 636000 },
-				{ taxableIncome: 1800, rate: 0.33693, money: 1536000 },
-				{ taxableIncome: 4000, rate: 0.4084, money: 2796000 },
-				{ taxableIncome: -1, rate: 0.45945, money: 4796000 },
-			];
-			// 住民税率
-			this.RESIDENT_TAX_RATE = 0.1;
-			// 介護保険加入年齢
-			this.CARE_INSURANCE_AGE = 40;
-			// 基礎控除(万円)
-			this.BASIC_DEDUCTION = 38;
-		},
-
-		/**
-		 * 節税額を取得
-		 * @param age 年齢
-		 * @param job 職業
-		 * @param annualIncome 年収
-		 * @param insuranceLimit 掛け金上限
-		 * @param insurance 掛け金
-		 */
-		getTaxSaving: function (age, job, annualIncome, insuranceLimit, insurance) {
-			// 年齢
-			this.age = age;
-			// 職業
-			this.job = job;
-			// 年収
-			this.annualIncome = this.Util.convertFloat(annualIncome);
-			// 掛け金上限
-			this.insuranceLimit = insuranceLimit;
-			// 毎月の掛け金
-			this.insurance = this.Util.convertInt(insurance);
-
-			if (!this.annualIncome || !this.insurance) {
-				kzs.console.log(
-					`年収：${this.annualIncome} 毎月の掛け金：${this.insurance}`
-				);
-				return 0;
-			}
-			kzs.console.log("年齢 = " + this.age);
-			kzs.console.log("職業 = " + this.job);
-			kzs.console.log("年収 = " + this.annualIncome);
-			kzs.console.log("掛け金上限 = " + this.insuranceLimit);
-			kzs.console.log("毎月の掛け金 = " + this.insurance);
-			kzs.console.log("年間の積み立て = " + calc._getYearInsurance());
-
-			kzs.console.log("給与所得控除率 = " + calc._getSalaryIncomeDeductionRate());
-			kzs.console.log("固定控除額 = " + calc._getFixedDeductionAmount());
-			kzs.console.log(
-				"社会保険控除率 = " + calc._getSocialInsuranceDeductionRate()
-			);
-			kzs.console.log("課税所得 = " + calc._getTaxableIncome());
-			kzs.console.log("iDeCo前課税所得 = " + calc._getIdecoBeforeTaxableIncome());
-			kzs.console.log("iDeCo前所得税率 = " + calc._getIdecoBeforeIncomeTaxRate());
-			kzs.console.log("iDeCo前所得税額 = " + calc._getIdecoBeforeIncomeTax());
-			kzs.console.log("iDeCo前住民税額 = " + calc._getIdecoBeforeResidentTax());
-			kzs.console.log("iDeCo前合計税額 = " + calc._getIdecoBeforeSumTaxSaving());
-			kzs.console.log("iDeCo後課税所得 = " + calc._getIdecoafterTaxableIncome());
-			kzs.console.log("iDeCo後所得税率 = " + calc._getIdecoAfterIncomeTaxRate());
-			kzs.console.log("iDeCo後所得税額 = " + calc._getIdecoAfterIncomeTax());
-			kzs.console.log("iDeCo後住民税額 = " + calc._getIdecoAfterResidentTax());
-			kzs.console.log("iDeCo後合計税額 = " + calc._getIdecoAfterSumTax());
-			kzs.console.log("年間節税額 = " + calc._getYearTaxSaving());
-
-			// 毎月の積立金額 <= 掛金上限
-			if (this.insurance <= this.insuranceLimit) {
-				kzs.console.log("毎月の積立金額 <= 掛金上限");
-				return this._getYearTaxSaving();
-			}
-
-			return "-";
-		},
-
-		// 年間の積立金額
-		_getYearInsurance: function () {
-			// 毎月の掛け金 * 12 /10000
-			return (
-				(this.Util.convertInt($("#kzs_grid_insurance_input_value").val()) *
-					12) /
-				10000
-			);
-		},
-
-		// 年収から給与所得控除率, 控除額を取得
-		_getSalaryIncomeDeduction: function () {
-			const that = this;
-			const result = this.salaryIncomeDeductionRateIncome.find(function (x) {
-				return that.annualIncome <= x.annualIncome;
-			});
-			return (
-				result ??
-				this.salaryIncomeDeductionRateIncome[
-					this.salaryIncomeDeductionRateIncome.length - 1
-				]
-			);
-		},
-		// 給与所得控除率
-		_getSalaryIncomeDeductionRate: function () {
-			return this._getSalaryIncomeDeduction().rate;
-		},
-		// 固定控除額
-		_getFixedDeductionAmount: function () {
-			return this._getSalaryIncomeDeduction().money;
-		},
-		// 社会保険控除率
-		_getSocialInsuranceDeductionRate: function () {
-			const sumRate = this.socialInsuranceDeductionRate.reduce(function (s, e) {
-				return s + e.rate;
-			}, 0);
-
-			// 40才以下は介護保険控除を減算
-			if (this.age < this.CARE_INSURANCE_AGE) {
-				return (
-					sumRate -
-					this.socialInsuranceDeductionRate.find(function (x) {
-						return x.insurance == "care";
-					}).rate
-				);
-			}
-			return sumRate;
-		},
-		// 課税所得
-		_getTaxableIncome: function () {
-			// 少数第2位を切り捨て(年収-(年収*給与所得控除率+固定控除額)-年収*社会保険控除率-基礎控除)
-			const result = this.Util.roundDown(
-				this.annualIncome -
-					(this.annualIncome * this._getSalaryIncomeDeductionRate() +
-						this._getFixedDeductionAmount()) -
-					this.annualIncome * this._getSocialInsuranceDeductionRate() -
-					this.BASIC_DEDUCTION,
-				1
-			);
-			return result > 0 ? result : 0;
-		},
-		// iDeCo前課税所得
-		_getIdecoBeforeTaxableIncome: function () {
-			// 個人事業主なら年収、個人事業主以外は課税所得
-			if (this.job == JOB_LIST[0].value) {
-				return this.annualIncome;
-			}
-			return this._getTaxableIncome();
-		},
-		// 年収から給与所得控除率, 控除額を取得
-		_getIncomeTaxRateFixedDeduction: function (taxableIncome) {
-			// 課税所得がどの所得税率になるか算出
-			const result = this.incomeTaxRateFixedDeduction.find(function (x) {
-				return taxableIncome <= x.taxableIncome;
-			});
-
-			return result === undefined
-				? this.incomeTaxRateFixedDeduction[
-						this.incomeTaxRateFixedDeduction.length - 1
-				  ]
-				: result;
-		},
-		// iDeCo前所得税率
-		_getIdecoBeforeIncomeTaxRate: function () {
-			return this._getIncomeTaxRateFixedDeduction(
-				this._getIdecoBeforeTaxableIncome()
-			).rate;
-		},
-		// iDeCo前所得税額
-		_getIdecoBeforeIncomeTax: function () {
-			// ROUNDDOWN(iDeCo前課税所得 * iDeCo前所得税率 * 10000, -2) - 給与所得控除額
-			return (
-				this.Util.roundDown(
-					this._getIdecoBeforeTaxableIncome() *
-						this._getIdecoBeforeIncomeTaxRate() *
-						10000,
-					-2
-				) -
-				this._getIncomeTaxRateFixedDeduction(
-					this._getIdecoBeforeTaxableIncome()
-				).money
-			);
-		},
-		// iDeCo前住民税額
-		_getIdecoBeforeResidentTax: function () {
-			// iDeCo前課税所得 * iDeCo前住民税率 * 10000
-			return (
-				this._getIdecoBeforeTaxableIncome() * this.RESIDENT_TAX_RATE * 10000
-			);
-		},
-
-		// iDeCo前合計税額
-		_getIdecoBeforeSumTaxSaving: function () {
-			// iDeCo前所得税額 + iDeCo前住民税額
-			return (
-				this._getIdecoBeforeIncomeTax() + this._getIdecoBeforeResidentTax()
-			);
-		},
-
-		// iDeCo後課税所得
-		_getIdecoafterTaxableIncome: function () {
-			if (this.job == JOB_LIST[0].value) {
-				// 自営業の場合(年収 - 年間の積立金額)
-				return this.annualIncome - this._getYearInsurance();
-			}
-			// 自営業以外の場合(iDeCo前課税所得 - 年間の積立金額)
-			return this._getIdecoBeforeTaxableIncome() - this._getYearInsurance();
-		},
-		// iDeCo後所得税率
-		_getIdecoAfterIncomeTaxRate: function () {
-			return this._getIncomeTaxRateFixedDeduction(
-				this._getIdecoafterTaxableIncome()
-			).rate;
-		},
-		// iDeCo後所得税額
-		_getIdecoAfterIncomeTax: function () {
-			// =ROUNDDOWN(iDeCo後課税所得 * iDeCo後所得税率 * 10000, -2) - 所得税固定控除)
-			return (
-				this.Util.roundDown(
-					this._getIdecoafterTaxableIncome() *
-						this._getIdecoAfterIncomeTaxRate() *
-						10000,
-					-2
-				) -
-				this._getIncomeTaxRateFixedDeduction(this._getIdecoafterTaxableIncome())
-					.money
-			);
-		},
-		// iDeCo後住民税額
-		_getIdecoAfterResidentTax: function () {
-			// iDeCo後課税所得 * iDeCo後住民税率 * 10000
-			return (
-				this._getIdecoafterTaxableIncome() * this.RESIDENT_TAX_RATE * 10000
-			);
-		},
-
-		// iDeCo後合計税額
-		_getIdecoAfterSumTax: function () {
-			// iDeCo後所得税額 + iDeCo後住民税額
-			return this._getIdecoAfterIncomeTax() + this._getIdecoAfterResidentTax();
-		},
-
-		// 年間節税額
-		_getYearTaxSaving: function () {
-			// iDeCo前合計税額 - iDeCo後合計税額
-			return this._getIdecoBeforeSumTaxSaving() - this._getIdecoAfterSumTax();
-		},
-	};
-
-	const calc = new Calc();
-	const util = new Util();
-	// 各項目のChangeイベントの追加
-	(function () {
-		// 年齢の変更
-		$("#kzs_grid_age_value").on("change", function (event) {
-			const taxSaving = calc.getTaxSaving(
-				event.currentTarget.value,
-				$("#kzs_grid_job_value").val(),
-				$("#kzs_grid_annual_income_value").val(),
-				util
-					.removeComma($("#kzs_grid_insurance_limit_value").val())
-					.replace(INSURANCE_LIMIT_ADD_UNIT, ""),
-				$("#kzs_grid_insurance_input_value").val()
-			);
-			// 年間の節税金額
-			$("#kzs_yaer_deduction").text(taxSaving.toLocaleString());
-			// 節税金額の合計
-			$("#kzs_sum_deduction").text(
-				(
-					taxSaving *
-					(AGE_RANGE.MAX + 1 - $("#kzs_grid_age_value").val())
-				).toLocaleString()
-			);
+		var $menu_body_1 = $gnavi
+			.add($login_btn)
+			.wrapAll("<div class='kaizen__menu__body'/>")
+			.parent();
+		var $menu = $menu_head_1
+			.add($menu_body_1)
+			.wrapAll("<div class='kaizen__menu'/>")
+			.parent();
+		var $login_area = $("#login-area");
+		var $base = $("#base");
+		var $right_column = $("#right-column");
+		var $right_column__h2 = $right_column.children("h2");
+		var $h2__offer = $right_column__h2.has("img[alt='お申込']");
+		var $h2_recommend_service = $right_column__h2.has(
+			"img[alt='おすすめサービス']"
+		);
+		var $h2_recommend_service__next = $h2_recommend_service.next();
+		var $h2_recommend_card = $right_column__h2.has("img[alt='おすすめカード']");
+		var $ClaimInfo = $("#ClaimInfo");
+		var $ClaimInfo__parent = $ClaimInfo.parent();
+		var $ClaimInfo__h2 = $ClaimInfo.children("h2");
+		var $h2_smile = $ClaimInfo__h2.has("img[alt='暮らスマイル情報']");
+		var $bg_dot = $h2_smile.prev(".bg-dot");
+		var $table_news = $base
+			.find("img[alt='お知らせ']")
+			.closest("table")
+			.nextAll()
+			.addBack();
+		var $banner_orico_point = $right_column
+			.find("img[alt='たまる！つかえる！オリコポイント']")
+			.closest("div.box1");
+		var $table__campaign__first = $base
+			.find("img[alt='キャンペーン']")
+			.closest("table");
+		var $table_campaign = $table__campaign__first
+			.nextUntil("img + table")
+			.addBack();
+		var $img_close = $base.find("img[alt='閉じる']");
+		var toggleClassName_1 = function (head) {
+			var class_name = "kaizen__--open";
+			head.is("." + class_name)
+				? head.removeClass(class_name)
+				: head.addClass(class_name);
+		};
+		$login_area.before($menu);
+		$menu_head_1.children().on({
+			click: function () {
+				$menu_body_1.slideToggle(function () {
+					toggleClassName_1($menu_head_1);
+				});
+			},
 		});
-		// 職業の変更
-		$("#kzs_grid_job_value").on("change", function (event) {
-			// 掛け金上限の変更
-			$("#kzs_grid_insurance_value").val(
-				JOB_LIST[event.currentTarget.value].money.toLocaleString() +
-					INSURANCE_LIMIT_ADD_UNIT
-			);
-			const taxSaving = calc.getTaxSaving(
-				$("#kzs_grid_age_value").val(),
-				event.currentTarget.value,
-				$("#kzs_grid_annual_income_value").val(),
-				util
-					.removeComma($("#kzs_grid_insurance_limit_value").val())
-					.replace(INSURANCE_LIMIT_ADD_UNIT, ""),
-				$("#kzs_grid_insurance_input_value").val()
-			);
-			// 年間の節税金額
-			$("#kzs_yaer_deduction").text(taxSaving.toLocaleString());
-			// 節税金額の合計
-			$("#kzs_sum_deduction").text(
-				(
-					taxSaving *
-					(AGE_RANGE.MAX + 1 - $("#kzs_grid_age_value").val())
-				).toLocaleString()
-			);
+		$h2__offer.add($h2_recommend_card).each(function () {
+			$(this).next().addBack().addClass("kaizen_--display_none");
 		});
-		// 年収の変更
-		$("#kzs_grid_annual_income_value").on("change", function (event) {
-			const taxSaving = calc.getTaxSaving(
-				$("#kzs_grid_age_value").val(),
-				$("#kzs_grid_job_value").val(),
-				event.currentTarget.value,
-				util
-					.removeComma($("#kzs_grid_insurance_limit_value").val())
-					.replace(INSURANCE_LIMIT_ADD_UNIT, ""),
-				$("#kzs_grid_insurance_input_value").val()
+		$h2_recommend_service.addClass("kaizen_head").html("おすすめ");
+		$h2_recommend_service__next.addClass("kaizen_banner");
+		$h2_recommend_service__next
+			.children()
+			.first()
+			.after("<a href='https://www.oricomall.com/sp/' tagrget='_blank'></a>");
+		$(".kaizen_banner").children("a").wrap($("<p/>"));
+		$h2_recommend_service__next.find(".box1").addClass("kaizen_--display_none");
+		if ($bg_dot.length) {
+			var $div = $ClaimInfo.find("div.align-center");
+			var $div__children = $div.children();
+			var $a = $div__children.eq(1).remove().end();
+			var $recommend = $h2_recommend_service.add($(".kaizen_banner"));
+			$a.first().html(
+				"<span><span class='kaizen_icon kaizen_icon--smile'></span><span class='kaizen_btn_text'>スマイルの<br>照会・交換</span></span>"
 			);
-			// 年間の節税金額
-			$("#kzs_yaer_deduction").text(taxSaving.toLocaleString());
-			// 節税金額の合計
-			$("#kzs_sum_deduction").text(
-				(
-					taxSaving *
-					(AGE_RANGE.MAX + 1 - $("#kzs_grid_age_value").val())
-				).toLocaleString()
+			$a.last().html(
+				"<span><span class='kaizen_icon kaizen_icon--smail_to_oricopoint'></span><span class='kaizen_btn_text'>オリコポイントへ<br>移行する</span></span>"
 			);
-		});
-		// 毎月の掛け金の変更
-		$("#kzs_grid_insurance_input_value").on("change", function (event) {
-			const taxSaving = calc.getTaxSaving(
-				$("#kzs_grid_age_value").val(),
-				$("#kzs_grid_job_value").val(),
-				$("#kzs_grid_annual_income_value").val(),
-				util
-					.removeComma($("#kzs_grid_insurance_limit_value").val())
-					.replace(INSURANCE_LIMIT_ADD_UNIT, ""),
-				event.currentTarget.value
+			$a.wrap("<p/>");
+			$div.addClass("kaizen_row");
+			$bg_dot.addClass("kaizen_--display_none");
+			$bg_dot.after("<h2 class='kaizen_head'>ポイント交換</h2>");
+			$div.before(
+				"<p class='kaizen_attention'>※暮らスマイルはオリコポイントに変換が可能です</p>"
 			);
-			// 年間の節税金額
-			$("#kzs_yaer_deduction").text(taxSaving.toLocaleString());
-			// 節税金額の合計
-			$("#kzs_sum_deduction").text(
-				(
-					taxSaving *
-					(AGE_RANGE.MAX + 1 - $("#kzs_grid_age_value").val())
-				).toLocaleString()
-			);
-		});
-	})();
-
-	var s = `
-	#kzs_container {
-		margin: 30px;
-		text-align: center;
+			$bg_dot.before([$table_campaign, $recommend]);
+		} else {
+			$h2_recommend_service.before($table_campaign);
+		}
+		if ($img_close.length) {
+			var $h2_usage = $ClaimInfo__h2.has("img[alt='ご利用状況']");
+			var $h2_usage__next = $h2_usage.next();
+			var $date = $ClaimInfo.find("th.bg-gray:contains(当月ご請求)").next();
+			var data_txt = $date.text();
+			var $billing_link = $date.next().children();
+			var billing_link_href = $billing_link.attr("href");
+			var $use_unfixed = $ClaimInfo.find(".text-s > a");
+			var use_unfixed_href = $use_unfixed.attr("href");
+			var $date_table = $date.closest("table");
+			var $date_table_other = $date_table
+				.nextUntil("span.text-s + table + table")
+				.addBack();
+			var $web_detail_apply = $ClaimInfo
+				.find("img[alt='Web明細のお申込']")
+				.parent();
+			var web_detail_apply_href = $web_detail_apply.attr("href");
+			var $revo_apply = $ClaimInfo.find("img[alt='あとリボ']").parent();
+			var revo_apply_href = $revo_apply.attr("href");
+			var $revo_status = $ClaimInfo
+				.find("img[alt='あとリボお申込状況']")
+				.parent();
+			var revo_status_href = $revo_status.attr("href");
+			var $pass_apply = $ClaimInfo.find("img[alt='支払PASS']").parent();
+			var pass_apply_href = $pass_apply.attr("href");
+			var $is_pass = $ClaimInfo.find("a:contains(支払PASSとは？)");
+			var is_pass_href = $is_pass.attr("href");
+			var payment_group =
+				'<h2 class="kaizen_head">\u304A\u652F\u6255\u3044\u5185\u5BB9</h2>\n<table class="kaizen_table">\n    <tbody>\n        <tr>\n            <th>\u304A\u652F\u6255\u3044\u65E5</th>\n            <td>' +
+				data_txt +
+				'</td>\n        </tr>\n        <tr>\n            <th>\u5F53\u6708\u3054\u8ACB\u6C42</th>\n            <td>\u3054\u8ACB\u6C42\u91D1\u984D\u306F<a href="' +
+				billing_link_href +
+				'">\u3053\u3061\u3089</a></td>\n        </tr>\n    </tbody>\n</table>\n<div class="kaizen_row">\n    <p><a class="kaizen_btn--solid" href="' +
+				billing_link_href +
+				'">\u3054\u5229\u7528\u78BA\u5B9A\u5206\u3092<br>\u78BA\u8A8D\u3059\u308B</a></p>\n    <p><a class="kaizen_btn--solid" href="' +
+				use_unfixed_href +
+				'">\u3054\u5229\u7528\u672A\u78BA\u5B9A\u5206\u3092<br>\u78BA\u8A8D\u3059\u308B</a></p>\n</div>';
+			var support =
+				'<div class="section">\n    <h3 class="section__head">\u304A\u652F\u6255\u3044\u30B5\u30DD\u30FC\u30C8</h3>\n    <div class="section__body sub_section">\n        <h4 class="sub_section__head">\u30AD\u30E3\u30C3\u30B7\u30F3\u30B0</h4>\n        <div class="sub_section__body group">\n            <p class="group__txt">\u632F\u8FBC\u624B\u6570\u6599\u306F\u7121\u6599\u3067\u3001\u6700\u77ED30\u5206\u4EE5\u5185\u3067\u304A\u632F\u8FBC\u3044\u305F\u3057\u307E\u3059\u3002</p>\n            <p class="group__btn btn">\n                <a class="btn__item" href="KAL1C10000.do" target="_blank">\u30AD\u30E3\u30C3\u30B7\u30F3\u30B0\u3092\u7533\u3057\u8FBC\u3080</a>\n            </p>\n        </div>\n    </div>\n    <div class="section__body sub_section">\n        <h4 class="sub_section__head">\u3042\u3068\u30EA\u30DC</h4>\n        <div class="sub_section__body group">\n            <p class="group__txt">\u30B7\u30E7\u30C3\u30D4\u30F3\u30B0\u3084\u30AD\u30E3\u30C3\u30B7\u30F3\u30B0\u306E\u3054\u5229\u7528\u5206\u3092\u3001\u3042\u3068\u304B\u3089\u30EA\u30DC\u6255\u3044\u306B\u5909\u66F4\u3067\u304D\u307E\u3059\u3002</p>\n            <p class="group__btn btn">\n                <a class="btn__item" href="' +
+				revo_apply_href +
+				'" target="_blank">\u3042\u3068\u30EA\u30DC\u3092\u7533\u3057\u8FBC\u3080</a>\n                <a class="btn__item btn__item--small" href="' +
+				revo_status_href +
+				'" target="_blank">\u3042\u3068\u30EA\u30DC\u304A\u7533\u8FBC\u307F\u72B6\u6CC1\u3092\u78BA\u8A8D</a>\n            </p>\n            <p class="group__link link">\n                <a class="link__item" href="http://www.orico.co.jp/use/basic/atorevo.html" target="_blank"><img src="https://teorico.orico.co.jp/eorico/common/image/arrow_link.gif" alt="" width="12" height="9" border="0" class="v-middle">\u3042\u3068\u30EA\u30DC\u3068\u306F\uFF1F</a>\n            </p>\n        </div>\n    </div>\n    <div class="section__body sub_section">\n        <h4 class="sub_section__head">\u652F\u6255PASS</h4>\n        <div class="sub_section__body group">\n            <p class="group__txt">\u4ECA\u6708\u5206\u306E\u652F\u6255\u3044\u3092\u7FCC\u6708\u4EE5\u964D\u306E\u30EA\u30DC\u6255\u3044\u306B\u5909\u66F4\u3067\u304D\u307E\u3059\u3002</p>\n            <p class="group__btn btn">\n                <a class="btn__item" href="' +
+				pass_apply_href +
+				'" target="_blank">\u652F\u6255PASS\u3092\u7533\u3057\u8FBC\u3080</a>\n            </p>\n            <p class="group__link link">\n                <a class="link__item" href="' +
+				is_pass_href +
+				'" target="_blank"><img src="https://teorico.orico.co.jp/eorico/common/image/arrow_link.gif" alt="" width="12" height="9" border="0" class="v-middle">\u652F\u6255\u3044PASS\u3068\u306F\uFF1F</a>\n            </p>\n        </div>\n    </div>\n</div>';
+			var web =
+				'<div class="section section--web">\n    <h3 class="section__head section__head--web">WEB\u660E\u7D30\u306E\u304A\u7533\u8FBC</h3>\n    <div class="section__body sub_section">\n        <div class="sub_section__body group">\n            <p class="group__txt">\uFF62\u3054\u5229\u7528\u4EE3\u91D1\u660E\u7D30\u66F8\uFF63\u306E\u90F5\u9001\u3092\u505C\u6B62\u3057\u3001\uFF45\u30AA\u30EA\u30B3\u4E0A\u3067\u3054\u78BA\u8A8D\u3044\u305F\u3060\u304F\u30B5\u30FC\u30D3\u30B9\u3067\u3059\u3002</p>\n            <p class="group__btn btn btn--single"><a class="btn__item btn__item--web" href="" target="_blank">WEB\u660E\u7D30\u3092\u7533\u3057\u8FBC\u3080</a></p>\n            <p class="group__link link"><a class="link__item" href="http://www.orico.co.jp/use/eorico/statement.html" target="_blank"><img src="https://teorico.orico.co.jp/eorico/common/image/arrow_link.gif" alt="" width="12" height="9" border="0" class="v-middle">Web\u660E\u7D30\u3068\u306F\uFF1F</a></p>\n        </div>\n    </div>\n</div>';
+			$h2_usage.add($h2_usage__next).addClass("kaizen_--display_none");
+			$date_table_other.attr("style", "display:none !important;");
+			$ClaimInfo__parent.addClass("kaizen_--style");
+			$ClaimInfo.before([payment_group, support, web]);
+		}
+		$banner_orico_point.prepend("<p class='kaizen_img--oricopoint'></p>");
+		$banner_orico_point
+			.children("a")
+			.html(
+				"<span><span class='kaizen_icon kaizen_icon--oricopoint'></span><span class='kaizen_btn_text'>オリコポイントを交換する</span></span>"
+			)
+			.wrap("<p class='kaizen_long'/>");
+		$("#footer").before($table_news).before($banner_orico_point);
+		var s =
+			"#bg02 .kaizen__menu__head {\n    text-align: right;\n  }\n  #bg02 .kaizen__menu__head p {\n    display: -webkit-inline-box;\n    display: -webkit-inline-flex;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    -webkit-align-items: center;\n            align-items: center;\n    padding: 4px 8px !important;\n    border: 1px solid #b3b3b3;\n    border-radius: 5px;\n    background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ece7e7)) !important;\n    background-image: -webkit-linear-gradient(top, #fff 0%, #ece7e7 100%) !important;\n    background-image: linear-gradient(to bottom, #fff 0%, #ece7e7 100%) !important;\n    cursor: pointer;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n  }\n  #bg02 .kaizen__menu__head p span {\n    line-height: 1.3 !important;\n  }\n  #bg02 .kaizen__menu__head p span:first-child:after {\n    content: '\u958B\u304F';\n  }\n  #bg02 .kaizen__menu__head p span:last-child:after {\n    display: inline-block;\n    position: relative;\n    top: 3px;\n    width: 0;\n    margin: 0 0 0 8px;\n    border: solid 5px transparent;\n    border-top: solid 7px #ff8c04;\n    content: '';\n  }\n  #bg02 .kaizen__menu__body {\n    display: none;\n  }\n  #bg02 .kaizen__--open p span:first-child:after {\n    content: '\u9589\u3058\u308B';\n  }\n  #bg02 .kaizen__--open p span:last-child:after {\n    display: inline-block;\n    position: relative;\n    top: -3px;\n    width: 0;\n    margin: 0 0 0 8px;\n    border: solid 5px transparent;\n    border-bottom: solid 7px #ff8c04;\n    content: '';\n  }\n  #bg02 .kaizen_head {\n    position: relative !important;\n    overflow: auto;\n    height: auto;\n    margin-top: 18px !important;\n    padding: 9px 8px 9px 20px !important;\n    border-bottom: 1px solid #c3c3c3;\n    background-color: #fff !important;\n    font-size: 16px;\n    line-height: 1.4;\n  }\n  #bg02 .kaizen_head:before {\n    display: block;\n    position: absolute;\n    top: 20%;\n    left: 5px;\n    width: 5px;\n    height: 60%;\n    border-radius: 3px;\n    background: #f8b002;\n    content: '';\n  }\n  #bg02 .kaizen_--display_none {\n    display: none;\n  }\n  #bg02 .kaizen_table {\n    display: table;\n    max-width: 100% !important;\n    margin-top: 12px !important;\n    border-top: 1px solid #c3c3c3;\n    border-left: 1px solid #c3c3c3;\n  }\n  #bg02 .kaizen_table tbody {\n    display: table-row-group;\n  }\n  #bg02 .kaizen_table tr {\n    display: table-row;\n  }\n  #bg02 .kaizen_table th,\n  #bg02 .kaizen_table td {\n    display: table-cell;\n    padding: 7px 8px !important;\n    border-right: 1px solid #c3c3c3;\n    border-bottom: 1px solid #c3c3c3;\n  }\n  #bg02 .kaizen_table th {\n    width: 39% !important;\n    background-color: #f5f5f5;\n  }\n  #bg02 .kaizen_table + .kaizen_row {\n    margin-top: 10px !important;\n  }\n  #bg02 .kaizen_row {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: -ms-flexbox;\n    display: flex;\n    margin-top: 7px !important;\n    margin-bottom: 18px !important;\n  }\n  #bg02 .kaizen_row p {\n    -webkit-flex-grow: 1;\n            flex-grow: 1;\n    width: 0% !important;\n    padding-top: 0 !important;\n    padding-bottom: 0 !important;\n    -webkit-box-flex: 1;\n        -ms-flex-positive: 1;\n  }\n  #bg02 .kaizen_row p:last-child {\n    margin-left: 10px !important;\n  }\n  #bg02 .kaizen_row p a {\n    display: block;\n    position: relative !important;\n    padding: 10px !important;\n    padding-right: 17px !important;\n    border: 1px solid #c3c3c3;\n    border-radius: 3px;\n    color: #ff7004;\n    color: #000;\n    font-weight: bold;\n    line-height: 1.3 !important;\n    text-align: center;\n    text-decoration: none;\n  }\n  #bg02 .kaizen_row p a.kaizen_btn--solid {\n    -webkit-box-shadow: 0 2px 0 0 #bbb;\n            box-shadow: 0 2px 0 0 #bbb;\n    background-color: #f8f8f8;\n    background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), color-stop(39%, #fff), to(#ece7e7)) !important;\n    background-image: -webkit-linear-gradient(top, #fff 0%, #fff 39%, #ece7e7 100%) !important;\n    background-image: linear-gradient(to bottom, #fff 0%, #fff 39%, #ece7e7 100%) !important;\n  }\n  #bg02 .kaizen_row p a:after {\n    position: absolute;\n    top: 0;\n    right: 10px;\n    bottom: 0;\n    -webkit-transform: rotate(45deg);\n    transform: rotate(45deg);\n    width: 5px;\n    height: 5px;\n    margin: auto 0;\n    border-top: 1px solid #c3c3c3;\n    border-right: 1px solid #c3c3c3;\n    content: '';\n  }\n  #bg02 .kaizen_banner {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-justify-content: space-between;\n            justify-content: space-between;\n    margin-top: 12px !important;\n    margin-bottom: 0 !important;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n  }\n  #bg02 .kaizen_banner p {\n    -webkit-flex-grow: 1 !important;\n            flex-grow: 1 !important;\n    width: 0% !important;\n    margin-top: 0 !important;\n    padding-top: 0 !important;\n    padding-bottom: 0 !important;\n    -webkit-box-flex: 1 !important;\n        -ms-flex-positive: 1 !important;\n  }\n  #bg02 .kaizen_banner p:first-child a {\n    display: block;\n  }\n  #bg02 .kaizen_banner p:first-child a img {\n    width: 100% !important;\n    height: auto;\n    padding: 0 !important;\n  }\n  #bg02 .kaizen_banner p:nth-child(2) {\n    margin-left: 10px !important;\n  }\n  #bg02 .kaizen_banner p:nth-child(2) a {\n    display: block !important;\n    width: 100% !important;\n    height: 0;\n    padding-top: 35.16483516483517%;\n    background: url(\"https://cdn.kaizenplatform.net/v2/attachments/000/356/989/ab61918e3f40e1dc1bbeeed8177182e92a0c6620.png\") no-repeat 0 0 transparent;\n    background-size: contain;\n  }\n  #bg02 .kaizen_icon {\n    display: block;\n    height: 28px;\n  }\n  #bg02 .kaizen_icon--smile {\n    width: 28px;\n    background: url(\"https://cdn.kaizenplatform.net/v2/attachments/000/357/550/758d4c057021ec69722265fe08366d934079f6ca.png\") no-repeat center 0 transparent;\n    background-size: contain;\n  }\n  #bg02 .kaizen_icon--smail_to_oricopoint {\n    width: 28px;\n    background: url(\"https://cdn.kaizenplatform.net/v2/attachments/000/357/551/5a9c2e2f9cae9e73b68721785a50eb2b1c6d15bc.png\") no-repeat center 0 transparent;\n    background-size: contain;\n  }\n  #bg02 .kaizen_img--oricopoint {\n    width: 166px !important;\n    margin-top: 13px !important;\n    padding-right: 10px !important;\n    padding-left: 10px !important;\n  }\n  #bg02 .kaizen_img--oricopoint:before {\n    display: block;\n    width: 100%;\n    height: 0;\n    padding-top: 22.48062015503876%;\n    background: url(\"https://cdn.kaizenplatform.net/v2/attachments/000/357/553/1fe3b52a6a50c8ff51f5842b27d841f8745cdd9f.gif\") no-repeat 0 0 transparent;\n    background-size: contain;\n    content: '';\n  }\n  #bg02 .kaizen_btn_text {\n    display: block;\n    margin-top: 5px !important;\n    line-height: 1.3;\n    text-align: center;\n  }\n  #bg02 .kaizen_long {\n    margin-top: 13px !important;\n    margin-bottom: 19px !important;\n  }\n  #bg02 .kaizen_long a {\n    display: block;\n    position: relative !important;\n    width: 77% !important;\n    margin: 0 auto !important;\n    padding: 10px !important;\n    padding-right: 17px !important;\n    border: 1px solid #c3c3c3 !important;\n    border-radius: 3px;\n    color: #000;\n    font-weight: bold;\n    line-height: 1.3 !important;\n    text-align: center;\n    text-decoration: none;\n  }\n  #bg02 .kaizen_long a > span {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-align-items: center;\n            align-items: center;\n    -webkit-justify-content: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n  }\n  #bg02 .kaizen_long a .kaizen_icon {\n    display: inline-block;\n  }\n  #bg02 .kaizen_long a .kaizen_icon--oricopoint {\n    width: 28px !important;\n    background: url(\"https://cdn.kaizenplatform.net/v2/attachments/000/357/552/03a2d2aee62df847e7758cbf369a68b46427d574.png\") no-repeat center 0 transparent;\n    background-size: contain;\n  }\n  #bg02 .kaizen_long a .kaizen_btn_text {\n    display: inline-block !important;\n    margin-top: 0 !important;\n    margin-left: 5px !important;\n    line-height: 1 !important;\n    text-align: left;\n  }\n  #bg02 .kaizen_long a:after {\n    position: absolute;\n    top: 0;\n    right: 10px;\n    bottom: 0;\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n    width: 5px;\n    height: 5px;\n    margin: auto 0;\n    border-top: 1px solid #c3c3c3;\n    border-right: 1px solid #c3c3c3;\n    content: '';\n  }\n  #bg02 .kaizen_attention {\n    margin-top: 2px !important;\n    padding-top: 0 !important;\n    padding-bottom: 0 !important;\n  }\n  #bg02 .section {\n    margin-top: 18px !important;\n  }\n  #bg02 .section__head {\n    position: relative !important;\n    padding: 9px 8px 9px 20px !important;\n    border-bottom: 1px solid #c3c3c3;\n    font-size: 16px;\n    line-height: 1.4;\n  }\n  #bg02 .section__head:before {\n    display: block;\n    position: absolute;\n    top: 20%;\n    left: 5px;\n    width: 5px;\n    height: 60%;\n    border-radius: 3px;\n    background: #f8b002;\n    content: '';\n  }\n  #bg02 .section__head--web:before {\n    background-color: #7bd20b;\n  }\n  #bg02 .section__body {\n    margin-top: 12px !important;\n  }\n  #bg02 .group {\n    padding-top: 14px;\n    padding-bottom: 14px;\n    border-radius: 2px;\n    -webkit-box-shadow: 0 0 0 1px #ece6e6;\n            box-shadow: 0 0 0 1px #ece6e6;\n    background-color: #fff;\n  }\n  #bg02 .sub_section {\n    padding: 5px !important;\n    border-radius: 2px;\n    background-color: #f5f5f5;\n  }\n  #bg02 .sub_section__head {\n    position: static !important;\n    margin-top: 5px !important;\n    margin-bottom: 10px !important;\n    padding-left: 5px !important;\n    padding-left: 15px !important;\n    color: #000;\n    font-size: 14px;\n    line-height: 1;\n  }\n  #bg02 .group--web {\n    background-color: #f8f8f8;\n  }\n  #bg02 .group__txt {\n    margin-bottom: 14px !important;\n    padding: 0 15px !important;\n    font-size: 13px !important;\n    line-height: 1.4 !important;\n  }\n  #bg02 .group__link {\n    margin-top: 14px !important;\n    padding: 0 18px 2px 0 !important;\n  }\n  #bg02 .group__list {\n    margin-top: 20px !important;\n    padding: 0 18px !important;\n  }\n  #bg02 .group__btn {\n    padding-top: 0 !important;\n    padding-bottom: 4px !important;\n  }\n  #bg02 .btn {\n    padding-bottom: 2px;\n    text-align: center;\n  }\n  #bg02 .btn--single {\n    padding-bottom: 4px;\n  }\n  #bg02 .btn__item {\n    display: inline-block;\n    width: 77% !important;\n    height: 33px;\n    padding: 0 10px !important;\n    border: none;\n    border-radius: 5px;\n    border-radius: 3px;\n    -webkit-box-shadow: 0 4px 0 0 #de7903;\n            box-shadow: 0 4px 0 0 #de7903;\n    background-color: #ff8c04;\n    color: #fff;\n    font-size: 14px;\n    line-height: 33px;\n    text-align: center;\n    text-decoration: none;\n  }\n  #bg02 .btn__item:nth-child(2) {\n    margin-top: 20px !important;\n  }\n  #bg02 .btn__item--small {\n    width: 62% !important;\n    height: 26px;\n    border: 1px solid #bfc4ca;\n    -webkit-box-shadow: 0 2px 0 0 #bbb;\n            box-shadow: 0 2px 0 0 #bbb;\n    background-color: #f8f8f8;\n    color: #584613;\n    font-size: 11px;\n    line-height: 25px;\n  }\n  #bg02 .btn__item--web {\n    -webkit-box-shadow: 0 4px 0 0 #0c9824;\n            box-shadow: 0 4px 0 0 #0c9824;\n    background-color: #13b82f;\n  }\n  #bg02 .link {\n    text-align: right;\n  }\n  #bg02 .link__item {\n    display: inline-block;\n  }\n  #bg02 .list__item {\n    line-height: 1.4 !important;\n  }\n  #bg02 .list__item:nth-child(n+2) {\n    margin-top: 2px !important;\n  }\n  #bg02 #base .kaizen_--style {\n    padding: 0 !important;\n  }\n  #bg02 #base #ClaimInfo table[background='https://teorico.orico.co.jp/eorico/KAL11100/image/bg_campaign-info_top.gif'] td {\n    padding: 0 !important;\n  }\n  #bg02 #base #ClaimInfo table[background='https://teorico.orico.co.jp/eorico/KAL11100/image/bg_campaign-info.gif'] td {\n    padding: 0 10px !important;\n  }\n  #bg02 #base table[background='https://teorico.orico.co.jp/eorico/KAL11100/image/bg_your-info_top.gif'] {\n    background-repeat: no-repeat !important;\n    background-position: 0 bottom;\n  }\n  #bg02 #base table[background='https://teorico.orico.co.jp/eorico/KAL11100/image/bg_your-info_top.gif'] td {\n    vertical-align: bottom;\n  }\n  #bg02 #base table[background='https://teorico.orico.co.jp/eorico/KAL11100/image/bg_your-info_top.gif'] td:first-child img {\n    height: 40px;\n    vertical-align: bottom;\n  }\n  #bg02 #base table[background='https://teorico.orico.co.jp/eorico/KAL11100/image/bg_your-info_top.gif'] td:nth-child(2) {\n    padding-bottom: 5px;\n  }\n  #bg02 #base table[background='https://teorico.orico.co.jp/eorico/KAL11100/image/bg_your-info_top.gif'] td:nth-child(2) img,\n  #bg02 #base table[background='https://teorico.orico.co.jp/eorico/KAL11100/image/bg_your-info_top.gif'] td:nth-child(2) br {\n    display: none;\n  }\n  #bg02 #base table[background='https://teorico.orico.co.jp/eorico/KAL11100/image/bg_your-info_top.gif'] td:nth-child(2) span.text-red a {\n    font-size: 11px;\n    white-space: nowrap !important;\n  }\n  #bg02 #base table[background='https://teorico.orico.co.jp/eorico/KAL11100/image/bg_your-info_top.gif'] td:last-child {\n    width: 70px !important;\n    padding-bottom: 5px;\n  }\n  #bg02 #base table[background='https://teorico.orico.co.jp/eorico/KAL11100/image/bg_your-info_top.gif'] td:last-child a {\n    display: inline-block;\n    padding-right: 5px !important;\n  }\n  #bg02 table[background='https://teorico.orico.co.jp/eorico/KAL11100/image/bg_campaign-info.gif'] td {\n    padding: 0 10px !important;\n  }\n  #bg02 table[background='https://teorico.orico.co.jp/eorico/KAL11100/image/bg_campaign-info.gif'] td p {\n    padding: 7px 0 !important;\n  }\n  #bg02 table[background='https://teorico.orico.co.jp/eorico/KAL11100/image/bg_campaign-info_top.gif'] {\n    margin-top: 27px !important;\n  }\n  #bg02 table[background='https://teorico.orico.co.jp/eorico/KAL11100/image/bg_campaign-info_top.gif'] h2 {\n    border-bottom: none;\n    background-color: transparent;\n  }\n  #bg02 img + .box1 .kaizen_img--oricopoint {\n    margin-top: 25px !important;\n    margin-left: -10px !important;\n  }";
+		var st = $("<style type='text/css' id='kz_variation_style'></style>");
+		var ss = st.prop("styleSheet");
+		if (ss) ss.cssText = s;
+		else st.html(s);
+		$("head").append(st);
 	}
-	
-	#kzs_block_header {
-		padding: 1% 20% 1% 20%;
-		background: rgb(246, 156, 85);
-		border: 1px red solid;
-		border-radius: 10px;
-		
-	 }
-	 #kzs_container_table {
-		 display: table;
-		 table-layout:fixed;
-	 }
-	 #kzs_table_row {
-		display: table-row;
-	 }
-	 #kzs_table_cell {
-		display: table-cell;
-
-	 }
-	 #kzs_grid_container {
-		margin: 2em;
-		display: grid;
-		grid-template-columns: 30% 60%;
-		place-items: center;
-		justify-items: left;
-		column-gap: 2em;
-		row-gap: 1em;
-		
-	}
-	#kzs_grid_age_label {
-		grid-column: 1;
-		grid-row: 1;
-		width: 100%;
-		text-align: end;
-	}
-
-	#kzs_grid_age_input {
-		grid-column: 2;
-		grid-row: 1;
-		text-align: center;
-	}
-
-	#kzs_grid_job_label {
-		grid-column: 1;
-		grid-row: 2;
-		width: 100%;
-		text-align: end;
-	}
-
-	#kzs_grid_job_input {
-		grid-column: 2;
-		grid-row: 2;
-	}
-
-	#kzs_grid_annual_income_label {
-		grid-column: 1;
-		grid-row: 3;
-		width: 100%;
-		text-align: end;
-	}
-
-	#kzs_grid_annual_income_value {
-		grid-column: 2;
-		grid-row: 3;
-		text-align: end;
-	}
-
-	#kzs_grid_annual_income_input {
-		grid-column: 2;
-		grid-row: 3;
-	}
-
-	#kzs_grid_insurance_limit_label {
-		grid-column: 1/3;
-		grid-row: 4;
-		width: 100%;
-	}
-
-	#kzs_grid_insurance_limit_value {
-		grid-column: 2/3;
-		grid-row: 5;
-		text-align: center;
-	}
-
-	#kzs_grid_insurance_limit_caution {
-		grid-column: 2/3;
-		grid-row: 6;
-	}
-
-	#kzs_grid_insurance_input_label {
-		grid-column: 2/3;
-		grid-row: 7;
-	}
-
-	#kzs_grid_insurance_input_value {
-		grid-column: 2/3;
-		grid-row: 8;
-		text-align: end;
-	}
-
-	#kzs_grid_insurance_input_error_limmt {
-		grid-column: 2/3;
-		grid-row: 9;
-	}
-
-	#kzs_grid_insurance_input_caution {
-		grid-column: 2/3;
-		grid-row: 10;
-	}
-
-	#kzs_yazirusi {
-		text-align: center;
-		margin-bottom: 1em;
-	}
-
-	#kzs_yaer_deduction_label {
-		margin-bottom: 1em;
-	}
-
-	#kzs_yaer_deduction_value {
-		margin-bottom: 1em;
-	}
-
-	#kzs_yaer_deduction_value #yaer_deduction {
-		color: red;
-		font: bold;
-	}
-
-	#kzs_sum_deduction_label {
-		margin-bottom: 1em;
-	}
-
-	#kzs_sum_deduction_value {
-		margin-bottom: 1em;
-	}
-
-	#kzs_sum_deduction_value #sum_deduction {
-		color: red;
-		font: bold;
-	}
-
-	#kzs_bottom_message {
-		background-color: gray;
-	}
-  `;
-
-	var st = $('<style type="text/css"></style>');
-	var ss = st.prop("styleSheet");
-	var st = $('<style type="text/css"></style>');
-	var ss = st.prop("styleSheet");
-	if (ss) ss.cssText = s;
-	else st.html(s);
-	$("head").append(st);
-})();
+}, 200);
