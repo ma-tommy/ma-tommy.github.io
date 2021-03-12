@@ -5,7 +5,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
 		<meta http-equiv="Content-Style-Type" content="text/css" />
 		<meta http-equiv="Content-Script-Type" content="text/javascript" />
-        <meta name="robots" content="noindex,nofollow,noarchive" /> 
+		<meta name="robots" content="noindex,nofollow,noarchive" />
 		<!-- visitor/header_dc_001.html/// -->
 		<title>iDeCo（個人型確定拠出年金）｜SBI証券</title>
 
@@ -43,10 +43,6 @@
 			src="//yjtag.yahoo.co.jp/tag?site=hAyydFq&amp;referrer=https%3A%2F%2Fsite0.sbisec.co.jp%2Fmarble%2Finsurance%2Fdc401k%2Fapplication%2FbaseCheck.do&amp;docReferrer=https%3A%2F%2Fsite0.sbisec.co.jp%2Fmarble%2Finsurance%2Fdc401k%2Fapplication%2FbaseForm.do%3F_scpr%3Dintpr%253d210104_ideco_apply_btn_01%26gunoad_cid%3Dnull&amp;H=-16oorlt"
 		></script>
 		<script async="" src="//s.yjtag.jp/tag.js#site=hAyydFq"></script>
-		<script
-			async=""
-			src="//www.googletagmanager.com/gtm.js?id=GTM-7SZV"
-		></script>
 		<script
 			type="text/javascript"
 			async=""
@@ -3297,52 +3293,6 @@
 							});
 						});
 					</script>
-
-					<!-- Google Tag Manager -->
-					<noscript
-						><iframe
-							src="//www.googletagmanager.com/ns.html?id=GTM-7SZV"
-							height="0"
-							width="0"
-							style="display: none; visibility: hidden"
-						></iframe
-					></noscript>
-					<script>
-						(function (w, d, s, l, i) {
-							w[l] = w[l] || [];
-							w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-							var f = d.getElementsByTagName(s)[0],
-								j = d.createElement(s),
-								dl = l != "dataLayer" ? "&l=" + l : "";
-							j.async = true;
-							j.src = "//www.googletagmanager.com/gtm.js?id=" + i + dl;
-							f.parentNode.insertBefore(j, f);
-						})(window, document, "script", "dataLayer", "GTM-7SZV");
-					</script>
-					<!-- End Google Tag Manager -->
-
-					<!-- Yahoo Tag Manager -->
-					<script type="text/javascript">
-						(function () {
-							var tagjs = document.createElement("script");
-							var s = document.getElementsByTagName("script")[0];
-							tagjs.async = true;
-							tagjs.src = "//s.yjtag.jp/tag.js#site=hAyydFq";
-							s.parentNode.insertBefore(tagjs, s);
-						})();
-					</script>
-					<noscript>
-						<iframe
-							src="//b.yjtag.jp/iframe?c=hAyydFq"
-							width="1"
-							height="1"
-							frameborder="0"
-							scrolling="no"
-							marginheight="0"
-							marginwidth="0"
-						></iframe>
-					</noscript>
-					<!-- End Yahoo Tag Manager -->
 				</div>
 				<div id="lowerHtmlPattern3" style="display: none">
 					<!-- dc401kapply_doc03_lower.html -->
@@ -3551,29 +3501,6 @@
 					yahoo_retargeting_label: "",
 				},
 			});
-		</script>
-		<div id="KzExt_SiteJsDetected" style="display: none">
-			[{"namespace":"kzs","key":"0cf19393e0746329"}]
-		</div>
-		<div id="KzExt_SiteJsGetVariation" style="display: none">
-			{"matchedProjects":[],"state":"decided","decidedProject":{"expId":"125121","expType":"singlePageTest","experimentId":"125121","experimentType":"singlePageTest","roundId":"167860","roundType":"initial","roundStateId":"206467","roundStateType":"active","variationId":-1,"gaSlot":null,"gaCTrack":"","scVars":"","uaCDim":null,"uaCTrack":"","analyticsId":"Exp_125121_Variation_control"}}
-		</div>
-		<script type="text/javascript" id="">
-			(function () {
-				if (
-					(google_tag_manager["GTM-7SZV"].macro(8) ||
-						void 0 !== google_tag_manager["GTM-7SZV"].macro(9)) &&
-					!google_tag_manager["GTM-7SZV"].macro(10).match(/\.sbisec\.co\.jp/)
-				) {
-					var b = google_tag_manager["GTM-7SZV"].macro(11),
-						a = new Date();
-					a.setTime(a.getTime() + 2592e6);
-					var c = ";domain\x3d.sbisec.co.jp",
-						d = ";path\x3d/";
-					a = ";expires\x3d" + a;
-					document.cookie = "lastclickad\x3d" + b + c + d + a;
-				}
-			})();
 		</script>
 		<!-- Yahoo! JAPAN xdomain script -->
 		<script
@@ -10989,42 +10916,6 @@
 	</script>
 	<script>
 		(function () {
-			//FIXME DRY
-			function postMessage(matchedProjects, state, decidedProject) {
-				var customEvent = document.createEvent("Event");
-				customEvent.initEvent("KzExt_SiteJsGetVariation", true, true);
-				var hiddenDiv = document.getElementById("KzExt_SiteJsGetVariation");
-				hiddenDiv.innerText = toJSON({
-					matchedProjects: projectsToJson(matchedProjects),
-					state: state,
-					decidedProject: decidedProject,
-				});
-				hiddenDiv.dispatchEvent(customEvent);
-			}
-			//FIXME DRY
-			function toJSON() {
-				// Fight with Prototype Sucks
-				// https://github.com/kaizenplatform/kaizen-site-js/issues/126
-				deleteToJSON = function (obj) {
-					if (!obj) {
-						return obj;
-					}
-					if (typeof obj != "object") {
-						return obj;
-					}
-					if (typeof obj.toJSON == "function") {
-						obj.toJSON = undefined;
-					}
-					for (var k in obj) {
-						obj[k] = deleteToJSON(obj[k]);
-					}
-					return obj;
-				};
-				a = arguments;
-				a[0] = deleteToJSON(a[0]);
-				return JSON.stringify.apply(JSON, a);
-			}
-
 			function projectsToJson(projects) {
 				var rs = [];
 				for (var i = 0; i < projects.length; i++) {
