@@ -57,7 +57,7 @@
 		<script type="text/javascript">
 			function formSubmit() {
 				var cnt = $(this).attr("cnt");
-				var url = "/xresponse?resno=10000017";
+				var url = "https://video.dmkt-sp.jp/xresponse?resno=10000017";
 				if (cnt) {
 					url = url + "&cnt=" + cnt;
 				}
@@ -70,7 +70,7 @@
 					var status = "delete";
 					$.ajax({
 						type: "POST",
-						url: "/setup/mail-complete-ajax",
+						url: "https://video.dmkt-sp.jp/setup/mail-complete-ajax",
 						data: { mail: mail, status: status, type: "register-delete" },
 						async: false,
 					});
@@ -78,7 +78,7 @@
 				if ($(".fcl") != null) {
 					$.ajax({
 						type: "GET",
-						url: "/xresponse?resno=10000003",
+						url: "https://video.dmkt-sp.jp/xresponse?resno=10000003",
 						async: false,
 					});
 				}
@@ -129,7 +129,7 @@
 					<span class="searchBox_button"><i class="searchBox_icon"></i></span>
 					<form
 						class="js-searchBox-submit"
-						action="/search/increment"
+						action="https://video.dmkt-sp.jp/search/increment"
 						method="get"
 					>
 						<input type="hidden" name="words" value="" /><input
@@ -177,7 +177,7 @@
 					});
 					accountButtonText = $("div.accountButton p.accountButton_text");
 					$.ajax({
-						url: "/account/daccount",
+						url: "https://video.dmkt-sp.jp/account/daccount",
 						dataType: "json",
 						async: true,
 						success: function (res) {
@@ -194,7 +194,7 @@
 					<li
 						class="globalNav_link globalNav_link--news globalNav_link--onlySP"
 					>
-						<a href="/news/list/10000018"
+						<a href="https://video.dmkt-sp.jp/news/list/10000018"
 							>お知らせ<!-- 数字アイコンの場合 --><!-- <span class="globalNav_badge">4</span> --><!-- NEWアイコンの場合 --><span
 								class="globalNav_badge globalNav_badge--new"
 								>NEW</span
@@ -206,19 +206,25 @@
 						<div class="globalNavDropdown">
 							<ul>
 								<li class="globalNavDropdown_link">
-									<a href="/mylist">マイリスト</a>
+									<a href="https://video.dmkt-sp.jp/mylist">マイリスト</a>
 								</li>
 								<li class="globalNavDropdown_link">
-									<a href="/mylist/fav">お気に入り</a>
+									<a href="https://video.dmkt-sp.jp/mylist/fav">お気に入り</a>
 								</li>
 								<li class="globalNavDropdown_link">
-									<a href="/mylist/download">視聴履歴</a>
+									<a href="https://video.dmkt-sp.jp/mylist/download"
+										>視聴履歴</a
+									>
 								</li>
 								<li class="globalNavDropdown_link">
-									<a href="/mylist/rental">レンタル中</a>
+									<a href="https://video.dmkt-sp.jp/mylist/rental"
+										>レンタル中</a
+									>
 								</li>
 								<li class="globalNavDropdown_link">
-									<a href="/mylist/playlist">音楽プレイリスト</a>
+									<a href="https://video.dmkt-sp.jp/mylist/playlist"
+										>音楽プレイリスト</a
+									>
 								</li>
 							</ul>
 						</div>
@@ -228,50 +234,66 @@
 						<div class="globalNavDropdown">
 							<ul>
 								<li class="globalNavDropdown_link">
-									<a href="/ge/top/3">オリジナル</a>
+									<a href="https://video.dmkt-sp.jp/ge/top/3">オリジナル</a>
 								</li>
 								<li class="globalNavDropdown_link">
-									<a href="/music">音楽</a>
+									<a href="https://video.dmkt-sp.jp/music">音楽</a>
 								</li>
 								<li class="globalNavDropdown_link">
-									<a href="/genre/genre-list/id/101">洋画</a>
+									<a href="https://video.dmkt-sp.jp/genre/genre-list/id/101"
+										>洋画</a
+									>
 								</li>
 								<li class="globalNavDropdown_link">
-									<a href="/genre/genre-list/id/102">邦画</a>
+									<a href="https://video.dmkt-sp.jp/genre/genre-list/id/102"
+										>邦画</a
+									>
 								</li>
 								<li class="globalNavDropdown_link">
-									<a href="/genre-structure/anime">アニメ</a>
+									<a href="https://video.dmkt-sp.jp/genre-structure/anime"
+										>アニメ</a
+									>
 								</li>
 								<li class="globalNavDropdown_link">
-									<a href="/genre/genre-list/id/106">国内ドラマ</a>
+									<a href="https://video.dmkt-sp.jp/genre/genre-list/id/106"
+										>国内ドラマ</a
+									>
 								</li>
 								<li class="globalNavDropdown_link">
-									<a href="/genre/genre-list/id/105">海外ドラマ</a>
+									<a href="https://video.dmkt-sp.jp/genre/genre-list/id/105"
+										>海外ドラマ</a
+									>
 								</li>
 								<li class="globalNavDropdown_link">
-									<a href="/genre/genre-list/id/107">韓流・華流</a>
+									<a href="https://video.dmkt-sp.jp/genre/genre-list/id/107"
+										>韓流・華流</a
+									>
 								</li>
 								<li class="globalNavDropdown_link">
-									<a href="/genre-structure/kids">キッズ</a>
+									<a href="https://video.dmkt-sp.jp/genre-structure/kids"
+										>キッズ</a
+									>
 								</li>
 								<li class="globalNavDropdown_link">
-									<a href="/genre/genre-list/id/109">バラエティ</a>
+									<a href="https://video.dmkt-sp.jp/genre/genre-list/id/109"
+										>バラエティ</a
+									>
 								</li>
 								<li class="globalNavDropdown_link">
-									<a href="/rental-list">レンタル</a>
+									<a href="https://video.dmkt-sp.jp/rental-list">レンタル</a>
 								</li>
 								<li class="globalNavDropdown_link">
-									<a href="/title-list/new-soon"
+									<a href="https://video.dmkt-sp.jp/title-list/new-soon"
 										>新着タイトル・もうすぐ配信開始されるタイトル</a
 									>
 								</li>
 								<li class="globalNavDropdown_link">
-									<a href="/title-list/end-soon"
+									<a href="https://video.dmkt-sp.jp/title-list/end-soon"
 										>31日以内に配信終了するタイトル</a
 									>
 								</li>
 								<li class="globalNavDropdown_link">
-									<a href="/sitemap">すべてから探す</a>
+									<a href="https://video.dmkt-sp.jp/sitemap">すべてから探す</a>
 								</li>
 							</ul>
 						</div>
@@ -343,37 +365,45 @@
 											class="castdeviceId"
 										/>
 										<a
-											href="/original?rl=https%3A%2F%2Fvideo.dmkt-sp.jp%2Fterminal%3Fdparam%3Don"
+											href="https://video.dmkt-sp.jp/original?rl=https%3A%2F%2Fvideo.dmkt-sp.jp%2Fterminal%3Fdparam%3Don"
 											>デバイス管理</a
 										>
 									</form>
 								</li>
 								<li class="globalNavDropdown_link">
-									<a href="/profile">プロフィール設定</a>
+									<a href="https://video.dmkt-sp.jp/profile"
+										>プロフィール設定</a
+									>
 								</li>
 								<li class="globalNavDropdown_link">
-									<a href="/clear?rl=%2Fhistory">契約状態/ご利用履歴</a>
+									<a href="https://video.dmkt-sp.jp/clear?rl=%2Fhistory"
+										>契約状態/ご利用履歴</a
+									>
 								</li>
 								<li class="globalNavDropdown_link">
-									<a href="/setup/hdtv">シリアルキーでログインする</a>
+									<a href="https://video.dmkt-sp.jp/setup/hdtv"
+										>シリアルキーでログインする</a
+									>
 								</li>
 								<li class="globalNavDropdown_link">
-									<a href="/setup/mail">メール設定</a>
+									<a href="https://video.dmkt-sp.jp/setup/mail">メール設定</a>
 								</li>
 								<li class="globalNavDropdown_link">
-									<a href="/mylist/user-rank">dTV会員特典</a>
+									<a href="https://video.dmkt-sp.jp/mylist/user-rank"
+										>dTV会員特典</a
+									>
 								</li>
 								<li class="globalNavDropdown_link">
-									<a href="/register/delete">解約</a>
+									<a href="https://video.dmkt-sp.jp/register/delete">解約</a>
 								</li>
 								<li class="globalNavDropdown_link">
 									<a href="https://help.video.dmkt-sp.jp/">よくある質問</a>
 								</li>
 								<li class="globalNavDropdown_link">
-									<a href="/request">お問い合わせ</a>
+									<a href="https://video.dmkt-sp.jp/request">お問い合わせ</a>
 								</li>
 								<li class="globalNavDropdown_link">
-									<a href="/clear">ログアウト</a>
+									<a href="https://video.dmkt-sp.jp/clear">ログアウト</a>
 								</li>
 							</ul>
 						</div>
@@ -388,23 +418,28 @@
 						<div class="globalNavNews">
 							<ul class="globalNavNews_lists">
 								<li class="globalNavNews_list">
-									<a href="/news-article/index/id/10025711"
+									<a
+										href="https://video.dmkt-sp.jp/news-article/index/id/10025711"
 										>【News】「チョコ松さん～ホワイトデー編～」独占配信開始！プレゼントキャンペーンも！</a
 									>
 								</li>
 								<li class="globalNavNews_list">
-									<a href="/news-article/index/id/10025710"
+									<a
+										href="https://video.dmkt-sp.jp/news-article/index/id/10025710"
 										>「Kis-My-Ft2のオールナイトニッポンPremium」生配信決定！</a
 									>
 								</li>
 								<li class="globalNavNews_list">
-									<a href="/news-article/index/id/10025479"
+									<a
+										href="https://video.dmkt-sp.jp/news-article/index/id/10025479"
 										>【News】Da-iCEのオンラインライブ独占配信決定！</a
 									>
 								</li>
 							</ul>
 							<p class="globalNavNews_more">
-								<a href="/news/list/10000018">お知らせ一覧</a>
+								<a href="https://video.dmkt-sp.jp/news/list/10000018"
+									>お知らせ一覧</a
+								>
 							</p>
 						</div>
 					</li>
@@ -458,7 +493,7 @@
 							<span>お試し期間中は無料でお楽しみいただけます。</span
 							><br />ぜひ期間終了までお楽しみください。
 						</p>
-						<!-- 会員ランク --><!-- <div class="kaiyaku_genre01" style="max-width:1000px; margin-left:auto; margin-right:auto;"><a href="/mylist/user-rank?cnt=hn000044" rel="external"><ul><li><span class="icon01"><img src="https://image.video.dmkt-sp.jp/custom/img/kaiyaku_boushi01/icon_user01.png"height="21"></span><span class="text01">会員ランク</span><span class="arrow01"><img src="https://image.video.dmkt-sp.jp/custom/img/base/arrow01b.png" width="15"></span></li></ul></a></div>-->
+						<!-- 会員ランク --><!-- <div class="kaiyaku_genre01" style="max-width:1000px; margin-left:auto; margin-right:auto;"><a href="https://video.dmkt-sp.jp/mylist/user-rank?cnt=hn000044" rel="external"><ul><li><span class="icon01"><img src="https://image.video.dmkt-sp.jp/custom/img/kaiyaku_boushi01/icon_user01.png"height="21"></span><span class="text01">会員ランク</span><span class="arrow01"><img src="https://image.video.dmkt-sp.jp/custom/img/base/arrow01b.png" width="15"></span></li></ul></a></div>-->
 						<div class="kaiyaku_user01">
 							<ul>
 								<li>
@@ -473,12 +508,16 @@
 									>
 								</li>
 								<div class="userRank_status_link">
-									<a href="/mylist/user-rank-info">会員ランクとは ＞</a>
+									<a href="https://video.dmkt-sp.jp/mylist/user-rank-info"
+										>会員ランクとは ＞</a
+									>
 								</div>
 							</ul>
 						</div>
 						<div class="kaiyaku_center01">
-							<a href="/mylist/user-rank?cnt=hn000044" rel="external"
+							<a
+								href="https://video.dmkt-sp.jp/mylist/user-rank?cnt=hn000044"
+								rel="external"
 								><img
 									src="https://image.video.dmkt-sp.jp/custom/img/register_page01/dpoint_btn01.png"
 									width="300"
@@ -491,7 +530,7 @@
 						</div>
 						<div class="kaiyaku_bnr_area">
 							<div class="kaiyaku_bnr">
-								<a href="/ft/s0004069" rel="external"
+								<a href="https://video.dmkt-sp.jp/ft/s0004069" rel="external"
 									><img
 										src="https://image.video.dmkt-sp.jp/custom/img/register_page01/present_bnr_02.png"
 										width="300"
@@ -506,7 +545,7 @@
 								target="_blank"
 								><img
 									src="https://image.video.dmkt-sp.jp/custom/img/register_page01/re.jpg" /></a
-							><a href="/ft/p0007925?cnt=nk000337"
+							><a href="https://video.dmkt-sp.jp/ft/p0007925?cnt=nk000337"
 								><img
 									src="https://image.video.dmkt-sp.jp/custom/img/register_page01/mirutoku_bnr_02.jpg"
 							/></a>
@@ -536,7 +575,7 @@
 								<ul class="withdrawal_imglist">
 									<li>
 										<a
-											href="/ti/10023141?cnt=hn000044"
+											href="https://video.dmkt-sp.jp/ti/10023141?cnt=hn000044"
 											rel="external"
 											class="withdrawal_link"
 											><img
@@ -549,7 +588,7 @@
 									</li>
 									<li>
 										<a
-											href="/ti/10021776?cnt=hn000044"
+											href="https://video.dmkt-sp.jp/ti/10021776?cnt=hn000044"
 											rel="external"
 											class="withdrawal_link"
 											><img
@@ -562,7 +601,7 @@
 									</li>
 									<li>
 										<a
-											href="/ti/10024810?cnt=hn000044"
+											href="https://video.dmkt-sp.jp/ti/10024810?cnt=hn000044"
 											rel="external"
 											class="withdrawal_link"
 											><img
@@ -575,7 +614,7 @@
 									</li>
 									<li>
 										<a
-											href="/ti/10029678?cnt=hn000044"
+											href="https://video.dmkt-sp.jp/ti/10029678?cnt=hn000044"
 											rel="external"
 											class="withdrawal_link"
 											><img
@@ -591,7 +630,7 @@
 								<ul class="withdrawal_imglist">
 									<li>
 										<a
-											href="/ti/10046940?cnt=hn000044"
+											href="https://video.dmkt-sp.jp/ti/10046940?cnt=hn000044"
 											rel="external"
 											class="withdrawal_link"
 											><img
@@ -604,7 +643,7 @@
 									</li>
 									<li>
 										<a
-											href="/ti/10047795?cnt=hn000044"
+											href="https://video.dmkt-sp.jp/ti/10047795?cnt=hn000044"
 											rel="external"
 											class="withdrawal_link"
 											><img
@@ -617,7 +656,7 @@
 									</li>
 									<li>
 										<a
-											href="/ti/10049947?cnt=hn000044"
+											href="https://video.dmkt-sp.jp/ti/10049947?cnt=hn000044"
 											rel="external"
 											class="withdrawal_link"
 											><img
@@ -630,7 +669,7 @@
 									</li>
 									<li>
 										<a
-											href="/ti/10023825?cnt=hn000044"
+											href="https://video.dmkt-sp.jp/ti/10023825?cnt=hn000044"
 											rel="external"
 											class="withdrawal_link"
 											><img
@@ -646,7 +685,7 @@
 								<ul class="withdrawal_imglist">
 									<li>
 										<a
-											href="/ti/10044702?cnt=hn000044"
+											href="https://video.dmkt-sp.jp/ti/10044702?cnt=hn000044"
 											rel="external"
 											class="withdrawal_link"
 											><img
@@ -659,7 +698,7 @@
 									</li>
 									<li>
 										<a
-											href="/ti/10040799?cnt=hn000044"
+											href="https://video.dmkt-sp.jp/ti/10040799?cnt=hn000044"
 											rel="external"
 											class="withdrawal_link"
 											><img
@@ -672,7 +711,7 @@
 									</li>
 									<li>
 										<a
-											href="/ti/10045455?cnt=hn000044"
+											href="https://video.dmkt-sp.jp/ti/10045455?cnt=hn000044"
 											rel="external"
 											class="withdrawal_link"
 											><img
@@ -685,7 +724,7 @@
 									</li>
 									<li>
 										<a
-											href="/ti/10019347?cnt=hn000044"
+											href="https://video.dmkt-sp.jp/ti/10019347?cnt=hn000044"
 											rel="external"
 											class="withdrawal_link"
 											><img
@@ -701,7 +740,7 @@
 								<div class="withdrawal_btnbox">
 									<div class="withdrawal_btnbox_left">
 										<a
-											href="/ranking/total/1?cnt=hn000044"
+											href="https://video.dmkt-sp.jp/ranking/total/1?cnt=hn000044"
 											rel="external"
 											class="withdrawal_link"
 											><img
@@ -714,7 +753,7 @@
 									</div>
 									<div class="withdrawal_btnbox_right">
 										<a
-											href="/ranking/total/2?cnt=hn000044"
+											href="https://video.dmkt-sp.jp/ranking/total/2?cnt=hn000044"
 											rel="external"
 											class="withdrawal_link"
 											><img
@@ -727,7 +766,7 @@
 									</div>
 									<div class="withdrawal_btnbox_bot">
 										<a
-											href="/title-list/latest-title?cnt=hn000044"
+											href="https://video.dmkt-sp.jp/title-list/latest-title?cnt=hn000044"
 											rel="external"
 											class="withdrawal_link"
 											><img
@@ -745,9 +784,9 @@
 							<h2 class="registDelete_title">
 								現在dTVにご登録いただいているdアカウントであれば、解約後も一年間は視聴履歴、お気に入り、プレイリスト、お支払い情報等が引き継がれ、いつでも簡単にご利用を再開いただけます。
 							</h2>
-							<!-- <div class="withdrawal_dtv_area"><div class="withdrawal_tit"><img src="https://image.video.dmkt-sp.jp/custom/img/register_page01/withdrawal_dtv_tit_pc.png" width="115" height="30" alt="作品数・会員数No.1dTV" class="withdrawal_img withdrawal_pc"><img src="https://image.video.dmkt-sp.jp/custom/img/register_page01/withdrawal_dtv_tit_sp.png" width="960" height="75" alt="" class="withdrawal_img withdrawal_sp"></div><div class="withdrawal_dtv_inner"><p class="withdrawal_dtv_caution_txt">※ 国内において。2015年6月時点インプレス総合研究所調べ。</p><div class="withdrawal_dtv_box01"><p class="withdrawal_dtv_redtxt">12万以上の作品を独り占め！<br>エンタメ配信サービスの決定版。</p><div class="withdrawal_dtvimg01"><img src="https://image.video.dmkt-sp.jp/custom/img/register_page01/withdrawal_dtv_img01_pc.png" width="221" height="113" alt="" class="withdrawal_img withdrawal_pc"><img src="https://image.video.dmkt-sp.jp/custom/img/register_page01/withdrawal_dtv_img01_sp.png" width="857" height="588" alt="" class="withdrawal_img withdrawal_sp"></div></div> --><!--withdrawal_dtv_box01--><!-- <div class="withdrawal_dtv_box02"><p class="withdrawal_dtv_redtxt">映画・ドラマだけじゃない！<br>音楽ライブやカラオケ、アニメやマンガも。<br>豊富なジャンルが好きなだけ楽しめる！</p><div class="withdrawal_dtvimg02"><img src="https://image.video.dmkt-sp.jp/custom/img/register_page01/withdrawal_dtv_img02_pc.png" width="270" height="169" alt="" class="withdrawal_img withdrawal_pc"><img src="https://image.video.dmkt-sp.jp/custom/img/register_page01/withdrawal_dtv_img02_sp.png" width="852" height="549" alt="" class="withdrawal_img withdrawal_sp"></div></div> --><!--withdrawal_dtv_box02--><!-- <div class="withdrawal_dtv_box03"><div class="withdrawal_pc"><p class="withdrawal_dtv_redtxt">dTVなら超話題作が楽しめる</p><div class="withdrawal_dtvimg03"><img src="https://image.video.dmkt-sp.jp/custom/img/register_page01/withdrawal_dtv_img03_pc.png" width="162" height="111" alt="" class="withdrawal_img"></div><div class="withdrawal_dtvtxt_box"><p class="withdrawal_dtv_txt01">＜ウォーキング・デッド＞<br>・シーズン1からシーズン5まで全話見放題！</p><p class="withdrawal_dtv_txt02">＜妖怪ウォッチ＞<br>・2014年の劇場版がまるごと全部見られる！</p><p class="withdrawal_dtv_txt03">ほかにも盛りだくさん！⇒<a href="/index?cnt=hn000044" rel="external" class="withdrawal_link"><span>見たい作品をチェック</span></a></p></div></div></div> --><!--withdrawal_dtv_box03--><!-- <div class="withdrawal_dtv_area02"><p class="withdrawal_dtv_area02_tit withdrawal_pc">dTV会員しか手に入らない　毎日がドキドキする特典がいっぱい！</p><p class="withdrawal_dtv_area02_tit withdrawal_sp">dTV会員しか手に入らない<br>毎日がドキドキする特典がいっぱい！</p><div class="withdrawal_dtv_list"><div class="withdrawal_dtv_white_box"><p class="withdrawal_dtv_listtxt">あのキャストに会える！<br><span>会員限定イベントへの招待</span></p><div class="withdrawal_dtv_listimg"><img src="https://image.video.dmkt-sp.jp/custom/img/register_page01/withdrawal_dtv_img04_pc.png" width="269" height="125" alt="" class="withdrawal_img withdrawal_pc"><img src="https://image.video.dmkt-sp.jp/custom/img/register_page01/withdrawal_dtv_img04_sp.png" width="781" height="270" alt="" class="withdrawal_img withdrawal_sp"></div></div> --><!--withdrawal_dtv_white_box--><!-- <div class="withdrawal_dtv_white_box"><p class="withdrawal_dtv_listtxt">会員限定dTVターミナルが当たる！<br><span>プレゼント</span></p><div class="withdrawal_dtv_listimg"><img src="https://image.video.dmkt-sp.jp/custom/img/register_page01/withdrawal_dtv_img05_pc.png" width="269" height="125" alt="" class="withdrawal_img withdrawal_pc"><div class="withdrawal_dtv_listimg02 withdrawal_sp"><img src="https://image.video.dmkt-sp.jp/custom/img/register_page01/withdrawal_dtv_img05_sp.png" width="698" height="261" alt="" class="withdrawal_img"></div></div></div> --><!--withdrawal_dtv_white_box--><!-- <div class="withdrawal_dtv_white_box"><p class="withdrawal_dtv_listtxt">劇場公開前に映画本編が楽しめる！<br><span>オンライン試写</span></p><div class="withdrawal_dtv_listimg"><img src="https://image.video.dmkt-sp.jp/custom/img/register_page01/withdrawal_dtv_img06_pc.png" width="269" height="125" alt="" class="withdrawal_img withdrawal_pc"><div class="withdrawal_dtv_listimg03 withdrawal_sp"><img src="https://image.video.dmkt-sp.jp/custom/img/register_page01/withdrawal_dtv_img06_sp.png" width="609" height="404" alt="" class="withdrawal_img"></div></div></div> --><!--withdrawal_dtv_white_box--><!-- </div></div></div></div> --><!--withdrawal_dtv_area-->
+							<!-- <div class="withdrawal_dtv_area"><div class="withdrawal_tit"><img src="https://image.video.dmkt-sp.jp/custom/img/register_page01/withdrawal_dtv_tit_pc.png" width="115" height="30" alt="作品数・会員数No.1dTV" class="withdrawal_img withdrawal_pc"><img src="https://image.video.dmkt-sp.jp/custom/img/register_page01/withdrawal_dtv_tit_sp.png" width="960" height="75" alt="" class="withdrawal_img withdrawal_sp"></div><div class="withdrawal_dtv_inner"><p class="withdrawal_dtv_caution_txt">※ 国内において。2015年6月時点インプレス総合研究所調べ。</p><div class="withdrawal_dtv_box01"><p class="withdrawal_dtv_redtxt">12万以上の作品を独り占め！<br>エンタメ配信サービスの決定版。</p><div class="withdrawal_dtvimg01"><img src="https://image.video.dmkt-sp.jp/custom/img/register_page01/withdrawal_dtv_img01_pc.png" width="221" height="113" alt="" class="withdrawal_img withdrawal_pc"><img src="https://image.video.dmkt-sp.jp/custom/img/register_page01/withdrawal_dtv_img01_sp.png" width="857" height="588" alt="" class="withdrawal_img withdrawal_sp"></div></div> --><!--withdrawal_dtv_box01--><!-- <div class="withdrawal_dtv_box02"><p class="withdrawal_dtv_redtxt">映画・ドラマだけじゃない！<br>音楽ライブやカラオケ、アニメやマンガも。<br>豊富なジャンルが好きなだけ楽しめる！</p><div class="withdrawal_dtvimg02"><img src="https://image.video.dmkt-sp.jp/custom/img/register_page01/withdrawal_dtv_img02_pc.png" width="270" height="169" alt="" class="withdrawal_img withdrawal_pc"><img src="https://image.video.dmkt-sp.jp/custom/img/register_page01/withdrawal_dtv_img02_sp.png" width="852" height="549" alt="" class="withdrawal_img withdrawal_sp"></div></div> --><!--withdrawal_dtv_box02--><!-- <div class="withdrawal_dtv_box03"><div class="withdrawal_pc"><p class="withdrawal_dtv_redtxt">dTVなら超話題作が楽しめる</p><div class="withdrawal_dtvimg03"><img src="https://image.video.dmkt-sp.jp/custom/img/register_page01/withdrawal_dtv_img03_pc.png" width="162" height="111" alt="" class="withdrawal_img"></div><div class="withdrawal_dtvtxt_box"><p class="withdrawal_dtv_txt01">＜ウォーキング・デッド＞<br>・シーズン1からシーズン5まで全話見放題！</p><p class="withdrawal_dtv_txt02">＜妖怪ウォッチ＞<br>・2014年の劇場版がまるごと全部見られる！</p><p class="withdrawal_dtv_txt03">ほかにも盛りだくさん！⇒<a href="https://video.dmkt-sp.jp/index?cnt=hn000044" rel="external" class="withdrawal_link"><span>見たい作品をチェック</span></a></p></div></div></div> --><!--withdrawal_dtv_box03--><!-- <div class="withdrawal_dtv_area02"><p class="withdrawal_dtv_area02_tit withdrawal_pc">dTV会員しか手に入らない　毎日がドキドキする特典がいっぱい！</p><p class="withdrawal_dtv_area02_tit withdrawal_sp">dTV会員しか手に入らない<br>毎日がドキドキする特典がいっぱい！</p><div class="withdrawal_dtv_list"><div class="withdrawal_dtv_white_box"><p class="withdrawal_dtv_listtxt">あのキャストに会える！<br><span>会員限定イベントへの招待</span></p><div class="withdrawal_dtv_listimg"><img src="https://image.video.dmkt-sp.jp/custom/img/register_page01/withdrawal_dtv_img04_pc.png" width="269" height="125" alt="" class="withdrawal_img withdrawal_pc"><img src="https://image.video.dmkt-sp.jp/custom/img/register_page01/withdrawal_dtv_img04_sp.png" width="781" height="270" alt="" class="withdrawal_img withdrawal_sp"></div></div> --><!--withdrawal_dtv_white_box--><!-- <div class="withdrawal_dtv_white_box"><p class="withdrawal_dtv_listtxt">会員限定dTVターミナルが当たる！<br><span>プレゼント</span></p><div class="withdrawal_dtv_listimg"><img src="https://image.video.dmkt-sp.jp/custom/img/register_page01/withdrawal_dtv_img05_pc.png" width="269" height="125" alt="" class="withdrawal_img withdrawal_pc"><div class="withdrawal_dtv_listimg02 withdrawal_sp"><img src="https://image.video.dmkt-sp.jp/custom/img/register_page01/withdrawal_dtv_img05_sp.png" width="698" height="261" alt="" class="withdrawal_img"></div></div></div> --><!--withdrawal_dtv_white_box--><!-- <div class="withdrawal_dtv_white_box"><p class="withdrawal_dtv_listtxt">劇場公開前に映画本編が楽しめる！<br><span>オンライン試写</span></p><div class="withdrawal_dtv_listimg"><img src="https://image.video.dmkt-sp.jp/custom/img/register_page01/withdrawal_dtv_img06_pc.png" width="269" height="125" alt="" class="withdrawal_img withdrawal_pc"><div class="withdrawal_dtv_listimg03 withdrawal_sp"><img src="https://image.video.dmkt-sp.jp/custom/img/register_page01/withdrawal_dtv_img06_sp.png" width="609" height="404" alt="" class="withdrawal_img"></div></div></div> --><!--withdrawal_dtv_white_box--><!-- </div></div></div></div> --><!--withdrawal_dtv_area-->
 						</div>
-						<!-- /.main --><!-- /作品紹介エリア--><!-- 解約理由--><!-- <div class="kaiyaku_genre01"><ul><li><span class="text02">あなたの解約理由をお聞かせください。</span></li></ul></div><ul class="kaiyaku_txt01"> --><!-- 1 --><!-- <a href="/ft/x0003401?cnt=hn000044" rel="external"><li class="line_top">見たい作品がないから</li></a> --><!-- 2 --><!-- <a href="/ft/x0003407?cnt=hn000044" rel="external"><li>もともと映画やドラマを見ないから</li></a> --><!-- 3 --><!-- <a href="/ft/x0003402?cnt=hn000044" rel="external"><li>視聴方法がわからないから</li></a> --><!-- 4 --><!-- <a href="/ft/x0003403?cnt=hn000044" rel="external"><li>スマートフォンで動画を見ないから</li></a> --><!-- 5 --><!-- <a href="/ft/x0003404?cnt=hn000044" rel="external"><li>メルマガやプッシュ通知が多いから</li></a> --><!-- 6 --><!-- <a href="/ft/x0003405?cnt=hn000044" rel="external"><li>視聴中に途中で止まってしまうから</li></a> --><!-- 7 --><!-- <a href="/ft/x0003406?cnt=hn000044" rel="external"><li>有料サービスは不要だから</li></a></ul> --><!-- ▲▲▲▲▲▲会員解約ページエリア終了▲▲▲▲▲▲ --><!-- カイゼンプラットフォームタグ -->
+						<!-- /.main --><!-- /作品紹介エリア--><!-- 解約理由--><!-- <div class="kaiyaku_genre01"><ul><li><span class="text02">あなたの解約理由をお聞かせください。</span></li></ul></div><ul class="kaiyaku_txt01"> --><!-- 1 --><!-- <a href="https://video.dmkt-sp.jp/ft/x0003401?cnt=hn000044" rel="external"><li class="line_top">見たい作品がないから</li></a> --><!-- 2 --><!-- <a href="https://video.dmkt-sp.jp/ft/x0003407?cnt=hn000044" rel="external"><li>もともと映画やドラマを見ないから</li></a> --><!-- 3 --><!-- <a href="https://video.dmkt-sp.jp/ft/x0003402?cnt=hn000044" rel="external"><li>視聴方法がわからないから</li></a> --><!-- 4 --><!-- <a href="https://video.dmkt-sp.jp/ft/x0003403?cnt=hn000044" rel="external"><li>スマートフォンで動画を見ないから</li></a> --><!-- 5 --><!-- <a href="https://video.dmkt-sp.jp/ft/x0003404?cnt=hn000044" rel="external"><li>メルマガやプッシュ通知が多いから</li></a> --><!-- 6 --><!-- <a href="https://video.dmkt-sp.jp/ft/x0003405?cnt=hn000044" rel="external"><li>視聴中に途中で止まってしまうから</li></a> --><!-- 7 --><!-- <a href="https://video.dmkt-sp.jp/ft/x0003406?cnt=hn000044" rel="external"><li>有料サービスは不要だから</li></a></ul> --><!-- ▲▲▲▲▲▲会員解約ページエリア終了▲▲▲▲▲▲ --><!-- カイゼンプラットフォームタグ -->
 						<script
 							src="https://cdn.kaizenplatform.net/s/16/67a74cb639a0e8.js?kz_namespace=kzs"
 							charset="utf-8"
@@ -842,7 +881,7 @@
 					</div>
 					<div class="containers containers--static">
 						<form
-							action="/register/check-suid?cnt=kj000002&amp;leave=on"
+							action="https://video.dmkt-sp.jp/register/check-suid?cnt=kj000002&amp;leave=on"
 							method="post"
 							id="form"
 						>
@@ -885,7 +924,8 @@
 									>
 								</div>
 								<p class="registDelete_terms">
-									<a href="/policy/available">利用規約</a
+									<a href="https://video.dmkt-sp.jp/policy/available"
+										>利用規約</a
 									><br />※解約を押下し「各種お申込・お手続き」より解約してください。<br />※下記期間においてシステムメンテナンスのためサービスの契約/解約手続きなどご利用頂けません。(毎週火曜
 									午後10時00分～（翌日）午前7時)<br />詳しくは<a
 										href="https://www.nttdocomo.co.jp/mydocomo/maint/"
@@ -898,7 +938,7 @@
 						<div class="registAttention registAttention--unit">
 							●メールサービスとは<br />・配信内容<br />dTVやdマーケットのオススメ情報をメッセージRでお届け♪<br />※内容は変更になる可能性があります。<br />・配信頻度<br />週に1～2回(お客様のご利用状況により異なります。)<br />・各メールサービスのチェックを外さずに「解約する」を押して解約が完了すると、登録されます。登録したくない場合はチェックを外してください。<br />・dTV解約時にメルマガ停止をしても、タイミングによっては最大1日間メルマガが届く可能性があります。<br />
 							<p class="registAttention_space">
-								<a href="/feature/index/id/sys00008"
+								<a href="https://video.dmkt-sp.jp/feature/index/id/sys00008"
 									>メールサービスご利用にあたって</a
 								>
 							</p>
@@ -1104,7 +1144,7 @@
 										id="login-btn"
 										onclick="Panel.login()"
 										class="dlogin_btn"
-										rel="/login"
+										rel="https://video.dmkt-sp.jp/login"
 										>ログイン</a
 									>
 								</div>
@@ -1164,7 +1204,7 @@
 										id="login-btn"
 										onclick="Panel.login()"
 										class="dlogin_btn"
-										rel="/login"
+										rel="https://video.dmkt-sp.jp/login"
 										>ログイン</a
 									>
 								</div>
@@ -1181,59 +1221,83 @@
 				<nav class="footer_links footerLinks footerLinks--contents">
 					<ul>
 						<li class="footerLinks_link">
-							<a href="/genre/genre-list/id/101">洋画</a>
+							<a href="https://video.dmkt-sp.jp/genre/genre-list/id/101"
+								>洋画</a
+							>
 						</li>
 						<li class="footerLinks_link">
-							<a href="/genre/genre-list/id/102">邦画</a>
+							<a href="https://video.dmkt-sp.jp/genre/genre-list/id/102"
+								>邦画</a
+							>
 						</li>
 						<li class="footerLinks_link">
-							<a href="/genre-structure/anime">アニメ</a>
+							<a href="https://video.dmkt-sp.jp/genre-structure/anime"
+								>アニメ</a
+							>
 						</li>
 						<li class="footerLinks_link">
-							<a href="/genre/genre-list/id/105">海外ドラマ</a>
+							<a href="https://video.dmkt-sp.jp/genre/genre-list/id/105"
+								>海外ドラマ</a
+							>
 						</li>
 						<li class="footerLinks_link">
-							<a href="/genre/genre-list/id/106">国内ドラマ</a>
+							<a href="https://video.dmkt-sp.jp/genre/genre-list/id/106"
+								>国内ドラマ</a
+							>
 						</li>
 						<li class="footerLinks_link">
-							<a href="/genre/genre-list/id/107">韓流・華流</a>
+							<a href="https://video.dmkt-sp.jp/genre/genre-list/id/107"
+								>韓流・華流</a
+							>
 						</li>
 						<li class="footerLinks_link">
-							<a href="/genre-structure/kids">キッズ</a>
+							<a href="https://video.dmkt-sp.jp/genre-structure/kids">キッズ</a>
 						</li>
 						<li class="footerLinks_link">
-							<a href="/genre/genre-list/id/109">バラエティ</a>
-						</li>
-						<li class="footerLinks_link"><a href="/ge/top/3">オリジナル</a></li>
-						<li class="footerLinks_link"><a href="/music">音楽</a></li>
-						<li class="footerLinks_link">
-							<a href="/rental-list">レンタル</a>
+							<a href="https://video.dmkt-sp.jp/genre/genre-list/id/109"
+								>バラエティ</a
+							>
 						</li>
 						<li class="footerLinks_link">
-							<a href="/kw/">注目のキーワード</a>
+							<a href="https://video.dmkt-sp.jp/ge/top/3">オリジナル</a>
+						</li>
+						<li class="footerLinks_link">
+							<a href="https://video.dmkt-sp.jp/music">音楽</a>
+						</li>
+						<li class="footerLinks_link">
+							<a href="https://video.dmkt-sp.jp/rental-list">レンタル</a>
+						</li>
+						<li class="footerLinks_link">
+							<a href="https://video.dmkt-sp.jp/kw/">注目のキーワード</a>
 						</li>
 					</ul>
 				</nav>
 				<nav class="footer_links footerLinks footerLinks--info">
 					<ul>
 						<li class="footerLinks_link">
-							<a href="/news/list/10000018">お知らせ</a>
+							<a href="https://video.dmkt-sp.jp/news/list/10000018">お知らせ</a>
 						</li>
 						<li class="footerLinks_link">
-							<a href="/feature/index/id/s0000101">初めての方へ</a>
+							<a href="https://video.dmkt-sp.jp/feature/index/id/s0000101"
+								>初めての方へ</a
+							>
 						</li>
-						<li class="footerLinks_link"><a href="/device">対応機種一覧</a></li>
+						<li class="footerLinks_link">
+							<a href="https://video.dmkt-sp.jp/device">対応機種一覧</a>
+						</li>
 						<li class="footerLinks_link">
 							<a href="https://help.video.dmkt-sp.jp/">よくある質問</a>
 						</li>
 						<li class="footerLinks_link">
-							<a href="/request">お問い合わせ</a>
+							<a href="https://video.dmkt-sp.jp/request">お問い合わせ</a>
 						</li>
 						<li class="footerLinks_link">
-							<a href="/policy/available">ご利用規約</a>
+							<a href="https://video.dmkt-sp.jp/policy/available">ご利用規約</a>
 						</li>
 						<li class="footerLinks_link">
-							<a href="/feature/index/id/sys00003">提供事業者等に関する表示</a>
+							<a href="https://video.dmkt-sp.jp/feature/index/id/sys00003"
+								>提供事業者等に関する表示</a
+							>
 						</li>
 						<li class="footerLinks_link">
 							<a
@@ -1611,7 +1675,7 @@
 					},
 					b = m(g, h, k, e, c, f),
 					n = "//taj",
-					p = e + f + "/cmt.js";
+					p = e + f + "https://video.dmkt-sp.jp/cmt.js";
 				b.src = n + "1." + p;
 				b._p.parentNode.insertBefore(b, b._p);
 				b.onerror = function (a) {
