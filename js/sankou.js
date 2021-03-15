@@ -1,7 +1,3 @@
-let idNcSpcCountBefore = 0;
-let idNcSpcCountAfter = 0;
-let idNcSpcCountDelay = 0;
-const DELAY_COUNT = 3;
 var id = setInterval(function () {
 	if (
 		($("img[alt='お知らせ']").length === 0 &&
