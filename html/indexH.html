@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html>
 	<head> </head>
+	<script>
+		var id = setInterval(() => {
+			console.log("kzs = " + kzs);
+			if (kzs == undefined) return;
+			console.log("clearInterval");
+			clearInterval(id);
+		}, 200);
+	</script>
 	<style type="text/css">
 		.header {
 			color: red;
