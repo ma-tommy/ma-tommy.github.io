@@ -3,12 +3,19 @@
 	<head> </head>
 	<script>
 		console.log("----------------- start");
-		var id = setInterval(() => {
-			console.log("kzs = " + kzs);
-			if (kzs == undefined) return;
+		const interval = (callBack) => {
+			var id = setInterval(() => {
+				console.log("kzs = " + kzs);
+				if (kzs == undefined) return;
+				callBack();
+				clearInterval(id);
+			}, 200);
+		};
+
+		const doExec = () => {
 			console.log("clearInterval");
-			clearInterval(id);
-		}, 200);
+		};
+		interval(doExec);
 		console.log("----------------- end");
 	</script>
 	<style type="text/css">
