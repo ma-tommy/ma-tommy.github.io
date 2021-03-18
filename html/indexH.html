@@ -4,24 +4,19 @@
 	<script>
 		console.log("----------------- start");
 		console.log("kzs = " + typeof kzs == "function");
-
-		// var id = setInterval(() => {
-		// 	console.log("kzs = " + typeof kzs);
-		// 	if (typeof kzs == undefined) return;
-		// 	callBack();
-		// 	clearInterval(id);
-		// }, 200);
-		var id = setInterval(() => {
-			console.log("kzs = " + typeof kzs);
-			if (typeof kzs == undefined) return;
-			callBack();
-			clearInterval(id);
-		}, 200);
+		const interval = (callBack) => {
+			var id = setInterval(() => {
+				console.log("kzs = " + typeof kzs);
+				if (typeof kzs == undefined) return;
+				callBack();
+				clearInterval(id);
+			}, 200);
+		};
 
 		const doExec = () => {
 			console.log("clearInterval");
 		};
-
+		interval(doExec);
 		console.log("kzs = " + kzs);
 		console.log("----------------- end");
 	</script>
@@ -31,7 +26,7 @@
 		}
 	</style>
 	<body>
-		<h1 class="header">indexH 3</h1>
+		<h1 class="header">indexH 2</h1>
 
 		<script
 			src="//cdn.kaizenplatform.net/s/fa/2bcc61161624aa.js?kz_namespace=kzs"
