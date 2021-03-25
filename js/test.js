@@ -184,12 +184,12 @@
 		 * @param insurance 掛金
 		 */
 		getTaxSaving: function (age, job, annualIncome, insuranceLimit, insurance) {
-			kzs.console.log("----INPUT（無加工）-----");
-			kzs.console.log("年齢： " + age);
-			kzs.console.log("職業： " + job);
-			kzs.console.log("年収： " + annualIncome);
-			kzs.console.log("毎月の掛け金： " + insurance);
-			kzs.console.log("毎月のLimit掛け金： " + insuranceLimit);
+			console.log("----INPUT（無加工）-----");
+			console.log("年齢： " + age);
+			console.log("職業： " + job);
+			console.log("年収： " + annualIncome);
+			console.log("毎月の掛け金： " + insurance);
+			console.log("毎月のLimit掛け金： " + insuranceLimit);
 			// 掛け金上限
 			this.insuranceLimit = this.Util.convertInt(
 				`${this.Util.removeComma(insuranceLimit)}`.replace(
@@ -219,7 +219,7 @@
 			);
 
 			if (!isValidate) {
-				kzs.console.log("validateNG： " + JSON.stringify(result.errorList));
+				console.log("validateNG： " + JSON.stringify(result.errorList));
 				return result;
 			}
 
@@ -227,7 +227,7 @@
 			result.sumDeduction =
 				result.yearTaxSaving * (this.AGE_RANGE.MAX + 1 - age);
 
-			kzs.console.log("合計節税額： " + result.sumDeduction);
+			console.log("合計節税額： " + result.sumDeduction);
 			return result;
 		},
 
@@ -242,21 +242,21 @@
 		_validate: function (resultJson, age, job, annualIncome, insurance) {
 			let isError = false;
 			// 年齢
-			const _age = this.Util.convertInt(age);
+			const _age = age == null ? age : this.Util.convertInt(age);
 			// 職業
-			const _job = this.Util.convertInt(job);
+			const _job = job == null ? job : this.Util.convertInt(job);
 			// 年収
 			const _annualIncome = this.Util.convertFloat(
 				this.Util.removeComma(annualIncome)
 			);
 			// 毎月の掛け金
 			const _insurance = this.Util.convertInt(this.Util.removeComma(insurance));
-			kzs.console.log("----INPUT（型やカンマ等を除去後)-----");
-			kzs.console.log("年齢： " + _age);
-			kzs.console.log("職業： " + _job);
-			kzs.console.log("年収： " + _annualIncome);
-			kzs.console.log("毎月の掛け金： " + _insurance);
-			kzs.console.log("毎月のLimit掛け金： " + this.insuranceLimit);
+			console.log("----INPUT（型やカンマ等を除去後)-----");
+			console.log("年齢： " + _age);
+			console.log("職業： " + _job);
+			console.log("年収： " + _annualIncome);
+			console.log("毎月の掛け金： " + _insurance);
+			console.log("毎月のLimit掛け金： " + this.insuranceLimit);
 			// 各項目が未入力の（=計算が行える状態に一度もなっていない)場合は弾く
 			if (
 				(this.age == null && (_age < 0 || _age == null)) ||
@@ -266,7 +266,7 @@
 					_annualIncome == 0) ||
 				(this.insurance == null && _insurance == 0)
 			) {
-				kzs.console.log(
+				console.log(
 					`Input項目が揃っていない：年齢：${this.age} 職業： ${this.job} 年収：${this.annualIncome} 毎月の掛け金：${this.insurance}`
 				);
 				return false;
@@ -318,7 +318,7 @@
 
 			// エラーの場合
 			if (isError) {
-				kzs.console.log(
+				console.log(
 					`チェックエラー：年齢：${this.age} 職業： ${this.job} 年収：${this.annualIncome} 毎月の掛け金：${this.insurance}`
 				);
 				return false;
@@ -332,10 +332,10 @@
 			this.annualIncome = _annualIncome;
 			// 毎月の掛け金
 			this.insurance = _insurance;
-			kzs.console.log("年齢: " + this.age);
-			kzs.console.log("職業: " + this.job);
-			kzs.console.log("年収: " + this.annualIncome);
-			kzs.console.log("毎月の掛け金: " + this.insurance);
+			console.log("年齢: " + this.age);
+			console.log("職業: " + this.job);
+			console.log("年収: " + this.annualIncome);
+			console.log("毎月の掛け金: " + this.insurance);
 
 			return true;
 		},
@@ -344,7 +344,7 @@
 		_getYearInsurance: function () {
 			// 毎月の掛け金 * 12 /10000
 			const result = (this.insurance * 12) / 10000;
-			kzs.console.log("年間の積み立て: " + result);
+			console.log("年間の積み立て: " + result);
 			return result;
 		},
 
@@ -364,13 +364,13 @@
 		// 給与所得控除率
 		_getSalaryIncomeDeductionRate: function () {
 			const result = this._getSalaryIncomeDeduction().rate;
-			kzs.console.log("給与所得控除率: " + result);
+			console.log("給与所得控除率: " + result);
 			return result;
 		},
 		// 固定控除額
 		_getFixedDeductionAmount: function () {
 			const result = this._getSalaryIncomeDeduction().money;
-			kzs.console.log("固定控除額:" + result);
+			console.log("固定控除額:" + result);
 			return result;
 		},
 		// 社会保険控除率
@@ -388,7 +388,7 @@
 					}).rate
 				);
 			}
-			kzs.console.log("社会保険控除率:" + sumRate);
+			console.log("社会保険控除率:" + sumRate);
 			return sumRate;
 		},
 		// 課税所得
@@ -404,7 +404,7 @@
 				1
 			);
 			const result = calcResult > 0 ? calcResult : 0;
-			kzs.console.log("課税所得: " + result);
+			console.log("課税所得: " + result);
 			return result;
 		},
 		// iDeCo前課税所得
@@ -416,7 +416,7 @@
 			} else {
 				result = this._getTaxableIncome();
 			}
-			kzs.console.log("iDeCo前課税所得: " + result);
+			console.log("iDeCo前課税所得: " + result);
 			return result;
 		},
 		// 年収から給与所得控除率, 控除額を取得
@@ -437,7 +437,7 @@
 			const result = this._getIncomeTaxRateFixedDeduction(
 				this._getIdecoBeforeTaxableIncome()
 			).rate;
-			kzs.console.log("iDeCo前所得税率: " + result);
+			console.log("iDeCo前所得税率: " + result);
 			return result;
 		},
 		// iDeCo前所得税額
@@ -453,7 +453,7 @@
 				this._getIncomeTaxRateFixedDeduction(
 					this._getIdecoBeforeTaxableIncome()
 				).money;
-			kzs.console.log("iDeCo前所得税額: " + result);
+			console.log("iDeCo前所得税額: " + result);
 			return result;
 		},
 		// iDeCo前住民税額
@@ -463,7 +463,7 @@
 			const result =
 				this._getIdecoBeforeTaxableIncome() * (this.RESIDENT_TAX_RATE * 10000);
 
-			kzs.console.log("iDeCo前住民税額: " + result);
+			console.log("iDeCo前住民税額: " + result);
 			return result;
 		},
 
@@ -472,7 +472,7 @@
 			// iDeCo前所得税額 + iDeCo前住民税額
 			const result =
 				this._getIdecoBeforeIncomeTax() + this._getIdecoBeforeResidentTax();
-			kzs.console.log("iDeCo前合計税額: " + result);
+			console.log("iDeCo前合計税額: " + result);
 			return result;
 		},
 
@@ -487,7 +487,7 @@
 				calc = this._getIdecoBeforeTaxableIncome() - this._getYearInsurance();
 			}
 			const result = calc > 0 ? calc : 0;
-			kzs.console.log("iDeCo後課税所得: " + result);
+			console.log("iDeCo後課税所得: " + result);
 			return result;
 		},
 		// iDeCo後所得税率
@@ -495,7 +495,7 @@
 			const result = this._getIncomeTaxRateFixedDeduction(
 				this._getIdecoafterTaxableIncome()
 			).rate;
-			kzs.console.log(
+			console.log(
 				"iDeCo後所得税率(_getIdecoAfterIncomeTaxRate): " + result
 			);
 			return result;
@@ -512,7 +512,7 @@
 				) -
 				this._getIncomeTaxRateFixedDeduction(this._getIdecoafterTaxableIncome())
 					.money;
-			kzs.console.log("iDeCo後所得税額: " + result);
+			console.log("iDeCo後所得税額: " + result);
 			return result;
 		},
 		// iDeCo後住民税額
@@ -521,7 +521,7 @@
 			// jsは整数＊小数だと誤差が出るので、先に税率*10000を行う(計算的にはどちらでも問題ないので)
 			const result =
 				this._getIdecoafterTaxableIncome() * (this.RESIDENT_TAX_RATE * 10000);
-			kzs.console.log("iDeCo後住民税額: " + result);
+			console.log("iDeCo後住民税額: " + result);
 			return result;
 		},
 
@@ -530,7 +530,7 @@
 			// iDeCo後所得税額 + iDeCo後住民税額
 			const result =
 				this._getIdecoAfterIncomeTax() + this._getIdecoAfterResidentTax();
-			kzs.console.log("iDeCo後合計税額: " + result);
+			console.log("iDeCo後合計税額: " + result);
 			return result;
 		},
 
@@ -539,7 +539,7 @@
 			// iDeCo前合計税額 - iDeCo後合計税額
 			const result =
 				this._getIdecoBeforeSumTaxSaving() - this._getIdecoAfterSumTax();
-			kzs.console.log("年間節税額： " + result);
+			console.log("年間節税額： " + result);
 			return result;
 		},
 	};

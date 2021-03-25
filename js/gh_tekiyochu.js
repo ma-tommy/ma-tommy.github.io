@@ -1,11 +1,10 @@
-var $ = kzs.$;
 let idNcSpcCountBefore = 0;
 let idNcSpcCountAfter = 0;
 let idNcSpcCountDelay = 0;
 const DELAY_COUNT = 3;
 var id = setInterval(function () {
 	idNcSpcCountBefore = $("[id*='NC_spc_']").length;
-
+	
 	// NC_spcのIDが全部展開しているかを判定する（念のため速度の都合でカウントが増えてない可能性もあるので０.６秒待つ)
 	if (
 		idNcSpcCountBefore == idNcSpcCountAfter &&
@@ -14,7 +13,7 @@ var id = setInterval(function () {
 		idNcSpcCountDelay++;
 		return;
 	}
-
+	
 	if (
 		idNcSpcCountBefore == idNcSpcCountAfter &&
 		idNcSpcCountDelay >= DELAY_COUNT
@@ -117,7 +116,7 @@ var id = setInterval(function () {
 			var $h2_usage__next = $h2_usage.next();
 			var $date = $ClaimInfo.find("th.bg-gray:contains(当月ご請求)").next();
 			if ($date.length == 0) {
-				$date = $ClaimInfo.find("th.bg-gray:contains(最近のご利用)").next();
+                $date = $ClaimInfo.find("tr.bg-txt-blue:eq(0)");
 			}
 			var data_txt = $date.text();
 			var $billing_link = $date.next().children();
@@ -187,7 +186,7 @@ var id = setInterval(function () {
 		// このスタイルが適用されていないので再適用（上のソースを解析るのがコストが高いので）
 		$("td:nth-child(2)").css("padding-bottom", "5px");
 		$("td:nth-child(2) span.text-red").css("vertical-align", "bottom");
-		$("td:nth-child(2) span.text-red a").css("font-size", "11px");
+		$("td:nth-child(2) span.text-red a").css("font-size", '11px');
 	}
 	idNcSpcCountAfter = $("[id*='NC_spc_']").length;
 	if (idNcSpcCountBefore != idNcSpcCountAfter) {

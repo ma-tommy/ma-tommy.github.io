@@ -1,56 +1,513 @@
-<div id="kzs_container">    
-    <span id="kzs_block_header">所得控除額 わくわく電卓</span>
-    <div id="kzs_grid_container">
-        <span id="kzs_grid_age_label">年齢</span>
-        <select id="kzs_grid_age_value">
-        </select>
-    
-        <span id="kzs_grid_job_label">職業</span>
-        <select id="kzs_grid_job_value">
-        </select>
-    
-        <span id="kzs_grid_annual_income_label">年収</span>
-        <input type="number" value='0' id="kzs_grid_annual_income_value" step="10000"></input>
-    
-        <span id='kzs_grid_annual_income_caution_message'></span>
+"use strict";
 
-        <span id='kzs_grid_insurance_limit_label'>あなたの毎月の掛金上限はこちら↓</span>
-        <input type="text" disabled id="kzs_grid_insurance_limit_value" value="">
-        <span id="kzs_grid_insurance_limit_caution">※職業によって、掛金上限額は異なります。</span>
-    
-        
-        <span id="kzs_grid_insurance_input_label">毎月の掛金予定額を入力ください</span>
-        <input type="number" id="kzs_grid_insurance_input_value" value="0" step="1000" >
-        <span id="kzs_grid_insurance_input_error_limmt">※掛け金の上限を超えています</span>
-        <span></span><span id="kzs_grid_insurance_input_caution">※iDeCoの掛金は5,000円以上1,000円刻みです。</span>
-    </div>
-    
-        <p id="#kzs_yazirusi">⬇️</p>
-        <div>
-            <span id="kzs_yaer_deduction_label">iDeCoを活用することで、</span><br>
-        </div>
-        <div id="kzs_yaer_deduction_value">
-            <span id="kzs_yaer_deduction_caption">年間</span>
-            <span id="kzs_yaer_deduction">0</span><span>
-            <span id="kzs_yaer_deduction_unit">円</span>
-        </div>
-        <span id="kzs_sum_deduction_label">60歳まで活用した場合、</span><br>
-        <div id="kzs_sum_deduction_value">
-            <span id="kzs_sum_deduction_caption">合計</span>
-            <span id="kzs_sum_deduction">0</span>
-            <span id="kzs_sum_deduction_unit">円の</span>
-        </div>
-        <div>
-            所得税が控除されます。
-        </div>
-        <div>
-            専業主婦(夫)の場合、所得自体がないため「所得控除」はありません。運用益、受取り時の節税メリットのみです。
-        </div>
-        <div id="kzs_bottom_message">
-            <p>※あくまでも簡易シミュレーションです。　節税金額を示唆・保証するものではありません。</p>
-            
-            <p>※課税所得は年収から必要経費や保険料等の各種控除を差し引いた金額であり、個人によってその額は大きく異なってきます。あくまで一例としてご参考ください。</p>
-            <p>※税率は2020年12月8日現在の税率にて試算しています。税率が変更となった場合には結果も異なります。</p>
-            <p>※復興特別所得税、配偶者控除（配偶者特別控除）は考慮していません。</p>
-        </div>
-</div>
+var _ver = "20210302-1";
+var _pid = "sbiiDeCoSimulator";
+var _exp = this;
+var _expId = (((_exp.variation || {}).round || {}).project || {}).id;
+var _el = "exp#" + (_expId || "none");
+
+(function () {
+  try {
+    var $ = kzs.$;
+    kzs.console.log("%s begin %s %s", _el, _pid, _ver);
+
+    // safari bfcache 対策 http://bit.ly/2W8EYC1
+    if (_expId != undefined) {
+      if (kzs[_expId])
+        return kzs.console.log("%s run in bfcache, skipping", _el);
+      kzs[_expId] = 1;
+    }
+
+    // ここから施策 code 実行
+    const Util = function () {
+      this.init.apply(this, arguments);
+    };
+
+    Util.prototype = {
+      init: function () {},
+      convertInt: function (value) {
+        return parseInt(Number(value));
+      },
+      convertFloat: function (value) {
+        return parseFloat(Number(value));
+      },
+      roundDown: function (value, digit) {
+        return Math.floor(value * Math.pow(10, digit)) / Math.pow(10, digit);
+      },
+      removeComma: function (value) {
+        return value ? `${value}`.replace(/,/g, "") : value;
+      },
+    };
+
+    const Calc = function () {
+      this.init.apply(this, arguments);
+    };
+    // 計算クラス
+    Calc.prototype = {
+      // 年齢
+      AGE_RANGE: { MIN: 20, MAX: 59 },
+      // 掛け金上限の単位
+      INSURANCE_LIMIT_ADD_UNIT: "円/月",
+      // 職業
+      JOB_LIST: [
+        { label: "自営業(個人事業主)", value: 0, money: 68000 },
+        { label: "専業主婦（夫）", value: 1, money: 23000 },
+        {
+          label: "会社員(企業型DCなし、確定給付企業年金(DB)なし)",
+          value: 2,
+          money: 23000,
+        },
+        {
+          label: "会社員(企業型DCあり、確定給付企業年金(DB)なし)",
+          value: 3,
+          money: 20000,
+        },
+        {
+          label: "会社員(企業型DCなし、確定給付企業年金(DB)あり)",
+          value: 4,
+          money: 12000,
+        },
+        {
+          label: "会社員(企業型DCあり、確定給付企業年金(DB)あり)",
+          value: 5,
+          money: 12000,
+        },
+        { label: "公務員", value: 6, money: 12000 },
+      ],
+
+      init: function () {
+        this.Util = new Util();
+        // 給与所得控除率, 固定控除額
+        this.salaryIncomeDeductionRateIncome = [
+          { annualIncome: 162.5, rate: 0, money: 55 },
+          { annualIncome: 180.0, rate: 0.4, money: -10 },
+          { annualIncome: 360.0, rate: 0.3, money: 8 },
+          { annualIncome: 660.0, rate: 0.2, money: 44 },
+          { annualIncome: 850.0, rate: 0.1, money: 110 },
+          { annualIncome: -1, rate: 0, money: 195 },
+        ];
+        // 社会保険料控除率
+        this.socialInsuranceDeductionRate = [
+          { insurance: "health", rate: 0.0494 },
+          { insurance: "welfarePension ", rate: 0.0915 },
+          { insurance: "employment", rate: 0.003 },
+          { insurance: "care", rate: 0.0079 },
+        ];
+        // 所得税率, 所得税固定控除（円）
+        this.incomeTaxRateFixedDeduction = [
+          { taxableIncome: 195, rate: 0.05105, money: 0 },
+          { taxableIncome: 330, rate: 0.1021, money: 97500 },
+          { taxableIncome: 695, rate: 0.2042, money: 427500 },
+          { taxableIncome: 900, rate: 0.23483, money: 636000 },
+          { taxableIncome: 1800, rate: 0.33693, money: 1536000 },
+          { taxableIncome: 4000, rate: 0.4084, money: 2796000 },
+          { taxableIncome: -1, rate: 0.45945, money: 4796000 },
+        ];
+        // 住民税率
+        this.RESIDENT_TAX_RATE = 0.1;
+        // 介護保険加入年齢
+        this.CARE_INSURANCE_AGE = 40;
+        // 基礎控除(万円)
+        this.BASIC_DEDUCTION = 38;
+        // 計算済み制御フラグ
+        this.calcFlg = false;
+        // 年齢
+        this.age = null;
+        // 職業
+        this.job = null;
+        // 年収
+        this.annualIncome = null;
+        // 毎月の掛け金
+        this.insurance = null;
+      },
+
+      /**
+       * 節税額を取得
+       * @param age 年齢
+       * @param job 職業
+       * @param annualIncome 年収
+       * @param insuranceLimit 掛け金上限
+       * @param insurance 掛け金
+       */
+      getTaxSaving: function (
+        age,
+        job,
+        annualIncome,
+        insuranceLimit,
+        insurance
+      ) {
+        // 掛け金上限
+        this.insuranceLimit = this.Util.convertInt(
+          this.Util.removeComma(insuranceLimit).replace(
+            kzsCalc.INSURANCE_LIMIT_ADD_UNIT,
+            ""
+          )
+        );
+        // 返却値
+        const result = {
+          errorList: [
+            { itemName: "age", message: "" },
+            { itemName: "job", message: "" },
+            { itemName: "annual_income", message: "" },
+            { itemName: "insurance", message: "" },
+          ],
+          isDoProc: false,
+          yearTaxSaving: 0,
+          sumDeduction: 0,
+        };
+        // 入力項目チェック
+        const isValidate = this._validate(
+          result,
+          age,
+          job,
+          annualIncome,
+          insurance
+        );
+
+        kzs.console.log("validate = " + JSON.stringify(result.errorList));
+        if (!isValidate) {
+          return result;
+        }
+
+        kzs.console.log("年齢 = " + this.age);
+        kzs.console.log("職業 = " + this.job);
+        kzs.console.log("年収 = " + this.annualIncome);
+        kzs.console.log("掛け金上限 = " + this.insuranceLimit);
+        kzs.console.log("毎月の掛け金 = " + this.insurance);
+        kzs.console.log("年間の積み立て = " + this._getYearInsurance());
+        kzs.console.log("職業一覧 = " + this.JOB_LIST);
+        kzs.console.log(
+          "給与所得控除率 = " + this._getSalaryIncomeDeductionRate()
+        );
+        kzs.console.log("固定控除額 = " + this._getFixedDeductionAmount());
+        kzs.console.log(
+          "社会保険控除率 = " + this._getSocialInsuranceDeductionRate()
+        );
+        kzs.console.log("課税所得 = " + this._getTaxableIncome());
+        kzs.console.log(
+          "iDeCo前課税所得 = " + this._getIdecoBeforeTaxableIncome()
+        );
+        kzs.console.log(
+          "iDeCo前所得税率 = " + this._getIdecoBeforeIncomeTaxRate()
+        );
+        kzs.console.log("iDeCo前所得税額 = " + this._getIdecoBeforeIncomeTax());
+        kzs.console.log(
+          "iDeCo前住民税額 = " + this._getIdecoBeforeResidentTax()
+        );
+        kzs.console.log(
+          "iDeCo前合計税額 = " + this._getIdecoBeforeSumTaxSaving()
+        );
+        kzs.console.log(
+          "iDeCo後課税所得 = " + this._getIdecoafterTaxableIncome()
+        );
+        kzs.console.log(
+          "iDeCo後所得税率 = " + this._getIdecoAfterIncomeTaxRate()
+        );
+        kzs.console.log("iDeCo後所得税額 = " + this._getIdecoAfterIncomeTax());
+        kzs.console.log(
+          "iDeCo後住民税額 = " + this._getIdecoAfterResidentTax()
+        );
+        kzs.console.log("iDeCo後合計税額 = " + this._getIdecoAfterSumTax());
+        kzs.console.log("年間節税額 = " + this._getYearTaxSaving());
+
+        result.yearTaxSaving = this._getYearTaxSaving();
+        result.sumDeduction =
+          result.yearTaxSaving * (this.AGE_RANGE.MAX + 1 - age);
+        return result;
+      },
+
+      _validate: function (result, age, job, annualIncome, insurance) {
+        let isError = false;
+        // 年齢
+        const _age = this.Util.convertInt(age);
+        // 職業
+        const _job = this.Util.convertInt(job);
+        // 年収
+        const _annualIncome = this.Util.convertFloat(
+          this.Util.removeComma(annualIncome)
+        );
+        // 毎月の掛け金
+        const _insurance = this.Util.convertInt(
+          this.Util.removeComma(insurance)
+        );
+        kzs.console.log("年齢 = " + _age);
+        kzs.console.log("職業 = " + _job);
+        kzs.console.log("年収 = " + _annualIncome);
+        kzs.console.log("毎月の掛け金 = " + _insurance);
+        kzs.console.log("毎月のLimit掛け金 = " + this.insuranceLimit);
+        kzs.console.log("---------");
+        // 各項目が未入力の（=計算が行える状態に一度もなっていない)場合は弾く
+        if (
+          (this.age == null && (_age < 0 || _age == null)) ||
+          (this.job == null && (_job < 0 || _job == null)) ||
+          (this.annualIncome == null &&
+            _job != this.JOB_LIST[1].value &&
+            _annualIncome == 0) ||
+          (this.insurance == null && _insurance == 0)
+        ) {
+          kzs.console.log(
+            `年齢：${this.age} 職業： ${this.job} 年収：${this.annualIncome} 毎月の掛け金：${this.insurance}`
+          );
+          return false;
+        }
+
+        // 計算が行える状態となっているのでisDoProcをtrueに更新
+        result.isDoProc = true;
+
+        const setErrorMessage = function (itemName, message) {
+          const index = result.errorList.findIndex(function (x) {
+            return x.itemName == itemName;
+          });
+          result.errorList[index].message = message;
+          isError = true;
+        };
+        // 年齢
+        if (this.age >= 0 && _age < 0) {
+          setErrorMessage("age", "年齢を選択してください");
+        }
+
+        // 職業
+        if (this.job >= 0 && _job < 0) {
+          setErrorMessage("job", "職業を選択してください");
+        }
+
+        if (
+          (this.annualIncome >= 0 || this.annualIncome == null) &&
+          _job != this.JOB_LIST[1].value &&
+          _job >= 0 &&
+          _annualIncome == 0
+        ) {
+          // 年収(職業が1（専業主婦（夫）且 未選択)以外の場合)
+          setErrorMessage("annual_income", "年収に金額を入力してください");
+        } else if (isNaN(_annualIncome)) {
+          setErrorMessage(
+            "annual_income",
+            "年収には半角数値を入力してください"
+          );
+        }
+
+        // 毎月の掛け金
+        if (this.insurance >= 0 && _insurance < 5000) {
+          setErrorMessage(
+            "insurance",
+            "毎月の掛金には5,000以上を入力してください"
+          );
+        } else if (_insurance > this.insuranceLimit && job >= 0) {
+          setErrorMessage("insurance", "※掛け金の上限を超えていますå");
+        } else if (isNaN(_insurance)) {
+          setErrorMessage(
+            "insurance",
+            "毎月の掛金には半角数値を入力してください"
+          );
+        }
+
+        // エラーの場合
+        if (isError) {
+          kzs.console.log(
+            `年齢：${this.age} 職業： ${this.job} 年収：${this.annualIncome} 毎月の掛け金：${this.insurance}`
+          );
+          return false;
+        }
+
+        // 年齢
+        this.age = _age;
+        // 職業
+        this.job = _job;
+        // 年収
+        this.annualIncome = _annualIncome;
+        // 毎月の掛け金
+        this.insurance = _insurance;
+        kzs.console.log("年齢 = " + this.age);
+        kzs.console.log("職業 = " + this.job);
+        kzs.console.log("年収 = " + this.annualIncome);
+        kzs.console.log("毎月の掛け金 = " + this.insurance);
+
+        return true;
+      },
+
+      // 年間の積立金額
+      _getYearInsurance: function () {
+        // 毎月の掛け金 * 12 /10000
+        return (this.insurance * 12) / 10000;
+      },
+
+      // 年収から給与所得控除率, 控除額を取得
+      _getSalaryIncomeDeduction: function () {
+        const that = this;
+        const result = this.salaryIncomeDeductionRateIncome.find(function (x) {
+          return that.annualIncome <= x.annualIncome;
+        });
+        return (
+          result ??
+          this.salaryIncomeDeductionRateIncome[
+            this.salaryIncomeDeductionRateIncome.length - 1
+          ]
+        );
+      },
+      // 給与所得控除率
+      _getSalaryIncomeDeductionRate: function () {
+        return this._getSalaryIncomeDeduction().rate;
+      },
+      // 固定控除額
+      _getFixedDeductionAmount: function () {
+        return this._getSalaryIncomeDeduction().money;
+      },
+      // 社会保険控除率
+      _getSocialInsuranceDeductionRate: function () {
+        const sumRate = this.socialInsuranceDeductionRate.reduce(function (
+          s,
+          e
+        ) {
+          return s + e.rate;
+        },
+        0);
+
+        // 40才以下は介護保険控除を減算
+        if (this.age < this.CARE_INSURANCE_AGE) {
+          return (
+            sumRate -
+            this.socialInsuranceDeductionRate.find(function (x) {
+              return x.insurance == "care";
+            }).rate
+          );
+        }
+        return sumRate;
+      },
+      // 課税所得
+      _getTaxableIncome: function () {
+        // 少数第2位を切り捨て(年収-(年収*給与所得控除率+固定控除額)-年収*社会保険控除率-基礎控除)
+        const result = this.Util.roundDown(
+          this.annualIncome -
+            (this.annualIncome * this._getSalaryIncomeDeductionRate() +
+              this._getFixedDeductionAmount()) -
+            this.annualIncome * this._getSocialInsuranceDeductionRate() -
+            this.BASIC_DEDUCTION,
+          1
+        );
+        return result > 0 ? result : 0;
+      },
+      // iDeCo前課税所得
+      _getIdecoBeforeTaxableIncome: function () {
+        // 個人事業主なら年収、個人事業主以外は課税所得
+        if (this.job == this.JOB_LIST[0].value) {
+          return this.annualIncome;
+        }
+        return this._getTaxableIncome();
+      },
+      // 年収から給与所得控除率, 控除額を取得
+      _getIncomeTaxRateFixedDeduction: function (taxableIncome) {
+        // 課税所得がどの所得税率になるか算出
+        const result = this.incomeTaxRateFixedDeduction.find(function (x) {
+          return taxableIncome <= x.taxableIncome;
+        });
+
+        return result === undefined
+          ? this.incomeTaxRateFixedDeduction[
+              this.incomeTaxRateFixedDeduction.length - 1
+            ]
+          : result;
+      },
+      // iDeCo前所得税率
+      _getIdecoBeforeIncomeTaxRate: function () {
+        return this._getIncomeTaxRateFixedDeduction(
+          this._getIdecoBeforeTaxableIncome()
+        ).rate;
+      },
+      // iDeCo前所得税額
+      _getIdecoBeforeIncomeTax: function () {
+        // ROUNDDOWN(iDeCo前課税所得 * iDeCo前所得税率 * 10000, -2) - 給与所得控除額
+        return (
+          this.Util.roundDown(
+            this._getIdecoBeforeTaxableIncome() *
+              this._getIdecoBeforeIncomeTaxRate() *
+              10000,
+            -2
+          ) -
+          this._getIncomeTaxRateFixedDeduction(
+            this._getIdecoBeforeTaxableIncome()
+          ).money
+        );
+      },
+      // iDeCo前住民税額
+      _getIdecoBeforeResidentTax: function () {
+        // iDeCo前課税所得 * iDeCo前住民税率 * 10000
+        return (
+          this._getIdecoBeforeTaxableIncome() * this.RESIDENT_TAX_RATE * 10000
+        );
+      },
+
+      // iDeCo前合計税額
+      _getIdecoBeforeSumTaxSaving: function () {
+        // iDeCo前所得税額 + iDeCo前住民税額
+        return (
+          this._getIdecoBeforeIncomeTax() + this._getIdecoBeforeResidentTax()
+        );
+      },
+
+      // iDeCo後課税所得
+      _getIdecoafterTaxableIncome: function () {
+        if (this.job == this.JOB_LIST[0].value) {
+          // 自営業の場合(年収 - 年間の積立金額)
+          const calc = this.annualIncome - this._getYearInsurance();
+          return calc > 0 ? calc : 0;
+        }
+        // 自営業以外の場合(iDeCo前課税所得 - 年間の積立金額)
+        return this._getIdecoBeforeTaxableIncome() - this._getYearInsurance();
+      },
+      // iDeCo後所得税率
+      _getIdecoAfterIncomeTaxRate: function () {
+        return this._getIncomeTaxRateFixedDeduction(
+          this._getIdecoafterTaxableIncome()
+        ).rate;
+      },
+      // iDeCo後所得税額
+      _getIdecoAfterIncomeTax: function () {
+        // =ROUNDDOWN(iDeCo後課税所得 * iDeCo後所得税率 * 10000, -2) - 所得税固定控除)
+        return (
+          this.Util.roundDown(
+            this._getIdecoafterTaxableIncome() *
+              this._getIdecoAfterIncomeTaxRate() *
+              10000,
+            -2
+          ) -
+          this._getIncomeTaxRateFixedDeduction(
+            this._getIdecoafterTaxableIncome()
+          ).money
+        );
+      },
+      // iDeCo後住民税額
+      _getIdecoAfterResidentTax: function () {
+        // iDeCo後課税所得 * iDeCo後住民税率 * 10000
+        return (
+          this._getIdecoafterTaxableIncome() * this.RESIDENT_TAX_RATE * 10000
+        );
+      },
+
+      // iDeCo後合計税額
+      _getIdecoAfterSumTax: function () {
+        // iDeCo後所得税額 + iDeCo後住民税額
+        return (
+          this._getIdecoAfterIncomeTax() + this._getIdecoAfterResidentTax()
+        );
+      },
+
+      // 年間節税額
+      _getYearTaxSaving: function () {
+        // iDeCo前合計税額 - iDeCo後合計税額
+        return this._getIdecoBeforeSumTaxSaving() - this._getIdecoAfterSumTax();
+      },
+    };
+
+    window.kzsCalc = new Calc();
+    window.kzsUtil = new Util();
+
+    kzs.console.log("%s end", _el);
+  } catch (e) {
+    kzs.console.error(_el, e);
+    kzs("trackCustomEvent", {
+      category: _pid + "-" + _el,
+      action: "exception",
+      label: e + "",
+    });
+  }
+})();

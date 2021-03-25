@@ -1,64 +1,67 @@
 (() => {
-	$(".first-section > div:eq(1)").after('<div id="simulation"></div>');
+	$(".first-section > div:eq(1)").after('<div id="kzs_simulation"></div>');
 
 	const makeHtml = (function () {
 		return `
 		<div id="kzs_container">    
-            <span id="kzs_block_header">所得控除額 わくわく電卓</span>
-            <div id="kzs_grid_container">
-                <span id="kzs_grid_age_label">年齢</span>
-                <select id="kzs_grid_age_value">
-                </select>
-            
-                <span id="kzs_grid_job_label">職業</span>
-                <select id="kzs_grid_job_value">
-                </select>
-            
-                <span id="kzs_grid_annual_income_label">年収</span>
-                <input type="number" value='0' id="kzs_grid_annual_income_value" step="10000"></input>
-            
-                <span id='kzs_grid_insurance_limit_label'>あなたの毎月の掛金上限はこちら↓</span>
-                <input type="text" disabled id="kzs_grid_insurance_limit_value" value="">
-                <span id="kzs_grid_insurance_limit_caution">※職業によって、掛金上限額は異なります。</span>
-            
-                
-                <span id="kzs_grid_insurance_input_label">毎月の掛金予定額を入力ください</span>
-                <input type="number" id="kzs_grid_insurance_input_value" value="0" step="1000" >
-                <span id="kzs_grid_insurance_input_error_limmt">※掛け金の上限を超えています</span>
-                <span></span><span id="kzs_grid_insurance_input_caution">※iDeCoの掛金は5,000円以上1,000円刻みです。</span>
-            </div>
-            <div>
-                <p id="#kzs_yazirusi">⬇️</p>
-                <div>
-                    <span id="kzs_yaer_deduction_label">iDeCoを活用することで、</span><br>
-                </div>
-                <div id="kzs_yaer_deduction_value">
-                    年間
-                    <span id="kzs_yaer_deduction">0</span><span>円
-                </div>
-                <span id="kzs_sum_deduction_label">60歳まで活用した場合、</span><br>
-                <div id="kzs_sum_deduction_value">
-                    合計
-                    <span id="kzs_sum_deduction">0</span>
-                    円の
-                </div>
-                <div>
-                    所得税が控除されます。
-                </div>
-                <div>
-                    専業主婦(夫)の場合、所得自体がないため「所得控除」はありません。運用益、受取り時の節税メリットのみです。
-                </div>
-                <div id="kzs_bottom_message">
-                    <p>※あくまでも簡易シミュレーションです。　節税金額を示唆・保証するものではありません。</p>
-                    
-                    <p>※課税所得は年収から必要経費や保険料等の各種控除を差し引いた金額であり、個人によってその額は大きく異なってきます。あくまで一例としてご参考ください。</p>
-                    <p>※税率は2020年12月8日現在の税率にて試算しています。税率が変更となった場合には結果も異なります。</p>
-                    <p>※復興特別所得税、配偶者控除（配偶者特別控除）は考慮していません。</p>
-                </div>
-        </div>
+			<span id="kzs_block_header">所得控除額 わくわく電卓</span>
+			<div id="kzs_grid_container">
+				<span id="kzs_grid_age_label">年齢</span>
+				<select id="kzs_grid_age_value">
+					<option selected disabled hidden>
+                    年齢を選択してください
+                    </option>
+				</select>
+			
+				<span id="kzs_grid_job_label">職業</span>
+				<select id="kzs_grid_job_value">
+					<option selected disabled hidden>
+                        職業を選択してください
+                    </option>
+				</select>
+			
+				<span id="kzs_grid_annual_income_label">年収</span>
+				<input type="number" value='0' id="kzs_grid_annual_income_value" step="1" min="0"></input>
+			
+				<span id='kzs_grid_annual_income_caution_message'></span>
+
+				<span id='kzs_grid_insurance_limit_label'>あなたの毎月の掛金上限はこちら↓</span>
+				<input type="text" disabled id="kzs_grid_insurance_limit_value" value="">
+				<span id="kzs_grid_insurance_limit_caution">※職業によって、掛金上限額は異なります。</span>
+			
+				
+				<span id="kzs_grid_insurance_input_label">毎月の掛金予定額を入力ください</span>
+				<input type="number" id="kzs_grid_insurance_input_value" value="0" step="1000" min="0">
+				<span id="kzs_grid_insurance_input_error_limmt">※掛け金の上限を超えています</span>
+				<span></span><span id="kzs_grid_insurance_input_caution">※iDeCoの掛金は5,000円以上1,000円刻みです。</span>
+			</div>
+			
+			<p>⬇️</p>
+			<p>iDeCoを活用することで、</p>
+			
+			<div id="kzs_yaer_deduction_value">
+				<span id="kzs_yaer_deduction_caption">年間</span>
+				<span id="kzs_yaer_deduction">0</span><span>
+				<span id="kzs_yaer_deduction_unit">円</span>
+			</div>
+			<p id="kzs_sum_deduction_label">60歳まで活用した場合、</p>
+			<div id="kzs_sum_deduction_value">
+				<span id="kzs_sum_deduction_caption">合計</span>
+				<span id="kzs_sum_deduction">0</span>
+				<span id="kzs_sum_deduction_unit">円の</span>
+			</div>
+			<p>所得税が控除されます。</p>
+			<p id='kzs_housewife_message'></p>
+			<div id="kzs_bottom_message">
+				<p>※あくまでも簡易シミュレーションです。　節税金額を示唆・保証するものではありません。</p>
+				<p>※課税所得は年収から必要経費や保険料等の各種控除を差し引いた金額であり、個人によってその額は大きく異なってきます。あくまで一例としてご参考ください。</p>
+				<p>※税率は2020年12月8日現在の税率にて試算しています。税率が変更となった場合には結果も異なります。</p>
+				<p>※復興特別所得税、配偶者控除（配偶者特別控除）は考慮していません。</p>
+			</div>
+		</div>
 		`;
 	})();
-	$("#simulation").append(makeHtml);
+	$("#kzs_simulation").append(makeHtml);
 
 	// セレクトボックスの初期化
 	// 年齢
@@ -93,19 +96,28 @@
 	];
 
 	for (let i = AGE_RANGE.MIN; i <= AGE_RANGE.MAX; i++) {
+		if (i == AGE_RANGE.MIN) {
+			$("#kzs_grid_age_value").append(
+				$("<option>").text("年齢を選択してください").val(-1)
+			);
+		}
 		$("#kzs_grid_age_value").append($("<option>").text(i).val(i));
 	}
 
 	for (let i = 0; i < JOB_LIST.length; i++) {
+		if (i == 0) {
+			$("#kzs_grid_job_value").append(
+				$("<option>").text("職業を選択してください").val(-1)
+			);
+		}
 		$("#kzs_grid_job_value").append(
 			$("<option>").text(JOB_LIST[i].label).val(JOB_LIST[i].value)
 		);
 	}
-	// 掛け金上限の初期化
-	$("#kzs_grid_insurance_limit_value").val(
-		JOB_LIST[0].money.toLocaleString() + INSURANCE_LIMIT_ADD_UNIT
-	);
 
+	// 掛け金上限の初期化
+	$("#kzs_grid_insurance_limit_value").val(0 + INSURANCE_LIMIT_ADD_UNIT);
+	
 	const Util = function () {
 		this.init.apply(this, arguments);
 	};
@@ -187,9 +199,9 @@
 			// 毎月の掛け金
 			this.insurance = this.Util.convertInt(insurance);
 
-			if (!this.annualIncome || !this.insurance) {
+			if (!this.age || !this.job || !this.annualIncome || !this.insurance) {
 				console.log(
-					`年収：${this.annualIncome} 毎月の掛け金：${this.insurance}`
+					`年齢：${this.age} 職業： ${this.job} 年収：${this.annualIncome} 毎月の掛け金：${this.insurance}`
 				);
 				return 0;
 			}
@@ -198,33 +210,34 @@
 			console.log("年収 = " + this.annualIncome);
 			console.log("掛け金上限 = " + this.insuranceLimit);
 			console.log("毎月の掛け金 = " + this.insurance);
-			console.log("年間の積み立て = " + calc._getYearInsurance());
+			console.log("年間の積み立て = " + this._getYearInsurance());
 
-			console.log("給与所得控除率 = " + calc._getSalaryIncomeDeductionRate());
-			console.log("固定控除額 = " + calc._getFixedDeductionAmount());
+			console.log("給与所得控除率 = " + this._getSalaryIncomeDeductionRate());
+			console.log("固定控除額 = " + this._getFixedDeductionAmount());
 			console.log(
-				"社会保険控除率 = " + calc._getSocialInsuranceDeductionRate()
+				"社会保険控除率 = " + this._getSocialInsuranceDeductionRate()
 			);
-			console.log("課税所得 = " + calc._getTaxableIncome());
-			console.log("iDeCo前課税所得 = " + calc._getIdecoBeforeTaxableIncome());
-			console.log("iDeCo前所得税率 = " + calc._getIdecoBeforeIncomeTaxRate());
-			console.log("iDeCo前所得税額 = " + calc._getIdecoBeforeIncomeTax());
-			console.log("iDeCo前住民税額 = " + calc._getIdecoBeforeResidentTax());
-			console.log("iDeCo前合計税額 = " + calc._getIdecoBeforeSumTaxSaving());
-			console.log("iDeCo後課税所得 = " + calc._getIdecoafterTaxableIncome());
-			console.log("iDeCo後所得税率 = " + calc._getIdecoAfterIncomeTaxRate());
-			console.log("iDeCo後所得税額 = " + calc._getIdecoAfterIncomeTax());
-			console.log("iDeCo後住民税額 = " + calc._getIdecoAfterResidentTax());
-			console.log("iDeCo後合計税額 = " + calc._getIdecoAfterSumTax());
-			console.log("年間節税額 = " + calc._getYearTaxSaving());
+			console.log("課税所得 = " + this._getTaxableIncome());
+			console.log("iDeCo前課税所得 = " + this._getIdecoBeforeTaxableIncome());
+			console.log("iDeCo前所得税率 = " + this._getIdecoBeforeIncomeTaxRate());
+			console.log("iDeCo前所得税額 = " + this._getIdecoBeforeIncomeTax());
+			console.log("iDeCo前住民税額 = " + this._getIdecoBeforeResidentTax());
+			console.log("iDeCo前合計税額 = " + this._getIdecoBeforeSumTaxSaving());
+			console.log("iDeCo後課税所得 = " + this._getIdecoafterTaxableIncome());
+			console.log("iDeCo後所得税率 = " + this._getIdecoAfterIncomeTaxRate());
+			console.log("iDeCo後所得税額 = " + this._getIdecoAfterIncomeTax());
+			console.log("iDeCo後住民税額 = " + this._getIdecoAfterResidentTax());
+			console.log("iDeCo後合計税額 = " + this._getIdecoAfterSumTax());
+			console.log("年間節税額 = " + this._getYearTaxSaving());
 
-			// 毎月の積立金額 <= 掛金上限
-			if (this.insurance <= this.insuranceLimit) {
-				console.log("毎月の積立金額 <= 掛金上限");
-				return this._getYearTaxSaving();
-			}
-
-			return "-";
+			// 毎月の積立金額 <= 掛金上限（メッセージを出すので画面側)
+			// if (this.insurance <= this.insuranceLimit) {
+			// 	const result = this._getYearTaxSaving();
+			// 	console.log("毎月の積立金額 <= 掛金上限 = " + result);
+			// 	// return this._getYearTaxSaving();
+			// 	return result;
+			// }
+			return this._getYearTaxSaving();
 		},
 
 		// 年間の積立金額
@@ -396,21 +409,25 @@
 		},
 	};
 
-	const calc = new Calc();
-	const util = new Util();
 	// 各項目のChangeイベントの追加
 	(function () {
-		// 年齢の変更
-		$("#kzs_grid_age_value").on("change", function (event) {
-			const taxSaving = calc.getTaxSaving(
-				event.currentTarget.value,
-				$("#kzs_grid_job_value").val(),
-				$("#kzs_grid_annual_income_value").val(),
-				util
-					.removeComma($("#kzs_grid_insurance_limit_value").val())
-					.replace(INSURANCE_LIMIT_ADD_UNIT, ""),
-				$("#kzs_grid_insurance_input_value").val()
+		const calc = new Calc();
+		const util = new Util();
+		const getInsuranceLimit = function (value) {
+			return util.convertInt(
+				util.removeComma(value).replace(INSURANCE_LIMIT_ADD_UNIT, "")
 			);
+		};
+
+		const calcTaxSaving = function (age, job, annualIncome, insurance) {
+			const taxSaving = calc.getTaxSaving(
+				age ?? $("#kzs_grid_age_value").val(),
+				job ?? $("#kzs_grid_job_value").val(),
+				annualIncome ?? $("#kzs_grid_annual_income_value").val(),
+				getInsuranceLimit($("#kzs_grid_insurance_limit_value").val()),
+				insurance ?? $("#kzs_grid_insurance_input_value").val()
+			);
+
 			// 年間の節税金額
 			$("#kzs_yaer_deduction").text(taxSaving.toLocaleString());
 			// 節税金額の合計
@@ -420,85 +437,76 @@
 					(AGE_RANGE.MAX + 1 - $("#kzs_grid_age_value").val())
 				).toLocaleString()
 			);
+		};
+
+		// 年齢の変更
+		$("#kzs_grid_age_value").on("change", function (event) {
+			calcTaxSaving(event.currentTarget.value);
 		});
 		// 職業の変更
 		$("#kzs_grid_job_value").on("change", function (event) {
 			// 掛け金上限の変更
 			$("#kzs_grid_insurance_limit_value").val(
-				JOB_LIST[event.currentTarget.value].money.toLocaleString() +
+				(event.currentTarget.value == -1
+					? 0
+					: JOB_LIST[event.currentTarget.value].money.toLocaleString()) +
 					INSURANCE_LIMIT_ADD_UNIT
 			);
-			const taxSaving = calc.getTaxSaving(
-				$("#kzs_grid_age_value").val(),
-				event.currentTarget.value,
-				$("#kzs_grid_annual_income_value").val(),
-				util
-					.removeComma($("#kzs_grid_insurance_limit_value").val())
-					.replace(INSURANCE_LIMIT_ADD_UNIT, ""),
-				$("#kzs_grid_insurance_input_value").val()
-			);
-			// 年間の節税金額
-			$("#kzs_yaer_deduction").text(taxSaving.toLocaleString());
-			// 節税金額の合計
-			$("#kzs_sum_deduction").text(
-				(
-					taxSaving *
-					(AGE_RANGE.MAX + 1 - $("#kzs_grid_age_value").val())
-				).toLocaleString()
-			);
+			// 各のメッセージを変更
+			$("#kzs_grid_annual_income_caution_message").text("");
+			$("#kzs_grid_annual_income_value").prop("disabled", false);
+			$("#kzs_housewife_message").hide();
+			if (event.currentTarget.value == JOB_LIST[0].value) {
+				// 自営業の場合
+				$("#kzs_grid_annual_income_caution_message").text(
+					"自営業(個人事業主)の場合、課税所得額を入力ください。"
+				);
+			} else if (event.currentTarget.value == JOB_LIST[1].value) {
+				// 専業主婦(夫)の場合
+				$("#kzs_grid_annual_income_caution_message").text(
+					"専業主婦(夫)の場合、所得自体がないため年収入力はできません。"
+				);
+				$("#kzs_housewife_message").show();
+				$("#kzs_grid_annual_income_value").prop("disabled", true);
+				$("#kzs_grid_annual_income_value").val(0);
+			}
+
+			calcTaxSaving(null, event.currentTarget.value);
 		});
 		// 年収の変更
 		$("#kzs_grid_annual_income_value").on("change", function (event) {
-			const taxSaving = calc.getTaxSaving(
-				$("#kzs_grid_age_value").val(),
-				$("#kzs_grid_job_value").val(),
-				event.currentTarget.value,
-				util
-					.removeComma($("#kzs_grid_insurance_limit_value").val())
-					.replace(INSURANCE_LIMIT_ADD_UNIT, ""),
-				$("#kzs_grid_insurance_input_value").val()
-			);
-			// 年間の節税金額
-			$("#kzs_yaer_deduction").text(taxSaving.toLocaleString());
-			// 節税金額の合計
-			$("#kzs_sum_deduction").text(
-				(
-					taxSaving *
-					(AGE_RANGE.MAX + 1 - $("#kzs_grid_age_value").val())
-				).toLocaleString()
-			);
+			calcTaxSaving(null, null, event.currentTarget.value);
 		});
 		// 毎月の掛け金の変更
 		$("#kzs_grid_insurance_input_value").on("change", function (event) {
-			const taxSaving = calc.getTaxSaving(
-				$("#kzs_grid_age_value").val(),
-				$("#kzs_grid_job_value").val(),
-				$("#kzs_grid_annual_income_value").val(),
-				util
-					.removeComma($("#kzs_grid_insurance_limit_value").val())
-					.replace(INSURANCE_LIMIT_ADD_UNIT, ""),
+			// 上限を超えた設定の場合
+			if (
+				getInsuranceLimit($("#kzs_grid_insurance_limit_value").val()) <
 				event.currentTarget.value
-			);
-			// 年間の節税金額
-			$("#kzs_yaer_deduction").text(taxSaving.toLocaleString());
-			// 節税金額の合計
-			$("#kzs_sum_deduction").text(
-				(
-					taxSaving *
-					(AGE_RANGE.MAX + 1 - $("#kzs_grid_age_value").val())
-				).toLocaleString()
-			);
+			) {
+				$("#kzs_grid_insurance_input_error_limmt").show();
+				// 年間の節税金額
+				$("#kzs_yaer_deduction").text(0);
+				// 節税金額の合計
+				$("#kzs_sum_deduction").text(0);
+			} else {
+				$("#kzs_grid_insurance_input_error_limmt").hide();
+				calcTaxSaving(null, null, null, null, event.currentTarget.value);
+			}
 		});
 	})();
 
 	var s = `
+	#kzs_simulation {
+		color: black;
+	}
 	#kzs_container {
 		margin: 30px;
 		text-align: center;
 	}
 	
 	#kzs_block_header {
-		padding: 1% 20% 1% 20%;
+		padding: 1% 40% 1% 40%;
 		background: rgb(246, 156, 85);
 		border: 1px red solid;
 		border-radius: 10px;
@@ -568,55 +576,59 @@
 		grid-row: 3;
 	}
 
-	#kzs_grid_insurance_limit_label {
+	#kzs_grid_annual_income_caution_message {
 		grid-column: 1/3;
 		grid-row: 4;
+		width: 100%;
+	}
+	#kzs_grid_insurance_limit_label {
+		grid-column: 1/3;
+		grid-row: 5;
 		width: 100%;
 	}
 
 	#kzs_grid_insurance_limit_value {
 		grid-column: 2/3;
-		grid-row: 5;
+		grid-row: 6;
 		text-align: center;
 	}
 
 	#kzs_grid_insurance_limit_caution {
 		grid-column: 2/3;
-		grid-row: 6;
+		grid-row: 7;
 	}
 
 	#kzs_grid_insurance_input_label {
-		grid-column: 2/3;
-		grid-row: 7;
+		grid-column: 1/3;
+		grid-row: 8;
+		width: 100%;
 	}
 
 	#kzs_grid_insurance_input_value {
 		grid-column: 2/3;
-		grid-row: 8;
+		grid-row: 9;
 		text-align: end;
 	}
 
 	#kzs_grid_insurance_input_error_limmt {
-		grid-column: 2/3;
-		grid-row: 9;
+		grid-column: 1/3;
+		grid-row: 10;
+		width: 100%;
+		display: none;
+		color: red:
 	}
 
 	#kzs_grid_insurance_input_caution {
-		grid-column: 2/3;
-		grid-row: 10;
-	}
-
-	#kzs_yazirusi {
-		text-align: center;
-		margin-bottom: 1em;
-	}
-
-	#kzs_yaer_deduction_label {
-		margin-bottom: 1em;
+		grid-column: 1/3;
+		grid-row: 11;
+		width: 100%;
 	}
 
 	#kzs_yaer_deduction_value {
 		margin-bottom: 1em;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	#kzs_yaer_deduction_value #yaer_deduction {
@@ -630,15 +642,35 @@
 
 	#kzs_sum_deduction_value {
 		margin-bottom: 1em;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
-	#kzs_sum_deduction_value #sum_deduction {
+	#kzs_sum_deduction_caption, #kzs_yaer_deduction_caption {
+		margin-right: 10px;
+	}
+
+	#kzs_sum_deduction_unit, #kzs_yaer_deduction_unit {
+		margin-left: 10px;
+	}
+	#kzs_yaer_deduction, #kzs_sum_deduction {
 		color: red;
-		font: bold;
+		font-size: 25px;
 	}
 
 	#kzs_bottom_message {
 		background-color: gray;
+		padding: 30px;
+	}
+
+	#kzs_bottom_message p {
+		text-align: left;
+	}
+
+	p {
+		text-align: center;
+		margin-bottom: 1em;
 	}
   `;
 

@@ -1,0 +1,1162 @@
+@charset "utf-8";
+
+$slick-font-family: "sans-serif";
+$slick-loader-path: "/common/assets/slick/";
+
+@import "../../../common/scss/base_33801";
+@import "../../../common/assets/slick/_slick-theme";
+@import "../../../common/assets/slick/_slick";
+@import "../../../common/docomohikari/scss/menu";
+@import "../../../common/docomohikari/scss/common"; // #35549 デザイン調整で作成。以降使用してください。
+@import "../common/scss/module/faq";
+@import "../common/scss/module/satisfaction";
+@import "../../../common/scss/oriconAnniversary_2020";
+@import "../common/scss/module/measure";
+
+
+body {
+	background: #fff;
+	color: #000;
+	font-size: 20px;
+	line-height: 1.5;
+}
+
+.flex-center {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+/********************
+
+	main（工事費無料なし）
+
+********************/
+// .main {
+// 	height: auto;
+// 	margin-bottom: 60px;
+// 	width: 100%;
+
+// 	&_title {
+// 		background: #e6ab3a;
+// 		display: flex;
+// 		justify-content: center;
+
+// 		&Inner {
+// 			background: url("/service/docomohikari/images/main/main_title_bg.png");
+// 			background-size: auto 95px;
+// 			height: 95px;
+// 			padding: 23px 0;
+// 			width: 1200px;
+
+// 			img {
+// 				// height: 100%;
+// 			}
+// 		}
+// 	}
+
+// 	&_cp {
+// 		display: flex;
+// 		justify-content: center;
+
+// 		&Inner {
+// 			height: 280px;
+
+// 			img {
+// 				height: 220px;
+// 			}
+// 		}
+// 	}
+
+// 	&_router {
+// 		background: url("/service/docomohikari/images/main/main_router_bg.png");
+// 		display: flex;
+// 		justify-content: center;
+
+// 		&Inner {
+// 			height: 155px;
+// 			width: 940px;
+
+// 			img {
+// 				height: 119px;
+// 				margin: -19px 0 0 10px;
+// 			}
+// 		}
+
+// 		&Note {
+// 			align-items: center;
+// 			color: #fff;
+// 			display: flex;
+// 			font-size: 14px;
+// 			-webkit-font-smoothing: subpixel-antialiased;
+// 			height: 56px;
+// 			letter-spacing: 0;
+// 			line-height: 21px;
+// 			margin-left: 10px;
+// 			margin-top: -2px;
+
+// 			a {
+// 				color: #fff;
+// 				text-decoration: underline;
+// 			}
+// 		}
+// 	}
+// }
+
+/********************
+
+	main（工事費無料あり）
+
+********************/
+.main {
+	height: auto;
+	margin-bottom: 60px;
+	width: 100%;
+
+	&_title {
+		display: flex;
+		justify-content: center;
+		margin-top: 44px;
+
+		&Inner {
+			height: 45px;
+
+			img {
+				height: 100%;
+			}
+		}
+	}
+
+	&_cp {
+		display: flex;
+		justify-content: center;
+		margin-top: 16px;
+
+		&Inner {
+			height: 219px;
+
+			img {
+				height: 100%;
+			}
+		}
+	}
+
+	&_detail {
+		background: url("/service/docomohikari/images/main/main_router_bg.png");
+		display: flex;
+		justify-content: center;
+		margin-top: 40px;
+
+		&Inner {
+			display: flex;
+			height: 178px;
+			padding-top: 15px;
+			width: 940px;
+		}
+
+		&Cashback {
+			width: 445px;
+
+			img {
+				height: 79px;
+			}
+		}
+
+		&Note {
+			align-items: center;
+			color: #fff;
+			display: flex;
+			-webkit-font-smoothing: subpixel-antialiased;
+			letter-spacing: 0;
+			margin-top: 8px;
+			width: 445px;
+
+			ul {
+				li {
+					font-size: 13px;
+					line-height: 17px;
+					padding-left: 1.5em;
+					text-indent: -1.5em;
+				}
+			}
+
+			a {
+				color: #fff;
+				text-decoration: underline;
+			}
+		}
+
+		&Plus {
+			img {
+				width: 42px;
+			}
+		}
+
+		&Router {
+			img {
+				width: 447px;
+			}
+		}
+	}
+}
+
+/********************
+
+	feature
+
+********************/
+.feature {
+	margin: 0 auto 60px;
+	width: 880px;
+}
+
+.featureBox_main {
+	margin: 0 0 50px;
+	text-align: center;
+}
+
+.featureBox_content {
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		li {
+			border: 1px solid #dcdcdc;
+			box-sizing: border-box;
+			margin: 0 20px 20px 0;
+			width: 280px;
+
+			&:nth-child(3n) {
+				margin: 0 0 20px 0;
+			}
+
+			dl {
+				text-align: center;
+
+				dt {
+					@include fontsize(24);
+
+					font-weight: bold;
+					line-height: 1.5;
+					padding: 15px 0 0;
+
+					span {
+						@include fontsize(28);
+					}
+				}
+
+				dd {
+					img {
+						margin: 0 auto 15px;
+					}
+
+					&:nth-child(2) {
+						align-items: center;
+						display: flex;
+						height: 120px;
+					}
+
+					&:last-child {
+						align-items: center;
+						background: #f6f6f6;
+						display: flex;
+						height: 4em;
+						justify-content: center;
+						padding: 10px 0;
+					}
+
+					p {
+						line-height: 1.5;
+						text-align: center;
+
+						span {
+							color: #c03;
+							display: inline;
+							font-weight: bold;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.featureBox_img {
+	margin: 40px 0 0;
+	text-align: center;
+}
+
+
+.box-campaign {
+	padding-bottom: 0;
+}
+
+/********************
+
+	slick
+
+********************/
+
+.slick-dotted.slick-slider + .linkbtn {
+	margin-top: 60px;
+}
+
+.slick-list {
+	margin: 0 auto;
+	width: 700px;
+}
+
+.slick-dotted.slick-slider {
+	margin-bottom: 22px;
+}
+
+.slider {
+	position: relative;
+}
+
+.slider img {
+	margin: 0 auto;
+	width: 700px;
+}
+
+.slider .slick-prev, .slider .slick-next {
+	opacity: 1;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-30px);
+	z-index: 1;
+}
+
+.slider .slick-prev:hover, .slider .slick-next:hover {
+	opacity: 0.9;
+}
+
+.slider .slick-prev {
+	height: 60px;
+	left: 98px;
+	width: 40px;
+}
+
+.slider .slick-next {
+	height: 60px;
+	right: 100px;
+	width: 40px;
+}
+
+.slider.lazyloaded .slick-prev::before {
+	content: url("/service/docomohikari/images_b/slide_ico.svg");
+	display: block;
+	opacity: 1;
+	transform: rotate(180deg);
+}
+
+.slider.lazyloaded .slick-next::before {
+	content: url("/service/docomohikari/images_b/slide_ico.svg");
+	display: block;
+	opacity: 1;
+}
+
+.slider .slick-dots {
+	bottom: -30px;
+}
+
+.slider .slick-dots li button::before {
+	background: #d1d1d1;
+	border: 1px solid #d1d1d1;
+	border-radius: 50%;
+	content: "";
+	height: 10px;
+	opacity: 1;
+	width: 10px;
+}
+
+.slider .slick-dots li.slick-active button::before {
+	background: #fff;
+}
+
+
+/********************
+
+	box-v6
+
+********************/
+.box-v6 {
+	padding: 0 20px;
+
+	.img {
+		text-align: center;
+
+		img {
+			margin: 0 auto 30px;
+		}
+	}
+
+	.common-box02 {
+		border: none;
+		padding: 0;
+
+		.common-box01 {
+			&__inner {
+				margin: 0 auto 30px;
+				overflow: hidden;
+				padding: 30px 20px 0;
+
+				dl {
+					dt {
+						@include fontsize(24);
+
+						color: #00245b;
+						font-weight: bold;
+						line-height: 1.5;
+						margin: 0 auto 10px;
+					}
+
+					dd {
+						line-height: 1.5;
+						text-align: justify;
+					}
+				}
+
+				p.note {
+					@include fontsize(16);
+
+					color: #6f6f6f;
+					line-height: 1.5;
+					margin: 5px auto 0;
+					padding-left: 1em;
+					text-align: justify;
+					text-indent: -1em;
+				}
+			}
+		}
+	}
+
+	.banner {
+		text-align: center;
+
+		img {
+			height: auto;
+			margin: 60px auto 0;
+			width: 700px;
+		}
+	}
+}
+
+.box-v6 h3 {
+	line-height: 1.5;
+	margin: 0 auto;
+}
+
+.box-v6 .common-attention {
+	margin: -10px auto 30px;
+	text-align: right;
+}
+
+.box-v6 .common-box02 .img {
+	float: right;
+	margin: 20px 0 0 40px;
+}
+
+
+/********************
+
+	box-measure
+
+********************/
+
+.box-measure .box-measure-border .title-local, .box-measure .box-measure-border ul.select-local, .box-measure ul.attention, .box-measure .link {
+	display: none;
+}
+
+.box-measure .title-local {
+	display: none;
+}
+
+.box-measure .note li, .common-attention li {
+	margin: 16px 0 16px 17px;
+	text-align: right;
+}
+
+
+/********************
+
+	regular
+
+********************/
+.regular {
+	margin: 0 auto 30px;
+	padding: 0 20px;
+}
+
+.regular + p {
+	line-height: 1.5;
+	padding: 0 20px 30px;
+	text-align: justify;
+}
+
+.regularBox {
+	display: flex;
+	justify-content: space-between;
+}
+
+.regularBox_contents {
+	text-align: center;
+	width: 100%;
+}
+
+.regularBox_title {
+	@include fontsize(24);
+
+	background: #b2b2b2;
+	font-weight: bold;
+	line-height: 1.5;
+	padding: 10px 0;
+}
+
+.regularBox_img {
+	background: #e7e7e7;
+	padding: 20px;
+
+	p {
+		line-height: 1.5;
+	}
+}
+
+.regularBox_contents-v6plus .regularBox_title {
+	background: #fabe00;
+	color: #c03;
+}
+
+.regularBox_contents-v6plus .regularBox_img {
+	background: #fff4d0;
+	color: #c03;
+}
+
+
+/********************
+
+	configuration
+
+********************/
+
+.configuration {
+	display: flex;
+	flex-direction: row-reverse;
+	margin: 0 auto;
+	padding: 0 40px;
+
+	.img {
+		img {
+			margin: 0 0 0 40px;
+		}
+	}
+
+	dl {
+		dt {
+			@include fontsize(24);
+
+			color: #00245b;
+			font-weight: bold;
+			line-height: 1.5;
+			margin: 0 auto 10px;
+		}
+
+		dd {
+			line-height: 1.5;
+			text-align: justify;
+		}
+	}
+
+	p.note {
+		@include fontsize(16);
+
+		color: #6f6f6f;
+		line-height: 1.5;
+		margin: 5px auto 0;
+		padding-left: 1em;
+		text-align: justify;
+		text-indent: -1em;
+	}
+}
+
+
+/********************
+
+	box-price
+
+********************/
+
+.box-price .inner {
+	padding: 0 40px;
+	width: auto;
+}
+
+.box-price .inner table {
+	margin: 0 auto 10px;
+	width: 100%;
+}
+
+.box-price .inner table thead th, .box-price .inner table tbody th, .box-price .inner table tbody td {
+	border: 1px solid #aaa;
+	text-align: center;
+}
+
+.box-price .inner table thead th {
+	font-weight: bold;
+	line-height: 1.5;
+	padding: 15px;
+	white-space: nowrap;
+}
+
+.box-price .inner table thead th sub {
+	@include fontsize(12);
+
+	font-weight: normal;
+	margin: 0 0 0 0.5em;
+	vertical-align: super;
+}
+
+.box-price .inner table thead th.price01 {
+	background: #c03;
+	color: #fff;
+}
+
+.box-price .inner table thead th.price02 {
+	background: #fabe00;
+	color: #000;
+}
+
+.box-price .inner table tbody th {
+	background: #f6f6f6;
+	line-height: 1.5;
+	padding: 15px;
+	white-space: nowrap;
+	width: 20%;
+}
+
+.box-price .inner table tbody td {
+	line-height: 1.5;
+	padding: 15px;
+	white-space: nowrap;
+	width: 40%;
+}
+
+.box-price .inner table .strike {
+	text-decoration: line-through;
+}
+
+.box-price .inner table .em00 {
+	font-weight: bold;
+}
+
+.box-price .inner table .em01 {
+	@include fontsize(24);
+
+	font-weight: bold;
+}
+
+.box-price .inner table .em02 {
+	color: #c03;
+	font-weight: bold;
+}
+
+.box-price .inner table .price-text {
+	@include fontsize(24);
+
+	color: #c03;
+	// 	display: block;
+	font-weight: bold;
+}
+
+.box-price__link {
+	//	font-size: 16px;
+}
+
+.box-price .common-attention li {
+	margin: 0;
+	text-align: justify;
+}
+
+.box-price .common-attention-num li {
+	padding-left: 2em;
+	text-indent: -2em;
+}
+
+.sumaho {
+	margin: 60px auto 0;
+	text-align: center;
+
+	img {
+		margin: 0 auto;
+	}
+}
+
+
+/********************
+
+	box-simulation
+
+********************/
+
+.box-simulation {
+	background: #f6f6f6;
+	margin: 60px auto 30px;
+	width: 880px;
+}
+
+.box-simulation__heading {
+	@include fontsize(40);
+
+	background: #00245b;
+	color: #fff;
+	font-weight: bold;
+	line-height: 1.5;
+	padding: 25px 0;
+	position: relative;
+	text-align: center;
+}
+
+.box-simulation__heading::after {
+	border: solid transparent;
+	border-top-color: #00245b;
+	border-width: 22px 13px 13px 13px;
+	content: "";
+	height: 10px;
+	left: 50%;
+	margin-left: -15px;
+	position: absolute;
+	top: 100%;
+	width: 0;
+}
+
+.box-simulation__heading span {
+	@include fontsize(30);
+
+	display: block;
+	font-weight: normal;
+}
+
+.box-simulation__content {
+	padding: 40px 40px 80px;
+}
+
+.box-simulation__content .box-step {
+	padding: 10px 0;
+}
+
+.box-simulation__content .box-step:first-child {
+	padding-top: 0;
+}
+
+.box-simulation__content .box-step__inner {
+	overflow: hidden;
+}
+
+.box-simulation__content .box-step__radio-wrap {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 30px;
+	overflow: hidden;
+	padding-bottom: 48px;
+	position: relative;
+}
+
+.box-step__radio-wrap::after {
+	border-color: #00245b transparent transparent transparent;
+	border-style: solid;
+	border-width: 18px 17px 0 17px;
+	bottom: 0;
+	content: "";
+	left: 50%;
+	position: absolute;
+	transform: translateX(-50%);
+}
+
+.box-simulation__content .box-step__radio {
+	float: left;
+	margin-right: 0;
+	width: 434px;
+}
+
+.box-simulation__content .box-step__radio:first-child {
+	margin-right: 12px;
+}
+
+.box-step__radio label {
+	&.lazyloaded {
+		background-image: url("/service/docomohikari/price/simulation/images/box-step_radio.png");
+	}
+
+	background-color: #fff;
+	background-position: 20px center;
+	background-repeat: no-repeat;
+	border: 2px solid #dcdcdc;
+	border-radius: 5px;
+	color: #00245b;
+	cursor: pointer;
+	display: block;
+	line-height: 1.5;
+	padding: 10px 0 10px 50px;
+	position: relative;
+}
+
+.box-step__radio label::after {
+	clear: both;
+	content: "";
+	display: block;
+}
+
+.box-step__radio label:hover, .box-step__radio label.checked {
+	background-color: #ffe8ee;
+	border-color: #c03;
+}
+
+.box-step__radio label.checked {
+	&.lazyloaded {
+		background-image: url("/service/docomohikari/price/simulation/images/box-step_radio_checked.png");
+	}
+
+	color: #c03;
+}
+
+.box-step__radio.box-step__radio i.ico {
+	display: none;
+}
+
+.box-step__radio__text {
+	display: block;
+	letter-spacing: 0;
+	margin-left: 12px;
+	overflow: hidden;
+	text-align: left;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+.box-step__radio label input[type="radio"] {
+	cursor: pointer;
+	filter: alpha(opacity=0);
+	height: 100%;
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.box-step__select select {
+	@include fontsize(20);
+
+	background: #fff;
+	border: 1px solid #dcdcdc;
+	border-radius: 5px;
+	color: #242424;
+	line-height: 1.2;
+	padding: 10px;
+	vertical-align: middle;
+	width: 100%;
+}
+
+/********************
+
+	btn-cast
+
+********************/
+.btn-cast {
+	padding: 50px 0 0 0;
+}
+
+.btn-cast a {
+	@include fontsize(30);
+
+	box-shadow: 1px 2px 5px -2px #555;
+	color: #fff;
+	font-weight: bold;
+	line-height: 100px;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+
+	&.lazyloaded {
+		&::before {
+			background: url("/service/docomohikari/images_b/cal.svg") no-repeat;
+		}
+	}
+
+	&::before {
+		content: "";
+		height: 46px;
+		left: 130px;
+		position: absolute;
+		top: calc( 50% - 23px );
+		width: 34px;
+	}
+}
+
+a.btn-cast__button {
+	background: #00245b;
+	border-radius: 8px;
+	display: block;
+	height: 100px;
+	margin: 0 auto;
+	width: 520px;
+}
+
+a.btn-cast__button.disabled {
+	background-color: #cecece;
+	cursor: default;
+}
+
+
+/********************
+
+	box-result
+
+********************/
+.box-result {
+	background: #fff4d0;
+	display: none;
+	margin: 0;
+	padding-bottom: 80px;
+}
+
+.box-result__inner {
+	&.lazyloaded {
+		background: url("/service/docomohikari/images/box-result_bg.png") no-repeat;
+		background-size: cover;
+	}
+
+	margin: 0;
+	position: relative;
+}
+
+.box-result .common-attention {
+	padding: 25px 20px 0;
+	width: auto;
+}
+
+.box-result .common-attention table {
+	text-indent: 0;
+}
+
+.box-result .common-attention table th {
+	font-weight: normal;
+}
+
+.box-result .common-attention table th::after {
+	content: ":";
+	margin: 0 0.3em;
+}
+
+.box-result .common-attention table td {
+	text-align: right;
+}
+
+.box-discount-price {
+	&.lazyloaded {
+		background: url("/service/docomohikari/price/simulation/images/box-discount-price.svg") no-repeat;
+	}
+
+	height: 200px;
+}
+
+.box-discount-price__line1 {
+	display: none;
+}
+
+.box-discount-price__line2 {
+	@include fontsize(80);
+
+	color: #c03;
+	font-weight: bold;
+	letter-spacing: 0;
+	line-height: 1;
+	position: absolute;
+	right: 515px;
+	text-align: right;
+	text-shadow: 4px 4px 0 #fde187, -4px 4px 0 #fde187, 4px -4px 0 #fde187, -4px -4px 0 #fde187;
+	top: 84px;
+	width: 300px;
+}
+
+.box-discount-price__text1 {
+	display: none;
+}
+
+
+.box-result .linkbtn {
+	margin-top: 54px;
+}
+
+
+.consult_bg {
+	background: #000;
+	display: none;
+	height: 100%;
+	left: 0;
+	opacity: 0.6;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1001;
+}
+
+.box-consult {
+	background: #fff;
+	display: none;
+	left: 50%;
+	margin: 0 0 0 -300px;
+	position: fixed;
+	top: 74px;
+	width: 640px;
+	z-index: 1002;
+}
+
+
+.arigatopoint {
+	margin: 60px auto 0;
+	padding: 0;
+}
+
+.arigatopoint dt {
+	@include fontsize(24);
+
+	background: #c03;
+	color: #fff;
+	font-weight: bold;
+	line-height: 1.5;
+	margin: 0 21px;
+	padding: 10px;
+	text-align: center;
+}
+
+.arigatopoint dd {
+	margin: 0;
+	padding: 20px 36px 0;
+}
+
+.arigatopoint dd p {
+	line-height: 1.5;
+
+	sup {
+		@include fontsize(8);
+
+		vertical-align: super;
+	}
+}
+
+.arigatopoint .arigatopoint_img {
+	// 	border: 1px solid #dcdcdc;
+	//height: 190px;
+	margin: 30px auto 20px;
+	text-align: center;
+
+	img {
+		height: auto;
+		margin: 0;
+		width: 700px;
+	}
+}
+
+.arigatopoint dd ul li {
+	color: #6f6f6f;
+	padding-left: 1em;
+	text-align: justify;
+	text-indent: -1em;
+}
+
+
+.box-movie {
+	text-align: center;
+}
+
+.box-movie .box-movie_inner {
+	margin: 0 auto;
+	width: 700px;
+}
+
+.box-movie .box-movie_iframe {
+	height: 0;
+	padding-top: 56%;
+	position: relative;
+	width: 100%;
+}
+
+.box-movie .box-movie_iframe iframe {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+}
+
+
+/********************
+
+	33849
+
+********************/
+.img img {
+	margin: 0 0 20px;
+}
+
+.img.is-amazon {
+	text-align: center;
+}
+
+.img.is-amazon img {
+	margin: 40px auto 0;
+	width: 700px;
+}
+
+@media screen and (max-width: 640px) {
+	.img img {
+		margin: 0;
+	}
+
+	.img.is-amazon {
+		margin: 0 25px;
+	}
+}
+
+
+.introduction {
+	dl {
+		margin: 30px 20px 0;
+		padding: 0 20px;
+
+		dt {
+			@include fontsize(16);
+
+			a {
+				color: #000;
+			}
+		}
+
+		dd {
+			@include fontsize(16);
+
+			display: none;
+			margin: 20px auto 0;
+
+			ul {
+				&.note {
+					li {
+						@include fontsize(16);
+
+						color: #000;
+						text-align: justify;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+@media screen and (max-width: 640px) {
+	@import "../../../common/docomohikari/scss/common_sp";
+	@import "this_sp";
+}
