@@ -1,452 +1,162 @@
-<html><head></head><body><section class="row legal-aos">
-	<div class="toa">
-		
-	<h1 class="circle-heading text-center">
-        <font style="vertical-align: inherit;" id="termsServiceStyleId">
-            <font style="vertical-align: inherit;" class="tosv">アキュビュー<sup>®</sup> オンラインストア　利用規約 </font>
-        </font>
-    </h1>
-			
-	<div id="termsServiceInfo">
-		<div class="field-item">
-			<h2>はじめに</h2>
-
-			<p>アキュビュー<sup>®</sup>&nbsp; オンラインストア（以下「オンラインストア」といいます。）のご利用に際しては、本「アキュビュー<sup>®</sup>&nbsp; オンラインストア 利用規約」（以下「利用規約」といいます。）をお読みいただき、その内容をご理解の上、ご利用ください。<br>
-			ジョンソン・エンド・ジョンソン株式会社 ビジョンケア カンパニー（以下「ビジョンケア カンパニー」といいます。）は、利用規約の内容を変更することがあります。その場合は改訂版を掲載しますので、最新の内容をご確認ください。なお利用規約の制定日及び改訂日につきましては、利用規約の末尾をご確認ください。</p>
-		</div>
-
-		<div class="field-item">
-			<h2>ご利用上の注意</h2>
-
-			<p>ビジョンケア カンパニーは、この利用規約に基づき、日本国内において、オンラインストア上に掲載する商品を通信販売いたします。<br> 
-			オンラインストアに掲載されている情報は日本の著作権法その他の関連法令で保護されています。非営利目的の個人利用の範囲を超えて本サイトに掲載される内容を使用（複製、転載、改変、アップロード、掲示、出版、送信、販売等を含む）することは、禁止されています。<br>
-			ビジョンケア カンパニーはオンラインストア上の情報についてあらゆる面から十分に注意を払い掲載するよう努めています。しかし、ビジョンケア カンパニーはこれらの情報の正確性や即時性、完全性、有用性、安全性等につきましては一切保証いたしません。オンラインストアの閲覧利用、閲覧利用ができなかったこと、またオンラインストア上の情報を信頼したことにより生ずる不利益や損害について、ビジョンケア カンパニーは一切責任を負うものではありません。なお、オンラインストアは日本に居住されている方々を対象に製作されています。<br> 
-			ビジョンケア カンパニーは、利用者の利便性のためにオンラインストアからビジョンケア カンパニー以外の第三者のインターネットサイト（以下｢リンクサイト｣といいます。）にリンクができるようにすることがありますが、そのリンクサイトの内容は、それぞれのリンクサイトの運営主において管理されるものであり、ビジョンケア カンパニーの管理下にあるものではありません。従って、ビジョンケア カンパニーはリンクサイトの内容について、また、それらをご利用になったことにより生ずるいかなる損害についても責任を負いません。リンクサイトのご利用にあたっては、各リンクサイトのご利用条件に従ってください。<br>
-			なお、このリンクサイトへのリンクという事実は、ビジョンケア カンパニーが当該リンクサイトの利用や、リンクサイトに掲載されている製品、サービス、会社等を推奨することを意味するものではなく、また、ビジョンケア カンパニーとリンクサイトとの間に提携などの特別な関係があるということを意味するものではありません。 ビジョンケア カンパニーは、予告なしにオンラインストア上の情報を変更することがあります。また、オンラインストアの運営を中断または中止させていただくことがあります。あらかじめご了承ください。なお、ビジョンケア カンパニーは、理由の如何に関わらず、オンラインストア上の情報の変更及び運用の中断または中止によって生ずるいかなる損害についても責任を負うものではありません。<br>
-			オンラインストア上の商標、サービスマーク、商号、トレードドレス及び製品はすべてビジョンケア カンパニー及びその関連会社の財産として、日本国内だけでなく国際的にも保護されています。これらすべてについてビジョンケア カンパニーの事前の書面による許可なしに使用することはできません。<br>
-			なお、オンラインストア上で、<sup>®</sup>&nbsp; と付されたものはビジョンケア カンパニー及びその関連会社の登録商標です。一部カギ括弧（「」）で示されている場合もあります。<br> 
-			ビジョンケア カンパニーは使い捨てコンタクトレンズ製品（以下「コンタクトレンズ」といいます。）の輸入販売業者であり、日本国内で販売活動を行っています。従って、オンラインストア上の製品やサービスに関する情報は、原則として日本国内における医療機器承認内容及び各種の関連法令に基づいて掲載しています（外国においては、製品名や製品販売状況、取扱い方法等が異なる場合があります。）。<br> 
-			オンラインストアは日本国内の消費者向けです。</p>
-		</div>
-
-		<div class="field-item">
-			<h2>情報の取扱いについて</h2>
-			
-			<p>オンラインストアまたはビジョンケア カンパニーにお寄せいただいた個人情報につきましては <a href="https://acuvuevision.jp/privacy" target="_blank">
-			個人情報保護方針およびグローバルプライバシーポリシー</a>は、どのような方法でも、またどのような目的でも、やり取りされたその他すべての情報を複製、出版または使用することを控えなければならないという義務を負いません。ビジョンケア カンパニーはお送りいただいたすべての情報の内容（その中で発表されたアイディア、発明、発想、技術またはノウハウを含むものとします。）について、製品及びサービスの開発、製造並びにマーケティング等の目的のために自由に使用することができるものとします。また、これらは各種の開発、製作関連のパートナー企業に対する開示を含みます。<br> 
-			オンラインストアまたはビジョンケア カンパニーに情報を発信された方は、すべての情報の内容及び
-			そこに含まれる情報の真実性及び正確さについて責任を負うものとします。<br> 
-			ビジョンケア カンパニーからの情報送信サービス（ダイレクトメールやダイレクト e メール等）を望まな
-			い方は、お問い合わせフォームにその旨お書き添えください。</p>
-		</div>
-
-		<div class="field-item">
-			<h2>リンクについて</h2>
-
-			<p>ビジョンケア カンパニーとお取引いただいているコンタクトレンズ販売店のサイトご担当者様は、下記
-			までご連絡ください。<br>
-			ジョンソン・エンド・ジョンソン株式会社 ビジョンケア カンパニー<br>
-			フリーダイヤル 0120-410-850（受付時間 9:00～17:30 日・祝日を除く）</p>
-		</div>
-
-		<div class="field-item">
-			<h2>その他</h2>
-
-			<h3 class="heading">動作環境のご案内</h3>
-
-			<p>オンラインストアは、下記の環境を推奨しております。</p>
-
-			<div class="responsive-table-container">
-				<table>
-					<tbody>
-						<tr>
-							<td class="rteleft">パソコン</td>
-							<td class="rteleft">Chrome, Safari の最新ver.</td>
-						</tr>
-						<tr>
-							<td class="rteleft">タブレット</td>
-							<td class="rteleft">Android 6.0以上, iOS11以上　標準搭載のブラウザ</td>
-						</tr>
-						<tr>
-							<td class="rteleft">スマートフォン</td>
-							<td class="rteleft">Android 6.0以上, iOS11以上　標準搭載のブラウザ</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-
-			<p>
-				<a href="https://www.google.co.jp/chrome/browser/index.html" class="ext" target="_blank">パソコン版の最新のブラウザはこちら <span class="ext"><span class="element-invisible"> →</span></span></a> からご入手いただけます。
-			</p>
-
-			<h3 class="heading">SSL 暗号化通信について</h3>
-
-			<p>オンラインストアで取り扱うお客様の情報については、SSL（Secure Socket Layer）による暗号化を用いてデータの送受信を行います。</p>
-
-			<h4>パソコン（PC）をお使いになる場合</h4>
-
-			<p>上記の推奨ブラウザは、SSL に対応しております。ブラウザのバージョンが古い場合は、正しく動作しないことがありますので、必ず推奨ブラウザをお使いください。</p>
-
-			<p>ご注意<br>
-			お客様のネットワーク環境によっては、まれに、SSL での通信が確立できないことがあります（SSL の専用ポートを遮断している場合等）。詳細は、お客様のネットワーク管理者にお尋ねください。</p>
-
-			<h4>タブレット・スマートフォンをお使いになる場合</h4>
-
-			<p>タブレット・スマートフォン向けサイトにおいては、SSL 対応機種でのみご利用可能です。SSL 非対応機種でアクセスされた場合、画面が正しく表示されないことがあります。また、機種によっては、見かけ上画面が正しく表示されていても、SSL 非対応機種では SSL 暗号化通信を行うことができません。セキュリティ上、お使いのタブレット・スマートフォンが SSL 対応機種であることをご確認の上、ご利用ください。詳しくは、タブレット・スマートフォンメーカーまたはタブレット・スマートフォンのお求め先にお尋ねください。</p>
-		</div>
-
-		<div class="field-item">
-			<h2>商品の売主と販売条件</h2>
-
-			<p>オンラインストアにおいて取り扱っている商品のご利用者への売主は、ビジョンケア カンパニーとなります。<br>
-			コンタクトレンズは高度管理医療機器です。ご注文の前に必ず眼科医に相談のうえ、検査・指示を受けてお求めください。医師による指示有効期間、購入可能箱数の範囲内でのご注文となります。<br>
-			ご使用の前に必ず添付文書をよく読み、取り扱い方法を守り、正しく使用してください。
-			</p>
-		</div>
-
-		<div class="field-item">
-			<h2>価格</h2>
-
-			<ul>
-				<li>オンラインストアに掲載されている商品の全ての価格には、消費税及び地方消費税（以下、両者をまとめて「消費税」といいます。）が別途かかります。</li>
-				<li>販売中の商品及び価格は、予告なく変更されることがあります。</li>
-				<li>アキュビュー<sup>®</sup>&nbsp; アイケア・ネットワーク加盟店で発行されたアキュビュー<sup>®</sup>&nbsp; コードを所定の箇所に入力すると、特別価格でご購入いただけます。</li>
-			</ul>
-		</div>
-
-		<div class="field-item">
-			<h2>アキュビュー<sup>®</sup>&nbsp; コード</h2>
-
-			<p>アキュビュー<sup>®</sup>&nbsp; アイケア・ネットワーク加盟店で発行されるアキュビュー<sup>®</sup>&nbsp; アイケアカードに記載されているコードです。<br>
-			アキュビュー<sup>®</sup>&nbsp; オンラインストア上の所定の箇所にアキュビュー<sup>®</sup>&nbsp; コードを入力すると、商品を特別価格でご購入いただけます。</p>
-
-			<ul>
-				<li>特別価格でご購入いただける箱数には上限があります。</li>
-				<li>アキュビュー<sup>®</sup>&nbsp; コードには有効期限があります。</li>
-			</ul>
-
-			<p>以下の場合、アキュビュー<sup>®</sup>&nbsp; コードをご利用いただくことができません。</p>
-
-			<ul>
-				<li>アキュビュー<sup>®</sup>&nbsp; コードの有効期間が終了した場合</li>
-				<li>My アキュビュー<sup>®</sup>&nbsp; から退会された場合</li>
-				<li>既に利用済のアキュビュー<sup>®</sup>&nbsp; コードの場合</li>
-			</ul>
-
-			<p>再度アキュビュー<sup>®</sup>&nbsp; オンラインストアにて特別価格でのご購入を希望される場合は、アキュビュー<sup>®</sup>&nbsp; アイケア・ネットワーク加盟店にて、アキュビュー<sup>®</sup>&nbsp; アイケアカードの発行を受けてください。</p>
-		</div>
-
-		<div class="field-item">
-			<h2>利用登録</h2>
-
-			<p>オンラインストアをご利用いただくためには、新規利用登録ページに氏名・生年月日・メールアドレス・ログイン ID・パスワード等の必要事項を入力し利用登録していただく必要があります。</p>
-			
-			<p>利用登録すると同時にアキュビュー<sup>®</sup> 定期便の会員として登録されます。ログインID・パスワードは、アキュビュー<sup>®</sup> 定期便の会員規約に従い、ご利用者は管理するものとします。ただし、すでにアキュビュー<sup>®</sup> 定期便の会員の方は、新たにオンラインストアに利用登録することなく、アキュビュー<sup>®</sup> 定期便でご使用されている同一のログインID・パスワードを使用してオンラインストアにログインいただき、オンラインストアをご利用いただけます。</p>
-
-			<p><a href="https://teikibin.acuvuevision.jp/subscription/legal.html" class="ext" target="_blank">アキュビュー<sup>®</sup>&nbsp; 定期便会員規約 <span class="ext"><span class="element-invisible"> →</span></span></a></p>
-		</div>
-
-		<div class="field-item">
-			<h2>ご注文</h2>
-
-			<p>商品ご購入のお申し込み（以下「ご注文」といいます。）は、ご注文内容をビジョンケア カンパニーが別途指定するウェブページにご入力いただき、これをインターネットを通じてビジョンケア カンパニーにオンラインで送信する方法（以下「オンライン注文」といいます。）により行っていただきます。</p>
-
-			<p>オンライン注文により、ご注文を行っていただく手順の中で、商品のお届け先、ご利用者の氏名、電話番号、クレジットカード番号等の情報をご入力いただくウェブページ（以下「情報記入ページ」といいます。）並びに情報記入ページにご入力いただいた情報の内容、及びご注文の内容を、再度ご利用者にご確認いただくために表示するウェブページ（以下「内容確認ページ」といいます。）がございます。ご注文後の手続きは、情報記入ページに入力され、オンライン注文によってビジョンケア カンパニーに送信される情報をもとに行われますので、情報記入ページへの正確な情報のご入力並びに内容確認ページでのご入力内容及びご注文内容のご確認をお願いいたします。オンライン注文によりビジョンケアカンパニーに送信されたご注文の内容に間違いがあった場合、ビジョンケア カンパニーは、ビジョンケア カンパニーの責に帰すべき場合を除き、後記「返品・交換」に定める返品以外のご利用者のいかなるお申し出にも応じかねますので、あらかじめご承知ください。</p>
-
-			<p>20 歳未満の方は、親権者または後見人(ご両親、保護者など)の方のご同意を得たうえで商品のご注文を行ってください</p>
-		</div>
-
-		<div class="field-item">
-			<h2>契約の成立</h2>
-
-			<p>オンラインストアにて商品をご注文いただくと、ご注文の受領確認とご注文内容を記載した「ご注文の確認」メールがオンラインストアから送信されます。お客様からのご注文は、商品購入についての契約の申し込みとなります。お客様が選択された商品の支払い方法及び配送方法にかかわらず、ビジョンケア カンパニーが販売する商品をご注文いただいた場合、オンラインストアから「ご注文商品の発送」メールがお客様に送信されたときにお客様の契約申し込みは承諾され、契約が成立します。</p>
-		</div>
-
-		<div class="field-item">
-			<h2>お支払い方法</h2>
-
-			<p>お支払い方法は、クレジットカード（一括払い）、代金引換（お届け時現金払い）、後払い（コンビニ・銀行振込・LINE Pay） の3種類からお選びいただけます。</p>
-
-			<h4>クレジットカード決済</h4>
-
-			<ul>
-				<li>お支払いには、ご利用者本人名義のクレジットカードのみご利用いただけます。</li>
-				<li>ご利用にあたって、名義人名、クレジットカード番号、有効期限、セキュリティコードをビジョンケア カンパニーの指示に従って情報記入ページでご入力いただくことが必要となります。</li>
-				<li>ご利用可能なクレジットカードは、次の 5 種類です。<br>
-				JCB、MasterCard、VISA、AMERICAN EXPRESS、ダイナース</li>
-				<li>ご利用者による商品の代金のお支払いは、各クレジットカード会社の会員規約にもとづくお支払いとなります。</li>
-				<li>クレジットカード会社によるクレジットカード利用の承認が得られない場合には、ご注文をお断りいたしますので、あらかじめご了承ください。内容確認ページからのご注文の手続きが完了した場合であっても、その後にクレジットカードのご利用をお断りすることもございます。</li>
-			</ul>
-
-			<h4>代金引換（お届け時現金払い）</h4>
-
-			<ul>
-				<li>代金は当社から送付するメールに記載の金額（配送料や代金引換手数料を含む）を、製品お届け時に配送業者に現金でお支払ください。</li>
-				<li>代金引換をご指定の場合、製品購入金額 10,000 円（税抜）未満は、手数料 300 円（税込 330 円）となります。10,000 円（税抜）以上は、手数料無料となります。(当社で負担いたします。）</li>
-				<li>代金引換をご指定の場合は、宅配ボックスをご利用いただけません。</li>
-				<li>ネコポスでの配送を選択された場合は、代金引換を選択いただけません。</li>
-			</ul>
-			
-			<h4>後払い（コンビニ・銀行振込・LINE Pay）</h4>
-			<p>ご注文時に、後払いを選択してください。</p>
-			<p>お客様の手元に商品が到着した後に代金をお支払いいただく決済方法です。</p>
-			<ul>
-				<li>お届け先が「運送会社留め」「郵便局留め」「転送」、また「学校」「病院」 「ホテル」など一時滞在となるご住所はご利用いただけません。</li>
-				<li>後払いをご指定の場合、手数料200円（税込220円）となります。</li>
-				<li>請求書は、商品とは別にGMOペイメントサービス株式会社より郵送されますので、お近くのコンビニエンスストア・銀行・LINE Payにてお支払いください。お支払い期限は請求書発行から14日以内です。お支払い期限は請求書にも記載しております。</li>
-				<li>後払いは、GMOペイメントサービス（株）の<a class="atag_noStyle" href="javascript:void(0);" onclick="javascript:openModalPopup();">サイト</a>をご参照の上、ご利用をお願いします。</li>
-			</ul>
-		</div>
-
-		<div class="field-item">
-			<h2>納品</h2>
-
-			<p>ご注文いただいた商品は、ビジョンケア カンパニーが指定する配送業者による配送便にてお届けいたします。</p>
-			<p>ご注文時の「ご希望のお届け日」にお客様へ商品をお届けすることをお約束するものではなく、諸般の事情であらかじめご案内した納期を変更させていただく場合、品切れ等により納期が遅れる場合、またご注文に応じられない場合もございます。<br>
-			なお、ネコポスでの配送を選択された場合は、お届け日のご指定はできません。
-			</p>
-			<p>アキュビュー<sup>®</sup>&nbsp; コードを利用してご注文いただいた場合、指示内容の確認のため、配送が遅れる可能性があります。また、ご注文いただいた商品が指示内容と異なる場合は、ご注文をキャンセルさせていただきます。</p>
-			<p>商品のお届け先は日本国内に限らせていただきます。</p>
-			<p>ご注文された商品は、原則としてご注文単位毎に 1 つにまとめてお届けいたしますが、ご注文内容及び各商品の納期により、ビジョンケア カンパニー所定の基準に従い複数に分けてお届けをすることができるものとします。</p>
-			<p>ご不在等でご注文された商品をお受取りいただいていないために配送会社での保管期間を過ぎた場合は、契約を解除させていただきます。契約を解除させていただく場合、商品代金と送料とそれらの消費税の合計額から、送料（500円。ネコポスの場合は300円）とその消費税を差し引いた額を、ご購入時にご利用いただいたクレジットカードの口座にご返金させていただきます。</p>
-			<p>ご利用者またはその指定納入先が、ご注文された商品を受領した時点をもって、当該商品の所有権はビジョンケア カンパニーからご利用者に移転するものとします。</p>
-		</div>
-
-		<div class="field-item">
-			<h2>配送料</h2>
-
-			<p>一定の購入条件を満たした場合、配送料は無料となります。購入条件を満たさない場合、配送料は全国一律配送料500円（消費税別）、ネコポスをご利用の場合は配送料300円（消費税別）となります。配送料が無料となる購入条件の詳細に関しましては、オンラインストアのご利用ガイドをご確認ください。</p>
-		</div>
-
-		<div class="field-item">
-			<h2>変更・キャンセル</h2>
-
-			<p>正式な受注手続きの完了後、ご注文内容キャンセルできるかどうかは､「マイアカウント」ご注文履歴から確認できます｡キャンセルできる場合は､そのままご注文履歴からキャンセル手続きに進むことができます｡<br>
-			商品の追加・変更についてはお受けできません。（後記「返品・交換」に定める返品制度はご利用いただけます。）。但し、ビジョンケア カンパニーは債務不履行責任を負う場合にこれを履行します。</p>
-		</div>
-
-		<div class="field-item">
-			<h2>返品</h2>
-
-			<p>返品の理由にかかわらず、返品期限は商品配達希望日から、30 日以内です。返品期限は、返品する商品が当社に到着する日までを含めます。あらかじめご了承ください。なお、製品に品質上の問題があった場合には商品を交換させていただきます。詳しくは、次の「交換」をご参照ください。<br>
-			お客様が配達された商品をなんらかの理由により返品することを希望される場合は、商品配達希望日より 30 日以内に、オンラインストアより返品申し込みを行い、返品申込書を印刷し、返品商品と一緒にビジョンケア カンパニーが指定する住所に速やかにご返送ください。この場合の返品送料はお客様のご負担となります。また、配達記録の残る方法でご返送ください。下記（ア）～（エ）に定める場合を除いて返品を承ります。<br>
-			次の商品の返品はお受けいたしかねますので、ご了承ください。</p>
-
-			<p>（ア）開封済みの場合<br>
-			（イ）お客様の責任により、汚れ・破損などが生じた場合<br>
-			（ウ）箱にマジックやシールなどで印をつけてしまった場合<br>
-			（エ）クーポンを利用されたご注文の場合</p>
-
-			<h4>ご返金について</h4>
-
-			<p>返金方法は、支払方法によって異なります。</p>
-
-			<ul>
-				<li>クレジットカード払いでご注文の場合<br>
-			当社にて返品製品を確認後、製品代金と消費税をご注文時にご利用いただいたクレジットカードに返金させていただきます。有効期限切れ等でご注文時にご利用されたクレジットカードに返金できない場合、銀行口座への返金となります。</li>
-				<li>代金引換でご注文の場合<br>
-			当社にて返品製品を受領しますと、マイアカウントのご注文履歴で、返品されたご注文番号の注文状況が「返品処理完了」となります。</li>
-			</ul>
-
-			<p>「返品処理完了」後に、当社より返金手続きのための書類と、返金額の通知を製品配送先住所に封書にてお送りいたしますので、書類に必要事項（銀行口座番号等）をご記入の上、返送をお願いします。</p>
-
-			<p>返送書類を確認後、通常 1～2 週間、最大 3 週間程度で、製品代金から振込手数料 110 円（税込）を差し引いた金額を、ご指定の銀行口座に返金させていただきます。</p>
-			<p></p><ul>
-				<li>後払い（コンビニエンス・銀行振込・LINE Pay）の場合<br>ご購入後、既にご入金されている場合は、当社より返金手続きのための書類と、返金額の通知を商品配送先住所に封書にてお送りいたしますので、書類に必要事項（銀行口座番号等）をご記入の上、返送をお願いします。</li>
-			</ul><p></p>
-			<p>返送書類を確認後、通常1～2週間、最大3週間程度で、商品代金から振込手数料110円（税込）を差し引いた金額を、ご指定の銀行口座に返金させていただきます。</p>
-
-			<p>返品製品・返品申込書・返金手続き書類（代金引換・後払いの場合）の内容に不備があった場合には、確認のため、ご連絡させていただきます。その際は、ご返金までお時間をいただく場合がございます。</p>
-
-			<p>返送の際の 送料はお客様のご負担となります。</p>
-
-			<p>ビジョンケア カンパニーが本サイトにおいて販売する商品は、アキュビュー<sup>®</sup>&nbsp; 製品取扱い店やアキュビュー<sup>®</sup>&nbsp; アイケア・ネットワーク加盟店では、ご利用者からの返品のご依頼をお受けすることはできません。お手数ですが返品については必ずビジョンケア カンパニーへご連絡ください。</p>
-		</div>
-
-		<div class="field-item">
-			<h2>交換</h2>
-
-			<p>交換はお受けしておりません。あらかじめご了承ください。商品をご返品の上、再度ご注文ください。但し、製品の品質上の問題があった場合は、 <strong>送料は当社負担にて</strong>商品を交換させていただきますので、速やかに下記フリーダイヤルまでご連絡ください。
-			</p>
-
-			<p>アキュビュー<sup>®</sup>&nbsp; カスタマー センター 0120-132-308 受付時間： 9:00-17:30 （日・祝日を除く）</p>
-
-			<h2>禁止行為</h2>
-
-			<p>ご利用者は、オンラインストアのご利用にあたり、以下のいずれかに該当する行為をしてはならないものとします。<br>
-			（1）他人のメールアドレス、ログイン ID、パスワード若しくは他人名義または虚偽のクレジットカードのカード番号及び有効期限等を使用してのご注文行為<br>
-			（2）商品の転売その他商取引のための仕入行為<br>
-			（3）オンラインストアに関連して発生する権利または義務について、ビジョンケア カンパニーの承諾なく第三者に譲渡する行為または担保に供する行為<br>
-			（4）オンラインストアを含むビジョンケア カンパニーのウェブサイトを改ざんする行為<br>
-			（5）オンラインストアを含むビジョンケア カンパニーのウェブサイト及びその他ビジョンケア カンパニーのシステムに不正な手段で侵入する行為<br>
-			（6）オンラインストアを含むビジョンケア カンパニーのウェブサイトに掲載されている著作物等のコンテンツにかかる著作権、肖像権、商標権その他の権利を侵害する行為<br>
-			（7）ビジョンケア カンパニーの営業活動を妨害する行為<br>
-			（8）上記(1)から(7)までに定める行為を、第三者をしてなさしめるまたはかかる行為を幇助する行為</p>
-
-			<h4>オンラインストアの利用停止</h4>
-
-			<p>ご利用者が、上記「禁止行為」のいずれかに該当した場合には、ビジョンケア カンパニーは、自らの裁量にて当該ご利用者によるオンラインストアの利用を停止することができます。</p>
-
-			<h4>売買契約の解除等</h4>
-
-			<p>売買契約成立後、ご利用者が上記「禁止行為」に定める行為を行ったとき、または行うおそれがあるとビジョンケア カンパニーが判断した場合には、ビジョンケア カンパニーは、ご利用者との間に成立した売買契約の解除、商品発送の停止、その他ビジョンケア カンパニーが必要と判断する対応をとることができます。</p>
-		</div>
-
-		<div class="field-item">
-			<h2>紛争</h2>
-
-			<p>オンラインストアへのアクセス、またはオンラインストアを通じた商品やサービスのご購入に関連する紛争に関してはすべて、法律で認められる管轄裁判所に加え、東京地方裁判所を付加的合意管轄裁判所として指定します。</p>
-		</div>
-
-		<div class="field-item">
-			<h2>サイトの管理運営</h2>
-
-			<h4>オンラインストアの運営管理</h4>
-
-			<p>ジョンソン・エンド・ジョンソン株式会社 ビジョンケア カンパニー<br>
-			所在地 〒101-0065 東京都千代田区西神田 3 丁目 5 番 2 号
-			</p>
-		</div>
-
-		<div class="field-item">
-			<h2>お問い合わせ先</h2>
-
-			<h4>アキュビュー<sup>®</sup>&nbsp; オンラインストアに関するお問い合わせ先</h4>
-
-			<p>ジョンソン・エンド・ジョンソン株式会社 ビジョンケア カンパニー<br>
-			フリーダイヤル 0120-132-882 受付時間：9:00-17:30（日・祝日を除く）</p>
-
-			<p>以上<br>
-			2015 年 6 月 1 日制定<br>
-			2017 年 7 月 11 日改定<br>
-			2019 年 2 月 20 日改定</p>
-		</div>
-		</div>
-	</div>
-</section>
- <div id="disclaimer-modal" class="reveal-modal modal-popup" data-reveal="" role="dialog" tabindex="-1" aria-hidden="true" data-options="close_on_background_click:false;close_on_esc:false;">
- 	 	 <div class="row">
-      		<h5 class="modal-title">ご注意 </h5>
-			<p class="popup-disclaimer-conent">このリンク先には、ジョンソン・エンド・ジョンソン株式会社ビジョンケア カンパニーの<a href="https://acuvuevision.jp/privacy" target="_blank">プライバシーポリシー</a>は適用されません。リンク先のウェブサイトにおける個人情報の取扱いについては、当社は責任を負いかねます。当該リンク先のプライバシーポリシーをお客様ご自身でご確認ください。&#8203; 続行する場合はOKを押してください。</p>
-            <p class="text-center"><a class="button btn-ok" href="https://www.gmo-ps.com/customer_2/" target="_blank">OK</a></p>
-            <p class="text-center"><a href="javascript:void(0);" onclick="javascript:closeModalPopup();">閉じる</a></p>
-      		</div>
-	</div> 
-<script>
-    function closeModalPopup(){
-    	$("#disclaimer-modal").foundation('reveal', 'close');
-    	$(".reveal-modal-bg").css('display', 'none');
-		$(".reveal-modal-bg").removeClass('disclaimer-bg-style');
-		$("#disclaimer-modal").removeClass('disclaimer-popup-style');
-    }
-    function openModalPopup(){
-    	$("#disclaimer-modal").foundation('reveal', 'open');
-    	$(".reveal-modal-bg").css('display', 'block');
-		$(".reveal-modal-bg").addClass('disclaimer-bg-style');
-		$("#disclaimer-modal").addClass('disclaimer-popup-style');
-    }
-</script><div id="KzExt_SiteJsDetected" style="display: none;"></div><div id="KzExt_SiteJsGetVariation" style="display: none;"></div></body><script>
-(function(){
-  //FIXME DRY
-  function postMessage(eventName, data) {
-    var customEvent = document.createEvent('Event');
-    customEvent.initEvent(eventName, true, true);
-    var hiddenDiv = document.getElementById(eventName);
-    hiddenDiv.innerText = toJSON(data);
-    hiddenDiv.dispatchEvent(customEvent);
-  }
-  //FIXME DRY
-  function toJSON(){
-    deleteToJSON = function(obj){
-      if(!obj){
-        return obj;
-      }
-      if(typeof obj != 'object'){
-        return obj;
-      }
-      if(typeof obj.toJSON == 'function'){
-        obj.toJSON = undefined;
-      }
-      for(var k in obj){
-        obj[k] = deleteToJSON(obj[k]);
-      }
-      return obj;
-    }
-    a = arguments;
-    a[0] = deleteToJSON(a[0]);
-    return JSON.stringify.apply(JSON, a);
-  }
-  function detectSitescript(){
-    var scripts = document.getElementsByTagName('script');
-    var sjs = [];
-    for (var i = 0; i < scripts.length; i++) {
-      var s = scripts[i];
-      if (match = s.src.match(/^https?:\/\/cdn\.kaizenplatform\.net\/s\/([^\/]{2})\/([^\/]{14})\.js/)){
-        var key = match[1] + match[2];
-        sjs.push({
-          namespace: s.dataset.kzNamespace,
-          key: key
-        });
-      }
-    }
-    if(sjs.length > 0){
-      postMessage("KzExt_SiteJsDetected", sjs)
-      return;
-    }
-    setTimeout(detectSitescript, 300); //TODO æ¤œçŸ¥ã§ããªã‹ã£ãŸæ™‚ã«é©å½“ãªã‚¿ã‚¤ãƒŸãƒ³ã‚°ã§æ&shy;¢ã‚ã‚‹
-  }
-  detectSitescript();
-})();
-</script><script>
-(function(){
-  //FIXME DRY
-  function postMessage(eventName, data) {
-    var customEvent = document.createEvent('Event');
-    customEvent.initEvent(eventName, true, true);
-    var hiddenDiv = document.getElementById(eventName);
-    hiddenDiv.innerText = toJSON(data);
-    hiddenDiv.dispatchEvent(customEvent);
-  }
-  //FIXME DRY
-  function toJSON(){
-    deleteToJSON = function(obj){
-      if(!obj){
-        return obj;
-      }
-      if(typeof obj != 'object'){
-        return obj;
-      }
-      if(typeof obj.toJSON == 'function'){
-        obj.toJSON = undefined;
-      }
-      for(var k in obj){
-        obj[k] = deleteToJSON(obj[k]);
-      }
-      return obj;
-    }
-    a = arguments;
-    a[0] = deleteToJSON(a[0]);
-    return JSON.stringify.apply(JSON, a);
-  }
-  function detectSitescript(){
-    var scripts = document.getElementsByTagName('script');
-    var sjs = [];
-    for (var i = 0; i < scripts.length; i++) {
-      var s = scripts[i];
-      if (match = s.src.match(/^https?:\/\/cdn\.kaizenplatform\.net\/s\/([^\/]{2})\/([^\/]{14})\.js/)){
-        var key = match[1] + match[2];
-        sjs.push({
-          namespace: s.dataset.kzNamespace,
-          key: key
-        });
-      }
-    }
-    if(sjs.length > 0){
-      postMessage("KzExt_SiteJsDetected", sjs)
-      return;
-    }
-    setTimeout(detectSitescript, 300); //TODO æ¤œçŸ¥ã§ããªã‹ã£ãŸæ™‚ã«é©å½“ãªã‚¿ã‚¤ãƒŸãƒ³ã‚°ã§æ&shy;¢ã‚ã‚‹
-  }
-  detectSitescript();
-})();
-</script></html>
+var openAccordion = function () {
+	$(".accordionContents").each(function () {
+		var $accordion = $(this);
+		var id = $accordion.parent().attr("id");
+		if (id == "detail" || id == "faq") return;
+
+		$accordion.show();
+	});
+};
+
+var overWriteGendoLink = function () {
+	var w$ = kzWindow.$;
+	var eventTid = setInterval(function () {
+		var $gendoButton = w$("#gendo_button");
+		var events = w$._data($gendoButton.get(0), "events") || {};
+		if (Object.keys(events).length == 0) return;
+
+		clearInterval(eventTid);
+		$gendoButton.off("click");
+
+		$gendoButton.on("click", function () {
+			var $target = $("#gendo");
+			if (!$target.is(":visible")) {
+				w$("#gendo_btn img").attr("src", "imgs/sp_riyu_accobtn01.jpg");
+				$target.parents(".accordionContents").show();
+			}
+		});
+	}, 200);
+};
+
+var makeAccordion = function () {
+	$("#cont02, #cont03 .aco__wrap, #scene, #age, #cont04, #faq").each(
+		function () {
+			$(this)
+				.find(
+					".caution_bottom, .left_border:contains('当行口座をお持ちの方は'), .check_list:contains('ご入力項目が少ない'), .check_bottom:contains('口座によっては'), .left_border:contains('口座をお持ちの場合でも'), .check_list:contains('当行にお届けのお名前'), .check_bottom:contains('お申し込みにあたってのご注意')"
+				)
+				.wrapAll(
+					"<div class='kz_wrapper'><div class='kz_accordion'></div></div>"
+				);
+		}
+	);
+	$(".kz_accordion").before("<p class='kz_accordion_toggle'>ご注意事項</p>");
+
+	$(".kz_accordion_toggle").on("click", function () {
+		var $toggle = $(this);
+		$toggle.toggleClass("open");
+		$toggle.next(".kz_accordion").slideToggle();
+	});
+};
+
+var waitFvImg = function () {
+	return new Promise(function (resolve) {
+		var tid = setInterval(function () {
+			var $target = $("#cont02 .btn_wrap img[src*='imgs/sp_btn']");
+			var visibleFlg = 0;
+			$target.each(function () {
+				if ($(this).css("opacity") < 1) return;
+				visibleFlg++;
+			});
+			if ($target.length < 2 || visibleFlg < 2) return;
+
+			clearInterval(tid);
+			resolve();
+		}, 200);
+	});
+};
+
+var addApplySentence = function () {
+	$(".chk_normal").before("<p class='kz_apply'>お申し込みはこちら</p>");
+};
+
+var cloneApplyButton = function () {
+	var $nomalClone = $("#cont02 .chk_normal").clone();
+	var $maintenanceClone = $("#cont02 .chk_maintenance").clone();
+	$("#main").append("<div class='kz_floating'></div>");
+	$(".kz_floating").append($nomalClone, $maintenanceClone);
+	$(".kz_floating .hedgetxt").remove();
+};
+
+var adjustBottom = function () {
+	var floatingHeight = $(".kz_floating").outerHeight();
+	$("body").css("margin-bottom", floatingHeight);
+};
+
+var addEvent = function () {
+	$(kzWindow).on("scroll", function () {
+		var targetPosition = 650;
+		$("#cont02 [class^='chk_']").each(function () {
+			var $v = $(this);
+			if ($v.is(":visible")) {
+				targetPosition = $v.offset().top + $v.outerHeight();
+			}
+		});
+		var scrollPosition = $(this).scrollTop();
+		if (targetPosition <= scrollPosition) {
+			$(".kz_floating").fadeIn();
+		} else {
+			$(".kz_floating").fadeOut();
+		}
+	});
+};
+
+var replaceImages = function () {
+	var imgTimer = setInterval(function () {
+		//画像を書き換える処理 元画像が遅延読み込みでいつ読み込まれるかわからないので interval を停止するタイミングは なしです
+		$("img.lazy").each(function () {
+			var $img = $(this);
+			var src = $img.attr("src") || "";
+			if (
+				src.indexOf("spacer") > -1 ||
+				src.indexOf("sp_detail_accobtn01") > -1 ||
+				src.indexOf("sp_faq_accobtn01") > -1 ||
+				$img.hasClass("kz_changed")
+			)
+				return;
+
+			var newSrc = "";
+			if (src == "imgs/sp_btn_ari.png") {
+				//あり の新しい画像に変える
+				newSrc =
+					"https://cdn.kaizenplatform.net/v2/attachments/000/353/673/0640f9083e3ca72dcb32fc650f419a1a25bdd21b.png";
+			} else if (src == "imgs/sp_btn_nashi.png") {
+				//なし の新しい画像に変える
+				newSrc =
+					"https://cdn.kaizenplatform.net/v2/attachments/000/353/674/808cb5461ff9eb94839eab2679ab753bdb535bc9.png";
+			} else if (src.indexOf("_on") > -1) {
+				if ($img.parent("h3").next(".accordionContents").is(":visible")) {
+					newSrc = src.replace("_on", "");
+				}
+			} else if (src == "imgs/sp_scene_accobtn.png") {
+				//バンクイックは どんな時に使える？ ここだけ画像の_onが他と逆
+				if ($img.parent("h3").next(".accordionContents").is(":visible")) {
+					newSrc = "imgs/sp_scene_accobtn_on.png";
+				}
+			} else {
+				return;
+			}
+			$img.attr("src", newSrc);
+			$img.addClass("kz_changed");
+		});
+	}, 200);
+};
+
+Promise.resolve()
+	.then(openAccordion)
+	.then(overWriteGendoLink)
+	.then(makeAccordion)
+	.then(waitFvImg)
+	.then(addApplySentence)
+	.then(cloneApplyButton)
+	.then(adjustBottom)
+	.then(addEvent)
+	.then(replaceImages)
+	.catch(function (e) {
+		console.error("variation exception", e);
+	});
+
+// KAIZEN Customer Support
+$("#main #topBanner").html(
+	'<div style="padding:100% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/512827998?autoplay=1&loop=1&muted=1&background=1&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>'
+);
