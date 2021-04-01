@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Mocha Tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css" />
+
+    <!-- project related tags -->
+    <script
+      src="//cdn.kaizenplatform.net/s/8b/5b0533fb551a94.js?kz_namespace=kzs"
+      charset="utf-8"
+    ></script>
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <script src="https://unpkg.com/mocha/mocha.js"></script>
+    <script class="mocha-exec">
+      mocha.setup("bdd");
+      mocha.setup({ timeout: 20000 });
+      mocha.checkLeaks();
+      mocha.setup({
+        globals: ["kz*"],
+      });
+      window.onload = function () {
+        mocha.run();
+      };
+    </script>
+  </body>
+</html>
