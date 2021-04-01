@@ -90,43 +90,50 @@ var id = setInterval(function () {
 		$(".kaizen_banner").children("a").wrap($("<p/>"));
 		$h2_recommend_service__next.find(".box1").addClass("kaizen_--display_none");
 		if ($bg_dot.length) {
-			var $div = $ClaimInfo.find("div.align-center");
-			var $div__children = $div.children();
-			var $a = $div__children.eq(1).remove().end();
-			var $recommend = $h2_recommend_service.add($(".kaizen_banner"));
-			$a.first().html(
-				"<span><span class='kaizen_icon kaizen_icon--smile'></span><span class='kaizen_btn_text'>スマイルの<br>照会・交換</span></span>"
-			);
-			$a.last().html(
-				"<span><span class='kaizen_icon kaizen_icon--smail_to_oricopoint'></span><span class='kaizen_btn_text'>オリコポイントへ<br>移行する</span></span>"
-			);
-			$a.wrap("<p/>");
-			$div.addClass("kaizen_row");
-			$bg_dot.addClass("kaizen_--display_none");
-			$bg_dot.after("<h2 class='kaizen_head'>ポイント交換</h2>");
-			$div.before(
-				"<p class='kaizen_attention'>※暮らスマイルはオリコポイントに変換が可能です</p>"
-			);
-			$bg_dot.before([$table_campaign, $recommend]);
+			var imgCloseId = setInterval(function () {
+				// safariの場合に、上部で定義・取得したタイミングでは取れない場合があったので、
+				//処理をする直前にDomの情報を精査する
+				if ($("#ClaimInfo > h2 ").has("img[alt='ご利用状況']").length == 0)
+					return;
+				clearInterval(imgCloseId);
+				var $div = $ClaimInfo.find("div.align-center");
+				var $div__children = $div.children();
+				var $a = $div__children.eq(1).remove().end();
+				var $recommend = $h2_recommend_service.add($(".kaizen_banner"));
+				$a.first().html(
+					"<span><span class='kaizen_icon kaizen_icon--smile'></span><span class='kaizen_btn_text'>スマイルの<br>照会・交換</span></span>"
+				);
+				$a.last().html(
+					"<span><span class='kaizen_icon kaizen_icon--smail_to_oricopoint'></span><span class='kaizen_btn_text'>オリコポイントへ<br>移行する</span></span>"
+				);
+				$a.wrap("<p/>");
+				$div.addClass("kaizen_row");
+				$bg_dot.addClass("kaizen_--display_none");
+				$bg_dot.after("<h2 class='kaizen_head'>ポイント交換</h2>");
+				$div.before(
+					"<p class='kaizen_attention'>※暮らスマイルはオリコポイントに変換が可能です</p>"
+				);
+				$bg_dot.before([$table_campaign, $recommend]);
+			}, 200);
 		} else {
 			$h2_recommend_service.before($table_campaign);
 		}
 		if ($img_close.length) {
-			console.log("ご利用状況の消去 スタート");
 			var imgCloseId = setInterval(function () {
-				if ($ClaimInfo__h2.has("img[alt='ご利用状況']").length === 0) return;
+				// safariの場合に、上部で定義・取得したタイミングでは取れない場合があったので、
+				//処理をする直前にDomの情報を精査する
+				if ($("#ClaimInfo > h2 ").has("img[alt='ご利用状況']").length == 0)
+					return;
 				clearInterval(imgCloseId);
 
+				$ClaimInfo = $("#ClaimInfo");
+				$ClaimInfo__h2 = $ClaimInfo.children("h2");
+
 				var $h2_usage = $ClaimInfo__h2.has("img[alt='ご利用状況']");
-				// console.log('$h2_usage ＝' + JSON.stringify($h2_usage));
 				var $h2_usage__next = $h2_usage.next();
-				// console.log('$h2_usage__next ＝' + JSON.stringify($h2_usage__next));
 				var $date = $ClaimInfo.find("th.bg-gray:contains(当月ご請求)").next();
-				// console.log('$date ＝' + JSON.stringify($date));
 				// 当月の請求がない場合は、TDタグが存在しないので、TR要素で取得
 				if ($date.length == 0) {
-					console.log("当月請求なしの処理IN");
-					console.log("$date.length = " + $date.length);
 					$date = $ClaimInfo.find("tr.bg-txt-blue:eq(0)");
 				}
 				var data_txt = $date.text();
@@ -178,10 +185,7 @@ var id = setInterval(function () {
 				$date_table_other.attr("style", "display:none !important;");
 				$ClaimInfo__parent.addClass("kaizen_--style");
 				$ClaimInfo.before([payment_group, support, web]);
-				console.log("h2_usage__next = " + $h2_usage__next.attr("class"));
-				console.log("$date_table_other = " + $date_table_other.attr("class"));
 			}, 200);
-			console.log("ご利用状況の消去 終了");
 		}
 		$banner_orico_point.prepend("<p class='kaizen_img--oricopoint'></p>");
 		$banner_orico_point

@@ -1,0 +1,4 @@
+node_modules
+dist
+serveInfo.json
+.DS_Store
