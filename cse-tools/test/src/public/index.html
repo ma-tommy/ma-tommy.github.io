@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.1/styles/default.min.css"
+    />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.1/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script
+      src="//cdn.kaizenplatform.net/s/8b/5b0533fb551a94.js?kz_namespace=kzs"
+      charset="utf-8"
+    ></script>
+  </head>
+  <body>
+    <div class="urllist">
+      <h2>deploied version urls</h2>
+      <p>
+        cse-tools exp deployコマンドで　google cloud
+        strageに配置された各バージョンの expscript jsを読み込みます
+      </p>
+      <div id="deploiedVersionUrls"></div>
+      <h2>dev urls</h2>
+      <p>localhostから配信される bundle.jsを読み込みます</p>
+      <div id="devUrls"></div>
+      <h2>reset urls</h2>
+      <p>
+        production version を表示するように、 `cookie:_kzExpvers`
+        をクリアします. currenVerが表示されます
+      </p>
+      <div id="resetUrls"></div>
+      <hr />
+      <script src="bundle.dev.js"></script>
+      <h2>ExpScript</h2>
+      <div class="control-panel"></div>
+      <hr />
+      <h2>Info</h2>
+      <div class="info">
+        <pre><code id="serveInfo" class="lang-json">{"a": 1}</code></pre>
+      </div>
+    </div>
+    <style>
+      .current {
+        color: green;
+      }
+      div.urllist {
+        font-size: 0.8em;
+      }
+      span.expName {
+        margin-right: 15px;
+      }
+    </style>
+    <script>
+      const $ = kzs.$;
+
+      const createUrlList = (elem, data, version) => {
+        const devUrls = $(`<ul></ul>`);
+        data.expConfig.targetUrls.forEach((trget) => {
+          const url = new URL(trget.url);
+          const searchParams = new URLSearchParams(url.search);
+          searchParams.append("_kz_debug", "1");
+          searchParams.append("_kzs_bucket", "excluded:0");
+          searchParams.append("_kz_expver", `${data.expConfig.pid}:${version}`);
+          url.search = "?" + searchParams.toString();
+          const targetUrl = decodeURIComponent(url.href);
+          console.log(targetUrl);
+          devUrls.append(
+            $(
+              `<li><span>${trget.title}</span>：<a href="${targetUrl}" target="${targetUrl}">${targetUrl}</a></li>`
+            )
+          );
+        });
+        devUrls.appendTo(elem);
+      };
+
+      kzs.utils.xjson.get("./serveInfo.json").then((data) => {
+        console.log(data);
+        const jsonText = JSON.stringify(data, null, 2);
+        $("#serveInfo").text(JSON.stringify(data, null, 2));
+        document.querySelectorAll("pre code").forEach((block) => {
+          hljs.highlightBlock(block);
+        });
+        createUrlList($("#devUrls"), data, "dev");
+        createUrlList($("#resetUrls"), data, "0");
+
+        data.versions.forEach((ver) => {
+          console.log(ver);
+          const verList = $(
+            `<div><h4 class="ver ${ver.expCurrent ? "current" : ""}">・${
+              ver.ver
+            }(${ver.deployedAt})${ver.expCurrent ? "[currentVer]" : ""}</h4></div>`
+          );
+          createUrlList(verList, data, ver.ver);
+          $("#deploiedVersionUrls").append(verList);
+        });
+      });
+      const listElement = $("<ul></ul>");
+      listElement.appendTo($(".control-panel"));
+      Object.keys(window.kzExternalExpScripts).forEach((pid) => {
+        listElement.append(
+          kzs.$(
+            `<li><span class="expName">${pid}</span><button name="run expscript" onclick="window.kzExternalExpScripts['${pid}']()">run at this window</button></li>`
+          )
+        );
+      });
+    </script>
+  </body>
+</html>
