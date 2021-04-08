@@ -90,12 +90,12 @@ var id = setInterval(function () {
 		$(".kaizen_banner").children("a").wrap($("<p/>"));
 		$h2_recommend_service__next.find(".box1").addClass("kaizen_--display_none");
 		if ($bg_dot.length) {
-			var imgCloseId = setInterval(function () {
+			var bgDotId = setInterval(function () {
 				// safariの場合に、上部で定義・取得したタイミングでは取れない場合があったので、
 				//処理をする直前にDomの情報を精査する
-				if ($("#ClaimInfo > h2 ").has("img[alt='ご利用状況']").length == 0)
-					return;
-				clearInterval(imgCloseId);
+				if ($("#ClaimInfo").find("div.align-center").length == 0) return;
+				clearInterval(bgDotId);
+				$ClaimInfo = $("#ClaimInfo");
 				var $div = $ClaimInfo.find("div.align-center");
 				var $div__children = $div.children();
 				var $a = $div__children.eq(1).remove().end();

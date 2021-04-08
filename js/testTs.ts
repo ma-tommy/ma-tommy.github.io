@@ -1,6 +1,6 @@
 const kzs = window.kzs;
 const $ = kzs.$;
-import { ApplyCss } from "src/module/utils";
+// import { ApplyCss } from "src/module/utils";
 
 interface ICircleIndicator {
   addCircleIndicator: (dom: string) => void,
