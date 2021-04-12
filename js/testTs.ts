@@ -1,108 +1,226 @@
-const kzs = window.kzs;
-const $ = kzs.$;
-// import { ApplyCss } from "src/module/utils";
+"use strict";
+var config = {
+	updatedAt: "2021-04-05T18:10:22+09:00",
+	deployedAt: "2021-04-05T18:10:11+09:00",
+	ver: "efbd68719306458f6bc0",
+	gcpBucketName: "kaizen-cse-public",
+	externalExpScriptUrl: {
+		dev: "//localhost:8080/bundle.dev.js",
+	},
+	doNotingInEdiotrOrPreview: false,
+	doNotingInOriginal: false,
+	k2ExpScriptFileOutPath: "./k2/exp-script-p129853-d129800.js",
+	expIds: {
+		prd: "129853",
+		dev: "129800",
+	},
+	pid: "@usen-26678/restaurant-detail",
+	gcpPrefix: "usen-26678/restaurant-detail",
+	gcsDir:
+		"https://storage.googleapis.com/kaizen-cse-public/usen-26678/restaurant-detail/",
+};
+var _ver = ([config.updated] || []).concat(config.ver).join("-");
+var _templateVer = "20201023-1";
+var _pid = config.pid;
+var _exp = this;
+var _expId = (((_exp.variation || {}).round || {}).project || {}).id;
+var _el = "exp#" + (_expId || "none"); // console log 用 prefix label
 
-interface ICircleIndicator {
-  addCircleIndicator: (dom: string) => void,
-  currentStep: number,
-  stepLength: number,
-  strokeStepStartColor: string | CanvasGradient | CanvasPattern,
-  strokeStepEndColor: string | CanvasGradient | CanvasPattern,
-  endAdornment: string,
-  css: string | undefined,
-}
+var logException = function (e) {
+	// exception が起きたら log 送る
+	kzs("trackCustomEvent", {
+		category: _pid + "-" + _el,
+		action: "exception",
+		label: e + "",
+	});
+};
 
-export const CircleIndicator = ({
-  addCircleIndicator,
-  currentStep,
-  stepLength,
-  strokeStepStartColor,
-  strokeStepEndColor,
-  endAdornment = '%完了',
-  css = undefined,
-}: ICircleIndicator) =>
-{
+/*
+ _kz_expverを指定することで、特定の versionの scriptを実行できる。 expid  or pidごとに指定可能
+ 例: https://www.bk.mufg.jp/banquic/?_kz_expver=128236:ebae69019e8cd83785b7&_kz_debug=1
+ _kz_expver=0 で全て削除できる
+ _kz_expver=(expid|pid):0 で、特定の expid or pidのexpverを expscriptにセットされている(config/ver)バージョンにする
+ */
+var getKzExpVer = function () {
+	var kzExpverParamText =
+		(window.location.search.match(/_kz_expver=([^#&]+)/) || [])[1] || "";
+	if (kzExpverParamText === "0") kzs.cookies.remove("_kzExpvers");
+	var kzExpverParams = kzExpverParamText
+		.split(",")
+		.reduce(function (ret, param) {
+			var p = param.split(":");
+			ret[p[0]] = p[1];
+			return ret;
+		}, {});
+	var kzExpver = kzExpverParams[_expId] || kzExpverParams[_pid];
+	var kzExpvers = kzs.cookies.get("_kzExpvers") || {};
+	if (kzExpver) {
+		kzExpvers[_pid] = kzExpver;
+		kzs.cookies.set("_kzExpvers", kzExpvers);
+	} else {
+		kzExpver = kzExpvers[_pid] || config.ver;
+	}
+	if (kzExpver === "0") kzExpver = config.ver;
+	return kzExpver;
+};
 
-  const setCss = ():void => {
-    const _css = `.kzHeaderNavi {
-      width: 100%;
-      padding: 2px;
-      border-top: #e1e1e1 solid 2px;
-    }
-    .kzIndicaterWrapper {
-      height: 80px;
-      display: table;
-    }
-    #kzIndicaterCanvas {
-      display: table-cell;
-    }
-    .kzHeaderMsgWrapper {
-      display: table-cell;
-      vertical-align: middle;
-      padding-left: 17px;
-      font-weight: bold;
-      font-size: 1.2em;
-    }
-    #kzHeaderMsgTitle {
-      margin-bottom: 5px;
-    }
-    `;
+var _jsUrl = function (kzExpver) {
+	return kzExpver === "dev"
+		? config.externalExpScriptUrl.dev
+		: config.gcsDir + "bundle." + kzExpver + ".js";
+};
 
-    ApplyCss(css ?? _css); 
-  }
+var loadScript = function (src) {
+	if (!window.kzExternalExpScripts) window.kzExternalExpScripts = {};
+	return new Promise(function (resolve, reject) {
+		var tid;
+		const handler = function (ev) {
+			if (ev.message === "Script error.") {
+				const msg = "Script error. " + src;
+				kzs.console.error("%s " + msg, _el, ev);
+				clearInterval(tid);
+				window.removeEventListener("error", handler);
+				reject(new Error(msg));
+			} else {
+				kzs.console.error("%s Error " + src, _el, ev);
+			}
+		};
+		// Syntax Errorは script.onerrorでは拾えないので、このハンドラでうける
+		window.addEventListener("error", handler);
 
-  const setIndicator = (): void => {
-    kzs.console.log("updateIndicator", currentStep);
-    const canvas = document.getElementById(
-      "kzIndicaterCanvas"
-    ) as HTMLCanvasElement;
-    const ctx = canvas.getContext("2d");
-    const start = -Math.PI / 2;
-    const val = start + 2 * Math.PI * (currentStep / stepLength);
-    const end = Math.PI * 1.5;
-    if (ctx) {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+		var script = document.createElement("script");
+		script.setAttribute("type", "text/javascript");
+		script.setAttribute("charset", "UTF-8");
+		script.setAttribute("src", src);
+		script.onload = function () {
+			tid = setInterval(function () {
+				if (window.kzExternalExpScripts[_pid]) {
+					clearInterval(tid);
+					kzs.console.log("%s Target Function Loaded " + src, _el);
+					window.removeEventListener("error", handler);
+					resolve();
+				}
+			}, 200);
+		};
+		script.onerror = function () {
+			const msg = "loading failed " + src;
+			kzs.console.error("%s " + msg, _el);
+			window.removeEventListener("error", handler);
+			reject(new Error(msg));
+		};
+		kzs.console.log("%s Start loading " + src, _el);
+		document.getElementsByTagName("head")[0].appendChild(script);
+	});
+};
+var runExternalExpScript = function () {
+	var kzExpver = getKzExpVer();
+	if (kzExpver == "noVer") {
+		kzs.console.log(
+			"%s kzExpver is `noVer`. skip exp script load, so do nothing",
+			_el
+		);
+		return Promise.resolve();
+	} else {
+		kzs.console.log(
+			"%s kzExpver:",
+			_el,
+			kzExpver,
+			kzExpver === config.ver ? "(product ver)" : "(set at cookie)"
+		);
+		return loadScript(_jsUrl(kzExpver)).then(function () {
+			return window.kzExternalExpScripts[_pid](_exp);
+		});
+	}
+};
 
-      ctx.beginPath();
-      // ctx.strokeStyle = "#EE0000";
-      ctx.strokeStyle = strokeStepStartColor;
-      ctx.lineWidth = 12;
-      ctx.arc(40, 40, 33, start, val);
-      ctx.stroke();
-      ctx.closePath();
-      
-      ctx.beginPath();
-      // ctx.strokeStyle = "#B7B7B7";
-      ctx.strokeStyle = strokeStepEndColor;
-      ctx.lineWidth = 12;
-      ctx.arc(40, 40, 33, val, end);
-      ctx.stroke();
-      ctx.closePath();
-    }
-    const persentStr = `${Math.ceil(
-      (currentStep / stepLength) * 100
-    )}${endAdornment}`;
+// console で実行したい場合は return を /*return*/ に変更すれば OK
+return (function () {
+	try {
+		var Promise = kzs.Promise; // console 実行時に kaizen の Promise を使う為 (browser 搭載 Promise と挙動異なる)
+		kzs.console.log("%s begin %s %s", _el, _pid, _ver);
+		kzs.console.log("%s templateVer %s", _el, _templateVer);
+		// ここから main scope: code 追加は最低限に抑えるべし
+		// safari bfcache 対策 http://bit.ly/2W8EYC1
+		if (_expId != undefined) {
+			if (kzs[_expId]) return Promise.reject("run in bfcache, skipping");
+			kzs[_expId] = 1;
+		}
 
-    $("#kzHeaderMsg").text(persentStr);
-  }
+		// editor or preview mode では何もしない:
+		if (
+			config.doNotingInEdiotrOrPreview &&
+			kzs.utils.isNotInEditorOrPreviewMode() == false
+		) {
+			kzs.console.log("%s in editor||preview mode, do nothing", _el);
+			return;
+		}
 
-  const makeIndicator = ():void => {
-    setCss();
-    
-    const dom = `<div class="kzHeaderNavi">
-    <div class="kzIndicaterWrapper">
-      <canvas id="kzIndicaterCanvas" width="80px" height="80px"></canvas>
-      <div class="kzHeaderMsgWrapper">
-        <div id="kzHeaderMsgTitle"></div>
-        <div id="kzHeaderMsg"></div>
-      </div>
-    </div>
-  </div>`;
-    addCircleIndicator(dom);
-  setIndicator();
-  } 
+		// オリジナル案ならば何もしない:
+		if (
+			config.doNotingInOriginal &&
+			(_exp.variation || {}).isOriginal == true
+		) {
+			kzs.console.log("%s is original, do nothing", _el);
+			return;
+		}
 
-  return makeIndicator();
-}
+		// variation js 内で kzs.console.log 出来るようにする
+		window.kzConsole = kzs.console;
 
-export default CircleIndicator;
+		// IP除外判定
+		var rejectIpsJudge = function () {
+			return new Promise(function (resolve, reject) {
+				var rejectIps = /^125\.63\.42\.218/; //ここに除外したいIPアドレスを正規表現で記述する
+				kzs.console.log("除外対象IP = " + rejectIps);
+				var judge = function (ip) {
+					if (ip.match(rejectIps)) {
+						reject();
+					} else {
+						resolve();
+					}
+				};
+				var ip = kzs.cookies.get("ip");
+				kzs.console.log("対象IP = " + ip);
+				if (ip) {
+					judge(ip);
+				} else {
+					kzs.utils.xjson
+						.get("https://ip.kaizenplatform.net/me/ip", {
+							callback: "kzs_cb",
+							timeout: 1000,
+							credentials: false,
+						})
+						.then(function (res) {
+							kzs.cookies.set("ip", res.ip, { expire: 3600 });
+							judge(res.ip);
+						})
+						.catch(function (err) {
+							reject(); // IPアドレス取得失敗時は除外する (IPアドレス取得失敗時に除外しない場合は resolve() にする)
+						});
+				}
+			});
+		};
+		// デザインを適用したい場合は以下の行をコメントアウトして下さい。
+		return rejectIpsJudge();
+
+		// ⑤ここから施策 code 実行
+		return Promise.resolve()
+			.then(runExternalExpScript)
+			.then(function () {
+				kzs.console.log("%s reolved(end)", _el);
+			})
+			.catch(function (e) {
+				if (e instanceof Error) {
+					logException(e);
+					kzs.console.error("%s rejected:", _el, e);
+				} else {
+					kzs.console.warn("%s rejected:", _el, e);
+				}
+				return Promise.reject();
+			});
+	} catch (e) {
+		logException(e);
+		kzs.console.error("%s rejected:", _el, e);
+		return Promise.reject();
+	}
+})();

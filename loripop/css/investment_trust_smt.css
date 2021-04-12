@@ -1,0 +1,682 @@
+@charset "shift_jis";
+
+/*JNB CSS for logging in site for smartphone and others JNB投資信託*/
+/*NBGFD202G11.jsp,NBGFD203G11.jsp,NBGFD211G11.jsp,NBGFD211G12.jsp,(NBGFD211G13.jsp,NBGFD211G14.jsp,NBGFD211G15.jsp,NBGFD211G16.jsp),NBGFD301G12.jsp,NBGFD302G11.jsp,NBGFD303G11.jsp,NBGFD303G12.jsp,NBGFD211G13.jsp,NBGFD211G17.jsp,NBGFD211G18.jsp,NBGFD211G19.jsp,NBGFD211G20.jsp,NBGFD212G11.jsp,NBGFD212G12.jsp,NBGFD212G13.jsp,NBGFD212G14.jsp*/
+
+/*button*/
+.btnPdf {
+	width: 85%;
+}
+.btnPdf span {
+	display: inline-block;
+	float: left;
+	width: 78%;
+	padding: 0.3em 0;
+	text-align: left;
+}
+.btnPdf span + span {
+	float: right;
+	width: auto;
+	margin: 0;
+	padding: 0.3em 0.7em;
+}
+.columnR .btn01 {
+	width: 80%;
+	margin: 10px auto;
+	padding: 1em 0;
+	letter-spacing: 0.2em;
+}
+
+/*form*/
+input[type="checkbox"],
+input[type="radio"] {
+	margin: 0.1em 0.5em;
+}
+select {
+	width: 100%;
+	margin: 6px 0;
+	white-space: normal;
+}
+
+/*opening of account, investment info change*/
+.labelBox1 input,
+.labelBox1 span {
+	display: block;
+	float: left;
+}
+.labelBox1 span {
+	width: 93%;
+	margin-right: -5%;
+	padding-right: 1%;
+}
+.labelBox2 {
+	display: inline-block;
+	padding: 0.2em 0.5em 0.2em 0.2em;
+}
+
+/*step*/
+.step3 span {
+	letter-spacing: 0.1em;
+	font-size: 12px;
+}
+.step4 li {
+	width: 21%;
+}
+.step4 li.stepFin {
+	width: 37%;
+}
+.step4 .stepFin span {
+	letter-spacing: 0;
+	padding: 0 0 0 0.7em;
+}
+.step5 li {
+	font-size: 0.8em;
+	width: 20%;
+}
+.step5 span {
+	letter-spacing: 0.3em;
+}
+.step5 li:nth-child(4) span {
+	letter-spacing: 0;
+}
+
+/*table*/
+
+/*opening of account*/
+.tableInvRadio th,
+.tableInvRadio td {
+	width: 33%;
+	border-right: 1px dotted #999;
+	border-bottom: 1px dotted #999;
+}
+.tableInvRadioTr td {
+	background: #fff9cd;
+}
+.tableInvConf1 th,
+.tableInvConf1 td {
+	display: block;
+}
+.tableInvConf1 th {
+	border-right: 0;
+	border-bottom: 0;
+}
+.tableInvConf2 th,
+.tableInvConf2 td {
+	border-right: 1px dotted #888;
+	border-bottom: 1px dotted #888;
+}
+.tableInvConf2 th {
+	width: 33%;
+}
+
+/*account info*/
+.tableInvInfo th,
+.tableInvInfo td {
+	display: block;
+}
+.tableInvInfo th {
+	border-right: 0;
+	border-bottom: 0;
+}
+.tableInvInfo td {
+	line-height: 1.4em;
+}
+
+/*investment info*/
+.tableInvInfo2 th,
+.tableInvInfo2 td {
+	border-right: 1px dotted #888;
+	border-bottom: 1px dotted #888;
+}
+.tableInvInfo2 th {
+	width: 46%;
+}
+.tableInvInfo2 th[colspan="2"] {
+	width: 100%;
+}
+.table01 .thIndent {
+	text-indent: 0.8em;
+}
+
+/*account info change FX*/
+.tableInvInfoFX th,
+.tableInvInfoFX td {
+	display: block;
+	width: 100%;
+	text-indent: 0.6em;
+}
+.tableInvInfoFX th {
+	border-right: 0;
+	border-bottom: 0;
+}
+.tableInvInfoFX th[rowspan="3"] {
+	border-bottom: 1px dotted #888;
+	text-indent: 0;
+}
+
+/*account info border bottom tacet*/
+.bdrBm1 {
+	margin-bottom: -1px;
+}
+
+/*NBGFD211G13*/
+.frameGry {
+	padding: 10px;
+	border: 1px solid #888;
+}
+.columnR {
+	text-align: center;
+}
+
+/*trustOpen*/
+.trustOpen .step4 li,
+.step4 li.stepFin {
+	width: 25%;
+}
+.trustOpen .mt15 {
+	margin-top: 15px;
+}
+.trustOpen input + span {
+	display: block;
+}
+.trustOpen .txtThankYou01 {
+	text-align: center;
+}
+
+/*txtThankYou*/
+.txtThankYou01 {
+	font-size: 1.4em;
+	line-height: 1.2em;
+	margin: 0.2em 0 0.5em 0;
+	font-weight: bold;
+}
+
+/*NBGFD212G11,NBGFD212G12*/
+#boxQ2,
+#boxQ3,
+#boxQ4,
+#boxQ5,
+#boxQ6,
+#boxQ7,
+#boxQ8,
+#boxQ9,
+#boxQ10,
+#boxQ11,
+#boxQ12,
+#boxQ13,
+#boxQ14,
+#boxQ15,
+#boxQ16,
+.boxErr,
+#todofukenSEL {
+	display: none;
+}
+.boxQuestion {
+	position: relative;
+}
+.boxQuestion:first-of-type {
+	padding-bottom: 12px;
+}
+.boxQuestion:after {
+	position: absolute;
+	margin-left: -60px;
+	width: 0;
+	height: 0;
+	border: solid 30px transparent;
+	border-top: solid 22px #364fa1;
+	left: 50%;
+	bottom: -62px;
+	margin: 0 -34px;
+	display: none;
+	content: "";
+}
+.boxQuestion.on {
+	border-bottom: 1px dotted #888;
+	margin-bottom: 54px;
+}
+.boxQuestion.on:after {
+	display: block;
+}
+.boxQuestion input[type="radio"]:checked + label,
+.boxQuestion input[type="checkbox"]:checked + label {
+	background-color: #deeefe;
+}
+.boxQuestion input[type="radio"],
+.boxQuestion:not(:nth-of-type(14)):not(:nth-of-type(15))
+	input[type="checkbox"] {
+	position: absolute;
+	top: 35%;
+	left: 4px;
+}
+.boxQuestion .ansSelectWrap {
+	margin-top: 20px;
+	font-size: 0.9em;
+	font-weight: bold;
+}
+.boxQuestion .ansSelectWrap li {
+	position: relative;
+	min-height: 60px;
+	margin-bottom: 10px;
+}
+.boxQuestion label {
+	padding: 18px 8px 17px 35px;
+	border: solid 1px #e5e5e5;
+	font-size: 1.1em;
+	display: block;
+	box-sizing: border-box;
+}
+.ansSelect01 .tableInvInfo th,
+.ansSelect01 .tableInvInfo td,
+.ansSelect02 .tableInvInfo th,
+.ansSelect02 .tableInvInfo td {
+	display: table-cell;
+}
+.ansSelect01 .tableInvInfo th,
+.ansSelect02 .tableInvInfo th {
+	width: 42%;
+	padding-right: 8px;
+	border-right: 1px dotted #888;
+	border-bottom: 1px dotted #888;
+}
+.ansSelect01 .tableInvInfo td {
+	border-bottom: 1px dotted #888;
+}
+.ansSelect01 .tableInvInfo tr:last-child th,
+.ansSelect01 .tableInvInfo tr:last-child td,
+.ansSelect02 .tableInvInfo tr:last-child th {
+	border-bottom: 1px solid #888;
+}
+
+/*NBGFD212G11*/
+.ansSelect01 .boxQuestion .ansSelectWrap span.appIc,
+.boxQuestion .ansSelectWrap span.mailIc {
+	background: url(/commontpl/images/app_ic.png) 0 0 no-repeat;
+	background-size: 45px auto;
+	padding: 13px 0 13px 56px;
+}
+.ansSelect01 .boxQuestion .ansSelectWrap span.mailIc {
+	background-image: url(/commontpl/images/mail_ic.png);
+}
+.ansSelect01 .boxQuestion .ansSelectWrap .baloon {
+	position: absolute;
+	color: #fff;
+	background-color: #0a78c3;
+	font-size: 0.9em;
+	font-weight: normal;
+	padding: 10px 8px;
+	border-radius: 4px;
+	line-height: 1.5em;
+	left: 166px;
+	bottom: 12px;
+}
+.ansSelect01 .boxQuestion .ansSelectWrap .baloon:before {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: -16px;
+	top: 15px;
+	border: 5px solid transparent;
+	border-right: 12px solid #0a78c3;
+}
+.boxErr dl {
+	margin-top: 15px;
+}
+.boxErr dt {
+	font-weight: bold;
+}
+
+/*NBGFD212G12*/
+.ansSelect02 .boxQuestion:nth-of-type(2) .blkTitle {
+	border-bottom: 1px dotted #888;
+}
+.ansSelect02 .tableInvInfo {
+	margin-top: 25px;
+}
+.ansSelect02 .boxQuestion:nth-of-type(14) label,
+.ansSelect02 .boxQuestion:nth-of-type(15) label {
+	padding: 0.4em;
+	border: none;
+}
+.ansSelect02 .boxQuestion:first-of-type input[type="radio"],
+.ansSelect02 .boxQuestion:nth-of-type(3) input[type="radio"] {
+	top: 23px;
+}
+.ansSelect02 .boxQuestion label p {
+	font-weight: normal;
+	margin-top: 20px;
+}
+.ansSelect02 .boxQuestion:first-of-type label p span {
+	display: block;
+	text-indent: -1em;
+	padding-left: 1em;
+}
+.ansSelect02 .boxQuestion:nth-of-type(3) label p span {
+	display: block;
+	font-size: 0.9em;
+}
+.ansSelect02 .boxQuestion:nth-of-type(3) label p span:nth-child(odd) {
+	width: 87px;
+	float: left;
+}
+.ansSelect02 .boxQuestion .ansSelectWrap label span {
+	font-weight: normal;
+}
+.ansSelect02 #boxQ1.boxQuestion .ansSelectWrap p {
+	font-weight: normal;
+	margin-top: 0.5em;
+	line-height: 1.4em;
+	margin-bottom: 1.5em;
+}
+.ansSelect02 #boxQ1.boxQuestion .ansSelectWrap p span {
+	color: #fff;
+	background-color: #f36;
+	padding: 0 0.5em;
+	border-radius: 5px;
+	margin-right: 0.5em;
+	font-size: 0.9em;
+}
+#boxQ14 .boxAgreement {
+	display: flex;
+	border-top: solid 1px #888;
+}
+#boxQ14 .boxAgreement div {
+	padding: 20px;
+	width: 66%;
+	border-right: solid 1px #888;
+}
+#boxQ14 .boxAgreement div + label {
+	width: 34%;
+	font-size: 0.9em;
+	padding-top: 20px;
+}
+#boxQ14 .boxAgreement .mt10 {
+	margin-top: 10px;
+}
+
+#regWrap {
+	padding: 10px;
+	border-top: dotted 1px #888;
+}
+.regulationWrap,
+.regulationWrap02 {
+	width: 100%;
+	padding-bottom: 2px;
+	border: 1px solid #c0c0c0;
+	font-family: Arial, "ヒラギノ角ゴPro W3", "Hiragino Kaku Gothic Pro",
+		"メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+	margin-bottom: 5px;
+}
+.regulationWrap .boxWrap01,
+.regulationWrap02 .boxWrap01 {
+	height: 100px;
+	overflow: hidden;
+	margin-bottom: 10px;
+	padding: 0 3%;
+	width: 94%;
+	font-size: 0.9em;
+}
+.regulationWrap02 .box01 {
+	margin-bottom: 10px;
+	padding: 0 3%;
+	width: 94%;
+	font-size: 0.9em;
+}
+.regulationWrap .title01,
+.regulationWrap02 .title01 {
+	font-size: 1.4em;
+	color: #1a3694;
+	line-height: 1.5em;
+	margin: 10px 0 15px;
+	font-weight: bold;
+}
+.regulationWrap .title02 {
+	border-bottom: 2px solid #1a3694;
+	font-size: 1.2em;
+	line-height: 1.5em;
+	margin-bottom: 15px;
+}
+.boxWrap01.on {
+	height: auto;
+	background-color: #fff !important;
+}
+.regulationWrap .mb15 {
+	margin-bottom: 15px;
+}
+.regulationWrap .sec01 {
+	margin: 0 0 25px;
+}
+.regulationWrap .list01 li,
+.regulationWrap02 .list01 li {
+	padding: 0 0 0 19px;
+	background: url(/common/images/com_ic017_8.png) 1px 0.3em no-repeat;
+	background-size: 10px auto;
+}
+.regulationWrap .list03 li,
+.regulationWrap .list07 .list03 li {
+	padding-left: 2em;
+	text-indent: -2.5em;
+}
+.regulationWrap .list03 .txt04 li {
+	padding-left: 2em;
+	text-indent: -2em;
+}
+.regulationWrap .list07 li,
+.regulationWrap .list03 li .list07 li {
+	padding-left: 1.5em;
+	text-indent: -1.5em;
+}
+.regulationWrap .list10 {
+	padding-left: 1em;
+}
+.regulationWrap .tR {
+	text-align: right;
+}
+.regulationWrap .boxFrame03 {
+	border: 1px solid #000;
+	padding: 10px;
+	margin-bottom: 15px;
+}
+.regulationWrap .noNumIndent01 {
+	padding-left: 1.5em;
+}
+.regulationWrap .noNumIndent02 {
+	padding-left: 2em;
+}
+.hideAll {
+	display: none;
+}
+.showAll .arw,
+.hideAll .arw {
+	float: right;
+	display: block;
+	cursor: pointer;
+	margin-right: 10px;
+}
+.showAll .arw:before {
+	right: 116px;
+	top: 10px;
+}
+.hideAll .arw:before {
+	right: 54px;
+	top: 5px;
+}
+
+/*NBGFD212G14*/
+.externalLinkBox {
+	text-align: center;
+}
+.externalLinkBox a {
+	display: inline;
+	margin-right: 0;
+}
+.btmArrow {
+	position: relative;
+	height: 40px;
+}
+.btmArrow:after {
+	position: absolute;
+	margin-left: -60px;
+	width: 0;
+	height: 0;
+	border: solid 30px transparent;
+	border-top: solid 22px #364fa1;
+	left: 50%;
+	bottom: -10px;
+	margin: 0 -34px;
+	content: "";
+}
+.boxGray {
+	background-color: #e9edef;
+	padding: 12px;
+	border-bottom: 1px solid #888;
+	text-align: center;
+}
+.boxGray li {
+	margin: 15px auto;
+}
+.boxGray li:first-child {
+	width: 290px;
+}
+.boxGray li:last-child {
+	width: 191px;
+}
+.captionBlue {
+	background-color: #112d8d;
+	color: #fff;
+	padding: 3px;
+	margin-bottom: 15px;
+	font-weight: bold;
+	text-align: center;
+}
+.accountFlow li:first-child {
+	margin-bottom: 25px;
+}
+.accountFlow li .ftxt {
+	font-size: 1.1em;
+	font-weight: bold;
+	line-height: 1.4em;
+	margin-bottom: 5px;
+}
+.appBox h2 a,
+.mailBox h2 a {
+	color: #000;
+}
+.appBox .inner,
+.mailBox .inner {
+	border: 1px solid #ccc;
+	margin: 10px;
+	font-size: 0.9em;
+}
+.appTbl {
+	margin: 10px 0;
+	border-top: 1px dotted #888;
+	border-bottom: 1px dotted #888;
+}
+.appTbl th,
+.appTbl td {
+	padding: 0;
+	border-bottom: none;
+	text-align: center;
+}
+.appTbl th {
+	border-left: 1px dotted #888;
+	border-right: 1px dotted #888;
+}
+.appTbl td {
+	display: block;
+	border-right: 1px dotted #888;
+}
+.appTbl th img {
+	margin-bottom: 0.5em;
+}
+.appTbl td img {
+	margin: 1em 0;
+}
+.appTbl span {
+	display: block;
+	padding: 0.5em;
+	background-color: #deeefe;
+	font-weight: bold;
+}
+.appTbl .device01 {
+	border-bottom: 1px dotted #888;
+}
+.accountFlow .thumb-step {
+	overflow: hidden;
+}
+.accountFlow .thumb-wrap {
+	max-width: 100%;
+	margin: 0 auto 15px;
+}
+.accountFlow .thumb-inwrap {
+	width: 100%;
+	position: relative;
+	height: 380px;
+}
+.accountFlow .thumb-cont {
+	width: 220%;
+	position: relative;
+	transform: translate3d(0px, 0px, 0px);
+	transition-duration: 0.5s;
+}
+.accountFlow .thumb01,
+.thumb02 {
+	position: relative;
+	float: left;
+	width: 288px;
+	opacity: 0.5;
+}
+.accountFlow .thumb-arrow {
+	display: none;
+}
+.accountFlow .activeThumb {
+	opacity: 1;
+}
+.accountFlow #thumb-prev {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 155px;
+}
+.accountFlow #thumb-next {
+	position: absolute;
+	right: 0;
+	top: 155px;
+}
+@media screen and (min-width: 567px) {
+	.accountFlow .thumb-wrap {
+		width: 576px;
+	}
+	.accountFlow .thumb01,
+	.thumb02 {
+		opacity: 1;
+	}
+	.accountFlow #thumb-next,
+	.accountFlow #thumb-prev {
+		display: none;
+	}
+}
+.mailBox .h301 {
+	border-color: #ccc;
+}
+.mailBox .subTtl {
+	color: #fff;
+	background-color: #364fa1;
+	font-weight: bold;
+	padding: 5px 14px;
+	font-size: 1.1em;
+}
+.mailBox .dload .subTtl {
+	text-align: center;
+}
+.mailBox .dload li {
+	border: 1px solid #364fa1;
+}
+.mailBox .dload li dd {
+	padding: 8px;
+}
+.mailBox .frameGry {
+	margin: 10px 0;
+	border-color: #ccc;
+}
