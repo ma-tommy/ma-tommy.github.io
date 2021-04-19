@@ -11,20 +11,18 @@
 	background: rgb(246, 156, 85);
 	border: 1px red solid;
 	border-radius: 10px;
-	
- }
- #kzs_container_table {
-	 display: table;
-	 table-layout:fixed;
- }
- #kzs_table_row {
+}
+#kzs_container_table {
+	display: table;
+	table-layout: fixed;
+}
+#kzs_table_row {
 	display: table-row;
- }
- #kzs_table_cell {
+}
+#kzs_table_cell {
 	display: table-cell;
-
- }
- #kzs_grid_container {
+}
+#kzs_grid_container {
 	margin: 2em;
 	display: grid;
 	grid-template-columns: 30% 60%;
@@ -32,7 +30,6 @@
 	justify-items: left;
 	column-gap: 2em;
 	row-gap: 1em;
-	
 }
 #kzs_grid_age_label {
 	grid-column: 1;
@@ -110,14 +107,17 @@
 	justify-content: center;
 }
 
-#kzs_sum_deduction_caption, #kzs_yaer_deduction_caption {
+#kzs_sum_deduction_caption,
+#kzs_yaer_deduction_caption {
 	margin-right: 10px;
 }
 
-#kzs_sum_deduction_unit, #kzs_yaer_deduction_unit {
+#kzs_sum_deduction_unit,
+#kzs_yaer_deduction_unit {
 	margin-left: 10px;
 }
-#kzs_yaer_deduction, #kzs_sum_deduction {
+#kzs_yaer_deduction,
+#kzs_sum_deduction {
 	color: red;
 	font-size: 25px;
 }

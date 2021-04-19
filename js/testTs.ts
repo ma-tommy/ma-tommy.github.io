@@ -200,24 +200,26 @@ return (function () {
 				}
 			});
 		};
-		// デザインを適用したい場合は以下の行をコメントアウトして下さい。
-		return rejectIpsJudge();
 
 		// ⑤ここから施策 code 実行
-		return Promise.resolve()
-			.then(runExternalExpScript)
-			.then(function () {
-				kzs.console.log("%s reolved(end)", _el);
-			})
-			.catch(function (e) {
-				if (e instanceof Error) {
-					logException(e);
-					kzs.console.error("%s rejected:", _el, e);
-				} else {
-					kzs.console.warn("%s rejected:", _el, e);
-				}
-				return Promise.reject();
-			});
+		return (
+			Promise.resolve()
+				// デザインを適用したい場合は以下の行()をコメントアウトして下さい。
+				.then(rejectIpsJudge)
+				.then(runExternalExpScript)
+				.then(function () {
+					kzs.console.log("%s reolved(end)", _el);
+				})
+				.catch(function (e) {
+					if (e instanceof Error) {
+						logException(e);
+						kzs.console.error("%s rejected:", _el, e);
+					} else {
+						kzs.console.warn("%s rejected:", _el, e);
+					}
+					return Promise.reject();
+				})
+		);
 	} catch (e) {
 		logException(e);
 		kzs.console.error("%s rejected:", _el, e);
