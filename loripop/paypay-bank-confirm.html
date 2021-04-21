@@ -92,7 +92,7 @@
 			var uaType = 2;
 			var smtFlg = uaType == 2 ? "1" : "0";
 		</script>
-		<script type="text/javascript" src="/js/inc_common.js?v=210225"></script>
+		<script type="text/javascript" src="./js/inc_common.js?v=210225"></script>
 
 		<script src="/common/js/adobe/fdb40d642a7524d383849d9e1c4fbc3f56afb2dd/satelliteLib-27fe9326fc116198f78f7151ce8e9e10bd1f9cc9-staging.js"></script>
 
@@ -803,6 +803,17 @@
 				var jspName = "NBGFD212G14.jsp";
 				_satellite.pageBottom();
 				//-->
+
+				$(function () {
+					var ua = navigator.userAgent;
+					if (ua.indexOf("iPhone") > 0) {
+						$("#toAppStore").attr("src", "./images/com_bn037.png");
+					} else if (ua.indexOf("Android") > 0) {
+						$("#toAppStore").attr("src", "./images/com_bn038.png");
+					} else {
+						$("#toAppStore").attr("src", "./images/com_bn038.png");
+					}
+				});
 			</script>
 
 			<!--/footer-->
