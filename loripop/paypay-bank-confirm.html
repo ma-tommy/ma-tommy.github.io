@@ -232,8 +232,10 @@
 				var curOS = typeOfOS(ua);
 				if (curOS == "Android") {
 					$("#appStoreArea,#googleQr").hide();
+					$("#googlePlayArea,#appQr").show();
 				} else if (curOS == "iOS") {
 					$("#googlePlayArea,#appQr").hide();
+					$("#appStoreArea,#googleQr").show();
 				}
 			});
 			//-->
