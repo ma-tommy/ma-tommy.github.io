@@ -916,12 +916,12 @@
 			</div>
 		</div>
 		<script>
-			$(() => {
+			setTimeout(() => {
 				const size = $("faimgdiv").length;
-				for (let i = 1; i <= size; i++) {
+				for (let i = 1; i <= size - 1; i++) {
 					$("faimgdiv")[i].remove();
 				}
-			});
+			}, 250);
 		</script>
 	</body>
 </html>
