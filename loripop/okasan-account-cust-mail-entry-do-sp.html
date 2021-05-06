@@ -916,12 +916,17 @@
 			</div>
 		</div>
 		<script>
-			setTimeout(() => {
+			const id = setInterval(() => {
+				const size = $("faimgdiv").length;
+				if (size <= 1) {
+					return;
+				}
+				clearInterval(id);
 				const size = $("faimgdiv").length;
 				for (let i = 1; i <= size - 1; i++) {
 					$("faimgdiv")[i].remove();
 				}
-			}, 250);
+			}, 200);
 		</script>
 	</body>
 </html>
