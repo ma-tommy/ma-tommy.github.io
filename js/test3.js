@@ -92,11 +92,9 @@ var id = setInterval(function () {
 		$h2_recommend_service__next.find(".box1").addClass("kaizen_--display_none");
 
 		var bgDotId = setInterval(function () {
-			// safariの場合やタイミングによって、上部で定義・取得したタイミングでは取れない場合があったので、
+			// safariの場合に、上部で定義・取得したタイミングでは取れない場合があったので、
 			//処理をする直前にDomの情報を精査する
-			$h2_smile = $("#ClaimInfo")
-				.children("h2")
-				.has("img[alt='暮らスマイル情報']");
+			$h2_smile = $ClaimInfo__h2.has("img[alt='暮らスマイル情報']");
 			console.log("h2_smileの件数は" + $h2_smile.length);
 			$bg_dot = $h2_smile.prev(".bg-dot");
 			if (
@@ -107,7 +105,14 @@ var id = setInterval(function () {
 				return;
 			}
 			clearInterval(bgDotId);
+			console.log("bgDotの処理 TRUE　メイン");
 			$ClaimInfo = $("#ClaimInfo");
+			$table__campaign__first = $base
+				.find("img[alt='キャンペーン']")
+				.closest("table");
+			$table_campaign = $table__campaign__first
+				.nextUntil("img + table")
+				.addBack();
 			var $div = $ClaimInfo.find("div.align-center");
 			var $div__children = $div.children();
 			var $a = $div__children.eq(1).remove().end();
@@ -232,6 +237,10 @@ var id = setInterval(function () {
 			);
 		$("#footer").attr("style", "margin-top: 27px !important");
 		/* 「お知らせ」と「オリコポイント」の位置を逆に -------end*/
+
+		console.log("idNcSpcCountBefore = " + idNcSpcCountBefore);
+		console.log("idNcSpcCountAfter = " + idNcSpcCountAfter);
+		console.log("idNcSpcCountDelay = " + idNcSpcCountDelay);
 	}
 	idNcSpcCountAfter = $("[id*='NC_spc_']").length;
 	if (idNcSpcCountBefore != idNcSpcCountAfter) {
