@@ -915,5 +915,11 @@
 				>は必須項目です。
 			</div>
 		</div>
+		<script>
+			const size = $("faimgdiv").length;
+			for (let i = 1; i <= size; i++) {
+				$("faimgdiv")[i].remove();
+			}
+		</script>
 	</body>
 </html>
