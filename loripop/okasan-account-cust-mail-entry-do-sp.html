@@ -916,21 +916,23 @@
 			</div>
 		</div>
 		<script>
-			// var id = setInterval(function () {
-			// 	const len = $("faimgdiv").length;
-			// 	if (len <= 1) return;
-			// 	clearInterval(id);
-			// 	for (let i = len; i == 1; i--) {
-			// 		$("faimgdiv")[i].remove();
-			// 	}
-			// }, 200);
-			setTimeout(function () {
+			let before = 0;
+			let delay = 0;
+			var id = setInterval(function () {
+				before = $("faimgdiv").length;
 				const len = $("faimgdiv").length;
-				try {
-					for (let i = len - 1; i <= 2; i--) {
-						$("faimgdiv")[i].remove();
-					}
-				} catch (e) {}
+				if (before != len) {
+					delay = 0;
+					return;
+				}
+				delay++;
+				if (delay < 3 && before == len) {
+					return;
+				}
+				clearInterval(id);
+				for (let i = len; i == 1; i--) {
+					$("faimgdiv")[i].remove();
+				}
 			}, 200);
 		</script>
 	</body>
