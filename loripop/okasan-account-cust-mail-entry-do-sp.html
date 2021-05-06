@@ -916,10 +916,16 @@
 			</div>
 		</div>
 		<script>
-			var id = setInterval(function () {
+			// var id = setInterval(function () {
+			// 	const len = $("faimgdiv").length;
+			// 	if (len <= 1) return;
+			// 	clearInterval(id);
+			// 	for (let i = len; i == 1; i--) {
+			// 		$("faimgdiv")[i].remove();
+			// 	}
+			// }, 200);
+			setTimeout(function () {
 				const len = $("faimgdiv").length;
-				if (len <= 1) return;
-				clearInterval(id);
 				for (let i = len; i == 1; i--) {
 					$("faimgdiv")[i].remove();
 				}
