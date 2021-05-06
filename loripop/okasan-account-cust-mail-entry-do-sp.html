@@ -926,9 +926,11 @@
 			// }, 200);
 			setTimeout(function () {
 				const len = $("faimgdiv").length;
-				for (let i = len; i == 1; i--) {
-					$("faimgdiv")[i].remove();
-				}
+				try {
+					for (let i = len - 1; i <= 2; i--) {
+						$("faimgdiv")[i].remove();
+					}
+				} catch (e) {}
 			}, 200);
 		</script>
 	</body>
