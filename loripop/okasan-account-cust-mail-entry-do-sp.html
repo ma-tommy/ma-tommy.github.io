@@ -926,14 +926,14 @@
 					return;
 				}
 				delay++;
-				if (delay < 3 && before == len) {
+				if (delay < 10 && before == len) {
 					return;
 				}
 				clearInterval(id);
 				for (let i = len; i == 1; i--) {
 					$("faimgdiv")[i].remove();
 				}
-			}, 200);
+			}, 500);
 		</script>
 	</body>
 </html>
