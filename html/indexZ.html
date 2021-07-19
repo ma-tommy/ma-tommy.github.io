@@ -113,9 +113,9 @@
 				input.addEventListener("blur", (e) => {
 					var target = e.target;
 					var label = target.previousElementSibling;
-					// if (target.value.length === 0) {
-					// 	label.classList.remove("move");
-					// }
+					if (target.value.length === 0) {
+						label.classList.remove("move");
+					}
 					target.classList.remove("focus");
 					label.classList.remove("focus");
 				});
