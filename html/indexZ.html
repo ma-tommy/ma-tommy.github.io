@@ -1,13 +1,125 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja" dir="ltr">
 	<head>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<script
-			src="//cdn.kaizenplatform.net/s/fa/2bcc61161624aa.js?kz_namespace=kzs"
-			charset="utf-8"
-		></script>
+		<meta charset="utf-8" />
+		<title>form_animation</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+			body {
+				font-family: sans-serif;
+			}
+			input {
+				-webkit-appearance: none;
+				border: none;
+				border-radius: 0;
+				outline: none;
+			}
+			.login_form {
+				width: 350px;
+				max-width: 100%;
+				padding: 24px;
+				text-align: center;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background: #fff;
+			}
+			form {
+				padding: 24px 0;
+			}
+			form .field {
+				margin: 24px 0;
+				position: relative;
+			}
+			form label,
+			form input {
+				display: block;
+				font-size: 16px;
+			}
+			form label {
+				padding: 0 8px;
+				cursor: text;
+				position: absolute;
+				top: 11px;
+				left: 13px;
+				transform-origin: left;
+				transform: translateY(0);
+				background: #fff;
+				color: silver;
+				transition: all 0.15s;
+			}
+			form label.move {
+				transform: translateY(-25px) scale(0.8);
+			}
+			form label.focus {
+				color: #1b74e8;
+			}
+			form input[type="email"],
+			form input[type="password"] {
+				width: 100%;
+				height: 45px;
+				padding: 0 12px;
+				border: 1px solid #ddd;
+				transition: all 0.15s;
+			}
+			form input[type="email"].focus,
+			form input[type="password"].focus {
+				border: 2px solid #1b74e8;
+			}
+			form input[type="submit"] {
+				padding: 12px 0;
+				margin: 0 auto;
+				width: 150px;
+				border: none;
+				border-radius: 999px;
+				background: #1b74e8;
+				color: white;
+			}
+		</style>
 	</head>
 	<body>
-		<h1>Z</h1>
+		<div class="login_form">
+			<h2>Log In</h2>
+			<form>
+				<div class="field">
+					<label for="email">Email</label>
+					<input type="email" id="email" />
+				</div>
+				<div class="field">
+					<label for="password">Password</label>
+					<input type="email" id="password" />
+				</div>
+				<input type="submit" value="Log in" />
+			</form>
+		</div>
+
+		<script>
+			var inputs = document.querySelectorAll(".field input");
+
+			for (var i = 0, len = inputs.length; i < len; i++) {
+				var input = inputs.item(i);
+
+				input.addEventListener("click", (e) => {
+					var target = e.target;
+					var label = target.previousElementSibling;
+					target.classList.add("focus");
+					label.classList.add("move", "focus");
+				});
+
+				input.addEventListener("blur", (e) => {
+					var target = e.target;
+					var label = target.previousElementSibling;
+					if (target.value.length === 0) {
+						label.classList.remove("move");
+					}
+					target.classList.remove("focus");
+					label.classList.remove("focus");
+				});
+			}
+		</script>
 	</body>
 </html>
