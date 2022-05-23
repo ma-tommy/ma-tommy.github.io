@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta name="robots" content="noindex,nofollow,noarchive" />
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>応募｜派遣の仕事探しなら、エン派遣 -人材派遣の仕事情報</title>
+		<link
+			rel="shortcut icon"
+			type="image/x-icon"
+			href="/hakenPC/imageFile/haken/user_globalItem/favicon.ico"
+		/>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta http-equiv="Content-Script-Type" content="text/javascript" />
+		<meta
+			name="description"
+			content="お仕事情報に応募するページです。｜派遣の仕事探しなら、エン派遣&nbsp;-人材派遣の仕事情報"
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta property="og:type" content="website" />
+		<meta
+			property="og:url"
+			content="https://haken17xp.en-japan.com/apply/done/"
+		/>
+		<meta
+			property="og:image"
+			content="https://haken17xp.en-japan.com/imageFile/facebook_ogp/haken_ogp.png"
+		/>
+		<meta
+			property="og:title"
+			content="応募｜派遣の仕事探しなら、エン派遣 -人材派遣の仕事情報"
+		/>
+		<meta
+			property="og:description"
+			content="お仕事情報に応募するページです。｜派遣の仕事探しなら、エン派遣&nbsp;-人材派遣の仕事情報"
+		/>
+		<script type="text/javascript">
+			<!--
+			enHakenURL = "haken17xp.en-japan.com";
+			enWomenURL = "women17xp.en-japan.com";
+			enHatarakuURL = "hb17xp.en-japan.com";
+			-->
+		</script>
+
+		<!-- New -->
+		<link
+			rel="stylesheet"
+			href="/hakenPC/common/css/myprofile.css?digest=DCKxsyKrXa6"
+		/>
+		<link
+			rel="stylesheet"
+			href="/hakenPC/common/css/jobsearch_list.css?digest=DCKxsyKrXa6"
+		/>
+
+		<!--/ New -->
+
+		<script
+			data-kz-key="57938194b5a09d3b"
+			data-kz-namespace="kzs"
+			src="//cdn.kaizenplatform.net/s/57/938194b5a09d3b.js"
+		></script>
+	</head>
+
+	<body class="">
+		<script>
+			fbq(
+				"track",
+				"Purchase",
+				{
+					content_type: "product",
+					content_ids: ["9002427"],
+				},
+				{
+					eventID: "Purchase8bf1179fa2e36ffe8baf937475387e1d",
+				}
+			);
+		</script>
+
+		<script
+			type="text/javascript"
+			src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+		></script>
+		<script>
+			$(function () {
+				var requestAddtocartAjax = function (content_ids) {
+					var xhr = new XMLHttpRequest();
+					if (document.getElementById("js_addtocart_url") != null) {
+						var url = document.getElementById("js_addtocart_url").value;
+						var param =
+							"?eventID=8bf1179fa2e36ffe8baf937475387e1d&content_ids=" +
+							content_ids +
+							"&sourceUrl=apply%2Fdone%2F%3FeCID%3D516%26eTerm%3DB001%26eJob%3DD0204010%26PK%3DE1F4B6";
+						xhr.open("GET", url + param, false);
+						xhr.send();
+					}
+				};
+
+				$(document).on("click", ".js_lumpEntryCheck", function () {
+					var arr = [];
+
+					if (document.getElementsByClassName("js_applyCheck").length > 0) {
+						for (
+							var i = 0;
+							i < document.getElementsByClassName("js_applyCheck").length;
+							i++
+						) {
+							if (document.getElementsByClassName("js_applyCheck")[i].checked) {
+								var wid =
+									document.getElementsByClassName("js_applyCheck")[i].value;
+								if (wid != null) {
+									wid = wid.replace("egh", "egh_");
+								}
+								arr.push(wid);
+							}
+						}
+					} else {
+						for (var i = 0; i < document.forms[0].elements.length; i++) {
+							if (document.forms[0].elements[i].checked) {
+								var wid = document.forms[0].elements[i].value;
+								if (wid != null) {
+									wid = wid.replace("egh", "egh_");
+								}
+								arr.push(wid);
+							}
+						}
+					}
+					requestAddtocartAjax(arr.join(","));
+					fbq(
+						"track",
+						"AddToCart",
+						{
+							content_type: "product",
+							content_ids: arr,
+						},
+						{
+							eventID: "AddToCart8bf1179fa2e36ffe8baf937475387e1d",
+						}
+					);
+				});
+
+				$(document).on("click", ".js_entryCheck", function () {
+					var arr = [];
+					var wid = this.parentNode.parentNode.getAttribute("data-id");
+					if (wid == null) wid = this.parentNode.getAttribute("data-id");
+					if (wid != null) {
+						wid = wid.replace("egh", "egh_");
+					}
+					arr.push(wid);
+					requestAddtocartAjax(arr.join(","));
+					fbq(
+						"track",
+						"AddToCart",
+						{
+							content_type: "product",
+							content_ids: arr,
+						},
+						{
+							eventID: "AddToCart8bf1179fa2e36ffe8baf937475387e1d",
+						}
+					);
+				});
+
+				$(document).on("click", ".js_todaysAiLumpEntryCheck", function () {
+					var wids = document.getElementById("js_widList").value;
+					var widArray = wids.split(",");
+					requestAddtocartAjax(wids);
+					fbq(
+						"track",
+						"AddToCart",
+						{
+							content_type: "product",
+							content_ids: widArray,
+						},
+						{
+							eventID: "AddToCart8bf1179fa2e36ffe8baf937475387e1d",
+						}
+					);
+				});
+			});
+		</script>
+		<input type="hidden" id="js_addtocart_url" value="/siteapi/addtocart/" />
+
+		<!-- Google Tag Manager -->
+		<script>
+			var memberID = "73352202e97bd03eab7dcfcd24bb0917";
+		</script>
+
+		<!-- End Google Tag Manager -->
+		<!--TagKnightManageTag-->
+		<script type="text/javascript">
+			(function () {
+				window.tkTagVersion = "1.0.1";
+				window.mtuId = "oNDlH8Mj8_K9";
+				var w = window,
+					d = w.document,
+					h = "//c.tgknt.com/c/j/",
+					s = d.createElement("script"),
+					oie = (function () {
+						if (w.navigator.userAgent.toLowerCase().indexOf("msie") > -1) {
+							if (d.documentMode) {
+								return d.documentMode < 9 ? true : false;
+							} else {
+								return true;
+							}
+						}
+						return false;
+					})();
+				s.type = "text/javascript";
+				s.src = w.location.protocol + h + w.mtuId;
+				if (oie) {
+					document.write(
+						'<script type="text/javascript" src=' + s.src + "><\/script>"
+					);
+				} else {
+					d.body.appendChild(s);
+				}
+			})();
+		</script>
+		<!--TagKnightManageTagEnd-->
+
+		<!-- GlobalHeader -->
+		<div id="globalHeader">
+			<h1 class="word">お仕事情報に応募｜派遣の仕事探し</h1>
+			<div class="navi">
+				<ul class="clearfix">
+					<li>
+						<a href="https://women17xp.en-japan.com/?PK=E1F4B6"
+							>ウィメンズワーク（女性の転職）<span class="num">1278</span>件</a
+						>
+					</li>
+					<li class="on">
+						<a href="https://haken17xp.en-japan.com/?PK=E1F4B6"
+							>エン派遣<span class="num">11230</span>件</a
+						>
+					</li>
+					<li class="">
+						<a href="https://hb17xp.en-japan.com/?PK=E1F4B6"
+							>エンバイト<span class="num">13586</span>件</a
+						>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- /GlobalHeader -->
+
+		<!-- Header -->
+		<header id="globalSiteHeader">
+			<div class="baseBg">
+				<div class="base">
+					<div class="logoSet">
+						<div class="logoBase">
+							<div class="tagline">
+								<a href="/?PK=E1F4B6">ちょうど良いワークライフバランスが叶う</a>
+							</div>
+							<div class="logo">
+								<a href="/?PK=E1F4B6" class="logoLink"
+									><img
+										src="/hakenPC/imageFile/newhaken/logo.png"
+										alt="エン派遣" /></a
+								><!--
+						-->
+								<div class="areaSet">
+									<span class="area">関東版</span
+									><a href="/index/areaSelect/?PK=E1F4B6" class="changeBtn"
+										>エリア変更</a
+									>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="settingSet">
+						<div class="user"><em class="name">山田&nbsp;一</em>さん</div>
+						<!--
+				-->
+						<ul class="linkList">
+							<li class="link mail">
+								<a href="/mail/?PK=E1F4B6">メール設定</a>
+							</li>
+							<!--
+					-->
+							<li class="link setting">
+								<a href="/setting/?PK=E1F4B6" class="js_under_developing"
+									>各種設定</a
+								>
+							</li>
+							<!--
+					-->
+							<li class="link request">
+								<a href="/request/?PK=E1F4B6">お問い合わせ</a>
+							</li>
+							<!--
+					-->
+							<li class="link sitemap">
+								<a href="/sitemap/?PK=E1F4B6" class="">サイトマップ</a>
+							</li>
+							<!--
+					-->
+							<li class="link help">
+								<a href="/help/?PK=E1F4B6" class="js_popup">ヘルプ</a>
+							</li>
+							<!--
+					-->
+							<li class="link logout">
+								<a href="/login/auth/logout/?PK=E1F4B6">ログアウト</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<nav class="menuListArea">
+				<div class="wrap">
+					<ul class="menuList">
+						<!--
+			-->
+						<li class="menu folder">
+							<a href="/myfolder/?PK=E1F4B6"
+								>気になる！リスト<span class="num js_numLikeJob">3</span></a
+							>
+						</li>
+						<!--
+			-->
+						<li class="menu save">
+							<a href="/mycondition/?PK=E1F4B6">保存した希望条件</a>
+						</li>
+						<!--
+			-->
+						<li class="menu love">
+							<a href="/favorite/?PK=E1F4B6"
+								>お気に入りの派遣会社<span class="num js_numLikeCompany"
+									>0</span
+								></a
+							>
+						</li>
+					</ul>
+					<ul class="subMenuList">
+						<li class="sub myprofile">
+							<a href="/myprofile/?PK=E1F4B6">マイプロフィール</a>
+						</li>
+						<!--
+			-->
+						<li class="sub manage">
+							<a href="/manage/?PK=E1F4B6" class="js_under_developing"
+								>応募管理</a
+							>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<!-- /Header -->
+
+		<!-- #EndLibraryItem --><!-- Container Start -->
+		<div id="container">
+			<!-- /Container Start -->
+
+			<!-- Breadcrumb List -->
+			<div id="globalBreadcrumbList">
+				<ul
+					class="breadcrumbList"
+					itemscope
+					itemtype="http://schema.org/BreadcrumbList"
+				>
+					<li
+						class="list"
+						itemprop="itemListElement"
+						itemscope
+						itemtype="http://schema.org/ListItem"
+					>
+						<a itemprop="item" href="/?PK=E1F4B6" class="home"
+							><span itemprop="name">派遣TOP</span></a
+						><meta itemprop="position" content="1" />
+					</li>
+					<li
+						class="list"
+						itemprop="itemListElement"
+						itemscope
+						itemtype="http://schema.org/ListItem"
+					>
+						<span class="now" itemprop="name">応募</span
+						><meta itemprop="position" content="2" />
+					</li>
+				</ul>
+			</div>
+			<!-- /Breadcrumb List -->
+
+			<!-- PageWrap Start -->
+			<div id="globalPageWrap">
+				<!-- /PageWrap Start -->
+
+				<!-- Done -->
+				<div id="settingDoneCopy">
+					<div class="copyBase">
+						<div class="copy">以下のお仕事に応募しました！</div>
+						<div class="afterNavLink">
+							<a
+								href="javascript:void(0);"
+								class="js_modalOpen"
+								data-modal="md_modal--howto"
+								>応募のあとは、どうすればいいの？</a
+							>
+						</div>
+					</div>
+
+					<!-- Entry Input Data -->
+					<div class="myprofileFormBase entry">
+						<div class="title">
+							<span class="text">応募先情報</span>
+						</div>
+						<div class="content">
+							<table class="jobdataTable">
+								<tr class="company">
+									<th class="item"><span class="text">派遣会社名</span></th>
+									<td class="data">
+										<div class="input">アデコ株式会社</div>
+									</td>
+								</tr>
+								<tr class="job">
+									<th class="item"><span class="text">職種名</span></th>
+									<td class="data">
+										<div class="input">
+											大手外資系ケーブル会社でのテレオペレーター<br />
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<!-- /Entry Input Data -->
+				</div>
+				<!-- /Done -->
+
+				<!-- RecommendArea Start -->
+				<div class="recommendArea entry" id="js_recommendArea">
+					<!-- /RightRecommend Start -->
+
+					<!-- Recommend Nav -->
+					<div class="recommendNav recommendNav--entryDone">
+						<div class="recoTitle">
+							<div class="enta">
+								<img src="/hakenPC/imageFile/newhaken/search2.png" alt="" />
+							</div>
+							<div class="base">
+								お仕事決定のために、<span class="num">5</span
+								>社以上の応募をオススメします<br />引き続き、他の派遣会社にも応募しましょう
+							</div>
+						</div>
+					</div>
+					<div class="lead">現在<span class="num">3</span>社に応募済</div>
+					<!-- /Recommend Nav -->
+
+					<!-- RecommendArea End -->
+				</div>
+				<!-- /RecommendARea End -->
+
+				<!-- Return Link -->
+				<div id="globalReturnLink">
+					<div class="link">
+						<a
+							href="/jobsearch/job_list/result_special/?PK=E1F4B6&areaID=kanto&SPID=3378"
+							>今週のお仕事特集に戻る</a
+						>
+					</div>
+				</div>
+				<!-- /Return Link -->
+
+				<!-- Modal Howto -->
+				<div class="md_modal md_modal--howto">
+					<a href="javascript:void(0);" class="bgLayer js_modalX"></a>
+					<div class="modalBase">
+						<a href="javascript:void(0);" class="closeBtn js_modalX"></a>
+						<div class="title">応募後の流れ</div>
+						<!-- After Nav -->
+						<div id="entryAfterNav">
+							<div class="content">
+								<div class="tableBase">
+									<div class="navUnit yet">
+										<div class="unitTitle">
+											<div class="mini">アデコ株式会社に</div>
+											<div class="main">本登録がまだの方</div>
+										</div>
+										<div class="unitContent">
+											<div class="navSet">
+												<div class="item">
+													<span class="num">1</span
+													><span class="text">連絡</span>
+												</div>
+												<div class="data">
+													3営業日以内に、派遣会社から本登録案内の連絡が、メールまたは電話であります。
+												</div>
+											</div>
+											<div class="navSet">
+												<div class="item">
+													<span class="num">2</span
+													><span class="text">訪問</span>
+												</div>
+												<div class="data">
+													派遣会社に訪問し、<br />本登録＆スキルチェックを行ないます。
+												</div>
+											</div>
+											<div class="navSet">
+												<div class="item">
+													<span class="num">3</span
+													><span class="text">受講</span>
+												</div>
+												<div class="data">お仕事が正式に紹介されます。</div>
+											</div>
+											<div class="navSet">
+												<div class="item">
+													<span class="num">4</span
+													><span class="text">決定</span>
+												</div>
+												<div class="data">
+													あなたと派遣会社の条件が合えば、決定です！
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="navUnit done">
+										<div class="unitTitle">
+											<div class="mini">アデコ株式会社に</div>
+											<div class="main">すでに本登録を済ませている方</div>
+										</div>
+										<div class="unitContent">
+											<div class="navSet">
+												<div class="item">
+													<span class="num">1</span
+													><span class="text">連絡</span>
+												</div>
+												<div class="data">
+													3営業日以内に、派遣会社から応募したお仕事についての連絡が、メールまたは電話であります。
+												</div>
+											</div>
+											<div class="navSet">
+												<div class="item">
+													<span class="num">2</span
+													><span class="text">決定</span>
+												</div>
+												<div class="data">
+													あなたと派遣会社の条件が合えば、決定です！
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<ul class="copyList">
+									<li class="copy">
+										お仕事の決定までどのくらいの期間がかかるかは、あなたの希望条件やスキル、派遣先の状況によります。
+									</li>
+									<li class="copy">
+										派遣会社からのお仕事の紹介を受けるには、必ず、派遣会社に訪問し、本登録を行う必要があります。
+									</li>
+									<li class="copy">
+										その際には、希望のお仕事条件や現在のスキル等を積極的にアピールしてくださいね。
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- /After Nav -->
+					</div>
+				</div>
+				<!-- /Modal Howto -->
+
+				<!-- PageWrap End -->
+			</div>
+			<!-- /PageWrap End -->
+			<!-- Container End -->
+		</div>
+		<!-- /Container End -->
+
+		<form method="post">
+			<input
+				type="hidden"
+				id="token_for_ajax"
+				name="csrf_test_name"
+				value="68f06c3968ee4eeb84c4dbe67f7bf576"
+			/>
+			<input
+				type="hidden"
+				name="recommend_url"
+				id="recommend_url"
+				value="//aigenttest2.silveregg.net/pycre5/jsonp/recommend?merch=enwomen&spec=pc120&num=99&cookie=73352202e97bd03eab7dcfcd24bb0917&prod=9002427&cat=0&xcat=2903_1&xcat=6014_1&xcat=516_1&xcat=640_1"
+			/>
+			<input
+				type="hidden"
+				name="focus_recommend_url"
+				id="focus_recommend_url"
+				value=""
+			/>
+			<input
+				type="hidden"
+				name="recommend_url_id"
+				id="recommend_url_id"
+				value="enusers"
+			/>
+			<input
+				type="hidden"
+				name="recommend_url_pass"
+				id="recommend_url_pass"
+				value="New2012"
+			/>
+			<input type="hidden" name="recommend_pat" id="recommend_pat" value="1" />
+			<input type="hidden" name="recommend_rqid" id="recommend_rqid" value="" />
+			<input
+				type="hidden"
+				name="focus_recommend_rqid"
+				id="focus_recommend_rqid"
+				value=""
+			/>
+			<input
+				type="hidden"
+				name="recommend_count"
+				id="recommend_count"
+				value="99"
+			/>
+			<input
+				type="hidden"
+				name="recommend_cookieid"
+				id="recommend_cookieid"
+				value="73352202e97bd03eab7dcfcd24bb0917"
+			/>
+			<input
+				type="hidden"
+				name="recommend_spec"
+				id="recommend_spec"
+				value="pc120"
+			/>
+			<input
+				type="hidden"
+				name="recommend_mode"
+				id="recommend_mode"
+				value="3"
+			/>
+			<input
+				type="hidden"
+				name="focus_recommend_flg"
+				id="focus_recommend_flg"
+				value="0"
+			/>
+			<input
+				type="hidden"
+				name="recommend_click_url"
+				id="recommend_click_url"
+				value="//aigenttest2.silveregg.net/pycre5/jsonp/click/"
+			/>
+			<input
+				type="hidden"
+				name="recommend_work_data_url"
+				id="recommend_work_data_url"
+				value="/api/recommend_list_haken/?isSMERestrain=true"
+			/>
+			<span id="recommend_out" style="display: none"></span>
+			<span id="focus_recommend_out" style="display: none"></span>
+		</form>
+		<div class="md_modal md_modal--entry" id="js_entryModal">
+			<a href="javascript:void(0);" class="bgLayer js_modalX"></a>
+			<form id="js_entryForm" method="post">
+				<input
+					type="hidden"
+					id="token_for_ajax"
+					name="csrf_test_name"
+					value="68f06c3968ee4eeb84c4dbe67f7bf576"
+				/>
+				<div class="modalBase">
+					<div class="content">
+						<div class="copySet">
+							<div class="navCopy">
+								<span class="js_notLumpTxt">このお仕事に応募します</span>
+								<span class="js_lumpTxt" style="display: none"
+									>チェックしたお仕事に一括応募します</span
+								>
+							</div>
+							<div class="question" id="js_answerText" style="display: none">
+								<span class="caption">派遣会社からの質問</span>
+								<div class="q"></div>
+							</div>
+							<div
+								class="appealSet"
+								id="js_appealTextForm"
+								style="display: none"
+							>
+								<div
+									style="text-align: left; font-size: 16px"
+									id="js_topSubText"
+								>
+									追加PR（任意）
+								</div>
+								<textarea
+									name="UserMessage"
+									id=""
+									cols=""
+									rows="5"
+									placeholder="これまでの経験や、仕事で大切にしていることなど、派遣会社へのアピール事項を入力してください"
+								></textarea>
+								<div
+									style="text-align: left; font-size: 14px"
+									id="js_bottomSubText"
+								>
+									※ここに「質問」を記載いただいてもお答えできない場合がございます。
+								</div>
+								<div class="errorcopy" id="js_errorCopy" style="display: none">
+									1000文字以内で入力してください。(<span id="js_num"></span
+									>文字入力されています)
+								</div>
+							</div>
+						</div>
+						<div class="btnArea">
+							<a
+								href="javascript:void(0);"
+								data-action-url="/apply/actionFromModal/?PK=E1F4B6"
+								class="button js_entry"
+							>
+								<span class="js_notLumpTxt">応募する</span>
+								<span class="js_lumpTxt" style="display: none"
+									>一括応募する</span
+								>
+							</a>
+						</div>
+						<div class="link">
+							<a
+								href="javascript:void(0);"
+								data-action-url="/myprofile/form/?PK=E1F4B6"
+								class="js_entry"
+							>
+								<span class="js_notLumpTxt"
+									>プロフィールを更新して応募する</span
+								>
+								<span class="js_lumpTxt" style="display: none"
+									>プロフィールを更新して一括応募する</span
+								>
+							</a>
+						</div>
+					</div>
+					<a href="javascript:void(0);" class="closeBtn js_modalX"></a>
+				</div>
+				<input
+					type="hidden"
+					name="recommend_spec_id"
+					value=""
+					id="js_spec"
+				/><!--//構築用memo// レコメンドの応募ボタン付近のdata-spec=""に設定した値が自動で入ります。-->
+				<input type="hidden" name="WID" value="" id="js_id" />
+				<input type="hidden" name="isDesc" value="0" />
+				<input
+					type="hidden"
+					name="isSMERestrain"
+					value=""
+					id="js_smeRestraint"
+				/>
+
+				<input type="hidden" name="ViaType" value="2" />
+			</form>
+		</div>
+		<div class="md_modal md_modal--favSignup" id="js_enoughAddFolderModal">
+			<a href="javascript:void(0);" class="bgLayer js_modalX"></a>
+			<form
+				action="/myfolder/form_profile/?signup=0&_pp_=WID%3D9002427%7CViaType%3D2&PK=E1F4B6&signup=15&addroot=%2Fapply%2Fdone%2F%3FeCID%3D516%26eTerm%3DB001%26eJob%3DD0204010%26PK%3DE1F4B6"
+				method="post"
+			>
+				<input
+					type="hidden"
+					id="token_for_ajax"
+					name="csrf_test_name"
+					value="68f06c3968ee4eeb84c4dbe67f7bf576"
+				/>
+				<div class="modalBase">
+					<div class="content">
+						<div class="catch">10秒で完了！</div>
+						<div class="copy">
+							「気になる！」のご利用には、<br /><em>追加情報</em
+							>の登録が必要です。
+						</div>
+						<div class="btnArea"><button class="button">登録する</button></div>
+					</div>
+					<a href="javascript:void(0);" class="closeBtn js_modalX"></a>
+				</div>
+				<input type="hidden" name="wid" value="" id="js_fid" />
+				<input type="hidden" name="isDesc" value="" id="js_setIsDesc" />
+				<input
+					type="hidden"
+					name="recommend_spec_id"
+					value=""
+					id="js_recommendSpec"
+				/>
+			</form>
+		</div>
+
+		<input
+			type="hidden"
+			id="addFolderAuthCheckApiUrl"
+			value="/api/add_folder_check/?PK=E1F4B6"
+		/><!--//構築用memo//  気になるボタンを押した際のチェック-->
+		<input
+			type="hidden"
+			id="addFolderLogoutUrl"
+			value="/myfolder/login/?signup=15"
+		/><!--//構築用memo//  ログアウト時の遷移先-->
+		<input
+			type="hidden"
+			id="addFolderApiUrl"
+			value="/myfolder/add/?FROM=ajax&PK=E1F4B6"
+		/><!--//構築用memo//  気になるリストへの追加処理-->
+		<input
+			type="hidden"
+			id="entryAuthCheckApiUrl"
+			value="/api/user_haken/entry_auth_check/?PK=E1F4B6"
+		/><!--//構築用memo//  応募するボタンを押した際のチェック-->
+
+		<!-- Footer -->
+		<div id="globalFooter">
+			<div class="wrap">
+				<div class="menuArea">
+					<ul class="menuList">
+						<li class="menu">
+							<a
+								href="https://corp.en-japan.com/privacy_services/"
+								target="_blank"
+								>個人情報の取り扱いについて</a
+							>
+						</li>
+						<li class="menu">
+							<a href="/about/copyright/?PK=E1F4B6">サイトのご利用にあたって</a>
+						</li>
+						<li class="menu">
+							<a href="/about/rule/?PK=E1F4B6">ご利用規約</a>
+						</li>
+						<li class="menu"><a href="/request/?PK=E1F4B6">お問い合わせ</a></li>
+						<li class="menu">
+							<a href="http://corp.en-japan.com/" target="_blank"
+								>エン･ジャパン会社概要</a
+							>
+						</li>
+						<li class="menu">
+							<a href="/contact/?PK=E1F4B6">掲載のお問い合わせ</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="nameArea">
+					<div class="item">ちょうど良いワークライフバランスが叶う</div>
+					<div class="name">エン派遣</div>
+				</div>
+				<div class="enLinkArea">
+					<div class="otherSiteLink">
+						<div class="enSiteVertical">
+							<div class="title">【エン・ジャパングループ】サービス一覧</div>
+							<div class="list clearfix">
+								<div class="toggle"><span>求職者様向けサービス</span></div>
+								<div class="listList">
+									<ul>
+										<div id="serviceInfo"></div>
+									</ul>
+								</div>
+							</div>
+
+							<div class="list clearfix">
+								<div class="toggle"><span>企業様向けサービス</span></div>
+								<div class="listList listListCompany">
+									<ul>
+										<div id="listCompany"></div>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<address class="copyright">
+					Copyright &copy; 2022 en Japan Inc. All Rights Reserved.
+				</address>
+			</div>
+		</div>
+		<input
+			type="hidden"
+			id="js_grobal_footer_url"
+			value="https://common.en-japan.com/service.json"
+		/>
+		<script
+			type="text/javascript"
+			language="JavaScript"
+			src="/common/script/global_footer.js?digest=DCKxsyKrXa6"
+		></script>
+		<!-- /Footer -->
+
+		<div id="globalToPageTop"><a href="#toTop" class="scrollTrigger"></a></div>
+
+		<input
+			type="hidden"
+			id="hideApproachApiUrl"
+			value="/siteapi/approach_attention/hide/"
+		/><!--//構築用memo// 未読アプローチのお知らせを消した際にAPIを飛ばして、サーバ側でCookieに保存する。return不要-->
+
+		<script
+			type="text/javascript"
+			src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+		></script>
+		<script type="text/javascript">
+			window.jQuery ||
+				document.write(
+					'<script src="/hakenPC/common/js/jquery.min_170921.js?digest=DCKxsyKrXa6"><\/script>'
+				);
+		</script>
+		<script
+			type="text/javascript"
+			src="/hakenPC/common/script/global.js?digest=DCKxsyKrXa6"
+		></script>
+		<script
+			type="text/javascript"
+			src="/hakenPC/common/script/refer.js?digest=DCKxsyKrXa6"
+		></script>
+
+		<script
+			type="text/javascript"
+			src="/hakenPC/common/script/entry/done.js?digest=DCKxsyKrXa6"
+		></script>
+
+		<script
+			src="//cdn.kaizenplatform.net/s/57/938194b5a09d3b.js?kz_namespace=kzs"
+			charset="utf-8"
+		></script>
+	</body>
+</html>
