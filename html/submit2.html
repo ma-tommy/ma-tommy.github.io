@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>個人情報入力フォーム</title>
+	</head>
+	<body>
+		<h1>個人情報入力フォーム</h1>
+		<form action="#" method="get" autocomplete="on">
+			<label>
+				姓名
+				<input type="text" name="name" autocomplete="name" />
+			</label>
+			<br />
+			<label>
+				姓名かな
+				<input type="text" name="name-kana" autocomplete="additional-name" />
+			</label>
+			<br />
+			<label>
+				メールアドレス
+				<input type="email" name="email" autocomplete="email" />
+			</label>
+			<br />
+			<label>
+				電話番号
+				<input type="tel" name="tel" autocomplete="tel" />
+			</label>
+			<br />
+			<label>
+				郵便番号
+				<input
+					type="text"
+					name="postal-code"
+					autocomplete="postal-code"
+					inputmode="numeric"
+					pattern="\d{3}-?\d{4}"
+				/>
+			</label>
+			<br />
+			<label>
+				住所１
+				<input type="text" name="address1" autocomplete="address-level1" />
+			</label>
+			<br />
+			<label>
+				住所２
+				<input type="text" name="address2" autocomplete="address-line2" />
+			</label>
+			<br />
+			<button type="submit">送信</button>
+		</form>
+	</body>
+</html>
